@@ -2,6 +2,7 @@
 layout: default
 scripts:
   - /assets/js/search.js
+  - /assets/js/cases-data.js
   - /assets/js/cases.js
 ---
 {% assign nlinks = 0 %}{% for c in site.data.links %}{% assign nlinks = nlinks | plus: c.links.size %}{% endfor %}
