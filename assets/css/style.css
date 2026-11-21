@@ -288,14 +288,16 @@ a:hover { text-decoration: underline; }
   .cite { margin-left: 0; width: 100%; }
 }
 
-/* Links and Topics pages: cards flow down in columns. inline-block (not block + margin) stops Safari
-   carrying the previous card's bottom margin to the top of the next column, so every column starts flush. */
-.grid.masonry { display: block; columns: 3 300px; column-gap: 14px; }
+/* Links and Topics pages: a grid of up to 3 columns (4 on wide screens). nav.js packs each card into the
+   shortest column (1px grid rows), so every column starts flush at the top and nothing reflows on hover.
+   Without JavaScript it is a plain grid. (CSS multi-column was dropped: Chrome and Safari repaint glitches.) */
+.grid.masonry { display: grid; grid-template-columns: repeat(auto-fill, minmax(max(300px, calc((100% - 28px) / 3)), 1fr)); column-gap: 14px; row-gap: 14px; align-items: start; }
 @media (min-width: 1400px) {
   .wrap:has(.grid.masonry) { max-width: 1640px; }
-  .grid.masonry { columns: 4 300px; }
+  .grid.masonry { grid-template-columns: repeat(auto-fill, minmax(max(300px, calc((100% - 42px) / 4)), 1fr)); }
 }
-.grid.masonry > .card { display: inline-block; width: 100%; vertical-align: top; margin: 0 0 14px; break-inside: avoid; -webkit-column-break-inside: avoid; page-break-inside: avoid; }
+.grid.masonry.mz-on { grid-auto-rows: 1px; row-gap: 0; }
+.grid.masonry > .card { margin: 0; min-width: 0; }
 .grid.masonry > .card[hidden] { display: none; }
 /* Topics: kind label in front of each item */
 .topics .cat li { display: flex; align-items: baseline; gap: 8px; }
@@ -1387,8 +1389,4 @@ button.opt { font: inherit; color: var(--ink); }
 .si-echo span, .si-note { font-family: var(--sans); }
 .sy-t { background: var(--bg); }
 @media (max-width: 760px) { .opts.wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-
-/* Chrome repaints (boxes vanish and reappear) when cards inside a multi-column layout are transformed:
-   keep the hover shadow but no lift for masonry cards. */
-.grid.masonry > .card, .grid.masonry > .card:hover { transform: none !important; }
-.grid.masonry > .card { transition: box-shadow .15s ease, border-color .15s ease; }
+.search .count { right: 44px; }

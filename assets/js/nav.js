@@ -116,3 +116,43 @@
   window.addEventListener('resize', function () { clearTimeout(pend); pend = setTimeout(bind, 120); });
   bind();
 })();
+
+/* Masonry for the Links and Topics grids: place each visible card in the shortest column, on 1px grid rows,
+   so column tops are flush and cards flow underneath each other. Re-runs when sizes change or cards are filtered. */
+(function () {
+  var GAP = 14;
+  function layout(g) {
+    var cards = Array.prototype.filter.call(g.children, function (c) { return c.classList.contains('card'); });
+    var cols = getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+    g.classList.add('mz-on');
+    var h = [];
+    for (var i = 0; i < cols; i++) h.push(0);
+    cards.forEach(function (c) {
+      if (c.hidden || c.offsetParent === null && getComputedStyle(c).display === 'none') { c.style.gridColumn = c.style.gridRow = ''; return; }
+      c.style.gridRow = 'auto';
+      var ht = Math.ceil(c.getBoundingClientRect().height);
+      var k = 0;
+      for (var j = 1; j < cols; j++) if (h[j] < h[k] - 1) k = j;
+      c.style.gridColumn = String(k + 1);
+      c.style.gridRow = (h[k] + 1) + ' / span ' + Math.max(1, ht);
+      h[k] += ht + GAP;
+    });
+  }
+  var grids = [], queued = false;
+  function all() { queued = false; grids.forEach(function (g) { if (g.offsetParent !== null || g.getClientRects().length) layout(g); }); }
+  function queue() { if (!queued) { queued = true; requestAnimationFrame(all); } }
+  function init() {
+    grids = Array.prototype.slice.call(document.querySelectorAll('.grid.masonry'));
+    if (!grids.length) return;
+    if (window.ResizeObserver) {
+      var ro = new ResizeObserver(queue);
+      grids.forEach(function (g) { ro.observe(g); Array.prototype.forEach.call(g.children, function (c) { ro.observe(c); }); });
+    }
+    grids.forEach(function (g) { new MutationObserver(queue).observe(g, { subtree: true, attributes: true, attributeFilter: ['hidden', 'class'], childList: true }); });
+    window.addEventListener('resize', queue);
+    window.addEventListener('hashchange', function () { setTimeout(queue, 0); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
+    queue();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
