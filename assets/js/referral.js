@@ -15,6 +15,7 @@
 
   var S = [
     { id: 'ref', t: 'Referral', ask: ['Who is calling: grade, team and hospital', 'What exactly is the question?', 'Advice only, or a request for review or transfer?'], f: [
+      { id: 'me', k: 'text', l: 'Taken by (your name and role; remembered on this device)', ph: 'e.g. Dr A Smith, ID registrar', mine: true },
       { id: 'from', k: 'text', l: 'Referrer (role, team, hospital)', ph: 'e.g. Medical registrar, AMU, district general hospital' },
       { id: 'reason', k: 'chips', l: 'Reason', o: ['Antimicrobial advice', 'Positive culture', 'Fever, source unclear', 'Returned traveller', 'Possible HCID', 'Endocarditis', 'Bone or joint infection', 'CNS infection', 'HIV-related', 'TB query', 'Exposure or PEP', 'Review or transfer request', 'OPAT'] },
       { id: 'question', k: 'area', l: 'Specific question' }] },
@@ -33,6 +34,7 @@
       { id: 'recent', k: 'text', l: 'Recent admissions or antibiotics' },
       { id: 'pmh', k: 'area', l: 'Other relevant history and medicines' }] },
     { id: 'trav', t: 'Travel and exposures', ask: ['Where, when, for how long, rural or urban', 'Malaria prophylaxis and pre-travel vaccines', 'Animals, water, insects, food, sex, sick contacts, work'], f: [
+      { id: 'links', k: 'links' },
       { id: 'travel', k: 'text', l: 'Travel (where, when returned, how long)', ph: 'e.g. Ghana, returned 9 days ago, 3 weeks visiting family' },
       { id: 'prev', k: 'chips', l: 'Prevention', o: ['No travel', 'Malaria prophylaxis taken', 'No malaria prophylaxis', 'Pre-travel vaccines', 'No pre-travel advice'] },
       { id: 'expo', k: 'chips', l: 'Exposures', neg: 'No exposure to', o: ['Mosquito bites', 'Tick bites', 'Freshwater', 'Animal bite or scratch', 'Farm animals', 'Unpasteurised dairy', 'Street food or untreated water', 'Sexual contact', 'Sick contacts', 'Healthcare abroad', 'Caves or bats', 'Occupational'] },
@@ -53,9 +55,19 @@
   ];
   var ABX = ['Amoxicillin', 'Benzylpenicillin', 'Flucloxacillin', 'Co-amoxiclav', 'Piperacillin–tazobactam', 'Temocillin', 'Cefalexin', 'Cefazolin', 'Cefuroxime', 'Ceftriaxone', 'Ceftazidime', 'Ceftazidime–avibactam', 'Meropenem', 'Ertapenem', 'Gentamicin', 'Amikacin', 'Vancomycin', 'Teicoplanin', 'Daptomycin', 'Linezolid', 'Clarithromycin', 'Azithromycin', 'Doxycycline', 'Clindamycin', 'Ciprofloxacin', 'Levofloxacin', 'Co-trimoxazole', 'Metronidazole', 'Nitrofurantoin', 'Rifampicin', 'Aciclovir', 'Fluconazole', 'Micafungin', 'Liposomal amphotericin', 'Artesunate'];
 
+  var LINKS = [
+    ['HCID list (UKHSA)', 'https://www.gov.uk/guidance/high-consequence-infectious-diseases-hcid'],
+    ['VHF risk assessment', 'https://assets.publishing.service.gov.uk/media/6aa2833e92e72b8ac437f0b8/viral-haemorrhagic-fevers-risk-assessment-algorithm-september-2026.pdf'],
+    ['TravelHealthPro outbreaks', 'https://travelhealthpro.org.uk/'],
+    ['WHO Disease Outbreak News', 'https://www.who.int/emergencies/disease-outbreak-news'],
+    ['ProMED', 'https://promedmail.org/'],
+    ['Fit for Travel', 'https://www.fitfortravel.nhs.uk/']
+  ];
+  var ME = 'mc-referral-me';
   var st = { v: {}, abx: [] };
   try { var sv = JSON.parse(sessionStorage.getItem(KEY) || 'null'); if (sv && sv.v) st = sv; } catch (e) {}
   if (!st.abx) st.abx = [];
+  try { var me = localStorage.getItem(ME); if (me) st.v.me = me; } catch (e) {}
   function save() { try { sessionStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function val(id) { var x = st.v[id]; return x == null ? '' : x; }
@@ -80,6 +92,10 @@
       h = '<div class="rf-grid">' + LABS.map(function (o) {
         return '<label class="rf-f rf-lab"><span>' + o[1] + '</span><input data-v="l_' + o[0] + '" data-lo="' + o[2] + '" data-hi="' + o[3] + '" inputmode="decimal" value="' + esc(val('l_' + o[0])) + '" autocomplete="off"></label>';
       }).join('') + '</div>';
+    } else if (f.k === 'links') {
+      h = '<div class="rf-wide rf-links"><span class="rf-lbl">Check current outbreaks and HCID status</span><div class="rf-linkrow">' + LINKS.map(function (l) {
+        return '<a href="' + l[1] + '" target="_blank" rel="noopener">' + esc(l[0]) + ' <span class="ext" aria-hidden="true">↗</span></a>';
+      }).join('') + '</div></div>';
     } else if (f.k === 'abx') {
       h = '<div class="rf-wide rf-abx"><span class="rf-lbl">Antimicrobials</span>' + st.abx.map(function (a, i) {
         return '<div class="rf-abxrow"><input data-abx="' + i + '" data-k="d" list="rf-abxlist" value="' + esc(a.d) + '" placeholder="Drug" autocomplete="off">' +
@@ -97,6 +113,7 @@
       if (f.k === 'obs') return OBS.some(function (o) { return val('o_' + o[0]) !== ''; });
       if (f.k === 'labs') return LABS.some(function (o) { return val('l_' + o[0]) !== ''; });
       if (f.k === 'abx') return st.abx.some(function (a) { return a.d; });
+      if (f.k === 'links' || f.mine) return false;
       if (f.k === 'chips') return arr(f.id).length > 0 || arr(f.id + '_no').length > 0;
       return val(f.id) !== '';
     });
@@ -114,7 +131,7 @@
     h += '</div><aside class="rf-side"><div class="card rf-prev"><div class="rf-prevhead"><h2>Note preview</h2><span class="rf-count"></span></div>' +
       '<pre class="rf-note" aria-live="off"></pre><p class="rf-warn" hidden></p><div class="ie-actions"><button type="button" class="reset rf-copy" data-copy>Copy for Epic</button>' +
       '<button type="button" class="reset" data-clear>Clear form</button></div>' +
-      '<p class="rf-priv">No names, dates of birth or hospital numbers. Entries stay in this browser tab only, and are removed when you clear the form or close the tab.</p></div></aside></div>' +
+      '<p class="rf-priv">No patient names, dates of birth or hospital numbers. Entries stay in this browser tab only, and are removed when you clear the form or close the tab. Your own name is remembered on this device.</p></div></aside></div>' +
       '<div class="rf-bar"><a href="#rf-prev" class="reset" data-goprev>Preview</a><button type="button" class="reset rf-copy" data-copy>Copy for Epic</button></div>';
     host.innerHTML = h;
     host.querySelector('.rf-prev').id = 'rf-prev';
@@ -138,6 +155,7 @@
     var negs = function (id, head) { var n = arr(id + '_no'); return n.length ? head + ': ' + n.map(function (x) { return /^[A-Z][A-Z0-9]/.test(x) ? x : x.charAt(0).toLowerCase() + x.slice(1); }).join(', ') : ''; };
     L.push('TELEPHONE INFECTION REFERRAL');
     L.push('Date and time: ' + stamp());
+    if (val('me')) L.push('Taken by: ' + val('me'));
     add('REFERRAL', [val('from') && 'From: ' + val('from'), list('reason') && 'Reason: ' + list('reason'), val('question') && 'Question: ' + val('question')]);
     var pt = [val('age') && val('age') + ' years', val('sex'), val('wt') && val('wt') + ' kg'].filter(Boolean).join(', ');
     var al = [list('allergy'), val('allergyd')].filter(Boolean).join('; ');
@@ -187,7 +205,7 @@
 
   host.addEventListener('input', function (e) {
     var el = e.target;
-    if (el.hasAttribute('data-v')) { st.v[el.getAttribute('data-v')] = el.value; if (el.hasAttribute('data-lo')) flag(el); }
+    if (el.hasAttribute('data-v')) { st.v[el.getAttribute('data-v')] = el.value; if (el.hasAttribute('data-lo')) flag(el); if (el.getAttribute('data-v') === 'me') { try { localStorage.setItem(ME, el.value); } catch (err) {} } }
     else if (el.hasAttribute('data-abx')) { st.abx[+el.getAttribute('data-abx')][el.getAttribute('data-k')] = el.value; }
     else return;
     save(); note();
@@ -229,7 +247,7 @@
     else if (b.hasAttribute('data-copy')) copy(b);
     else if (b.hasAttribute('data-clear')) {
       if (!clearArmed) { clearArmed = true; b.textContent = 'Tap again to clear everything'; setTimeout(function () { clearArmed = false; b.textContent = 'Clear form'; }, 3000); return; }
-      clearArmed = false; st = { v: {}, abx: [] }; try { sessionStorage.removeItem(KEY); } catch (err) {} draw(); window.scrollTo(0, host.getBoundingClientRect().top + window.scrollY - 80);
+      clearArmed = false; st = { v: { me: st.v.me || '' }, abx: [] }; try { sessionStorage.removeItem(KEY); } catch (err) {} draw(); window.scrollTo(0, host.getBoundingClientRect().top + window.scrollY - 80);
     } else if (b.hasAttribute('data-sec') || b.hasAttribute('data-goprev')) {
       e.preventDefault();
       var tgt = document.getElementById(b.hasAttribute('data-goprev') ? 'rf-prev' : 'rf-' + b.getAttribute('data-sec'));
