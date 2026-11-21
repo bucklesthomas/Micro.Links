@@ -902,7 +902,7 @@ a.sp-chip { display: inline-block; text-decoration: none; }
 /* Softer boxes */
 .card, .ie-done, .ie-step, .ie-disclaimer, .search input { border-radius: var(--radius); }
 .card { border-color: var(--line-soft); box-shadow: var(--shadow); transition: box-shadow .18s ease, transform .18s ease; }
-.cat:hover, .score:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+.card.cat:hover, .card.score:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
 .cat li { border-top-color: var(--line-soft); }
 .cat li small { font-size: 13px; line-height: 1.45; margin-top: 1px; }
 .row, .ie-regimen li { border-top-color: var(--line-soft); }
@@ -911,7 +911,7 @@ a.sp-chip { display: inline-block; text-decoration: none; }
 .ie-done { border-color: var(--line-soft); box-shadow: var(--shadow); }
 .ie-opt { transition: background .15s ease, box-shadow .15s ease, transform .15s ease; }
 .ie-opt:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
-@media (prefers-reduced-motion: reduce) { .card, .ie-opt { transition: none; } .cat:hover, .score:hover, .ie-opt:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .card, .ie-opt { transition: none; } .card.cat:hover, .card.score:hover, .ie-opt:hover { transform: none; } }
 
 /* Matching page headers */
 .page-head { margin: 28px 0 20px; max-width: 78ch; }
@@ -1175,3 +1175,32 @@ tr.sp-note td,
 .rf-sirk { display: inline-grid; place-items: center; min-width: 17px; height: 17px; margin-right: 2px; border-radius: 4px; font: 700 11px/1 var(--sans); color: var(--surface); background: currentColor; }
 .rf-sirk { color: inherit; }
 .rf-chip.sS .rf-sirk, .rf-chip.sI .rf-sirk, .rf-chip.sR .rf-sirk { background: transparent; border: 1.5px solid currentColor; }
+
+/* Antifungals page: tidy spacing */
+.af-card h2 { font-size: 19px; margin: 0 0 6px; }
+.af-sub { margin: 0 0 14px; font-size: 14.5px; line-height: 1.5; }
+.af-ref { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
+.sp-scroll { border-color: var(--line-soft); }
+.sp-table thead th { font-family: var(--sans); vertical-align: middle; }
+.sp-table thead th.sp-org { padding: 10px 12px 10px 14px; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--muted); }
+.sp-table thead .sp-drug button { padding: 10px 6px; font-family: var(--sans); font-size: 12px; font-weight: 600; }
+.sp-table th, .sp-table td { border-bottom-color: var(--line-soft); }
+th.sp-org button { padding: 10px 12px 10px 14px; line-height: 1.35; }
+tbody th.sp-org button::after { content: "\00a0›"; }
+tbody tr.open th.sp-org button::after { content: "\00a0⌄"; }
+tr.sp-note td { padding: 10px 14px 12px; }
+.sp-legend { margin-top: 12px; }
+#tdm { gap: 2px; }
+#tdm fieldset.row.choice { padding: 12px 0; border-top-color: var(--line-soft); }
+#tdm fieldset.row.choice:first-child { padding-top: 0; }
+#tdm .choice legend { font-family: var(--sans); font-size: 12.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+#tdm .opt { min-height: 52px; justify-content: center; align-items: center; padding: 10px 12px; }
+#tdm .opt-text { font-size: 15px; }
+#tdm .opt-pts { margin-top: 2px; }
+.tdm-inputs { margin: 12px 0 6px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
+.tdm-inputs label { font-family: var(--sans); font-size: 12.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.tdm-field input { font-size: 16px; }
+.tdm-when { margin: 10px 0 8px; padding: 10px 14px; background: var(--bg); border-radius: 8px; }
+#tdm .result { margin-top: 6px; padding: 12px 16px; }
+#tdm .note { margin: 8px 0 0; font-size: 14px; line-height: 1.55; }
+.tdm-field { text-transform: none; letter-spacing: 0; font-weight: 400; font-size: 13.5px; }
