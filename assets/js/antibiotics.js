@@ -12,6 +12,14 @@
   A.drugs.forEach(function (d) { if (CLASSES.indexOf(d.cls) === -1) CLASSES.push(d.cls); });
   var st = { aware: 'All', q: '', pick: null };
 
+  // Internal links: site base path on the website; #view hashes in the single-page hosted copy
+  var hashMode = !!document.getElementById('view-links');
+  var sbase = ((document.querySelector('script[data-base]') || { getAttribute: function () { return '/'; } }).getAttribute('data-base') || '/').replace(/\/$/, '');
+  function link(u) {
+    if (hashMode) { var m = /^\/([^/]+)\/(#.*)?$/.exec(u); return m ? (m[2] || '#' + m[1]) : u; }
+    return sbase + u;
+  }
+
   function awareBadge(a) { return '<span class="aw aw-' + slug(a) + '">' + esc(a === 'Not listed' ? 'Not in UK-AWaRe' : a) + '</span>'; }
 
   function grid() {
@@ -22,7 +30,7 @@
           (!q || (d.name + ' ' + d.brands + ' ' + d.cls).toLowerCase().indexOf(q) !== -1);
       });
       if (!ds.length) return;
-      h += '<h3 class="ab-cls">' + esc(c) + '</h3><div class="ab-grid">';
+      h += '<h3 class="ab-cls" id="cls-' + slug(c) + '">' + esc(c) + '</h3><div class="ab-grid">';
       ds.forEach(function (d) {
         h += '<button type="button" class="ab-box' + (st.pick === d.id ? ' on' : '') + '" data-id="' + d.id + '" aria-expanded="' + (st.pick === d.id) + '">' +
           '<span class="ab-name">' + esc(d.name) + '</span><span class="ab-meta">' + awareBadge(d.aware) + '<span class="ab-route">' + esc(d.routes) + '</span></span></button>';
@@ -77,6 +85,9 @@
     h += '</div></div>';
     h += '<div class="ab-sec"><h4>Spectrum</h4><p class="ab-key"><span class="cv cv2"><span class="dot"></span>usually active</span><span class="cv cv1"><span class="dot"></span>variable or limited role</span><span class="cv cv0"><span class="dot"></span>not active</span></p>' + spectrum(d) + '</div>';
     h += intrinsic(d);
+    var X = window.ABX_XLINKS && window.ABX_XLINKS.by_drug ? window.ABX_XLINKS.by_drug[d.id] : null;
+    if (X && X.g.length) h += '<div class="ab-sec"><h4>In the guides on this site</h4><p class="cov-chips">' + X.g.map(function (g) { return '<a class="sp-chip xl-guide" href="' + esc(link(g[1])) + '">' + esc(g[0]) + '</a>'; }).join('') + '</p></div>';
+    if (X && X.o.length) h += '<div class="ab-sec"><h4>First line or an alternative for</h4><p class="ab-pills">' + X.o.map(function (o) { return '<a class="org-pill g" href="' + esc(link('/organisms/#bug-' + o[1])) + '"><i>' + esc(o[0]) + '</i></a>'; }).join('') + '</p></div>';
     h += '<p class="ab-actions"><a class="sp-chip on" href="' + esc(covHref) + '#on-' + d.id + '">Check coverage with this antibiotic</a></p>';
     return h + '</div>';
   }
@@ -85,7 +96,8 @@
     var d = A.drugs.filter(function (x) { return x.id === st.pick; })[0];
     var h = '<div class="ab-bar"><input id="ab-q" type="search" placeholder="Filter antibiotics…" value="' + esc(st.q) + '" aria-label="Filter antibiotics" autocomplete="off"><div class="ab-aw" role="group" aria-label="UK-AWaRe category">';
     ['All', 'Access', 'Watch', 'Reserve'].forEach(function (a) { h += '<button type="button" class="sp-chip' + (st.aware === a ? ' on' : '') + '" data-aw="' + a + '">' + a + '</button>'; });
-    h += '</div></div><div class="ab-list">' + grid() + '</div>';
+    var shown = CLASSES.filter(function (c) { var q = st.q.toLowerCase().trim(); return A.drugs.some(function (d) { return d.cls === c && (st.aware === 'All' || d.aware === st.aware) && (!q || (d.name + ' ' + d.brands + ' ' + d.cls).toLowerCase().indexOf(q) !== -1); }); });
+    h += '</div></div>' + (shown.length > 2 ? '<nav class="jump ab-jump" aria-label="Antibiotic classes">' + shown.map(function (c) { return '<a href="#cls-' + slug(c) + '">' + esc(c) + '</a>'; }).join('') + '</nav>' : '') + '<div class="ab-list">' + grid() + '</div>';
     host.innerHTML = h;
     if (d) {
       var box = host.querySelector('.ab-box[data-id="' + d.id + '"]');

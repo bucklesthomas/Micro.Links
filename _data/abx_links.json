@@ -1,0 +1,1569 @@
+{
+ "index": [
+  [
+   "Phenoxymethylpenicillin",
+   "phenoxymethylpenicillin"
+  ],
+  [
+   "Piperacillin–tazobactam",
+   "piperacillin-tazobactam"
+  ],
+  [
+   "Ceftolozane–tazobactam",
+   "ceftolozane-tazobactam"
+  ],
+  [
+   "Ceftazidime–avibactam",
+   "ceftazidime-avibactam"
+  ],
+  [
+   "Benzylpenicillin",
+   "benzylpenicillin"
+  ],
+  [
+   "Chloramphenicol",
+   "chloramphenicol"
+  ],
+  [
+   "Flucloxacillin",
+   "flucloxacillin"
+  ],
+  [
+   "Clarithromycin",
+   "clarithromycin"
+  ],
+  [
+   "Co-trimoxazole",
+   "co-trimoxazole"
+  ],
+  [
+   "Nitrofurantoin",
+   "nitrofurantoin"
+  ],
+  [
+   "Pivmecillinam",
+   "pivmecillinam"
+  ],
+  [
+   "Ciprofloxacin",
+   "ciprofloxacin"
+  ],
+  [
+   "Metronidazole",
+   "metronidazole"
+  ],
+  [
+   "Co-amoxiclav",
+   "co-amoxiclav"
+  ],
+  [
+   "Azithromycin",
+   "azithromycin"
+  ],
+  [
+   "Erythromycin",
+   "erythromycin"
+  ],
+  [
+   "Levofloxacin",
+   "levofloxacin"
+  ],
+  [
+   "Moxifloxacin",
+   "moxifloxacin"
+  ],
+  [
+   "Trimethoprim",
+   "trimethoprim"
+  ],
+  [
+   "Fusidic acid",
+   "fusidic-acid"
+  ],
+  [
+   "Amoxicillin",
+   "amoxicillin"
+  ],
+  [
+   "Ceftriaxone",
+   "ceftriaxone"
+  ],
+  [
+   "Ceftazidime",
+   "ceftazidime"
+  ],
+  [
+   "Ceftaroline",
+   "ceftaroline"
+  ],
+  [
+   "Cefiderocol",
+   "cefiderocol"
+  ],
+  [
+   "Teicoplanin",
+   "teicoplanin"
+  ],
+  [
+   "Clindamycin",
+   "clindamycin"
+  ],
+  [
+   "Doxycycline",
+   "doxycycline"
+  ],
+  [
+   "Tigecycline",
+   "tigecycline"
+  ],
+  [
+   "Fidaxomicin",
+   "fidaxomicin"
+  ],
+  [
+   "Temocillin",
+   "temocillin"
+  ],
+  [
+   "Cefuroxime",
+   "cefuroxime"
+  ],
+  [
+   "Cefotaxime",
+   "cefotaxime"
+  ],
+  [
+   "Gentamicin",
+   "gentamicin"
+  ],
+  [
+   "Tobramycin",
+   "tobramycin"
+  ],
+  [
+   "Vancomycin",
+   "vancomycin-iv"
+  ],
+  [
+   "Daptomycin",
+   "daptomycin"
+  ],
+  [
+   "Fosfomycin",
+   "fosfomycin"
+  ],
+  [
+   "Rifampicin",
+   "rifampicin"
+  ],
+  [
+   "Cefalexin",
+   "cefalexin"
+  ],
+  [
+   "Cefazolin",
+   "cefazolin"
+  ],
+  [
+   "Meropenem",
+   "meropenem"
+  ],
+  [
+   "Ertapenem",
+   "ertapenem"
+  ],
+  [
+   "Aztreonam",
+   "aztreonam"
+  ],
+  [
+   "Linezolid",
+   "linezolid"
+  ],
+  [
+   "Cefepime",
+   "cefepime"
+  ],
+  [
+   "Amikacin",
+   "amikacin"
+  ],
+  [
+   "Colistin",
+   "colistin"
+  ]
+ ],
+ "oral": {
+  "Vancomycin": "vancomycin-oral"
+ },
+ "by_drug": {
+  "benzylpenicillin": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Syphilis serology",
+     "/syphilis/"
+    ]
+   ],
+   "o": [
+    [
+     "Streptococcus pyogenes (group A)",
+     "streptococcus-pyogenes-group-a"
+    ],
+    [
+     "Streptococcus agalactiae (group B)",
+     "streptococcus-agalactiae-group-b"
+    ],
+    [
+     "Streptococcus pneumoniae",
+     "streptococcus-pneumoniae"
+    ],
+    [
+     "Viridans group streptococci",
+     "viridans-group-streptococci"
+    ],
+    [
+     "Streptococcus anginosus group",
+     "streptococcus-anginosus-group"
+    ],
+    [
+     "Clostridium perfringens and other clostridia",
+     "clostridium-perfringens-and-other-clostridia"
+    ]
+   ]
+  },
+  "phenoxymethylpenicillin": {
+   "g": [
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ]
+   ],
+   "o": []
+  },
+  "amoxicillin": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ]
+   ],
+   "o": [
+    [
+     "Streptococcus agalactiae (group B)",
+     "streptococcus-agalactiae-group-b"
+    ],
+    [
+     "Streptococcus pneumoniae",
+     "streptococcus-pneumoniae"
+    ],
+    [
+     "Enterococcus faecalis",
+     "enterococcus-faecalis"
+    ],
+    [
+     "Listeria monocytogenes",
+     "listeria-monocytogenes"
+    ],
+    [
+     "Proteus mirabilis",
+     "proteus-mirabilis"
+    ],
+    [
+     "Haemophilus influenzae",
+     "haemophilus-influenzae"
+    ]
+   ]
+  },
+  "flucloxacillin": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "Staphylococcus lugdunensis",
+     "staphylococcus-lugdunensis"
+    ]
+   ]
+  },
+  "co-amoxiclav": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Clostridium perfringens and other clostridia",
+     "clostridium-perfringens-and-other-clostridia"
+    ],
+    [
+     "Escherichia coli",
+     "escherichia-coli"
+    ],
+    [
+     "Proteus mirabilis",
+     "proteus-mirabilis"
+    ],
+    [
+     "Haemophilus influenzae",
+     "haemophilus-influenzae"
+    ],
+    [
+     "Moraxella catarrhalis",
+     "moraxella-catarrhalis"
+    ],
+    [
+     "Bacteroides fragilis group",
+     "bacteroides-fragilis-group"
+    ]
+   ]
+  },
+  "piperacillin-tazobactam": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Neutropenic sepsis",
+     "/neutropenic-sepsis/"
+    ],
+    [
+     "Spontaneous bacterial peritonitis",
+     "/sbp/"
+    ]
+   ],
+   "o": [
+    [
+     "Klebsiella aerogenes",
+     "klebsiella-aerogenes"
+    ],
+    [
+     "Citrobacter freundii",
+     "citrobacter-freundii"
+    ],
+    [
+     "Pseudomonas aeruginosa",
+     "pseudomonas-aeruginosa"
+    ],
+    [
+     "Bacteroides fragilis group",
+     "bacteroides-fragilis-group"
+    ]
+   ]
+  },
+  "temocillin": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": []
+  },
+  "pivmecillinam": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Escherichia coli",
+     "escherichia-coli"
+    ]
+   ]
+  },
+  "cefalexin": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ]
+   ],
+   "o": []
+  },
+  "cefazolin": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "Staphylococcus lugdunensis",
+     "staphylococcus-lugdunensis"
+    ]
+   ]
+  },
+  "cefuroxime": {
+   "g": [
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ]
+   ],
+   "o": []
+  },
+  "ceftriaxone": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ],
+    [
+     "Returned traveller with fever",
+     "/returned-traveller/"
+    ],
+    [
+     "Spontaneous bacterial peritonitis",
+     "/sbp/"
+    ],
+    [
+     "Syphilis serology",
+     "/syphilis/"
+    ]
+   ],
+   "o": [
+    [
+     "Streptococcus pneumoniae",
+     "streptococcus-pneumoniae"
+    ],
+    [
+     "Viridans group streptococci",
+     "viridans-group-streptococci"
+    ],
+    [
+     "Streptococcus anginosus group",
+     "streptococcus-anginosus-group"
+    ],
+    [
+     "Enterococcus faecalis",
+     "enterococcus-faecalis"
+    ],
+    [
+     "Escherichia coli",
+     "escherichia-coli"
+    ],
+    [
+     "Klebsiella pneumoniae",
+     "klebsiella-pneumoniae"
+    ],
+    [
+     "Klebsiella aerogenes",
+     "klebsiella-aerogenes"
+    ],
+    [
+     "Citrobacter freundii",
+     "citrobacter-freundii"
+    ],
+    [
+     "Serratia marcescens",
+     "serratia-marcescens"
+    ],
+    [
+     "Proteus mirabilis",
+     "proteus-mirabilis"
+    ],
+    [
+     "Morganella and Providencia",
+     "morganella-and-providencia"
+    ],
+    [
+     "Salmonella (non-typhoidal)",
+     "salmonella-non-typhoidal"
+    ],
+    [
+     "Salmonella Typhi and Paratyphi",
+     "salmonella-typhi-and-paratyphi"
+    ],
+    [
+     "Haemophilus influenzae",
+     "haemophilus-influenzae"
+    ],
+    [
+     "Neisseria meningitidis",
+     "neisseria-meningitidis"
+    ],
+    [
+     "Neisseria gonorrhoeae",
+     "neisseria-gonorrhoeae"
+    ]
+   ]
+  },
+  "cefotaxime": {
+   "g": [
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Spontaneous bacterial peritonitis",
+     "/sbp/"
+    ]
+   ],
+   "o": []
+  },
+  "ceftazidime": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ]
+   ],
+   "o": [
+    [
+     "Pseudomonas aeruginosa",
+     "pseudomonas-aeruginosa"
+    ],
+    [
+     "Burkholderia cepacia complex",
+     "burkholderia-cepacia-complex"
+    ]
+   ]
+  },
+  "cefepime": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Enterobacter cloacae complex",
+     "enterobacter-cloacae-complex"
+    ],
+    [
+     "Klebsiella aerogenes",
+     "klebsiella-aerogenes"
+    ],
+    [
+     "Citrobacter freundii",
+     "citrobacter-freundii"
+    ],
+    [
+     "Serratia marcescens",
+     "serratia-marcescens"
+    ],
+    [
+     "Morganella and Providencia",
+     "morganella-and-providencia"
+    ],
+    [
+     "Pseudomonas aeruginosa",
+     "pseudomonas-aeruginosa"
+    ]
+   ]
+  },
+  "ceftaroline": {
+   "g": [
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ]
+   ],
+   "o": [
+    [
+     "MRSA",
+     "mrsa"
+    ]
+   ]
+  },
+  "ceftazidime-avibactam": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Pseudomonas aeruginosa",
+     "pseudomonas-aeruginosa"
+    ],
+    [
+     "Stenotrophomonas maltophilia",
+     "stenotrophomonas-maltophilia"
+    ]
+   ]
+  },
+  "ceftolozane-tazobactam": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Pseudomonas aeruginosa",
+     "pseudomonas-aeruginosa"
+    ]
+   ]
+  },
+  "cefiderocol": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Stenotrophomonas maltophilia",
+     "stenotrophomonas-maltophilia"
+    ]
+   ]
+  },
+  "meropenem": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Returned traveller with fever",
+     "/returned-traveller/"
+    ],
+    [
+     "Spontaneous bacterial peritonitis",
+     "/sbp/"
+    ]
+   ],
+   "o": [
+    [
+     "Klebsiella pneumoniae",
+     "klebsiella-pneumoniae"
+    ],
+    [
+     "Salmonella Typhi and Paratyphi",
+     "salmonella-typhi-and-paratyphi"
+    ],
+    [
+     "Pseudomonas aeruginosa",
+     "pseudomonas-aeruginosa"
+    ],
+    [
+     "Burkholderia cepacia complex",
+     "burkholderia-cepacia-complex"
+    ]
+   ]
+  },
+  "ertapenem": {
+   "g": [
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": []
+  },
+  "aztreonam": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ]
+   ],
+   "o": [
+    [
+     "Stenotrophomonas maltophilia",
+     "stenotrophomonas-maltophilia"
+    ]
+   ]
+  },
+  "gentamicin": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ]
+   ],
+   "o": [
+    [
+     "Enterococcus faecalis",
+     "enterococcus-faecalis"
+    ],
+    [
+     "Listeria monocytogenes",
+     "listeria-monocytogenes"
+    ]
+   ]
+  },
+  "amikacin": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Tuberculosis",
+     "/tb/"
+    ]
+   ],
+   "o": []
+  },
+  "tobramycin": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": []
+  },
+  "vancomycin-iv": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Neutropenic sepsis",
+     "/neutropenic-sepsis/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ],
+    [
+     "Spontaneous bacterial peritonitis",
+     "/sbp/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "MRSA",
+     "mrsa"
+    ],
+    [
+     "Coagulase-negative staphylococci",
+     "coagulase-negative-staphylococci"
+    ],
+    [
+     "Viridans group streptococci",
+     "viridans-group-streptococci"
+    ],
+    [
+     "Enterococcus faecalis",
+     "enterococcus-faecalis"
+    ],
+    [
+     "Enterococcus faecium (including VRE)",
+     "enterococcus-faecium-including-vre"
+    ]
+   ]
+  },
+  "vancomycin-oral": {
+   "g": [
+    [
+     "C. difficile",
+     "/cdiff/"
+    ]
+   ],
+   "o": [
+    [
+     "Clostridioides difficile",
+     "clostridioides-difficile"
+    ]
+   ]
+  },
+  "teicoplanin": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "MRSA",
+     "mrsa"
+    ],
+    [
+     "Coagulase-negative staphylococci",
+     "coagulase-negative-staphylococci"
+    ],
+    [
+     "Viridans group streptococci",
+     "viridans-group-streptococci"
+    ],
+    [
+     "Enterococcus faecalis",
+     "enterococcus-faecalis"
+    ],
+    [
+     "Enterococcus faecium (including VRE)",
+     "enterococcus-faecium-including-vre"
+    ]
+   ]
+  },
+  "daptomycin": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ],
+    [
+     "Spontaneous bacterial peritonitis",
+     "/sbp/"
+    ]
+   ],
+   "o": [
+    [
+     "MRSA",
+     "mrsa"
+    ],
+    [
+     "Enterococcus faecium (including VRE)",
+     "enterococcus-faecium-including-vre"
+    ]
+   ]
+  },
+  "linezolid": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ],
+    [
+     "Tuberculosis",
+     "/tb/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "MRSA",
+     "mrsa"
+    ],
+    [
+     "Enterococcus faecium (including VRE)",
+     "enterococcus-faecium-including-vre"
+    ]
+   ]
+  },
+  "clarithromycin": {
+   "g": [
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "HIV opportunistic infections",
+     "/hiv-oi/"
+    ]
+   ],
+   "o": [
+    [
+     "Moraxella catarrhalis",
+     "moraxella-catarrhalis"
+    ],
+    [
+     "Campylobacter",
+     "campylobacter"
+    ],
+    [
+     "Legionella pneumophila",
+     "legionella-pneumophila"
+    ],
+    [
+     "Mycoplasma pneumoniae",
+     "mycoplasma-pneumoniae"
+    ]
+   ]
+  },
+  "azithromycin": {
+   "g": [
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "HIV opportunistic infections",
+     "/hiv-oi/"
+    ]
+   ],
+   "o": [
+    [
+     "Salmonella (non-typhoidal)",
+     "salmonella-non-typhoidal"
+    ],
+    [
+     "Salmonella Typhi and Paratyphi",
+     "salmonella-typhi-and-paratyphi"
+    ],
+    [
+     "Campylobacter",
+     "campylobacter"
+    ]
+   ]
+  },
+  "erythromycin": {
+   "g": [
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ]
+   ],
+   "o": []
+  },
+  "clindamycin": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "HIV opportunistic infections",
+     "/hiv-oi/"
+    ],
+    [
+     "Malaria",
+     "/malaria/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "MRSA",
+     "mrsa"
+    ],
+    [
+     "Streptococcus pyogenes (group A)",
+     "streptococcus-pyogenes-group-a"
+    ],
+    [
+     "Streptococcus agalactiae (group B)",
+     "streptococcus-agalactiae-group-b"
+    ],
+    [
+     "Clostridium perfringens and other clostridia",
+     "clostridium-perfringens-and-other-clostridia"
+    ]
+   ]
+  },
+  "doxycycline": {
+   "g": [
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Malaria",
+     "/malaria/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ],
+    [
+     "Returned traveller with fever",
+     "/returned-traveller/"
+    ],
+    [
+     "Syphilis serology",
+     "/syphilis/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "MRSA",
+     "mrsa"
+    ],
+    [
+     "Streptococcus pneumoniae",
+     "streptococcus-pneumoniae"
+    ],
+    [
+     "Haemophilus influenzae",
+     "haemophilus-influenzae"
+    ],
+    [
+     "Moraxella catarrhalis",
+     "moraxella-catarrhalis"
+    ],
+    [
+     "Mycoplasma pneumoniae",
+     "mycoplasma-pneumoniae"
+    ]
+   ]
+  },
+  "tigecycline": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Acinetobacter baumannii",
+     "acinetobacter-baumannii"
+    ]
+   ]
+  },
+  "ciprofloxacin": {
+   "g": [
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Spontaneous bacterial peritonitis",
+     "/sbp/"
+    ]
+   ],
+   "o": [
+    [
+     "Enterobacter cloacae complex",
+     "enterobacter-cloacae-complex"
+    ],
+    [
+     "Serratia marcescens",
+     "serratia-marcescens"
+    ],
+    [
+     "Salmonella (non-typhoidal)",
+     "salmonella-non-typhoidal"
+    ],
+    [
+     "Pseudomonas aeruginosa",
+     "pseudomonas-aeruginosa"
+    ],
+    [
+     "Neisseria meningitidis",
+     "neisseria-meningitidis"
+    ],
+    [
+     "Neisseria gonorrhoeae",
+     "neisseria-gonorrhoeae"
+    ]
+   ]
+  },
+  "levofloxacin": {
+   "g": [
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "Tuberculosis",
+     "/tb/"
+    ]
+   ],
+   "o": [
+    [
+     "Streptococcus pneumoniae",
+     "streptococcus-pneumoniae"
+    ],
+    [
+     "Stenotrophomonas maltophilia",
+     "stenotrophomonas-maltophilia"
+    ],
+    [
+     "Legionella pneumophila",
+     "legionella-pneumophila"
+    ],
+    [
+     "Mycoplasma pneumoniae",
+     "mycoplasma-pneumoniae"
+    ]
+   ]
+  },
+  "moxifloxacin": {
+   "g": [],
+   "o": []
+  },
+  "trimethoprim": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "HIV opportunistic infections",
+     "/hiv-oi/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ]
+   ],
+   "o": [
+    [
+     "Stenotrophomonas maltophilia",
+     "stenotrophomonas-maltophilia"
+    ]
+   ]
+  },
+  "co-trimoxazole": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "HIV opportunistic infections",
+     "/hiv-oi/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Penicillin allergy and cross-reactivity",
+     "/penicillin-allergy/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ],
+    [
+     "Spontaneous bacterial peritonitis",
+     "/sbp/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "MRSA",
+     "mrsa"
+    ],
+    [
+     "Listeria monocytogenes",
+     "listeria-monocytogenes"
+    ],
+    [
+     "Enterobacter cloacae complex",
+     "enterobacter-cloacae-complex"
+    ],
+    [
+     "Serratia marcescens",
+     "serratia-marcescens"
+    ],
+    [
+     "Stenotrophomonas maltophilia",
+     "stenotrophomonas-maltophilia"
+    ],
+    [
+     "Burkholderia cepacia complex",
+     "burkholderia-cepacia-complex"
+    ]
+   ]
+  },
+  "nitrofurantoin": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Enterococcus faecalis",
+     "enterococcus-faecalis"
+    ],
+    [
+     "Enterococcus faecium (including VRE)",
+     "enterococcus-faecium-including-vre"
+    ],
+    [
+     "Escherichia coli",
+     "escherichia-coli"
+    ],
+    [
+     "Proteus mirabilis",
+     "proteus-mirabilis"
+    ]
+   ]
+  },
+  "fosfomycin": {
+   "g": [
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ]
+   ],
+   "o": [
+    [
+     "Enterococcus faecalis",
+     "enterococcus-faecalis"
+    ],
+    [
+     "Enterococcus faecium (including VRE)",
+     "enterococcus-faecium-including-vre"
+    ],
+    [
+     "Escherichia coli",
+     "escherichia-coli"
+    ]
+   ]
+  },
+  "metronidazole": {
+   "g": [
+    [
+     "Positive blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "C. difficile",
+     "/cdiff/"
+    ],
+    [
+     "Exclusion and clearance",
+     "/exclusion/"
+    ],
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Streptococcus anginosus group",
+     "streptococcus-anginosus-group"
+    ],
+    [
+     "Clostridium perfringens and other clostridia",
+     "clostridium-perfringens-and-other-clostridia"
+    ],
+    [
+     "Bacteroides fragilis group",
+     "bacteroides-fragilis-group"
+    ]
+   ]
+  },
+  "colistin": {
+   "g": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ],
+   "o": [
+    [
+     "Acinetobacter baumannii",
+     "acinetobacter-baumannii"
+    ]
+   ]
+  },
+  "rifampicin": {
+   "g": [
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ],
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "HIV opportunistic infections",
+     "/hiv-oi/"
+    ],
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ],
+    [
+     "Tuberculosis",
+     "/tb/"
+    ]
+   ],
+   "o": [
+    [
+     "Staphylococcus aureus (MSSA)",
+     "staphylococcus-aureus-mssa"
+    ],
+    [
+     "Coagulase-negative staphylococci",
+     "coagulase-negative-staphylococci"
+    ]
+   ]
+  },
+  "fusidic-acid": {
+   "g": [],
+   "o": []
+  },
+  "chloramphenicol": {
+   "g": [
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ]
+   ],
+   "o": []
+  },
+  "fidaxomicin": {
+   "g": [
+    [
+     "C. difficile",
+     "/cdiff/"
+    ]
+   ],
+   "o": [
+    [
+     "Clostridioides difficile",
+     "clostridioides-difficile"
+    ]
+   ]
+  }
+ }
+}

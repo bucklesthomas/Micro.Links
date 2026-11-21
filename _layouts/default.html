@@ -19,6 +19,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <script type="speculationrules">
+  { "prefetch": [{ "where": { "and": [{ "href_matches": "{{ '/' | relative_url }}*" }, { "not": { "selector_matches": "[target=_blank]" } }] }, "eagerness": "moderate" }] }
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -52,6 +55,7 @@
 
   <script src="{{ '/assets/js/sitesearch.js' | relative_url }}?v={{ site.time | date: '%s' }}" data-index="{{ '/search.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-base="{{ '/' | relative_url }}"></script>
   <script src="{{ '/assets/js/theme.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/nav.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
   <script>
     (function () {
       var pill = document.getElementById('offline-pill');
@@ -62,6 +66,7 @@
       }
     })();
   </script>
+  {% if page.scripts contains '/assets/js/guide.js' %}<script src="{{ '/assets/js/abx-index.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endif %}
   {% for s in page.scripts %}<script src="{{ s | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endfor %}
 </body>
 </html>

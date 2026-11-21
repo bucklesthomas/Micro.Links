@@ -29,6 +29,10 @@
     [
      "Endocarditis therapy",
      "/endocarditis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
     ]
    ],
    "id": "staphylococcus-aureus-mssa"
@@ -55,6 +59,18 @@
     [
      "Endocarditis therapy",
      "/endocarditis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ],
+    [
+     "Vancomycin AUC calculator",
+     "/vancomycin-auc/"
+    ],
+    [
+     "Isolation and precautions",
+     "/isolation/"
     ]
    ],
    "id": "mrsa"
@@ -77,6 +93,10 @@
     [
      "Positive blood culture triage",
      "/blood-culture-triage/"
+    ],
+    [
+     "Vancomycin AUC calculator",
+     "/vancomycin-auc/"
     ]
    ],
    "id": "coagulase-negative-staphylococci"
@@ -102,6 +122,10 @@
     [
      "Endocarditis therapy",
      "/endocarditis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
     ]
    ],
    "id": "staphylococcus-lugdunensis"
@@ -132,6 +156,10 @@
     [
      "Positive blood culture triage",
      "/blood-culture-triage/"
+    ],
+    [
+     "Isolation and precautions",
+     "/isolation/"
     ]
    ],
    "id": "streptococcus-pyogenes-group-a"
@@ -274,6 +302,14 @@
     [
      "Positive blood culture triage",
      "/blood-culture-triage/"
+    ],
+    [
+     "Vancomycin AUC calculator",
+     "/vancomycin-auc/"
+    ],
+    [
+     "Isolation and precautions",
+     "/isolation/"
     ]
    ],
    "id": "enterococcus-faecium-including-vre"
@@ -322,6 +358,14 @@
     [
      "C. difficile treatment",
      "/cdiff/"
+    ],
+    [
+     "Isolation and precautions",
+     "/isolation/"
+    ],
+    [
+     "Lab test finder",
+     "/lab-tests/"
     ]
    ],
    "id": "clostridioides-difficile"
@@ -373,6 +417,10 @@
     [
      "Positive blood culture triage",
      "/blood-culture-triage/"
+    ],
+    [
+     "Exclusion and clearance",
+     "/exclusion/"
     ]
    ],
    "id": "escherichia-coli"
@@ -545,6 +593,10 @@
     [
      "Returned traveller with fever",
      "/returned-traveller/"
+    ],
+    [
+     "Exclusion and clearance",
+     "/exclusion/"
     ]
    ],
    "id": "salmonella-non-typhoidal"
@@ -571,6 +623,14 @@
     [
      "Returned traveller with fever",
      "/returned-traveller/"
+    ],
+    [
+     "Exclusion and clearance",
+     "/exclusion/"
+    ],
+    [
+     "Lab test finder",
+     "/lab-tests/"
     ]
    ],
    "id": "salmonella-typhi-and-paratyphi"
@@ -720,6 +780,10 @@
     [
      "Contact prophylaxis",
      "/contact-prophylaxis/"
+    ],
+    [
+     "Isolation and precautions",
+     "/isolation/"
     ]
    ],
    "id": "neisseria-meningitidis"
@@ -754,7 +818,16 @@
    ],
    "tx": "Usually no antibiotics. If severe, immunosuppressed or prolonged: clarithromycin or azithromycin.",
    "alt": "",
-   "links": [],
+   "links": [
+    [
+     "Exclusion and clearance",
+     "/exclusion/"
+    ],
+    [
+     "Lab test finder",
+     "/lab-tests/"
+    ]
+   ],
    "id": "campylobacter"
   },
   {
@@ -792,7 +865,12 @@
    ],
    "tx": "Clarithromycin or levofloxacin (levofloxacin preferred if severe).",
    "alt": "Usually 7–10 days; longer if immunosuppressed.",
-   "links": [],
+   "links": [
+    [
+     "Lab test finder",
+     "/lab-tests/"
+    ]
+   ],
    "id": "legionella-pneumophila"
   },
   {
@@ -809,7 +887,12 @@
    ],
    "tx": "Doxycycline or clarithromycin.",
    "alt": "Levofloxacin for macrolide-resistant or severe infection.",
-   "links": [],
+   "links": [
+    [
+     "Lab test finder",
+     "/lab-tests/"
+    ]
+   ],
    "id": "mycoplasma-pneumoniae"
   },
   {
@@ -882,6 +965,10 @@
     [
      "Antifungal spectrum and TDM",
      "/antifungals/"
+    ],
+    [
+     "Isolation and precautions",
+     "/isolation/"
     ]
    ],
    "id": "candidozyma-auris-candida-auris"
@@ -936,6 +1023,10 @@
     [
      "Antifungal spectrum and TDM",
      "/antifungals/"
+    ],
+    [
+     "Lab test finder",
+     "/lab-tests/"
     ]
    ],
    "id": "cryptococcus-neoformans"

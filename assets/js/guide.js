@@ -78,6 +78,24 @@
     return { id: id, steps: steps, answers: answers, question: G.Q[id] || null, result: result };
   }
 
+  // Drug names in results link to the antibiotics page (data from abx-index.js, or abx-data.js in the hosted copy)
+  var hashMode = !!document.getElementById('view-links');
+  var sbase = ((document.querySelector('script[data-base]') || { getAttribute: function () { return '/'; } }).getAttribute('data-base') || '/').replace(/\/$/, '');
+  function drugLink(name, dose) {
+    var idx = window.ABX_INDEX || (window.ABX_XLINKS && window.ABX_XLINKS.index), oral = window.ABX_ORAL || (window.ABX_XLINKS && window.ABX_XLINKS.oral) || {};
+    var s = String(name || ''), m = /^((?:or|and|plus|then|with or without|switch to|followed by|if [^:]*:)\s+)?(.*)$/i.exec(s), pre = m[1] || '', rest = m[2];
+    if (!idx) return esc(s);
+    for (var i = 0; i < idx.length; i++) {
+      var n = idx[i][0], low = rest.toLowerCase();
+      if (low.indexOf(n.toLowerCase()) === 0 && !/[a-z–-]/i.test(rest.charAt(n.length) || ' ')) {
+        var id = (oral[n] && /orally|\boral\b/i.test(String(dose || ''))) ? oral[n] : idx[i][1];
+        var href = hashMode ? '#drug-' + id : sbase + '/antibiotics/#drug-' + id;
+        return esc(pre) + '<a class="ie-druglink" href="' + esc(href) + '" title="Open ' + esc(n) + ' on the antibiotics page">' + esc(rest.slice(0, n.length)) + '</a>' + esc(rest.slice(n.length));
+      }
+    }
+    return esc(s);
+  }
+
   // Link buttons on a question or result: links: [[label, url], ...] (external, open in a new tab)
   function linkRow(links) {
     if (!links || !links.length) return '';
@@ -100,7 +118,7 @@
                  (g.tag ? '<span class="ie-cls">' + esc(g.tag) + '</span>' : '');
       h += '<div class="ie-regimen"><p class="ie-rname">' + head + '</p><ul>';
       g.items.forEach(function (it) {
-        h += '<li><span class="ie-drug">' + esc(it.drug) + '</span><span class="ie-dose">' + esc(it.dose) + '</span>' +
+        h += '<li><span class="ie-drug">' + drugLink(it.drug, it.dose) + '</span><span class="ie-dose">' + esc(it.dose) + '</span>' +
              (it.dur ? '<span class="ie-dur">' + esc(it.dur) + '</span>' : '') + '</li>';
       });
       h += '</ul></div>';

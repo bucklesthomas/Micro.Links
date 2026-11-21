@@ -3,6 +3,14 @@ layout: default
 scripts:
   - /assets/js/search.js
 ---
+{% assign nlinks = 0 %}{% for c in site.data.links %}{% assign nlinks = nlinks | plus: c.links.size %}{% endfor %}
+<header class="page-head">
+  <p class="page-kind k-directory">Quick links</p>
+  <h1 class="page-title">Infection and microbiology links</h1>
+  <p class="lede">Local, national and international guidance, laboratory and public health resources, and this site’s own guides, calculators and note templates.</p>
+  <p class="page-meta"><span class="pm-check">Checked November 2026</span><span>{{ nlinks }} links in {{ site.data.links | size }} sections</span><span>Press / to search the whole site</span></p>
+</header>
+
 <div class="search">
   <input id="q" type="search" placeholder="Filter links…" autocomplete="off" aria-label="Filter links">
   <span id="count" class="count" aria-live="polite"></span>
