@@ -27,9 +27,9 @@
       { id: 'sx', k: 'chips', l: 'Symptoms', o: ['Fever', 'Rigors', 'Night sweats', 'Weight loss', 'Headache', 'Confusion', 'Neck stiffness', 'Seizure', 'Cough', 'Breathlessness', 'Chest pain', 'Abdominal pain', 'Diarrhoea', 'Vomiting', 'Jaundice', 'Urinary symptoms', 'Back pain', 'Joint pain or swelling', 'Rash', 'Skin or wound infection', 'Line site problem', 'New murmur'] },
       { id: 'hpcd', k: 'area', l: 'History of presenting illness' }] },
     { id: 'bg', t: 'Background', ask: ['Immune status and immunosuppressive drugs', 'Implants, devices and lines', 'Admissions, surgery and antibiotics in the last 3 months', 'Known resistant organisms'], f: [
-      { id: 'immuno', k: 'chips', l: 'Risk factors', o: ['HIV', 'Solid organ transplant', 'Stem cell transplant', 'Chemotherapy', 'Neutropenic', 'Steroids', 'Biologics or DMARDs', 'Asplenia', 'Diabetes', 'CKD', 'Dialysis', 'Cirrhosis', 'Pregnant', 'Injecting drug use', 'Alcohol excess'] },
-      { id: 'devices', k: 'chips', l: 'Devices and implants', o: ['Prosthetic valve', 'Pacemaker or ICD', 'Prosthetic joint', 'Vascular graft or stent', 'Central line or PICC', 'Port', 'Urinary catheter', 'CSF shunt or drain', 'Recent surgery'] },
-      { id: 'mdro', k: 'chips', l: 'Known organisms', o: ['MRSA', 'ESBL', 'CPE', 'VRE', 'Pseudomonas', 'C. difficile', 'Candida auris'] },
+      { id: 'immuno', k: 'chips', l: 'Risk factors', none: 'None', o: ['None', 'HIV', 'Solid organ transplant', 'Stem cell transplant', 'Chemotherapy', 'Neutropenic', 'Steroids', 'Biologics or DMARDs', 'Asplenia', 'Diabetes', 'CKD', 'Dialysis', 'Cirrhosis', 'Pregnant', 'Injecting drug use', 'Alcohol excess'] },
+      { id: 'devices', k: 'chips', l: 'Devices and implants', none: 'None', o: ['None', 'Prosthetic valve', 'Pacemaker or ICD', 'Prosthetic joint', 'Vascular graft or stent', 'Central line or PICC', 'Port', 'Urinary catheter', 'CSF shunt or drain', 'Recent surgery'] },
+      { id: 'mdro', k: 'chips', l: 'Known resistant organisms', none: 'None known', o: ['None known', 'MRSA', 'ESBL', 'CPE', 'VRE', 'Pseudomonas', 'C. difficile', 'Candida auris'] },
       { id: 'recent', k: 'text', l: 'Recent admissions or antibiotics' },
       { id: 'pmh', k: 'area', l: 'Other relevant history and medicines' }] },
     { id: 'trav', t: 'Travel and exposures', ask: ['Where, when, for how long, rural or urban', 'Malaria prophylaxis and pre-travel vaccines', 'Animals, water, insects, food, sex, sick contacts, work'], f: [
@@ -44,8 +44,8 @@
       { id: 'samples', k: 'area', l: 'Other samples (urine, sputum, CSF, swabs, tissue)' },
       { id: 'viro', k: 'area', l: 'Serology, PCR, malaria tests' }] },
     { id: 'img', t: 'Imaging', ask: ['What was done and when', 'Formal report or provisional'], f: [
-      { id: 'imgdone', k: 'chips', l: 'Done', o: ['Chest X-ray', 'CT', 'Ultrasound', 'MRI', 'Echo (TTE)', 'TOE', 'PET-CT'] },
-      { id: 'imgd', k: 'area', l: 'Findings' }] },
+      { id: 'imgdone', k: 'chips', l: 'Done (tap to add a line for its findings)', ins: 'imgd', o: ['Chest X-ray', 'CT', 'Ultrasound', 'MRI', 'Echo (TTE)', 'TOE', 'PET-CT'] },
+      { id: 'imgd', k: 'area', l: 'Findings', rows: 5 }] },
     { id: 'mx', t: 'Current management', ask: ['Antimicrobials: drug, dose, route, and when started', 'Source control done or planned', 'Response so far'], f: [
       { id: 'abx', k: 'abx' }, { id: 'source', k: 'text', l: 'Source control' }, { id: 'resp', k: 'text', l: 'Response so far' }] },
     { id: 'adv', t: 'Impression and advice', ask: ['Your impression', 'Antimicrobial advice', 'Further tests', 'Follow-up: who calls whom, and when'], f: [
@@ -64,7 +64,7 @@
   function field(f) {
     var h = '';
     if (f.k === 'text') h = '<label class="rf-f rf-wide"><span>' + esc(f.l) + '</span><input data-v="' + f.id + '" value="' + esc(val(f.id)) + '" placeholder="' + esc(f.ph || '') + '" autocomplete="off"></label>';
-    else if (f.k === 'area') h = '<label class="rf-f rf-wide"><span>' + esc(f.l) + '</span><textarea data-v="' + f.id + '" rows="3" placeholder="' + esc(f.ph || '') + '">' + esc(val(f.id)) + '</textarea></label>';
+    else if (f.k === 'area') h = '<label class="rf-f rf-wide"><span>' + esc(f.l) + '</span><textarea data-v="' + f.id + '" rows="' + (f.rows || 3) + '" placeholder="' + esc(f.ph || '') + '">' + esc(val(f.id)) + '</textarea></label>';
     else if (f.k === 'num') h = '<label class="rf-f rf-num"><span>' + esc(f.l) + '</span><span class="rf-u"><input data-v="' + f.id + '" inputmode="decimal" value="' + esc(val(f.id)) + '" autocomplete="off"><em>' + esc(f.u) + '</em></span></label>';
     else if (f.k === 'chips' || f.k === 'one') {
       var sel = f.k === 'one' ? [val(f.id)] : arr(f.id);
@@ -143,14 +143,15 @@
     add('PATIENT', [pt, al && 'Allergies: ' + al]);
     add('PRESENTING ILLNESS', [val('onset') && 'Onset: ' + val('onset'), list('sx') && 'Symptoms: ' + list('sx'), val('hpcd')]);
     add('BACKGROUND', [list('immuno') && 'Risk factors: ' + list('immuno'), list('devices') && 'Devices and implants: ' + list('devices'),
-      list('mdro') && 'Known organisms: ' + list('mdro'), val('recent') && 'Recent admissions or antibiotics: ' + val('recent'), val('pmh')]);
+      list('mdro') && 'Known resistant organisms: ' + list('mdro'), val('recent') && 'Recent admissions or antibiotics: ' + val('recent'), val('pmh')]);
     add('TRAVEL AND EXPOSURES', [val('travel') && 'Travel: ' + val('travel'), list('prev') && 'Prevention: ' + list('prev'), list('expo') && 'Exposures: ' + list('expo'), val('expod')]);
     var ob = OBS.map(function (o) { var x = val('o_' + o[0]); return x !== '' ? o[1] + ' ' + x + (o[0] === 'temp' ? '°C' : '') : ''; }).filter(Boolean).join(', ');
     add('OBSERVATIONS', [ob, val('obsd')]);
     var lb = LABS.map(function (o) { var x = val('l_' + o[0]); return x !== '' ? o[1] + ' ' + x : ''; }).filter(Boolean).join(', ');
     add('BLOODS', [lb, val('labsd')]);
     add('MICROBIOLOGY', [val('bc') && 'Blood cultures: ' + val('bc'), val('samples'), val('viro')]);
-    add('IMAGING', [list('imgdone') && 'Done: ' + list('imgdone'), val('imgd')]);
+    var notIn = arr('imgdone').filter(function (x) { return String(val('imgd')).indexOf(x) === -1; });
+    add('IMAGING', [notIn.length && 'Done: ' + notIn.join(', '), val('imgd')]);
     add('CURRENT MANAGEMENT', st.abx.filter(function (a) { return a.d; }).map(function (a) { return '- ' + [a.d, a.dose, a.start && 'started ' + a.start].filter(Boolean).join(', '); })
       .concat([val('source') && 'Source control: ' + val('source'), val('resp') && 'Response: ' + val('resp')]));
     add('IMPRESSION', [val('imp')]);
@@ -194,9 +195,16 @@
   host.addEventListener('click', function (e) {
     var b = e.target.closest('button, a'); if (!b) return;
     if (b.hasAttribute('data-chips')) {
-      var id = b.getAttribute('data-chips'), o = b.getAttribute('data-o'), a = arr(id).slice(), i = a.indexOf(o);
-      if (i === -1) a.push(o); else a.splice(i, 1);
-      st.v[id] = a; b.classList.toggle('on', i === -1); b.setAttribute('aria-pressed', String(i === -1)); save(); note();
+      var id = b.getAttribute('data-chips'), o = b.getAttribute('data-o'), a = arr(id).slice(), i = a.indexOf(o), fd = fieldDef(id);
+      if (i === -1) {
+        // 'None' is exclusive: it clears the other options, and picking another option clears it
+        if (fd.none) a = o === fd.none ? [] : a.filter(function (x) { return x !== fd.none; });
+        a.push(o);
+      } else a.splice(i, 1);
+      st.v[id] = a;
+      Array.prototype.forEach.call(host.querySelectorAll('[data-chips="' + id + '"]'), function (x) { var on = a.indexOf(x.getAttribute('data-o')) !== -1; x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on)); });
+      if (fd.ins) insertLine(fd.ins, o, i === -1);
+      save(); note();
     } else if (b.hasAttribute('data-one')) {
       var id1 = b.getAttribute('data-one'), o1 = b.getAttribute('data-o');
       st.v[id1] = st.v[id1] === o1 ? '' : o1;
@@ -214,6 +222,20 @@
       if (tgt) window.scrollTo({ top: tgt.getBoundingClientRect().top + window.scrollY - 76, behavior: 'smooth' });
     }
   });
+  function fieldDef(id) { for (var i = 0; i < S.length; i++) for (var j = 0; j < S[i].f.length; j++) if (S[i].f[j].id === id) return S[i].f[j]; return {}; }
+  // Imaging: tapping a test adds "Test: " as its own line in the findings box, ready for a comment; untapping removes it if still empty
+  function insertLine(target, label, adding) {
+    var ta = host.querySelector('[data-v="' + target + '"]'); if (!ta) return;
+    var lines = String(ta.value).split('\n'), prefix = label + ':';
+    var idx = lines.map(function (l) { return l.trim(); }).findIndex(function (l) { return l.indexOf(prefix) === 0; });
+    if (adding) {
+      if (idx === -1) { while (lines.length && lines[lines.length - 1].trim() === '') lines.pop(); lines.push(prefix + ' '); idx = lines.length - 1; }
+      ta.value = lines.join('\n');
+      var pos = lines.slice(0, idx + 1).join('\n').length;
+      ta.focus(); ta.setSelectionRange(pos, pos);
+    } else if (idx !== -1 && lines[idx].trim() === prefix) { lines.splice(idx, 1); ta.value = lines.join('\n'); }
+    st.v[target] = ta.value;
+  }
   function redraw(secId) { var y = window.scrollY; draw(); window.scrollTo(0, y); }
   draw();
 })();
