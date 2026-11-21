@@ -160,6 +160,10 @@
     [
      "Isolation and precautions",
      "/isolation/"
+    ],
+    [
+     "Infectious period calculator",
+     "/infectious-period/"
     ]
    ],
    "id": "streptococcus-pyogenes-group-a"
@@ -211,6 +215,10 @@
     [
      "Positive blood culture triage",
      "/blood-culture-triage/"
+    ],
+    [
+     "Asplenia and hyposplenism",
+     "/asplenia/"
     ]
    ],
    "id": "streptococcus-pneumoniae"
@@ -796,6 +804,14 @@
     [
      "Isolation and precautions",
      "/isolation/"
+    ],
+    [
+     "Asplenia and hyposplenism",
+     "/asplenia/"
+    ],
+    [
+     "Infectious period calculator",
+     "/infectious-period/"
     ]
    ],
    "id": "neisseria-meningitidis"

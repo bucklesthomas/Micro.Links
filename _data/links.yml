@@ -150,6 +150,10 @@
 
 - category: Public health & notification
   links:
+    - name: Asplenia and hyposplenism
+      url: "/asplenia/"
+      note: Vaccines around splenectomy, prophylaxis by age, standby antibiotics and patient advice
+      tags: asplenia splenectomy hyposplenism spleen sickle cell pcv20 pneumococcal menacwy menb penicillin prophylaxis standby capnocytophaga green book
     - name: Exclusion and clearance
       url: "/exclusion/"
       note: Cases and contacts in risk groups (food handlers, care staff, childcare); school exclusion periods
@@ -157,6 +161,10 @@
     - name: Find your local health protection team
       url: "https://www.gov.uk/health-protection-team"
       tags: hpt phe ukhsa
+    - name: Infectious period calculator
+      url: "/infectious-period/"
+      note: Infectious window, exclusion end, contacts and PEP deadlines from an onset date
+      tags: infectious period calculator exclusion contacts measles chickenpox varicella shingles mumps pertussis whooping cough tb tuberculosis meningococcal igas hepatitis a pep deadline window incubation dates
     - name: Isolation and precautions
       url: "/isolation/"
       note: Room, precautions, RPE and duration by infection (NIPCM)
@@ -176,6 +184,10 @@
     - name: CDC Yellow Book
       url: "https://www.cdc.gov/yellow-book/"
       tags: travel
+    - name: Country lookup
+      url: "/countries/"
+      note: Malaria advice, VHF and other risks, resistance and TravelHealthPro link by country
+      tags: country countries travel malaria prophylaxis lassa ebola marburg cchf mers yellow fever dengue typhoid xdr mdr tb cpe carbapenemase destination migrant
     - name: Fit for Travel
       url: "https://www.fitfortravel.nhs.uk/"
       tags: travel vaccines
@@ -314,6 +326,14 @@
       url: "/flashcards/"
       note: Revision cards for the Combined Infection Certificate Examination
       tags: cice exam revision flashcards quiz frcpath combined infection certificate training study
+    - name: Exam syllabus tracker
+      url: "/syllabus/"
+      note: Track CICE and FRCPath Part 1 revision by topic, with an exam countdown
+      tags: cice frcpath exam syllabus curriculum revision tracker progress study combined infection training
+    - name: Infection screen before immunosuppression
+      url: "/immunosuppression-screen/"
+      note: Tests, vaccines and prophylaxis before biologics, steroids, chemotherapy or transplant
+      tags: immunosuppression biologic screen screening anti-tnf rituximab jak steroids transplant hepatitis b reactivation igra strongyloides pjp shingrix vaccines eculizumab
     - name: Key ID & micro trials (this site)
       url: "/trials/"
       note: 60 trials in PICO format with UK takeaways

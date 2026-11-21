@@ -17,6 +17,7 @@
   var Q = {
     start: {
       q: 'Which infection is the index case?',
+      links: [['Infectious period calculator', '/infectious-period/']],
       options: [
         { label: 'Meningococcal disease', next: 'R_men' },
         { label: 'Invasive group A streptococcus (iGAS)', next: 'igas' },

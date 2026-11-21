@@ -10,7 +10,7 @@
   var Q = {
     start: {
       q: 'Could this be a viral haemorrhagic fever or other HCID?',
-      links: [['VHF risk assessment algorithm', 'https://assets.publishing.service.gov.uk/media/6aa2833e92e72b8ac437f0b8/viral-haemorrhagic-fevers-risk-assessment-algorithm-september-2026.pdf'], ['HCID list (UKHSA)', 'https://www.gov.uk/guidance/high-consequence-infectious-diseases-hcid'], ['TravelHealthPro outbreaks', 'https://travelhealthpro.org.uk/'], ['WHO Disease Outbreak News', 'https://www.who.int/emergencies/disease-outbreak-news']],
+      links: [['Country lookup', '/countries/'], ['VHF risk assessment algorithm', 'https://assets.publishing.service.gov.uk/media/6aa2833e92e72b8ac437f0b8/viral-haemorrhagic-fevers-risk-assessment-algorithm-september-2026.pdf'], ['HCID list (UKHSA)', 'https://www.gov.uk/guidance/high-consequence-infectious-diseases-hcid'], ['TravelHealthPro outbreaks', 'https://travelhealthpro.org.uk/'], ['WHO Disease Outbreak News', 'https://www.who.int/emergencies/disease-outbreak-news']],
       help: 'Fever (or history of fever) within 21 days of leaving an area with Ebola, Marburg, Lassa or CCHF, or contact with a case or with body fluids. MERS: respiratory illness within 14 days of travel to the Arabian Peninsula. Use the ACDP VHF risk assessment algorithm (link below).',
       options: [
         { label: 'Possible VHF or HCID', next: 'R_hcid' },

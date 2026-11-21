@@ -104,6 +104,7 @@
     - { name: "Returned traveller with fever", url: /returned-traveller/, kind: guide }
     - { name: "Malaria treatment", url: /malaria/, kind: guide }
     - { name: "Rabies post-exposure advice", url: /rabies/, kind: guide }
+    - { name: "Country lookup", url: /countries/, kind: tool }
     - { name: "Lab test finder: malaria, arboviruses, rickettsia, leptospira", url: /lab-tests/, kind: tool }
     - { name: "HIV, TB, malaria and sexual health trials", url: "/trials/#hiv-tb-malaria-and-sexual-health", kind: trials }
     - { name: "Malaria (UK 2016)", url: "https://www.journalofinfection.com/action/showPdf?pii=S0163-4453%2816%2900047-5", kind: link }
@@ -118,6 +119,8 @@
     - { name: "Invasive aspergillosis treatment", url: /aspergillosis/, kind: guide }
     - { name: "Candidaemia treatment", url: /candidaemia/, kind: guide }
     - { name: "Tuberculosis (screening before biologics)", url: /tb/, kind: guide }
+    - { name: "Infection screen before immunosuppression", url: /immunosuppression-screen/, kind: tool }
+    - { name: "Asplenia and hyposplenism", url: /asplenia/, kind: tool }
     - { name: "Fungal markers interpretation", url: /fungal-markers/, kind: tool }
     - { name: "Lab test finder: hepatitis B, Strongyloides, CMV", url: /lab-tests/, kind: tool }
     - { name: "Green Book (immunisation)", url: "https://www.gov.uk/government/collections/immunisation-against-infectious-disease-the-green-book", kind: link }
@@ -139,6 +142,7 @@
 
 - title: Infection control and public health
   items:
+    - { name: "Infectious period calculator", url: /infectious-period/, kind: tool }
     - { name: "Isolation and precautions", url: /isolation/, kind: tool }
     - { name: "Exclusion and clearance", url: /exclusion/, kind: guide }
     - { name: "Contact prophylaxis", url: /contact-prophylaxis/, kind: guide }
