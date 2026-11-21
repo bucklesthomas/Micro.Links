@@ -11,6 +11,10 @@
       url: "https://app.eolasmedical.com/organisation/Cambridge%20University%20Hospitals%20NHS%20Foundation%20Trust"
       note: Cambridge University Hospitals, via Eolas Medical
       tags: local trust cuh addenbrookes cambridge empirical antibiotics microguide eolas
+    - name: ID referral call
+      url: "/referral/"
+      note: Take a phone referral section by section and copy the history into Epic
+      tags: referral phone call telephone template history clerking epic note copy advice on call
 
 - category: Prescribing & interactions
   links:
