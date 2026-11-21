@@ -885,3 +885,233 @@ a.sp-chip { display: inline-block; text-decoration: none; }
 /* Offline indicator */
 .offline-pill { align-self: center; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; border: 1px solid #e6c27a; background: rgba(230, 170, 40, .12); color: var(--ink); margin-left: 8px; }
 .offline-pill[hidden] { display: none; }
+
+/* ════════ Design refresh: softer boxes, page headers, guide progress and results ════════ */
+:root {
+  --sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 12px;
+  --line-soft: #e9eef3;
+  --shadow: 0 1px 2px rgba(20, 40, 60, .04), 0 3px 12px rgba(20, 40, 60, .05);
+  --shadow-hover: 0 2px 4px rgba(20, 40, 60, .05), 0 10px 24px rgba(20, 40, 60, .09);
+}
+:root[data-theme="dark"] { --line-soft: #212b36; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .25); --shadow-hover: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 26px rgba(0, 0, 0, .4); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --line-soft: #212b36; --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .25); --shadow-hover: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 26px rgba(0, 0, 0, .4); }
+}
+
+/* Softer boxes */
+.card, .ie-done, .ie-step, .ie-disclaimer, .search input { border-radius: var(--radius); }
+.card { border-color: var(--line-soft); box-shadow: var(--shadow); transition: box-shadow .18s ease, transform .18s ease; }
+.cat:hover, .score:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+.cat li { border-top-color: var(--line-soft); }
+.cat li small { font-size: 13px; line-height: 1.45; margin-top: 1px; }
+.row, .ie-regimen li { border-top-color: var(--line-soft); }
+.search input { border-color: var(--line-soft); box-shadow: var(--shadow); }
+.jump a, .sp-chip { border-color: var(--line-soft); box-shadow: 0 1px 2px rgba(20, 40, 60, .04); }
+.ie-done { border-color: var(--line-soft); box-shadow: var(--shadow); }
+.ie-opt { transition: background .15s ease, box-shadow .15s ease, transform .15s ease; }
+.ie-opt:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+@media (prefers-reduced-motion: reduce) { .card, .ie-opt { transition: none; } .cat:hover, .score:hover, .ie-opt:hover { transform: none; } }
+
+/* Matching page headers */
+.page-head { margin: 28px 0 20px; max-width: 78ch; }
+.page-head .page-title { margin: 0 0 6px; font-size: 28px; line-height: 1.2; letter-spacing: -0.02em; text-wrap: balance; }
+.page-head .lede { margin: 0; font-size: 16px; line-height: 1.5; }
+.page-kind { display: flex; align-items: center; gap: 7px; margin: 0 0 8px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
+.page-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+.page-meta span { display: inline-flex; align-items: center; gap: 6px; }
+.page-meta .pm-check::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--low); }
+@media (max-width: 520px) { .page-head { margin-top: 20px; } .page-head .page-title { font-size: 24px; } }
+
+/* Guide step progress */
+.ie-progress { display: flex; align-items: center; gap: 12px; margin-bottom: 2px; font-size: 13px; color: var(--muted); }
+.ie-dots { display: flex; gap: 5px; align-items: center; }
+.ie-dots i { width: 22px; height: 6px; border-radius: 999px; background: var(--line); }
+.ie-dots i.done { background: var(--accent); }
+.ie-dots i.now { background: var(--accent-ink); }
+.ie-dots i.maybe { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
+.ie-progress b { color: var(--ink); font-weight: 600; }
+
+/* Results that stand out */
+.ie-result {
+  --tone: var(--accent); --tone-ink: var(--accent-ink); --tone-bg: var(--accent-soft);
+  position: relative; padding: 20px 22px 18px 26px; border: 1px solid var(--line-soft); border-radius: var(--radius);
+  box-shadow: var(--shadow-hover); overflow: hidden;
+}
+.ie-result::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--tone); }
+.ie-result[data-tone="green"] { --tone: var(--low); --tone-ink: var(--low); --tone-bg: var(--low-bg); border-color: var(--line-soft); box-shadow: var(--shadow-hover); }
+.ie-result[data-tone="amber"] { --tone: var(--mid); --tone-ink: var(--mid); --tone-bg: var(--mid-bg); border-color: var(--line-soft); box-shadow: var(--shadow-hover); }
+.ie-result[data-tone="red"] { --tone: var(--high); --tone-ink: var(--high); --tone-bg: var(--high-bg); border-color: var(--line-soft); box-shadow: var(--shadow-hover); }
+.ie-result .ie-eyebrow { display: inline-block; margin: 0 0 8px; padding: 3px 9px; border-radius: 999px; font-family: var(--sans); font-size: 11.5px; letter-spacing: .07em; color: var(--tone-ink); background: var(--tone-bg); }
+.ie-result h2 { font-size: 23px; line-height: 1.25; margin: 0 0 10px; letter-spacing: -0.01em; }
+.ie-result .ie-summary { margin: 0 0 16px; padding: 10px 14px; font-size: 15px; line-height: 1.5; background: var(--tone-bg); border-radius: 8px; }
+.ie-result .ie-regimen { margin-top: 4px; border-color: var(--line-soft); }
+.ie-result .ie-regimen + .ie-regimen { margin-top: 12px; }
+.ie-result .ie-or { margin: 8px 0; }
+.ie-result .ie-drug { font-size: 15.5px; }
+.ie-nhead { margin: 18px 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.ie-result .ie-notes { margin: 0; padding: 12px 14px 12px 32px; background: var(--bg); border-radius: 8px; font-size: 14px; gap: 6px; }
+.ie-result .ie-ref { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line-soft); }
+
+/* Second font: a clean sans-serif for small text, descriptions, notes and tables */
+.count,
+.jump a,
+.cat li small,
+.score .use,
+.row b,
+.foot small,
+.reset,
+.footer,
+/* Section headings inside a score (e.g. Duke major / minor) */
+.subhead,
+.note,
+.pico-key,
+.pico-key b,
+.pico-key.uk b,
+.caveats,
+.jump .n,
+.cite,
+.uk-tag,
+.pico dt,
+.pico dt b,
+.takeaway span,
+.tp-kind,
+.opt-pts,
+.ss-type,
+.ss-main small,
+.opt.toggle .opt-pts,
+.ie-disclaimer,
+.ie-change,
+.ie-sub,
+.ie-eyebrow,
+.ie-verify,
+.ie-rname,
+.ie-dose,
+.ie-dur,
+.ie-or,
+.ie-notes,
+.ie-ref,
+.ie-source,
+.ie-cls,
+/* Guide results: traffic-light tone (rabies,
+needlestick) and extras */
+.ie-help,
+.ie-contact,
+.af-ref,
+.sp-chip,
+.sp-hint,
+.sp-table,
+.sp-drug button,
+th.sp-org button,
+tr.sp-note td,
+.sp-legend,
+.tdm-field,
+.tdm-when,
+.tdm-empty,
+.sp-legend .sp-cell,
+.sp-notecells .sp-cell,
+.sp-notebox,
+.ir-grp,
+.ir-eyebrow,
+.ir-cls,
+.ir-pill,
+.ir-note,
+.ir-ampc,
+.ir-flag,
+.ab-cls,
+.ab-route,
+.aw,
+.ab-sub,
+.ab-sec h4,
+.ab-tbl,
+.ab-note,
+.ab-key,
+.ab-spec-g p,
+.cv,
+.cov-pill,
+.cov-tbl thead th,
+.cov-why,
+.bp-inputs label,
+.bp-row,
+.bp-tbl,
+.bp-cat,
+.bp-brk,
+.bp-explain,
+.bp-notes,
+.dur-tbl tr.dur-h th,
+.org-tx .org-alt,
+.org-lab,
+.org-pill,
+.cd4-item,
+/* ── Pregnancy table ──────────────────────────────────── */
+.pg-tag,
+.pg-note,
+.pg-cls,
+.pg-tbl td::before,
+/* ── Isolation table ──────────────────────────────────── */
+.iso-tag,
+.iso-tbl td,
+.fc-count,
+.fc-meta,
+.fc-lab,
+.fc-hint,
+.td-sec h3,
+.td-res h3,
+.td-why,
+.td-t,
+.td-x,
+.vc-big span,
+.vc-big small,
+.vc-opt th,
+.vc-opt td,
+.vc-warn,
+/* Offline indicator */
+.offline-pill,
+.lede,
+.page-kind,
+.page-meta,
+.ie-q,
+.ie-help,
+.ie-nhead,
+.ie-progress,
+.cov-tbl td,
+.cov-tbl th,
+.ab-tbl td,
+.ab-tbl th,
+.ss-results small { font-family: var(--sans); }
+
+/* Line icons on Links and Topics box headers */
+#local-on-call > h2::before, #prescribing-interactions > h2::before, #guidelines > h2::before, #microbiology-lab > h2::before, #public-health-notification > h2::before, #travel-imported-infection > h2::before, #click-through-guides > h2::before, #mycology > h2::before, #calculators-tools > h2::before, #tp-bloodstream-infection-and-sepsis > h2::before, #tp-endocarditis > h2::before, #tp-cns-infection > h2::before, #tp-respiratory-infection > h2::before, #tp-gastrointestinal-and-liver > h2::before, #tp-urinary-tract-infection > h2::before, #tp-bone-joint-and-soft-tissue > h2::before, #tp-fungal-infection > h2::before, #tp-hiv-tb-and-sexual-health > h2::before, #tp-travel-and-tropical-infection > h2::before, #tp-immunocompromised-host > h2::before, #tp-antimicrobials-and-resistance > h2::before, #tp-infection-control-and-public-health > h2::before {
+  content: ""; flex: none; width: 20px; height: 20px; background: var(--accent-ink);
+  -webkit-mask: var(--ico) center / contain no-repeat; mask: var(--ico) center / contain no-repeat;
+}
+#local-on-call > h2, #prescribing-interactions > h2, #guidelines > h2, #microbiology-lab > h2, #public-health-notification > h2, #travel-imported-infection > h2, #click-through-guides > h2, #mycology > h2, #calculators-tools > h2, #tp-bloodstream-infection-and-sepsis > h2, #tp-endocarditis > h2, #tp-cns-infection > h2, #tp-respiratory-infection > h2, #tp-gastrointestinal-and-liver > h2, #tp-urinary-tract-infection > h2, #tp-bone-joint-and-soft-tissue > h2, #tp-fungal-infection > h2, #tp-hiv-tb-and-sexual-health > h2, #tp-travel-and-tropical-infection > h2, #tp-immunocompromised-host > h2, #tp-antimicrobials-and-resistance > h2, #tp-infection-control-and-public-health > h2 { display: flex; align-items: center; gap: 9px; }
+#local-on-call { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z'/%3E%3C/svg%3E"); }
+#prescribing-interactions { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2.5' y='8.5' width='19' height='7' rx='3.5' transform='rotate%28-45 12 12%29'/%3E%3Cpath d='M9.3 9.3l5.4 5.4'/%3E%3C/svg%3E"); }
+#guidelines { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5V5a2 2 0 0 1 2-2h14v15H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h14'/%3E%3Cpath d='M8 7h8M8 10.5h6'/%3E%3C/svg%3E"); }
+#microbiology-lab { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3h6M10 3v6.5L4.6 18.3A1.8 1.8 0 0 0 6.1 21h11.8a1.8 1.8 0 0 0 1.5-2.7L14 9.5V3M6.8 15h10.4'/%3E%3C/svg%3E"); }
+#public-health-notification { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10v4h3l7 4.5V5.5L7 10z'/%3E%3Cpath d='M17.5 9a4 4 0 0 1 0 6M7 14l1.5 5.5h2.5L10 15'/%3E%3C/svg%3E"); }
+#travel-imported-infection { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9'/%3E%3C/svg%3E"); }
+#click-through-guides { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='6' cy='5' r='2'/%3E%3Ccircle cx='6' cy='19' r='2'/%3E%3Ccircle cx='18' cy='8' r='2'/%3E%3Cpath d='M6 7v10M6 15c0-4 3-5 6-5.5S16 9 16 9'/%3E%3C/svg%3E"); }
+#mycology { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12a9 7.5 0 0 1 18 0z'/%3E%3Cpath d='M9.5 12v6a2.5 2.5 0 0 0 5 0v-6M9 7.5h.01M14.5 6.5h.01'/%3E%3C/svg%3E"); }
+#calculators-tools { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='2.5' width='14' height='19' rx='2.2'/%3E%3Cpath d='M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h3.5'/%3E%3C/svg%3E"); }
+#tp-bloodstream-infection-and-sepsis { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3s6.5 6.8 6.5 11.3a6.5 6.5 0 0 1-13 0C5.5 9.8 12 3 12 3z'/%3E%3Cpath d='M9 15a3 3 0 0 0 3 3'/%3E%3C/svg%3E"); }
+#tp-endocarditis { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z'/%3E%3Cpath d='M5.5 12.5h3l1.5-2.5 2 5 1.5-2.5h5'/%3E%3C/svg%3E"); }
+#tp-cns-infection { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5.5A3 3 0 0 0 6.5 6 3 3 0 0 0 4.5 11a3 3 0 0 0 1 4.8A3 3 0 0 0 9.5 20a2.5 2.5 0 0 0 2.5-1.5zM12 5.5A3 3 0 0 1 17.5 6a3 3 0 0 1 2 5 3 3 0 0 1-1 4.8 3 3 0 0 1-4 4.2 2.5 2.5 0 0 1-2.5-1.5'/%3E%3Cpath d='M12 5.5v13'/%3E%3C/svg%3E"); }
+#tp-respiratory-infection { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3.5v8M12 11.5l-2.5-2M12 11.5l2.5-2'/%3E%3Cpath d='M8.5 7.5C5.5 8 4 13 4 17c0 2 1.2 3 3 3 1.6 0 2.5-1 2.5-3V9.5c0-1.4-.4-2-1-2zM15.5 7.5c3 .5 4.5 5.5 4.5 9.5 0 2-1.2 3-3 3-1.6 0-2.5-1-2.5-3V9.5c0-1.4.4-2 1-2z'/%3E%3C/svg%3E"); }
+#tp-gastrointestinal-and-liver { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3v3.5A4.5 4.5 0 0 0 12.5 11h1A4.5 4.5 0 0 1 18 15.5 4.5 4.5 0 0 1 13.5 20H10a4 4 0 0 1-4-4v-1.5a2.5 2.5 0 0 1 5 0V15'/%3E%3C/svg%3E"); }
+#tp-urinary-tract-infection { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.5 4C6.5 4 4.5 7.5 4.5 12s2 8 6 8c2.4 0 3-1.7 3-3.2 0-2.3-2.3-2.6-2.3-4.8S13.5 9.6 13.5 7.4C13.5 5.5 12.6 4 10.5 4z'/%3E%3Cpath d='M13 12h2.5a3 3 0 0 1 3 3v6'/%3E%3C/svg%3E"); }
+#tp-bone-joint-and-soft-tissue { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='5.5' cy='8' r='2.2'/%3E%3Ccircle cx='8' cy='5.5' r='2.2'/%3E%3Ccircle cx='16' cy='18.5' r='2.2'/%3E%3Ccircle cx='18.5' cy='16' r='2.2'/%3E%3Cpath d='M8.2 9.3l6.5 6.5M9.3 8.2l6.5 6.5'/%3E%3C/svg%3E"); }
+#tp-fungal-infection { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12a9 7.5 0 0 1 18 0z'/%3E%3Cpath d='M9.5 12v6a2.5 2.5 0 0 0 5 0v-6M9 7.5h.01M14.5 6.5h.01'/%3E%3C/svg%3E"); }
+#tp-hiv-tb-and-sexual-health { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3.5a3.2 3.2 0 0 0-3.2 3.2c0 2.3 1.7 4.6 3.2 6.6l-4.6 7.2M12 3.5a3.2 3.2 0 0 1 3.2 3.2c0 2.3-1.7 4.6-3.2 6.6l4.6 7.2'/%3E%3C/svg%3E"); }
+#tp-travel-and-tropical-infection { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9'/%3E%3C/svg%3E"); }
+#tp-immunocompromised-host { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7.5 3v5.6c0 4.6-3.2 8.2-7.5 9.4-4.3-1.2-7.5-4.8-7.5-9.4V6z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E"); }
+#tp-antimicrobials-and-resistance { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2.5' y='8.5' width='19' height='7' rx='3.5' transform='rotate%28-45 12 12%29'/%3E%3Cpath d='M9.3 9.3l5.4 5.4'/%3E%3C/svg%3E"); }
+#tp-infection-control-and-public-health { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10v4h3l7 4.5V5.5L7 10z'/%3E%3Cpath d='M17.5 9a4 4 0 0 1 0 6M7 14l1.5 5.5h2.5L10 15'/%3E%3C/svg%3E"); }
+.page-kind::before { content: ""; flex: none; width: 16px; height: 16px; background: currentColor; -webkit-mask: var(--ico) center / contain no-repeat; mask: var(--ico) center / contain no-repeat; }
+.page-kind.k-guide { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='6' cy='5' r='2'/%3E%3Ccircle cx='6' cy='19' r='2'/%3E%3Ccircle cx='18' cy='8' r='2'/%3E%3Cpath d='M6 7v10M6 15c0-4 3-5 6-5.5S16 9 16 9'/%3E%3C/svg%3E"); }
+.page-kind.k-calculator { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='2.5' width='14' height='19' rx='2.2'/%3E%3Cpath d='M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h3.5'/%3E%3C/svg%3E"); }
+.page-kind.k-interpreter { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3h6M10 3v6.5L4.6 18.3A1.8 1.8 0 0 0 6.1 21h11.8a1.8 1.8 0 0 0 1.5-2.7L14 9.5V3M6.8 15h10.4'/%3E%3C/svg%3E"); }
+.page-kind.k-reference { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5V5a2 2 0 0 1 2-2h14v15H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h14'/%3E%3Cpath d='M8 7h8M8 10.5h6'/%3E%3C/svg%3E"); }
+.page-kind.k-revision { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5V5a2 2 0 0 1 2-2h14v15H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h14'/%3E%3Cpath d='M8 7h8M8 10.5h6'/%3E%3C/svg%3E"); }
+.page-kind.k-directory { --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9'/%3E%3C/svg%3E"); }

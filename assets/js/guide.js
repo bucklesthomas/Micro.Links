@@ -97,10 +97,37 @@
       h += '</ul></div>';
     });
     if (r.notes && r.notes.length) {
-      h += '<ul class="ie-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>';
+      h += '<h3 class="ie-nhead">Notes</h3><ul class="ie-notes">' + r.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>';
     }
     if (ref) h += '<p class="ie-ref">' + esc(ref) + '</p>';
     return h + '</section>';
+  }
+
+  // Fewest and most questions still to answer from here (including the current one), for the progress bar.
+  function remaining(G, picks, depth) {
+    var st = resolve(G, picks);
+    if (!st.question) return [0, 0];
+    if (depth > 14) return [1, 1];
+    var lo = Infinity, hi = 0;
+    st.question.options.forEach(function (_, j) {
+      var r = remaining(G, picks.concat([j]), depth + 1);
+      if (r[0] + 1 < lo) lo = r[0] + 1;
+      if (r[1] + 1 > hi) hi = r[1] + 1;
+    });
+    return [lo, hi];
+  }
+
+  function progress(G, picks, st) {
+    var done = st.steps.length, dots = '', label;
+    if (st.question) {
+      var r = remaining(G, picks, 0), total = done + r[1], fixed = r[0] === r[1];
+      for (var i = 0; i < total; i++) dots += '<i class="' + (i < done ? 'done' : i === done ? 'now' : (i < done + r[0] ? '' : 'maybe')) + '"></i>';
+      label = 'Question <b>' + (done + 1) + '</b> of ' + (fixed ? total : 'up to ' + total);
+    } else {
+      for (var k = 0; k < done; k++) dots += '<i class="done"></i>';
+      label = '<b>Result</b> after ' + done + ' question' + (done === 1 ? '' : 's');
+    }
+    return '<div class="ie-progress" aria-hidden="true"><span class="ie-dots">' + dots + '</span><span>' + label + '</span></div>';
   }
 
   function mount(host) {
@@ -116,7 +143,7 @@
 
     function render(focus) {
       var st = resolve(G, picks);
-      var html = '';
+      var html = progress(G, picks, st);
       st.steps.forEach(function (s, i) {
         html += '<div class="ie-done"><span class="ie-q">' + esc(s.q.q) + '</span>' +
                 '<button type="button" class="ie-ans" data-back="' + i + '" aria-label="Change answer: ' + esc(s.o.label) + '">' +

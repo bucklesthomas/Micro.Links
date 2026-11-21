@@ -24,7 +24,7 @@ var PRECACHE = [
   '{{ f.path | relative_url }}' + V,
   {%- endif -%}
 {%- endfor %}
-  'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap'
+  'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap'
 ];
 
 self.addEventListener('install', function (e) {
