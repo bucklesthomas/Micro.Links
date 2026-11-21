@@ -1387,3 +1387,8 @@ button.opt { font: inherit; color: var(--ink); }
 .si-echo span, .si-note { font-family: var(--sans); }
 .sy-t { background: var(--bg); }
 @media (max-width: 760px) { .opts.wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Chrome repaints (boxes vanish and reappear) when cards inside a multi-column layout are transformed:
+   keep the hover shadow but no lift for masonry cards. */
+.grid.masonry > .card, .grid.masonry > .card:hover { transform: none !important; }
+.grid.masonry > .card { transition: box-shadow .15s ease, border-color .15s ease; }
