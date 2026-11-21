@@ -1157,3 +1157,8 @@ tr.sp-note td,
 .rf-priv { margin: 10px 0 0; font: 12px/1.45 var(--sans); color: var(--muted); }
 .rf-bar { position: sticky; bottom: 0; z-index: 5; display: flex; justify-content: flex-end; gap: 8px; margin: 16px -16px 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -4px 14px rgba(20, 40, 60, .06); }
 .rf-bar .reset { padding: 9px 14px; font-size: 14px; text-decoration: none; }
+
+/* Referral call: three-way chips (yes / no) */
+.rf-chip { touch-action: manipulation; -webkit-user-select: none; user-select: none; }
+.rf-chip.no { color: var(--high); background: var(--high-bg); border-color: var(--high); text-decoration: line-through; text-decoration-thickness: 1px; }
+.rf-tip { display: block; margin-top: 2px; font-weight: 400; font-size: 12px; color: var(--muted); }

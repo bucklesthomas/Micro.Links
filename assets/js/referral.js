@@ -24,7 +24,7 @@
       { id: 'allergyd', k: 'text', l: 'Allergy details' }] },
     { id: 'hpc', t: 'Presenting illness', ask: ['When and how it started', 'Fever pattern and rigors', 'Localising symptoms', 'What has happened since admission'], f: [
       { id: 'onset', k: 'text', l: 'Onset', ph: 'e.g. 5 days, gradual' },
-      { id: 'sx', k: 'chips', l: 'Symptoms', o: ['Fever', 'Rigors', 'Night sweats', 'Weight loss', 'Headache', 'Confusion', 'Neck stiffness', 'Seizure', 'Cough', 'Breathlessness', 'Chest pain', 'Abdominal pain', 'Diarrhoea', 'Vomiting', 'Jaundice', 'Urinary symptoms', 'Back pain', 'Joint pain or swelling', 'Rash', 'Skin or wound infection', 'Line site problem', 'New murmur'] },
+      { id: 'sx', k: 'chips', l: 'Symptoms', neg: 'Not present', o: ['Fever', 'Rigors', 'Night sweats', 'Weight loss', 'Headache', 'Confusion', 'Neck stiffness', 'Seizure', 'Cough', 'Breathlessness', 'Chest pain', 'Abdominal pain', 'Diarrhoea', 'Vomiting', 'Jaundice', 'Urinary symptoms', 'Back pain', 'Joint pain or swelling', 'Rash', 'Skin or wound infection', 'Line site problem', 'New murmur'] },
       { id: 'hpcd', k: 'area', l: 'History of presenting illness' }] },
     { id: 'bg', t: 'Background', ask: ['Immune status and immunosuppressive drugs', 'Implants, devices and lines', 'Admissions, surgery and antibiotics in the last 3 months', 'Known resistant organisms'], f: [
       { id: 'immuno', k: 'chips', l: 'Risk factors', none: 'None', o: ['None', 'HIV', 'Solid organ transplant', 'Stem cell transplant', 'Chemotherapy', 'Neutropenic', 'Steroids', 'Biologics or DMARDs', 'Asplenia', 'Diabetes', 'CKD', 'Dialysis', 'Cirrhosis', 'Pregnant', 'Injecting drug use', 'Alcohol excess'] },
@@ -35,7 +35,7 @@
     { id: 'trav', t: 'Travel and exposures', ask: ['Where, when, for how long, rural or urban', 'Malaria prophylaxis and pre-travel vaccines', 'Animals, water, insects, food, sex, sick contacts, work'], f: [
       { id: 'travel', k: 'text', l: 'Travel (where, when returned, how long)', ph: 'e.g. Ghana, returned 9 days ago, 3 weeks visiting family' },
       { id: 'prev', k: 'chips', l: 'Prevention', o: ['No travel', 'Malaria prophylaxis taken', 'No malaria prophylaxis', 'Pre-travel vaccines', 'No pre-travel advice'] },
-      { id: 'expo', k: 'chips', l: 'Exposures', o: ['Mosquito bites', 'Tick bites', 'Freshwater', 'Animal bite or scratch', 'Farm animals', 'Unpasteurised dairy', 'Street food or untreated water', 'Sexual contact', 'Sick contacts', 'Healthcare abroad', 'Caves or bats', 'Occupational'] },
+      { id: 'expo', k: 'chips', l: 'Exposures', neg: 'No exposure to', o: ['Mosquito bites', 'Tick bites', 'Freshwater', 'Animal bite or scratch', 'Farm animals', 'Unpasteurised dairy', 'Street food or untreated water', 'Sexual contact', 'Sick contacts', 'Healthcare abroad', 'Caves or bats', 'Occupational'] },
       { id: 'expod', k: 'area', l: 'Exposure details' }] },
     { id: 'obs', t: 'Observations', ask: ['Latest set, and the trend', 'Oxygen requirement', 'Conscious level'], f: [{ id: 'obs', k: 'obs' }, { id: 'obsd', k: 'text', l: 'Trend or other' }] },
     { id: 'bloods', t: 'Bloods', ask: ['Latest values, and the date', 'Trend since admission'], f: [{ id: 'labs', k: 'labs' }, { id: 'labsd', k: 'text', l: 'Date, trend or other results', ph: 'e.g. today; CRP 320 → 250 over 48 h' }] },
@@ -67,10 +67,10 @@
     else if (f.k === 'area') h = '<label class="rf-f rf-wide"><span>' + esc(f.l) + '</span><textarea data-v="' + f.id + '" rows="' + (f.rows || 3) + '" placeholder="' + esc(f.ph || '') + '">' + esc(val(f.id)) + '</textarea></label>';
     else if (f.k === 'num') h = '<label class="rf-f rf-num"><span>' + esc(f.l) + '</span><span class="rf-u"><input data-v="' + f.id + '" inputmode="decimal" value="' + esc(val(f.id)) + '" autocomplete="off"><em>' + esc(f.u) + '</em></span></label>';
     else if (f.k === 'chips' || f.k === 'one') {
-      var sel = f.k === 'one' ? [val(f.id)] : arr(f.id);
-      h = '<div class="rf-f rf-wide"><span>' + esc(f.l) + '</span><div class="ab-aw">' + f.o.map(function (o) {
-        var on = sel.indexOf(o) !== -1;
-        return '<button type="button" class="sp-chip' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-' + f.k + '="' + f.id + '" data-o="' + esc(o) + '">' + esc(o) + '</button>';
+      var sel = f.k === 'one' ? [val(f.id)] : arr(f.id), no = arr(f.id + '_no');
+      h = '<div class="rf-f rf-wide"><span>' + esc(f.l) + (f.neg ? '<small class="rf-tip">Tap once for yes, twice for no (red), three times to clear</small>' : '') + '</span><div class="ab-aw">' + f.o.map(function (o) {
+        var on = sel.indexOf(o) !== -1, isNo = no.indexOf(o) !== -1;
+        return '<button type="button" class="sp-chip rf-chip' + (on ? ' on' : '') + (isNo ? ' no' : '') + '" aria-pressed="' + (on ? 'true' : isNo ? 'mixed' : 'false') + '"' + (isNo ? ' aria-label="No ' + esc(o) + '"' : '') + ' data-' + f.k + '="' + f.id + '" data-o="' + esc(o) + '">' + esc(o) + '</button>';
       }).join('') + '</div></div>';
     } else if (f.k === 'obs') {
       h = '<div class="rf-grid">' + OBS.map(function (o) {
@@ -97,7 +97,7 @@
       if (f.k === 'obs') return OBS.some(function (o) { return val('o_' + o[0]) !== ''; });
       if (f.k === 'labs') return LABS.some(function (o) { return val('l_' + o[0]) !== ''; });
       if (f.k === 'abx') return st.abx.some(function (a) { return a.d; });
-      if (f.k === 'chips') return arr(f.id).length > 0;
+      if (f.k === 'chips') return arr(f.id).length > 0 || arr(f.id + '_no').length > 0;
       return val(f.id) !== '';
     });
   }
@@ -135,16 +135,17 @@
   function build() {
     var L = [], add = function (head, lines) { lines = lines.filter(Boolean); if (lines.length) { L.push(''); L.push(head); lines.forEach(function (x) { L.push(x); }); } };
     var list = function (id) { return arr(id).join(', '); };
+    var negs = function (id, head) { var n = arr(id + '_no'); return n.length ? head + ': ' + n.map(function (x) { return /^[A-Z][A-Z0-9]/.test(x) ? x : x.charAt(0).toLowerCase() + x.slice(1); }).join(', ') : ''; };
     L.push('TELEPHONE INFECTION REFERRAL');
     L.push('Date and time: ' + stamp());
     add('REFERRAL', [val('from') && 'From: ' + val('from'), list('reason') && 'Reason: ' + list('reason'), val('question') && 'Question: ' + val('question')]);
     var pt = [val('age') && val('age') + ' years', val('sex'), val('wt') && val('wt') + ' kg'].filter(Boolean).join(', ');
     var al = [list('allergy'), val('allergyd')].filter(Boolean).join('; ');
     add('PATIENT', [pt, al && 'Allergies: ' + al]);
-    add('PRESENTING ILLNESS', [val('onset') && 'Onset: ' + val('onset'), list('sx') && 'Symptoms: ' + list('sx'), val('hpcd')]);
+    add('PRESENTING ILLNESS', [val('onset') && 'Onset: ' + val('onset'), list('sx') && 'Symptoms: ' + list('sx'), negs('sx', 'Not present'), val('hpcd')]);
     add('BACKGROUND', [list('immuno') && 'Risk factors: ' + list('immuno'), list('devices') && 'Devices and implants: ' + list('devices'),
       list('mdro') && 'Known resistant organisms: ' + list('mdro'), val('recent') && 'Recent admissions or antibiotics: ' + val('recent'), val('pmh')]);
-    add('TRAVEL AND EXPOSURES', [val('travel') && 'Travel: ' + val('travel'), list('prev') && 'Prevention: ' + list('prev'), list('expo') && 'Exposures: ' + list('expo'), val('expod')]);
+    add('TRAVEL AND EXPOSURES', [val('travel') && 'Travel: ' + val('travel'), list('prev') && 'Prevention: ' + list('prev'), list('expo') && 'Exposures: ' + list('expo'), negs('expo', 'No exposure to'), val('expod')]);
     var ob = OBS.map(function (o) { var x = val('o_' + o[0]); return x !== '' ? o[1] + ' ' + x + (o[0] === 'temp' ? '°C' : '') : ''; }).filter(Boolean).join(', ');
     add('OBSERVATIONS', [ob, val('obsd')]);
     var lb = LABS.map(function (o) { var x = val('l_' + o[0]); return x !== '' ? o[1] + ' ' + x : ''; }).filter(Boolean).join(', ');
@@ -196,6 +197,19 @@
     var b = e.target.closest('button, a'); if (!b) return;
     if (b.hasAttribute('data-chips')) {
       var id = b.getAttribute('data-chips'), o = b.getAttribute('data-o'), a = arr(id).slice(), i = a.indexOf(o), fd = fieldDef(id);
+      if (fd.neg) {
+        // three-way: off -> yes -> no -> off
+        var n = arr(id + '_no').slice(), ni = n.indexOf(o);
+        if (i !== -1) { a.splice(i, 1); n.push(o); }
+        else if (ni !== -1) n.splice(ni, 1);
+        else a.push(o);
+        st.v[id] = a; st.v[id + '_no'] = n;
+        var yes = a.indexOf(o) !== -1, isNo = n.indexOf(o) !== -1;
+        b.classList.toggle('on', yes); b.classList.toggle('no', isNo);
+        b.setAttribute('aria-pressed', yes ? 'true' : isNo ? 'mixed' : 'false');
+        if (isNo) b.setAttribute('aria-label', 'No ' + o); else b.removeAttribute('aria-label');
+        save(); note(); return;
+      }
       if (i === -1) {
         // 'None' is exclusive: it clears the other options, and picking another option clears it
         if (fd.none) a = o === fd.none ? [] : a.filter(function (x) { return x !== fd.none; });
