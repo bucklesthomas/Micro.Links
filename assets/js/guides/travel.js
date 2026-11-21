@@ -10,7 +10,8 @@
   var Q = {
     start: {
       q: 'Could this be a viral haemorrhagic fever or other HCID?',
-      help: 'Fever (or history of fever) within 21 days of leaving an area with Ebola, Marburg, Lassa or CCHF, or contact with a case or with body fluids. MERS: respiratory illness within 14 days of travel to the Arabian Peninsula. Use the ACDP VHF risk assessment algorithm (Links page).',
+      links: [['VHF risk assessment algorithm', 'https://assets.publishing.service.gov.uk/media/6aa2833e92e72b8ac437f0b8/viral-haemorrhagic-fevers-risk-assessment-algorithm-september-2026.pdf'], ['HCID list (UKHSA)', 'https://www.gov.uk/guidance/high-consequence-infectious-diseases-hcid'], ['TravelHealthPro outbreaks', 'https://travelhealthpro.org.uk/'], ['WHO Disease Outbreak News', 'https://www.who.int/emergencies/disease-outbreak-news']],
+      help: 'Fever (or history of fever) within 21 days of leaving an area with Ebola, Marburg, Lassa or CCHF, or contact with a case or with body fluids. MERS: respiratory illness within 14 days of travel to the Arabian Peninsula. Use the ACDP VHF risk assessment algorithm (link below).',
       options: [
         { label: 'Possible VHF or HCID', next: 'R_hcid' },
         { label: 'No', sub: 'VHF risk assessed and excluded', next: 'region' }
@@ -103,6 +104,7 @@
     R_hcid: {
       title: 'Possible VHF or other high consequence infectious disease', tone: 'red',
       summary: 'Isolate in a side room, minimise staff contact with appropriate PPE, and follow the ACDP VHF algorithm.',
+      links: [['VHF risk assessment algorithm', 'https://assets.publishing.service.gov.uk/media/6aa2833e92e72b8ac437f0b8/viral-haemorrhagic-fevers-risk-assessment-algorithm-september-2026.pdf'], ['HCID list (UKHSA)', 'https://www.gov.uk/guidance/high-consequence-infectious-diseases-hcid']],
       regimens: [{ name: 'Do not delay', noOr: true, items: [I('Urgent malaria test', 'Still needed: malaria is far more common than VHF. Inform the laboratory first', '')] }],
       notes: ['Discuss immediately with the local infectious diseases or microbiology consultant, who will contact the Imported Fever Service and HCID network.', 'Avoid unnecessary blood tests until the risk is clarified; label any samples as high risk.', 'Notify the local health protection team.', 'MERS or avian influenza: airborne HCID precautions and urgent respiratory samples.', 'If septic, give ceftriaxone after blood cultures while awaiting advice.']
     }

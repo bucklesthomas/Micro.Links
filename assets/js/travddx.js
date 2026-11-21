@@ -124,7 +124,7 @@
     });
     var res = rank();
     h += '<div class="td-res" aria-live="polite">';
-    if (st.f.vhf) h += '<div class="td-alert">Possible VHF or HCID exposure: isolate, use the ACDP VHF risk assessment, and discuss with infectious diseases now. Still test for malaria (inform the lab first).</div>';
+    if (st.f.vhf) h += '<div class="td-alert">Possible VHF or HCID exposure: isolate, use the <a href="https://assets.publishing.service.gov.uk/media/6aa2833e92e72b8ac437f0b8/viral-haemorrhagic-fevers-risk-assessment-algorithm-september-2026.pdf" target="_blank" rel="noopener">ACDP VHF risk assessment algorithm ↗</a>, and discuss with infectious diseases now. Still test for malaria (inform the lab first).</div>';
     if (st.r >= 0 && MAL_ZONE[st.r]) h += '<div class="td-alert amber">Malaria area: test for malaria today in every febrile traveller, whatever else is on this list.</div>';
     if (st.r < 0 && st.o < 0 && !res.sel.length) h += '<p class="ab-note">Pick a region, onset and any features: the list updates as you go.</p>';
     else if (!res.list.length) h += '<p class="ab-note">No condition on this list matches all of that. Consider non-travel causes, and discuss with infectious diseases.</p>';

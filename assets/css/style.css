@@ -1204,3 +1204,8 @@ tr.sp-note td { padding: 10px 14px 12px; }
 #tdm .result { margin-top: 6px; padding: 12px 16px; }
 #tdm .note { margin: 8px 0 0; font-size: 14px; line-height: 1.55; }
 .tdm-field { text-transform: none; letter-spacing: 0; font-weight: 400; font-size: 13.5px; }
+
+/* Link buttons inside guide steps and results */
+.ie-links { margin: 0 0 14px; }
+.ie-step .ie-links { clear: both; }
+.td-alert a { font-weight: 600; text-decoration: underline; }

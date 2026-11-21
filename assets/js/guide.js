@@ -78,11 +78,20 @@
     return { id: id, steps: steps, answers: answers, question: G.Q[id] || null, result: result };
   }
 
+  // Link buttons on a question or result: links: [[label, url], ...] (external, open in a new tab)
+  function linkRow(links) {
+    if (!links || !links.length) return '';
+    return '<div class="rf-linkrow ie-links">' + links.map(function (l) {
+      return '<a href="' + esc(l[1]) + '" target="_blank" rel="noopener">' + esc(l[0]) + ' <span class="ext" aria-hidden="true">↗</span></a>';
+    }).join('') + '</div>';
+  }
+
   function renderResult(r, G) {
     var ref = G.ref;
     var h = '<section class="ie-result" aria-live="polite"' + (r.tone ? ' data-tone="' + r.tone + '"' : '') + '>' +
             '<p class="ie-eyebrow">' + esc(r.eyebrow || G.eyebrow || 'Suggested management') + '</p><h2>' + esc(r.title) + '</h2>';
     if (r.summary) h += '<p class="ie-summary">' + esc(r.summary) + '</p>';
+    h += linkRow(r.links);
     if (r.verify) h += '<p class="ie-verify">' + esc(r.verify) + '</p>';
     (r.regimens || []).forEach(function (g, gi) {
       if (gi > 0 && !g.noOr) h += '<p class="ie-or">or</p>';
@@ -152,7 +161,7 @@
       if (st.question) {
         var q = st.question;
         html += '<fieldset class="ie-step"><legend>' + esc(q.q) + '</legend>' +
-                (q.help ? '<p class="ie-help">' + esc(q.help) + '</p>' : '') + '<div class="ie-opts">';
+                (q.help ? '<p class="ie-help">' + esc(q.help) + '</p>' : '') + linkRow(q.links) + '<div class="ie-opts">';
         q.options.forEach(function (o, j) {
           html += '<button type="button" class="opt ie-opt" data-pick="' + j + '"><span class="opt-text">' + esc(o.label) + '</span>' +
                   (o.sub ? '<span class="ie-sub">' + esc(o.sub) + '</span>' : '') + '</button>';
