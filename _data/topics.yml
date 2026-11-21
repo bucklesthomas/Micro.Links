@@ -3,6 +3,7 @@
 - title: Bloodstream infection and sepsis
   items:
     - { name: "Positive blood culture triage", url: /blood-culture-triage/, kind: guide }
+    - { name: "Blood culture report (note template)", url: /blood-culture-report/, kind: tool }
     - { name: "S. aureus bacteraemia", url: /sab/, kind: guide }
     - { name: "Gram-negative bacteraemia", url: /gram-negative-bacteraemia/, kind: guide }
     - { name: "Neutropenic sepsis", url: /neutropenic-sepsis/, kind: guide }

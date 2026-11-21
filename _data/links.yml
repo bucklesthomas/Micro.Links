@@ -7,6 +7,10 @@
 
 - category: Local & on-call
   links:
+    - name: Blood culture report
+      url: "/blood-culture-report/"
+      note: Document a positive blood culture and the advice given, then copy into Epic
+      tags: blood culture report positive phoning result template note epic copy susceptibility sensitivities gram stain advice
     - name: CUH antimicrobial guidelines
       url: "https://app.eolasmedical.com/organisation/Cambridge%20University%20Hospitals%20NHS%20Foundation%20Trust"
       note: Cambridge University Hospitals, via Eolas Medical
