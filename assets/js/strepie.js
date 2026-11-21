@@ -82,15 +82,15 @@
   function yn(key, label, help) {
     var v = st[key];
     return '<div class="ab-sec"><h4>' + esc(label) + '</h4>' + (help ? '<p class="ab-note">' + esc(help) + '</p>' : '') +
-      '<div class="ab-aw"><button type="button" class="sp-chip' + (v === true ? ' on' : '') + '" data-yn="' + key + '" data-v="1">Yes</button>' +
-      '<button type="button" class="sp-chip' + (v === false ? ' on' : '') + '" data-yn="' + key + '" data-v="0">No</button></div></div>';
+      '<div class="opts yn-opts"><button type="button" class="opt' + (v === true ? ' on' : '') + '" aria-pressed="' + (v === true) + '" data-yn="' + key + '" data-v="1"><span class="opt-text">Yes</span></button>' +
+      '<button type="button" class="opt' + (v === false ? ' on' : '') + '" aria-pressed="' + (v === false) + '" data-yn="' + key + '" data-v="0"><span class="opt-text">No</span></button></div></div>';
   }
 
   function chips() {
     var list = find(st.q);
     if (!list.length) return '<p class="ab-note">No match. Try the species name without "Streptococcus", e.g. "mitis" or "bovis". If it is not listed, these papers have no figure for it.</p>';
     return list.map(function (sp) {
-      return '<button type="button" class="sp-chip si-chip' + (st.sp === sp.id ? ' on' : '') + '" data-sp="' + sp.id + '"><span>' + esc(sp.n) + '</span><small class="si-pill t-' + GROUP[sp.g].tone + '">' + esc(pct(sp)) + '</small></button>';
+      return '<button type="button" class="opt' + (st.sp === sp.id ? ' on' : '') + '" aria-pressed="' + (st.sp === sp.id) + '" data-sp="' + sp.id + '"><span class="opt-text">' + esc(sp.n) + '</span><span class="opt-pts"><span class="si-pill t-' + GROUP[sp.g].tone + '">' + esc(pct(sp)) + '</span></span></button>';
     }).join('');
   }
 
@@ -147,9 +147,9 @@
     if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback();
   }
 
-  host.innerHTML = '<label class="si-q-lab" for="si-q">Streptococcal species</label>' +
+  host.innerHTML = '<div class="ab-sec"><h4><label for="si-q">Streptococcal species</label></h4></div>' +
     '<input id="si-q" type="search" placeholder="e.g. mitis, bovis, gordonii, group B" autocomplete="off" spellcheck="false">' +
-    '<div id="si-list" class="cov-chips si-list"></div><div id="si-out" class="bp-result" aria-live="polite"></div>' +
+    '<div id="si-list" class="opts wide si-list"></div><div id="si-out" class="bp-result" aria-live="polite"></div>' +
     '<details class="si-all"><summary>All species, ranked</summary>' + table() + '</details>';
 
   host.addEventListener('input', function (e) {

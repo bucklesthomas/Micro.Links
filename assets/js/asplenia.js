@@ -16,7 +16,7 @@
   var ERY = { adult: 'Erythromycin 500 mg twice daily', child: 'Erythromycin 250 mg twice daily (2–8 years) or 500 mg (over 8 years)', infant: 'Erythromycin 125 mg twice daily (1 month to 2 years)' };
 
   function chips(key, arr) {
-    return '<div class="ab-aw">' + arr.map(function (x) { return '<button type="button" class="sp-chip' + (st[key] === x[0] ? ' on' : '') + '" data-' + key + '="' + x[0] + '">' + esc(x[1]) + '</button>'; }).join('') + '</div>';
+    return '<div class="opts wide">' + arr.map(function (x) { return '<button type="button" class="opt' + (st[key] === x[0] ? ' on' : '') + '" aria-pressed="' + (st[key] === x[0]) + '" data-' + key + '="' + x[0] + '"><span class="opt-text">' + esc(x[1]) + '</span></button>'; }).join('') + '</div>';
   }
   function form() {
     var dl = st.sit === 'elective' ? 'Date of planned splenectomy (optional)' : st.sit === 'done' ? 'Date of splenectomy (optional)' : st.sit === 'chemo' ? 'Date treatment starts (optional)' : '';

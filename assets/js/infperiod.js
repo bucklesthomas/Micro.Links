@@ -153,8 +153,8 @@
   function href(u) { return document.getElementById('view-links') ? '#' + u.replace(/^\/|\/$/g, '') : base() + u; }
 
   function form() {
-    var h = '<div class="ab-sec"><h4>Infection</h4><div class="ab-aw">' + ORDER.map(function (k) {
-      return '<button type="button" class="sp-chip' + (st.d === k ? ' on' : '') + '" data-d="' + k + '">' + esc(D[k].n) + '</button>';
+    var h = '<div class="ab-sec"><h4>Infection</h4><div class="opts wide">' + ORDER.map(function (k) {
+      return '<button type="button" class="opt' + (st.d === k ? ' on' : '') + '" aria-pressed="' + (st.d === k) + '" data-d="' + k + '"><span class="opt-text">' + esc(D[k].n) + '</span></button>';
     }).join('') + '</div></div>';
     if (st.d) {
       var x = D[st.d];

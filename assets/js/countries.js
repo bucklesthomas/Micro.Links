@@ -37,9 +37,9 @@
   function href(u) { return document.getElementById('view-links') ? '#' + u.replace(/^\/|\/$/g, '') : base() + u; }
 
   function shell() {
-    host.innerHTML = '<label class="si-q-lab" for="ct-q">Countries visited</label>' +
+    host.innerHTML = '<div class="ab-sec"><h4><label for="ct-q">Countries visited</label></h4></div>' +
       '<input id="ct-q" type="search" placeholder="Type a country, e.g. Nigeria, India, Brazil" autocomplete="off" spellcheck="false">' +
-      '<div id="ct-list" class="si-list"></div><div id="ct-sel" class="ct-sel"></div><div id="ct-out" aria-live="polite"></div>';
+      '<div id="ct-list" class="opts wide si-list"></div><div id="ct-sel" class="ct-sel"></div><div id="ct-out" aria-live="polite"></div>';
     draw();
   }
 
@@ -47,7 +47,7 @@
     var list = host.querySelector('#ct-list'), sel = host.querySelector('#ct-sel'), out = host.querySelector('#ct-out');
     var hits = find(st.q);
     list.innerHTML = st.q ? (hits.length ? hits.slice(0, 24).map(function (c) {
-      return '<button type="button" class="sp-chip' + (st.sel.indexOf(c.n) >= 0 ? ' on' : '') + '" data-c="' + esc(c.n) + '">' + esc(c.n) + '</button>';
+      return '<button type="button" class="opt' + (st.sel.indexOf(c.n) >= 0 ? ' on' : '') + '" data-c="' + esc(c.n) + '"><span class="opt-text">' + esc(c.n) + '</span><span class="opt-pts">' + esc(c.r) + '</span></button>';
     }).join('') : '<p class="ab-note">No match. Not every country is listed: use TravelHealthPro for others.</p>') : '';
     sel.innerHTML = st.sel.length ? st.sel.map(function (n) { return '<button type="button" class="ct-tag" data-rm="' + esc(n) + '" aria-label="Remove ' + esc(n) + '">' + esc(n) + ' <span aria-hidden="true">×</span></button>'; }).join('') : '';
     if (!st.sel.length) { out.innerHTML = '<p class="ab-note">Add one or more countries. Each shows the UKHSA malaria advice, haemorrhagic fever and other notable risks, and a link to the TravelHealthPro country page.</p>'; out.removeAttribute('data-text'); return; }

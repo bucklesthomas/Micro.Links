@@ -1263,7 +1263,7 @@ a.ie-druglink:hover { color: var(--accent-ink); text-decoration-color: currentCo
 .si-q-lab { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-ink); }
 #si-q, #ct-q { width: 100%; max-width: 420px; margin-bottom: 10px; padding: 10px 12px; font: inherit; font-size: 16px; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; }
 #si-q:focus, #ct-q:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-.si-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.si-list { margin-bottom: 12px; }
 .si-chip { display: inline-flex; align-items: center; gap: 8px; }
 .si-pill { font-size: 11.5px; font-weight: 700; padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
 .t-green { background: var(--low-bg); color: var(--low); }
@@ -1370,5 +1370,20 @@ input[type="date"] { min-height: 40px; }
 .sy-t.lv2 { border-color: var(--low); background: var(--low-bg); } .sy-t.lv2 .sy-dot { border-color: var(--low); background: var(--low); } .sy-t.lv2 .sy-lv { color: var(--low); font-weight: 700; }
 .sy-go { flex: none; display: flex; align-items: center; padding: 0 10px; font-size: 12.5px; font-weight: 700; text-decoration: none; color: var(--accent-ink); border-left: 1px solid var(--line); }
 @media (max-width: 760px) { .sy-area ul { grid-template-columns: 1fr; } }
-.cotd-stem, .cotd-opt, .cotd-ans, .cotd-line, .cotd-next { font-family: var(--sans); }
-.ip-pep, .ip-notes, .ip-opt .opt-text, .is-list, .is-grid .opt-text, .as-when, .sy-t button, .sy-sum span, .sy-exam, .sy-go, .sy-count, .ct-card, .ct-sum, .ct-tag, .vc-h small { font-family: var(--sans); }
+.cotd-ans, .cotd-line, .cotd-next, .cotd-kicker { font-family: var(--sans); }
+.ip-pep span, .ip-rel, .ip-notes, .is-sub, .is-list, .as-when, .sy-lv, .sy-sum span, .sy-exam, .sy-go, .sy-count, .ct-mal, .ct-flags, .ct-also, .ct-sum ul, .ct-card header small, .ct-tag, .ct-pill, .si-pill, .vc-h small, #si-q, #ct-q { font-family: var(--sans); }
+
+/* Box options as buttons (same look as the score option boxes) */
+button.opt { font: inherit; color: var(--ink); }
+.opt.on { background: var(--accent-soft); border-color: var(--accent); }
+.opt.on .opt-text { font-weight: 700; color: var(--accent-ink); }
+.opt.on .opt-pts { color: var(--accent-ink); }
+.opts.wide { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.opts.yn-opts { grid-template-columns: repeat(2, minmax(92px, 140px)); }
+.si-list { margin-bottom: 12px; }
+.ct-card h3, .ct-sum h3 { font-size: 15px; }
+.cotd-stem { font-size: 15px; }
+.cotd-opt { font-family: inherit; }
+.si-echo span, .si-note { font-family: var(--sans); }
+.sy-t { background: var(--bg); }
+@media (max-width: 760px) { .opts.wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
