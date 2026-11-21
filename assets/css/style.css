@@ -1258,3 +1258,26 @@ a.ie-druglink:hover { color: var(--accent-ink); text-decoration-color: currentCo
 /* Search: recently opened */
 .ss-head { display: flex; justify-content: space-between; align-items: center; margin: 0; padding: 8px 12px 4px; font: 600 11.5px/1.2 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .ss-clear { font: 600 12px var(--sans); text-transform: none; letter-spacing: 0; color: var(--accent-ink); background: none; border: 0; cursor: pointer; padding: 2px 4px; }
+
+/* ── Strep species → IE risk ─────────────────────────── */
+.si-q-lab { display: block; margin-bottom: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-ink); }
+#si-q { width: 100%; max-width: 420px; margin-bottom: 10px; padding: 10px 12px; font: inherit; font-size: 16px; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; }
+#si-q:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.si-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.si-chip { display: inline-flex; align-items: center; gap: 8px; }
+.si-pill { font-size: 11.5px; font-weight: 700; padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+.t-green { background: var(--low-bg); color: var(--low); }
+.t-amber { background: var(--mid-bg); color: var(--mid); }
+.t-red { background: var(--high-bg); color: var(--high); }
+.si-note { margin-top: 10px; }
+.si-echo { display: flex; flex-direction: column; gap: 3px; margin: 12px 0 8px; padding: 12px 14px; background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; }
+.si-echo b { font-size: 18px; color: var(--accent-ink); }
+.si-echo span { font-size: 13.5px; line-height: 1.45; }
+.si-all { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 10px; }
+.si-all summary { cursor: pointer; font-weight: 700; font-size: 14px; color: var(--accent-ink); }
+.si-tbl td { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.si-tbl td small { color: var(--muted); }
+.si-bar { display: inline-block; vertical-align: middle; width: 90px; height: 8px; margin-right: 8px; background: var(--bg); border: 1px solid var(--line-soft); border-radius: 4px; overflow: hidden; }
+.si-bar i { display: block; height: 100%; }
+.si-bar i.t-green { background: var(--low); } .si-bar i.t-amber { background: var(--mid); } .si-bar i.t-red { background: var(--high); }
+@media (max-width: 760px) { .si-bar { width: 50px; } }

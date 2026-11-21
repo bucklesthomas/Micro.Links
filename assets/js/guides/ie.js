@@ -73,6 +73,7 @@
     /* ── Streptococci ────────────────────────── */
     strep_type: {
       q: 'Which streptococcus?',
+      links: [['Strep species and endocarditis risk', '/strep-ie-risk/']],
       options: [
         { label: 'Oral streptococcus or S. gallolyticus', sub: 'Viridans group: mitis, sanguinis, salivarius, mutans; S. bovis group', next: 'strep_mic' },
         { label: 'β-haemolytic or S. anginosus group', sub: 'Groups A, B, C, G; S. anginosus, constellatus, intermedius', next: 'R_strep_bhs' },

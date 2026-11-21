@@ -181,6 +181,10 @@
     [
      "Positive blood culture triage",
      "/blood-culture-triage/"
+    ],
+    [
+     "Strep species and endocarditis risk",
+     "/strep-ie-risk/"
     ]
    ],
    "id": "streptococcus-agalactiae-group-b"
@@ -233,6 +237,10 @@
     [
      "Positive blood culture triage",
      "/blood-culture-triage/"
+    ],
+    [
+     "Strep species and endocarditis risk",
+     "/strep-ie-risk/"
     ]
    ],
    "id": "viridans-group-streptococci"
@@ -254,6 +262,10 @@
     [
      "Positive blood culture triage",
      "/blood-culture-triage/"
+    ],
+    [
+     "Strep species and endocarditis risk",
+     "/strep-ie-risk/"
     ]
    ],
    "id": "streptococcus-anginosus-group"

@@ -17,6 +17,7 @@
   items:
     - { name: "Endocarditis therapy", url: /endocarditis/, kind: guide }
     - { name: "S. aureus bacteraemia", url: /sab/, kind: guide }
+    - { name: "Strep species and endocarditis risk", url: /strep-ie-risk/, kind: tool }
     - { name: "Duke-ISCVID criteria (2023)", url: "/scores/#duke", kind: score }
     - { name: "Endocarditis trials (POET, POET II, EASE)", url: "/trials/#endocarditis", kind: trials }
     - { name: "Lab test finder: blood cultures, Q fever, Bartonella, 16S PCR", url: /lab-tests/, kind: tool }

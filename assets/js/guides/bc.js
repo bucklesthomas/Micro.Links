@@ -112,26 +112,30 @@
     R_bhs: {
       title: 'β-haemolytic streptococcal bacteraemia', tone: 'red',
       summary: 'Always significant. Group A (S. pyogenes) is invasive group A strep: notify.',
+      links: [['Strep species and endocarditis risk', '/strep-ie-risk/']],
       regimens: [{ items: [I('Benzylpenicillin', '1.2–2.4 g IV every 4–6 hours (2.4 g every 4 hours if severe)')] }, { name: 'Necrotising infection or toxic shock: add', noOr: true, items: [I('Clindamycin', '1.2 g IV every 6 hours (toxin suppression)'), I('and consider IVIG', 'Specialist advice')] }],
       notes: ['Look for skin and soft tissue infection, necrotising fasciitis (LRINEC on the Scores page), septic arthritis.', 'Group A: notify the health protection team; high-risk household contacts need prophylaxis (see contact prophylaxis guide).', 'Group B in adults: look for endocarditis, diabetes, malignancy; group B in pregnancy or postpartum needs obstetric input.']
     },
     R_vgs: {
       title: 'Viridans group streptococcus', tone: 'amber',
       summary: 'Can be a contaminant in a single set, but is a typical endocarditis organism.',
+      links: [['Strep species and endocarditis risk', '/strep-ie-risk/']],
       regimens: [{ name: 'If significant', items: [I('Benzylpenicillin or ceftriaxone', 'By susceptibility')] }],
-      notes: ['Single set, no endocarditis risk, well: possibly contaminant; repeat cultures.', '2 or more sets, or any predisposing heart condition: echo and work up for endocarditis (see the endocarditis guide).', 'Neutropenia with mucositis: viridans streptococci cause severe sepsis.']
+      notes: ['Single set, no endocarditis risk, well: possibly contaminant; repeat cultures.', '2 or more sets, or any predisposing heart condition: echo and work up for endocarditis (see the endocarditis guide).', 'Risk varies about tenfold by species: S. mutans, S. cristatus, S. gordonii and S. sanguinis over 30%, S. mitis/oralis about 12%, S. salivarius about 6% (Deas 2025). Use the species risk tool for echo advice.', 'Neutropenia with mucositis: viridans streptococci cause severe sepsis.']
     },
     R_ang: {
       title: 'Streptococcus anginosus group', tone: 'amber',
       summary: 'Always significant: look for an abscess.',
+      links: [['Strep species and endocarditis risk', '/strep-ie-risk/']],
       regimens: [{ items: [I('Benzylpenicillin or ceftriaxone', 'By susceptibility, plus source control')] }],
       notes: ['Image for liver, brain, lung, dental or intra-abdominal abscess.']
     },
     R_bov: {
       title: 'Streptococcus gallolyticus (bovis) bacteraemia', tone: 'amber',
       summary: 'Strongly associated with endocarditis and colorectal neoplasia.',
+      links: [['Strep species and endocarditis risk', '/strep-ie-risk/']],
       regimens: [{ items: [I('Benzylpenicillin or ceftriaxone', 'By susceptibility')] }],
-      notes: ['Echocardiography for all.', 'Colonoscopy.']
+      notes: ['Echocardiography for all (endocarditis in about 31% of S. gallolyticus bacteraemias).', 'Colonoscopy.']
     },
     R_ent: {
       title: 'Enterococcal bacteraemia', tone: 'amber',

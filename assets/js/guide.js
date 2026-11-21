@@ -100,7 +100,9 @@
   function linkRow(links) {
     if (!links || !links.length) return '';
     return '<div class="rf-linkrow ie-links">' + links.map(function (l) {
-      return '<a href="' + esc(l[1]) + '" target="_blank" rel="noopener">' + esc(l[0]) + ' <span class="ext" aria-hidden="true">↗</span></a>';
+      var u = String(l[1]);
+      if (u.charAt(0) === '/') return '<a href="' + esc(hashMode ? '#' + u.replace(/^\/|\/$/g, '').split('/')[0] : sbase + u) + '">' + esc(l[0]) + '</a>';
+      return '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(l[0]) + ' <span class="ext" aria-hidden="true">↗</span></a>';
     }).join('') + '</div>';
   }
 

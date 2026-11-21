@@ -321,6 +321,10 @@
     - name: MDCalc
       url: "https://www.mdcalc.com/"
       tags: scores calculators
+    - name: Strep species and endocarditis risk
+      url: "/strep-ie-risk/"
+      note: Risk of endocarditis by streptococcal species in bacteraemia, with echo advice (Deas 2025 meta-analysis)
+      tags: streptococcus strep species endocarditis ie risk viridans mitis oralis sanguinis gordonii mutans cristatus gallolyticus bovis salivarius anginosus parasanguinis echo tte toe bacteraemia hamilton deas chamat-hedemand
     - name: TST/IGRA Interpreter
       url: "https://www.tstin3d.com/en/calc.html"
       note: Risk of active TB from a positive TST or IGRA, and hepatotoxicity risk, to guide latent TB treatment (Menzies, McGill)
