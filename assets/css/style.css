@@ -1393,44 +1393,37 @@ button.opt { font: inherit; color: var(--ink); }
 .ab-box { min-width: 0; }
 
 /* ── Antibiotic spectrum chart ───────────────────────── */
-.sp-quick { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
-#sp-q { flex: 1 1 220px; min-width: 0; max-width: 340px; padding: 8px 10px; font: inherit; font-family: var(--sans); font-size: 15px; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; }
-#sp-q:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-.sp-key { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 4px 0 12px; font-family: var(--sans); font-size: 13px; color: var(--muted); }
+#sp-q { flex: 1 1 260px; max-width: 340px; }
+.sp-cls { margin: 4px 0 12px; }
+.sp-key { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 14px; font-family: var(--sans); font-size: 13px; color: var(--muted); }
 .sp-key span { display: inline-flex; align-items: center; gap: 6px; }
-.sp-key i { display: inline-block; width: 16px; height: 16px; border-radius: 3px; border: 1px solid var(--line); }
-.spec-scroll { max-height: 78vh; overflow: auto; border: 1px solid var(--line-soft, var(--line)); border-radius: 8px; }
-table.spec { border-collapse: separate; border-spacing: 0; font-family: var(--sans); font-size: 13px; }
-table.spec th, table.spec td { border-bottom: 1px solid var(--line-soft, var(--line)); }
-table.spec thead th { position: sticky; background: var(--surface, var(--bg)); z-index: 2; }
-table.spec .spec-grp th { top: 0; height: 26px; padding: 4px 6px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--accent-ink); text-align: left; border-left: 2px solid var(--line); white-space: nowrap; }
-table.spec .spec-org th { top: 26px; padding: 6px 0; vertical-align: bottom; font-weight: 600; color: var(--ink); }
-table.spec .spec-org th span { display: inline-block; writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; font-size: 12.5px; line-height: 1; padding: 0 7px; }
-table.spec .spec-corner { left: 0; z-index: 3; min-width: 170px; text-align: left; padding: 6px 10px; vertical-align: bottom; font-size: 12px; color: var(--muted); font-weight: 600; border-left: 0; }
-table.spec tbody th[scope="row"] { position: sticky; left: 0; z-index: 1; background: var(--surface, var(--bg)); text-align: left; padding: 5px 10px; font-weight: 600; white-space: nowrap; border-right: 1px solid var(--line); }
-table.spec tbody th[scope="row"] a { color: var(--accent-ink); text-decoration: none; }
-table.spec tbody th[scope="row"] a:hover { text-decoration: underline; }
-table.spec tbody th[scope="row"] small { display: block; font-weight: 400; font-size: 11px; color: var(--muted); }
-table.spec .spec-cls th { position: sticky; left: 0; padding: 10px 10px 4px; text-align: left; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); background: var(--surface, var(--bg)); }
-table.spec td { width: 26px; min-width: 26px; height: 26px; padding: 0; border-left: 1px solid var(--line-soft, var(--line)); }
-table.spec td.gs, table.spec th.gs { border-left: 2px solid var(--line); }
-table.spec td.c2, .sp-key i.c2 { background: var(--low); }
-table.spec td.c1, .sp-key i.c1 { background: color-mix(in srgb, var(--mid) 70%, transparent); }
-table.spec td.c0, .sp-key i.c0 { background: transparent; }
-table.spec tbody tr:not(.spec-cls):hover th[scope="row"] { background: var(--accent-soft); }
-table.spec tbody tr:not(.spec-cls):hover td { box-shadow: inset 0 0 0 999px rgba(80, 140, 200, .10); }
-table.spec .hl { box-shadow: inset 0 0 0 999px rgba(80, 140, 200, .10); }
-table.spec thead th.hl { color: var(--accent-ink); }
+.sp-key i { display: inline-block; width: 14px; height: 14px; border-radius: 3px; }
+.spec-scroll { max-height: 80vh; overflow: auto; }
+table.spec { width: auto; border-collapse: separate; border-spacing: 2px; font-family: var(--sans); }
+table.spec thead th { position: sticky; z-index: 2; background: var(--surface); font-weight: 600; }
+table.spec .spec-grp th { top: 0; height: 22px; padding: 0 4px 4px; text-align: left; vertical-align: bottom; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--accent-ink); border-bottom: 2px solid var(--accent-soft); white-space: nowrap; }
+table.spec .spec-org th { top: 26px; padding: 6px 0 6px; vertical-align: bottom; color: var(--muted); }
+table.spec .spec-org th span { display: inline-block; writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; font-size: 12.5px; line-height: 1; }
+table.spec .spec-corner { left: 0; z-index: 3; width: 1%; min-width: 190px; border-bottom: 0; }
+table.spec th.gap, table.spec td.gap { width: 8px; min-width: 8px; padding: 0; border: 0; background: none; }
+table.spec tbody th[scope="row"] { position: sticky; left: 0; z-index: 1; background: var(--surface); text-align: left; padding: 4px 12px 4px 0; white-space: nowrap; font-family: var(--serif, 'Libre Baskerville', Georgia, serif); font-size: 14px; font-weight: 700; }
+table.spec tbody th[scope="row"] a { color: var(--ink); text-decoration: none; }
+table.spec tbody th[scope="row"] a:hover { color: var(--accent-ink); text-decoration: underline; }
+table.spec tbody th[scope="row"] small { display: block; margin-top: 1px; font-family: var(--sans); font-weight: 400; font-size: 11.5px; color: var(--muted); }
+table.spec .spec-cls th { position: sticky; left: 0; padding: 14px 0 4px; text-align: left; background: var(--surface); }
+table.spec .spec-cls th span { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+table.spec tbody tr:first-child.spec-cls th { padding-top: 6px; }
+table.spec td { width: 32px; min-width: 26px; height: 28px; padding: 0; }
+table.spec .spec-org th { width: 32px; }
+table.spec td i { display: block; height: 100%; min-height: 28px; border-radius: 4px; }
+table.spec .c2 { background: var(--low); }
+table.spec .c1 { background: color-mix(in srgb, var(--mid) 78%, var(--surface)); }
+table.spec .c0 { background: var(--bg); box-shadow: inset 0 0 0 1px var(--line-soft, var(--line)); }
+.sp-key .c2 { background: var(--low); }
+.sp-key .c1 { background: color-mix(in srgb, var(--mid) 78%, var(--surface)); }
+.sp-key .c0 { background: var(--bg); box-shadow: inset 0 0 0 1px var(--line); }
+table.spec tbody tr:not(.spec-cls):hover th[scope="row"] a { color: var(--accent-ink); }
+table.spec tbody tr:not(.spec-cls):hover td i, table.spec td.hl i { filter: brightness(.94); }
+table.spec thead th.hl span { color: var(--accent-ink); font-weight: 700; }
 table.spec .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.sp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
-.sp-seg { display: inline-flex; flex-wrap: wrap; border: 1.5px solid var(--line); border-radius: 8px; overflow: hidden; }
-.sp-seg button { padding: 8px 12px; font: inherit; font-family: var(--sans); font-size: 14px; color: var(--muted); background: var(--bg); border: 0; border-right: 1px solid var(--line); cursor: pointer; }
-.sp-seg button:last-child { border-right: 0; }
-.sp-seg button.on { color: var(--accent-ink); background: var(--accent-soft); font-weight: 700; }
-.sp-filter { margin: 0 0 10px; }
-.sp-filter summary { cursor: pointer; font-family: var(--sans); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--accent-ink); padding: 4px 0; }
-.sp-filter summary small { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--muted); }
-.sp-filter .opts { margin-top: 8px; }
-@media (max-width: 760px) { .sp-seg { width: 100%; } .sp-seg button { flex: 1; padding: 8px 6px; font-size: 13px; } #sp-q { max-width: none; } .spec-scroll { max-height: 70vh; } table.spec .spec-corner, table.spec tbody th[scope="row"] { min-width: 0; max-width: 132px; white-space: normal; } }
-.sp-short { display: none; }
-@media (max-width: 760px) { .sp-long { display: none; } .sp-short { display: inline; } .sp-seg button { white-space: nowrap; } }
+@media (max-width: 760px) { #spec .ab-aw { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; margin-right: -12px; } #spec .ab-aw::-webkit-scrollbar { display: none; } #spec .sp-chip { flex: none; } table.spec .spec-corner { min-width: 0; } table.spec tbody th[scope="row"] { white-space: normal; min-width: 120px; max-width: 140px; font-size: 13px; } .spectrum-wrap .af-card { padding-left: 12px; padding-right: 12px; } }
