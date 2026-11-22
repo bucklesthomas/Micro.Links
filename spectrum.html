@@ -1,0 +1,21 @@
+---
+layout: default
+title: Antibiotic spectrum chart
+permalink: /spectrum/
+scripts:
+  - /assets/js/abx-data.js
+  - /assets/js/spectrum.js
+---
+<header class="page-head">
+  <p class="page-kind k-reference">Reference</p>
+  <h1 class="page-title">Antibiotic spectrum chart</h1>
+  <p class="lede">Every antibiotic on this site against the organisms that matter, colour coded at a glance. Narrow it down by organism group or antibiotic class, or tap a drug name for doses and details.</p>
+  <p class="page-meta"><span class="pm-check">Checked November 2026</span><span>Main source: EUCAST intrinsic resistance; site antibiotic data</span></p>
+</header>
+<p class="ie-disclaimer">Typical UK activity, not the patient’s isolate. Green does not guarantee susceptibility: check culture results, the site of infection, dosing and local resistance rates.</p>
+
+<section class="card af-card">
+  <div id="spec" data-abx="{{ '/antibiotics/' | relative_url }}"><noscript>This chart needs JavaScript turned on.</noscript></div>
+</section>
+
+<p class="ie-source">Uses the same spectrum data as the <a href="{{ '/antibiotics/' | relative_url }}">antibiotics page</a> and the <a href="{{ '/coverage/' | relative_url }}">coverage checker</a>, checked against the <a href="{{ '/intrinsic-resistance/' | relative_url }}">EUCAST intrinsic resistance table</a>.</p>

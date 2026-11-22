@@ -26,6 +26,10 @@
       url: "/coverage/"
       note: Is the current regimen covering the bugs you are worried about?
       tags: coverage spectrum regimen gram-positive gram-negative anaerobes atypical covering gaps empirical
+    - name: Antibiotic spectrum chart
+      url: "/spectrum/"
+      note: Every antibiotic against key organisms, colour coded at a glance
+      tags: spectrum chart table grid activity coverage antibiotic antibiotics gram positive negative anaerobes atypicals mrsa esbl pseudomonas heatmap
     - name: Antibiotics (UK-AWaRe, dosing, PK/PD)
       url: "/antibiotics/"
       note: Doses, PK/PD and AUC targets, spectrum and AWaRe category
