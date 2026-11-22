@@ -75,11 +75,13 @@
 
   // ── Interactive explorer ─────────────────────────────────────────
   var PRE = {
-    bl: { n: 'Meropenem-like β-lactam', dose: 1000, v: 20, th: 1, fu: 0.98, taus: [6, 8, 12], tau: 8, modes: ['bolus', 'ext', 'cont'], mode: 'bolus', mic: 2, idx: 'time', unit: 'mg', note: '1 g every 8 hours, half-life about 1 hour.' },
-    ag: { n: 'Gentamicin-like aminoglycoside', dose: 490, v: 21, th: 2.5, fu: 1, taus: [8, 24], tau: 24, modes: ['bolus'], mode: 'bolus', mic: 1, idx: 'peak', unit: 'mg', note: '7 mg/kg for a 70 kg adult, half-life about 2.5 hours.' },
-    vg: { n: 'Vancomycin', dose: 1000, v: 49, th: 6, fu: 0.55, taus: [8, 12, 24], tau: 12, modes: ['bolus', 'cont'], mode: 'bolus', mic: 1, idx: 'auc', unit: 'mg', note: '1 g every 12 hours, volume 0.7 L/kg, half-life about 6 hours. Shown as total drug, as in TDM practice.' }
+    bl: { n: 'Meropenem-like β-lactam', dose: 1000, v: 20, th: 1, fu: 0.98, ymax: 90, taus: [6, 8, 12], tau: 8, modes: ['bolus', 'ext', 'cont'], mode: 'bolus', mic: 2, idx: 'time', unit: 'mg', note: '1 g every 8 hours, half-life about 1 hour.' },
+    ag: { n: 'Gentamicin-like aminoglycoside', dose: 490, v: 21, th: 2.5, fu: 1, ymax: 50, taus: [8, 24], tau: 24, modes: ['bolus'], mode: 'bolus', mic: 1, idx: 'peak', unit: 'mg', note: '7 mg/kg for a 70 kg adult, half-life about 2.5 hours.' },
+    vg: { n: 'Vancomycin', dose: 1000, v: 49, th: 6, fu: 0.55, ymax: 100, taus: [8, 12, 24], tau: 12, modes: ['bolus', 'cont'], mode: 'bolus', mic: 1, idx: 'auc', unit: 'mg', note: '1 g every 12 hours, volume 0.7 L/kg, half-life about 6 hours. Shown as total drug, as in TDM practice.' }
   };
-  var MICS = [0.125, 0.25, 0.5, 1, 2, 4, 8, 16, 32];
+  // MIC slider is continuous on a log2 scale from 0.125 to 32 mg/L; whole steps are the doubling dilutions
+  function micFrom(v) { return Math.pow(2, +v); }
+  function micText(m) { return m >= 10 ? Math.round(m) : m >= 1 ? (Math.round(m * 10) / 10) : (Math.round(m * 100) / 100); }
   var MODE = { bolus: 'Short infusion (30 min)', ext: 'Extended infusion (3 hours)', cont: 'Continuous infusion' };
   var st = { pre: 'bl', tau: 8, mode: 'bolus', mic: 2, dmul: 1 };
 
@@ -102,7 +104,7 @@
 
   function plot(r) {
     var W2 = 640, H2 = 300, L = 46, Rr = 16, T2 = 16, B = 36;
-    var ymax = Math.max(r.cmax, st.mic) * 1.15;
+    var ymax = Math.max(PRE[st.pre].ymax, r.cmax * 1.05, st.mic * 1.15);
     var nice = [1, 2, 5, 10, 20, 25, 50, 100, 200];
     var step = nice.filter(function (n) { return ymax / n <= 6; })[0] || 200;
     ymax = Math.ceil(ymax / step) * step;
@@ -127,7 +129,7 @@
       var pk = r.pts.reduce(function (m, q) { return q[1] > m[1] ? q : m; }, [0, 0]);
       h += '<circle class="dot" cx="' + sx(pk[0]).toFixed(1) + '" cy="' + sy(pk[1]).toFixed(1) + '" r="4.5"/><text class="lab strong" x="' + (sx(pk[0]) + 10).toFixed(1) + '" y="' + (sy(pk[1]) + 4).toFixed(1) + '">Cmax ' + pk[1].toFixed(1) + '</text>';
     }
-    h += '<line class="mic" x1="' + L + '" x2="' + (W2 - Rr) + '" y1="' + sy(st.mic).toFixed(1) + '" y2="' + sy(st.mic).toFixed(1) + '"/><text class="micl" x="' + (W2 - Rr - 2) + '" y="' + (sy(st.mic) - 6).toFixed(1) + '" text-anchor="end">MIC ' + st.mic + ' mg/L</text>';
+    h += '<line class="mic" x1="' + L + '" x2="' + (W2 - Rr) + '" y1="' + sy(st.mic).toFixed(1) + '" y2="' + sy(st.mic).toFixed(1) + '"/><text class="micl" x="' + (W2 - Rr - 2) + '" y="' + (sy(st.mic) - 6).toFixed(1) + '" text-anchor="end">MIC ' + micText(st.mic) + ' mg/L</text>';
     h += '<line class="ax" x1="' + L + '" x2="' + (W2 - Rr) + '" y1="' + (H2 - B) + '" y2="' + (H2 - B) + '"/><line class="ax" x1="' + L + '" x2="' + L + '" y1="' + T2 + '" y2="' + (H2 - B) + '"/>';
     h += '<text class="axl" x="' + ((L + W2 - Rr) / 2) + '" y="' + (H2 - 6) + '" text-anchor="middle">Hours (steady state)</text><text class="axl" transform="translate(13 ' + ((T2 + H2 - B) / 2) + ') rotate(-90)" text-anchor="middle">' + (st.pre === 'vg' ? 'Total' : 'Free') + ' concentration (mg/L)</text>';
     return h + '</svg>';
@@ -141,9 +143,14 @@
     var h = '<div class="pk-ctrl"><div class="ab-sec"><h4>Drug</h4>' + chips('pre', Object.keys(PRE).map(function (k) { return [k, PRE[k].n]; })) + '</div>';
     h += '<div class="ab-sec"><h4>Dosing interval</h4>' + chips('tau', P.taus.map(function (t) { return [t, 'Every ' + t + ' hours']; })) + '</div>';
     if (P.modes.length > 1) h += '<div class="ab-sec"><h4>Infusion</h4>' + chips('mode', P.modes.map(function (m) { return [m, MODE[m]]; })) + '</div>';
-    h += '<div class="ab-sec"><h4>Organism MIC</h4><div class="pk-range"><input type="range" id="pk-mic" min="0" max="' + (MICS.length - 1) + '" step="1" value="' + MICS.indexOf(st.mic) + '" aria-label="MIC"><output>' + st.mic + ' mg/L</output></div></div>';
-    h += '<div class="ab-sec"><h4>Dose</h4><div class="pk-range"><input type="range" id="pk-dose" min="0.5" max="2" step="0.25" value="' + st.dmul + '" aria-label="Dose"><output>' + Math.round(r.p.dose) + ' mg per dose (' + Math.round(r.daily) + ' mg a day)</output></div></div></div>';
-    h += '<div class="pk-plot">' + plot(r) + '</div>';
+    h += '<div class="ab-sec"><h4>Organism MIC</h4><div class="pk-range"><input type="range" id="pk-mic" min="-3" max="5" step="0.01" value="' + (Math.log(st.mic) / Math.LN2) + '" aria-label="MIC"><output id="pk-mic-o">' + micText(st.mic) + ' mg/L</output></div></div>';
+    h += '<div class="ab-sec"><h4>Dose</h4><div class="pk-range"><input type="range" id="pk-dose" min="0.5" max="2" step="0.01" value="' + st.dmul + '" aria-label="Dose"><output id="pk-dose-o">' + doseText(r) + '</output></div></div></div>';
+    h += '<div id="pk-res">' + results(r) + '</div>';
+    return h;
+  }
+  function doseText(r) { var d = r.p.dose; d = d >= 200 ? Math.round(d / 10) * 10 : Math.round(d); return d + ' mg per dose (' + Math.round(d * 24 / st.tau / 10) * 10 + ' mg a day)'; }
+  function results(r) {
+    var P = PRE[st.pre], h = '<div class="pk-plot">' + plot(r) + '</div>';
     var ok = function (b) { return b ? 'ok' : 'low'; };
     var m1 = r.ft, m2 = r.cmax / st.mic, m3 = r.auc / st.mic;
     var tgt = st.pre === 'bl' ? m1 >= 40 : st.pre === 'ag' ? m2 >= 8 : m3 >= 400;
@@ -193,13 +200,23 @@
     else st[k] = v;
     redrawExplorer();
   });
+  var raf = 0;
+  function live() {
+    raf = 0;
+    var r = sim(), res = host.querySelector('#pk-res');
+    if (res) res.innerHTML = results(r);
+    var mo = host.querySelector('#pk-mic-o'), dd = host.querySelector('#pk-dose-o');
+    if (mo) mo.textContent = micText(st.mic) + ' mg/L';
+    if (dd) dd.textContent = doseText(r);
+  }
   host.addEventListener('input', function (e) {
-    if (e.target.id === 'pk-mic') st.mic = MICS[+e.target.value];
-    else if (e.target.id === 'pk-dose') st.dmul = +e.target.value;
+    if (e.target.id === 'pk-mic') {
+      var v = +e.target.value, w = Math.round(v);
+      if (Math.abs(v - w) < 0.06) v = w; // gently snap to the doubling dilutions
+      st.mic = micFrom(v);
+    } else if (e.target.id === 'pk-dose') st.dmul = +e.target.value;
     else return;
-    var id = e.target.id;
-    redrawExplorer();
-    var el = host.querySelector('#' + id); if (el) el.focus();
+    if (!raf) raf = requestAnimationFrame(live);
   });
   // Arrow marker defs once
   var defs = document.createElement('div');
