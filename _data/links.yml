@@ -55,6 +55,10 @@
       note: Subscription
       tags: renal dosing ckd
 
+    - name: TB drug monographs
+      url: "https://www.tbdrugmonographs.co.uk/"
+      note: Monitoring and safe use of first-line and MDR-TB drugs (UK)
+      tags: tb tuberculosis drug monographs monitoring rifampicin isoniazid pyrazinamide ethambutol bedaquiline linezolid mdr-tb toxicity baseline tests interactions
 - category: Guidelines
   links:
     - name: BASHH guidelines

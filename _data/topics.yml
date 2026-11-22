@@ -91,6 +91,7 @@
   items:
     - { name: "HIV opportunistic infections", url: /hiv-oi/, kind: guide }
     - { name: "Tuberculosis", url: /tb/, kind: guide }
+    - { name: "TB drug monographs", url: "https://www.tbdrugmonographs.co.uk/", kind: link }
     - { name: "Syphilis serology", url: /syphilis/, kind: guide }
     - { name: "Needlestick and BBV exposure", url: /needlestick/, kind: guide }
     - { name: "HIV, TB, malaria and sexual health trials", url: "/trials/#hiv-tb-malaria-and-sexual-health", kind: trials }

@@ -6,6 +6,8 @@
   var covHref = host.getAttribute('data-coverage') || '';
   var irHref = host.getAttribute('data-intrinsic') || '';
 
+  // Soft hyphen before common drug-name endings so long names (phenoxymethylpenicillin) break cleanly in small boxes
+  function shy(n) { return String(n).replace(/([a-z]{5,}?)(penicillin|cillin|mycin|floxacin|cycline|sporin|azole|bactam|penem)/gi, '$1\u00AD$2'); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   var CLASSES = [];
@@ -33,7 +35,7 @@
       h += '<h3 class="ab-cls" id="cls-' + slug(c) + '">' + esc(c) + '</h3><div class="ab-grid">';
       ds.forEach(function (d) {
         h += '<button type="button" class="ab-box' + (st.pick === d.id ? ' on' : '') + '" data-id="' + d.id + '" aria-expanded="' + (st.pick === d.id) + '">' +
-          '<span class="ab-name">' + esc(d.name) + '</span><span class="ab-meta">' + awareBadge(d.aware) + '<span class="ab-route">' + esc(d.routes) + '</span></span></button>';
+          '<span class="ab-name">' + esc(shy(d.name)) + '</span><span class="ab-meta">' + awareBadge(d.aware) + '<span class="ab-route">' + esc(d.routes) + '</span></span></button>';
       });
       h += '</div>';
     });

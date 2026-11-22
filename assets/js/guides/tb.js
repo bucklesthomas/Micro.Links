@@ -25,6 +25,7 @@
   var Q = {
     start: {
       q: 'What do you need?',
+      links: [['TB drug monographs', 'https://www.tbdrugmonographs.co.uk/']],
       options: [
         { label: 'Latent TB: testing or treatment', next: 'ltbi' },
         { label: 'Active TB: starting treatment', next: 'site' },
