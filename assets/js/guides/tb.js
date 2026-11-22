@@ -3,6 +3,7 @@
  * drug-induced liver injury, and infection control.
  * NICE NG33 Tuberculosis (last updated February 2024); BNF adult doses; ATS/CDC/IDSA 2016 treatment guideline and
  * ATS 2006 statement on hepatotoxicity of TB therapy (stop criteria and reintroduction); BTS 1998 (sequential reintroduction).
+ * Doses, administration, ethambutol eye monitoring and drug levels checked against the UK TB Drug Monographs (tbdrugmonographs.co.uk), November 2026.
  */
 (function () {
   window.GUIDES = window.GUIDES || {};
@@ -65,9 +66,9 @@
     var s = a.site ? a.site.i : 0, d = (a.wt && a.wt.i === 1) ? DOSE.hi : DOSE.lo;
     var cont = s === 1 ? '10 months' : '4 months';
     var regs = [
-      { name: 'Initial phase: 2 months, once daily', noOr: true, items: [I('Rifampicin', d.r), I('Isoniazid', '300 mg'), I('Pyrazinamide', d.z), I('Ethambutol', '15 mg/kg, rounded to the nearest 100 mg'), I('Pyridoxine', '10 mg (with isoniazid)')] },
+      { name: 'Initial phase: 2 months, once daily', noOr: true, items: [I('Rifampicin', d.r), I('Isoniazid', '300 mg (consider 5 mg/kg if low body weight)'), I('Pyrazinamide', d.z), I('Ethambutol', '15 mg/kg, rounded to the nearest whole tablet (100 mg and 400 mg tablets); BMI over 30: dose on ideal body weight plus 40% of the excess'), I('Pyridoxine', '10 mg (with isoniazid)')] },
       { name: 'Continuation phase: ' + cont + ', once daily', noOr: true, items: [I('Rifampicin', d.r), I('Isoniazid', '300 mg, with pyridoxine 10 mg')] },
-      { name: 'Combination tablets (BNF; take before breakfast)', noOr: true, items: [I('Initial phase', 'Rifater ' + d.rifater + ', plus ethambutol'), I('Continuation phase', d.rifinah)] }
+      { name: 'Combination tablets (take 30–60 minutes before breakfast)', noOr: true, items: [I('Initial phase', 'Rifater ' + d.rifater + ', plus ethambutol'), I('Continuation phase', d.rifinah)] }
     ];
     var notes = [];
     if (s === 1) {
@@ -84,7 +85,7 @@
       tone: 'amber',
       summary: 'Start once samples are sent (3 sputum samples, or tissue or fluid for culture and molecular testing), and adjust to susceptibility results.',
       regimens: regs,
-      notes: notes.concat([N.base, 'Ethambutol: reduce in renal impairment and warn about visual symptoms (stop and seek help). Isoniazid: peripheral neuropathy (pyridoxine). Pyrazinamide: hepatotoxicity, gout.', N.rif, 'Directly observed treatment for people with adherence risks; daily dosing is preferred (NICE).', N.hiv, N.tbs, N.notify])
+      notes: notes.concat([N.base, 'Take rifampicin and isoniazid on an empty stomach: 30–60 minutes before food or 2 hours after. Pyrazinamide can be taken with or without food.', 'Ethambutol eyes: visual acuity and colour vision at baseline, a symptom screen every month, and formal tests at least every 6 months. Test monthly if the dose is over 15 mg/kg or there is renal impairment. Reduce the dose in severe renal impairment, and tell patients to stop and seek help if their vision changes.', 'Isoniazid: peripheral neuropathy; pyridoxine is essential with diabetes, alcohol dependence or malnutrition. Pyrazinamide: hepatotoxicity, gout.', 'Drug levels are not routine: check 2-hour peaks for malabsorption or poor response (targets: rifampicin 8–24, isoniazid 3–5, pyrazinamide 20–40, ethambutol 2–6 mg/L).', N.rif, 'Directly observed treatment for people with adherence risks; daily dosing is preferred (NICE).', N.hiv, N.tbs, N.notify])
     };
   }
 
