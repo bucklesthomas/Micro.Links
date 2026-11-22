@@ -1,0 +1,59 @@
+---
+layout: default
+title: PK/PD targets explained
+permalink: /pkpd/
+scripts:
+  - /assets/js/abx-data.js
+  - /assets/js/pkpd.js
+---
+<div class="ie-wrap pk-wrap">
+  <header class="page-head">
+    <p class="page-kind k-reference">Reference</p>
+    <h1 class="page-title">PK/PD targets explained</h1>
+    <p class="lede">How antibiotics kill depends on how long the concentration stays above the MIC, how high the peak gets, or the total exposure over the day. The target decides the best way to dose.</p>
+    <p class="page-meta"><span class="pm-check">Checked November 2026</span><span>Main sources: Craig 1998; Roberts 2014; Rybak 2020</span></p>
+  </header>
+
+  <div id="pkpd" data-abx="{{ '/antibiotics/' | relative_url }}">
+    <div class="pk-cards">
+      <section class="card pk-card">
+        <p class="pk-kicker">Time-dependent</p>
+        <h2>fT&gt;MIC</h2>
+        <div id="pk-concepts-a" class="pk-fig"></div>
+        <p>The percentage of the dosing interval that the <b>free</b> (unbound) drug concentration stays above the MIC. Higher peaks add little once the concentration is a few times the MIC.</p>
+        <dl class="pk-dl"><dt>Drugs</dt><dd>Penicillins, cephalosporins, carbapenems, aztreonam</dd><dt>Targets</dt><dd>About 40% for carbapenems, 50% for penicillins, 60–70% for cephalosporins; aim for 100% in critical illness</dd><dt>Dosing</dt><dd>Dose more often, or give extended (3-hour) or continuous infusions, rather than bigger doses</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">Concentration-dependent</p>
+        <h2>Cmax/MIC</h2>
+        <div id="pk-concepts-b" class="pk-fig"></div>
+        <p>The peak concentration divided by the MIC. Killing is faster the higher the peak, and a long post-antibiotic effect suppresses regrowth after levels fall.</p>
+        <dl class="pk-dl"><dt>Drugs</dt><dd>Aminoglycosides (gentamicin, amikacin, tobramycin)</dd><dt>Target</dt><dd>Cmax/MIC 8–10</dd><dt>Dosing</dt><dd>One large dose once a day: a high peak, then a drug-free period that lowers kidney and ear toxicity (trough-guided)</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">Exposure-dependent</p>
+        <h2>AUC/MIC</h2>
+        <div id="pk-concepts-c" class="pk-fig"></div>
+        <p>The area under the concentration–time curve over 24 hours divided by the MIC: the total exposure over the day, however it is split.</p>
+        <dl class="pk-dl"><dt>Drugs</dt><dd>Vancomycin, fluoroquinolones, linezolid, macrolides, tetracyclines, daptomycin</dd><dt>Targets</dt><dd>Vancomycin AUC24 400–600 (MIC 1); levofloxacin fAUC/MIC 30–50 for pneumococcus, 100–125 for Gram-negatives; linezolid 80–120</dd><dt>Dosing</dt><dd>The total daily dose matters most; use AUC-guided monitoring for vancomycin</dd></dl>
+      </section>
+    </div>
+
+    <h2 class="section-title">Try it: change the dose, interval and MIC</h2>
+    <section class="card af-card"><div id="pk-explorer"></div></section>
+
+    <h2 class="section-title">Things that move the curve</h2>
+    <ul class="vc-notes">
+      <li><b>Protein binding:</b> only free drug is active. For highly bound drugs (flucloxacillin, ceftriaxone, ertapenem, teicoplanin) a total level can look adequate while the free level is below the MIC, especially when albumin is low.</li>
+      <li><b>Critical illness:</b> augmented renal clearance and a larger volume of distribution lower β-lactam levels; extended or continuous infusion and TDM help. Kidney injury does the opposite.</li>
+      <li><b>MIC:</b> a higher MIC needs more exposure for every target. Use the EUCAST breakpoints and the isolate’s MIC, not just “S”.</li>
+      <li><b>Post-antibiotic effect:</b> aminoglycosides and fluoroquinolones keep suppressing Gram-negative growth after levels fall below the MIC; β-lactams have little effect against Gram-negatives (except carbapenems).</li>
+      <li><b>Resistance:</b> levels between the MIC and the mutant prevention concentration (the mutant selection window) favour resistant mutants; short, high exposures and combination therapy narrow it.</li>
+    </ul>
+
+    <h2 class="section-title">Antibiotics on this site by target</h2>
+    <div id="pk-table" class="card af-card"></div>
+  </div>
+
+  <p class="ie-source">Sources: Craig WA. Pharmacokinetic/pharmacodynamic parameters: rationale for antibacterial dosing of mice and men. Clin Infect Dis 1998;26:1–10; Roberts JA et al. Individualised antibiotic dosing for patients who are critically ill. Lancet Infect Dis 2014;14:498–509; Rybak MJ et al. Therapeutic monitoring of vancomycin for serious MRSA infections: revised consensus guideline. Am J Health Syst Pharm 2020;77:835–64; Abdul-Aziz MH et al. Antimicrobial therapeutic drug monitoring in critically ill adult patients: a position paper. Intensive Care Med 2020;46:1127–53. Drug targets from the <a href="{{ '/antibiotics/' | relative_url }}">antibiotics page</a>; for vancomycin dosing use the <a href="{{ '/vancomycin-auc/' | relative_url }}">AUC calculator</a>.</p>
+</div>

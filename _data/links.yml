@@ -54,6 +54,10 @@
     - name: Liverpool HIV drug interactions
       url: "https://www.hiv-druginteractions.org/checker"
       tags: hiv arv interactions
+    - name: PK/PD targets explained
+      url: "/pkpd/"
+      note: Diagrams of fT>MIC, Cmax/MIC and AUC/MIC, with an interactive dosing curve
+      tags: pkpd pk pd pharmacokinetics pharmacodynamics auc mic auc/mic cmax ft>mic time above mic extended continuous infusion beta-lactam aminoglycoside vancomycin tdm teaching
     - name: Renal Drug Database
       url: "https://renaldrugdatabase.com/"
       note: Subscription
