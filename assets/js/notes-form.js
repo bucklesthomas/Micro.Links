@@ -40,7 +40,13 @@
       return '<button type="button" class="sp-chip rf-chip' + cls + '" aria-pressed="' + pressed + '"' + (label ? ' aria-label="' + esc(label) + '"' : '') +
         ' data-' + kind + '="' + f.id + '" data-o="' + esc(o) + '">' + esc(o) + '</button>';
     }
+    // A field with dep: { id, v } only shows (and only goes in the note) when that other field has value v
+    function depOk(f) { return !f.dep || val(f.dep.id) === f.dep.v; }
     function field(f) {
+      if (f.dep) { var inner = fieldInner(f); return '<div class="rf-dep" data-dep="' + f.dep.id + '" data-depv="' + esc(f.dep.v) + '"' + (depOk(f) ? '' : ' hidden') + '>' + inner + '</div>'; }
+      return fieldInner(f);
+    }
+    function fieldInner(f) {
       if (f.k === 'text') return '<label class="rf-f rf-wide"><span>' + esc(f.l) + '</span><input data-v="' + f.id + '" value="' + esc(val(f.id)) + '" placeholder="' + esc(f.ph || '') + '"' + (f.list ? ' list="' + P + '-' + f.id + '-list"' : '') + ' autocomplete="off"></label>' +
         (f.list ? '<datalist id="' + P + '-' + f.id + '-list">' + f.list.map(function (x) { return '<option value="' + esc(x) + '">'; }).join('') + '</datalist>' : '');
       if (f.k === 'area') return '<label class="rf-f rf-wide"><span>' + esc(f.l) + '</span><textarea data-v="' + f.id + '" rows="' + (f.rows || 3) + '" placeholder="' + esc(f.ph || '') + '">' + esc(val(f.id)) + '</textarea></label>';
@@ -119,6 +125,7 @@
 
     // Note lines for one field
     function lines(f) {
+      if (!depOk(f)) return [];
       var out = f.out != null ? f.out : (f.k === 'area' ? '' : f.l + ': ');
       if (f.k === 'text' || f.k === 'area') return val(f.id) ? [out + val(f.id)] : [];
       if (f.k === 'num') return val(f.id) ? [out + val(f.id) + (f.u ? ' ' + f.u : '')] : [];
@@ -253,6 +260,7 @@
         var id1 = b.getAttribute('data-one'), o1 = b.getAttribute('data-o');
         st.v[id1] = st.v[id1] === o1 ? '' : o1;
         Array.prototype.forEach.call(host.querySelectorAll('[data-one="' + id1 + '"]'), function (x) { var on = st.v[id1] === x.getAttribute('data-o'); x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on)); });
+        Array.prototype.forEach.call(host.querySelectorAll('[data-dep="' + id1 + '"]'), function (x) { x.hidden = st.v[id1] !== x.getAttribute('data-depv'); });
         save(); note();
       } else if (b.hasAttribute('data-sir')) {
         var id2 = b.getAttribute('data-sir'), o2 = b.getAttribute('data-o'), m = obj(id2), order = ['', 'S', 'I', 'R'];

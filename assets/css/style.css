@@ -1677,3 +1677,6 @@ table.bl-spec .spec-corner { min-width: 210px; }
 .rt-ctrl .ab-sec { margin-bottom: 12px; }
 .rt-ctrl .pk-range output { min-width: 78px; }
 @media (max-width: 600px) { .rt-counts { gap: 12px; font-size: 12.5px; } }
+
+.rf-dep { display: contents; }
+.rf-dep[hidden] { display: none; }

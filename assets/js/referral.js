@@ -34,7 +34,11 @@ NoteForm({
       { id: 'prev', k: 'chips', l: 'Prevention', o: ['No travel', 'Malaria prophylaxis taken', 'No malaria prophylaxis', 'Pre-travel vaccines', 'No pre-travel advice'] },
       { id: 'expo', k: 'chips', l: 'Exposures', neg: 'No exposure to', o: ['Mosquito bites', 'Tick bites', 'Freshwater', 'Animal bite or scratch', 'Farm animals', 'Unpasteurised dairy', 'Street food or untreated water', 'Sexual contact', 'Sick contacts', 'Healthcare abroad', 'Caves or bats', 'Occupational'] },
       { id: 'expod', k: 'area', l: 'Exposure details' }] },
-    { id: 'obs', t: 'Observations', ask: ['Latest set, and the trend', 'Oxygen requirement', 'Conscious level'], f: [{ id: 'obs', k: 'obs' }, { id: 'obsd', k: 'text', l: 'Trend or other', out: '' }] },
+    { id: 'obs', t: 'Observations', ask: ['Latest set, and the trend', 'Oxygen requirement', 'Conscious level', 'In ICU or HDU: organ support'], f: [{ id: 'obs', k: 'obs' },
+      { id: 'icu', k: 'one', l: 'Critical care', o: ['In ICU or HDU'], out: '' },
+      { id: 'icus', k: 'chips', l: 'Organ support', dep: { id: 'icu', v: 'In ICU or HDU' }, out: 'Organ support: ', o: ['Intubated and ventilated', 'Non-invasive ventilation', 'High-flow nasal oxygen', 'Proned', 'Vasopressors', 'Inotropes', 'CRRT', 'ECMO', 'Sedated'] },
+      { id: 'icud', k: 'text', l: 'Support details', ph: 'e.g. noradrenaline 0.2 micrograms/kg/min, FiO₂ 0.5, PEEP 10', dep: { id: 'icu', v: 'In ICU or HDU' }, out: 'Support details: ' },
+      { id: 'obsd', k: 'text', l: 'Trend or other', out: '' }] },
     { id: 'bloods', t: 'Bloods', ask: ['Latest values, and the date', 'Trend since admission'], f: [{ id: 'labs', k: 'labs' }, { id: 'labsd', k: 'text', l: 'Date, trend or other results', ph: 'e.g. today; CRP 320 → 250 over 48 h', out: '' }] },
     { id: 'micro', t: 'Microbiology', ask: ['Blood cultures: sets, result, time to positivity', 'Other samples and results', 'Serology, PCR, malaria tests'], f: [
       { id: 'bc', k: 'text', l: 'Blood cultures', ph: 'e.g. 2/2 sets S. aureus at 14 h; sensitivities pending' },
