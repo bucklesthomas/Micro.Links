@@ -110,31 +110,19 @@
   };
   var st = { c: 'A' };
   function tree() {
-    var h = '<svg viewBox="10 0 600 236" class="bl-svg bl-tree" role="group" aria-label="Ambler classes of β-lactamase">';
-    h += '<rect class="node root" x="245" y="6" width="150" height="34" rx="8"/><text class="lbl nd" x="320" y="28" text-anchor="middle">β-lactamases</text>';
-    h += '<path class="link" d="M320 40 L 320 54 M190 54 L 530 54 M190 54 L 190 66 M530 54 L 530 66"/>';
-    h += '<rect class="node mid" x="90" y="66" width="200" height="34" rx="8"/><text class="lbl nd" x="190" y="88" text-anchor="middle">Serine at the active site</text>';
-    h += '<rect class="node mid" x="430" y="66" width="200" height="34" rx="8"/><text class="lbl nd" x="530" y="88" text-anchor="middle">Zinc at the active site</text>';
-    h += '<path class="link" d="M190 100 L 190 114 M70 114 L 310 114 M70 114 L 70 126 M190 114 L 190 126 M310 114 L 310 126 M530 100 L 530 126"/>';
-    [['A', 70], ['C', 190], ['D', 310], ['B', 530]].forEach(function (p) {
-      var c = CL[p[0]], x = p[1];
-      h += '<g class="cls' + (st.c === p[0] ? ' on' : '') + '" data-c="' + p[0] + '" tabindex="0" role="button" aria-pressed="' + (st.c === p[0]) + '" aria-label="Ambler ' + c.t + '">' +
-        '<rect x="' + (x - 54) + '" y="126" width="108" height="106" rx="10"/><text class="big" x="' + x + '" y="166" text-anchor="middle">' + p[0] + '</text>' +
-        c.ex.split(', ').map(function (e, i) { return '<text class="lbl sm" x="' + x + '" y="' + (184 + i * 13.5) + '" text-anchor="middle">' + esc(e) + '</text>'; }).join('') + '</g>';
-    });
-    return h + '</svg>';
+    function box(k) {
+      var on = st.c === k;
+      return '<button type="button" class="opt bl-cls' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-c="' + k + '"><span class="bl-letter">' + k + '</span><span class="opt-pts">' + esc(CL[k].ex) + '</span></button>';
+    }
+    return '<div class="bl-tree"><div class="bl-root">β-lactamases</div>' +
+      '<div class="bl-branches"><div class="bl-branch"><p class="bl-bh">Serine at the active site</p><div class="bl-boxes">' + box('A') + box('C') + box('D') + '</div></div>' +
+      '<div class="bl-branch"><p class="bl-bh">Zinc at the active site</p><div class="bl-boxes">' + box('B') + '</div></div></div></div>';
   }
   function clsPanel() {
     var c = CL[st.c];
     return '<div class="mech-head"><span class="mech-n big">' + st.c + '</span><div><p class="mech-kicker">' + esc(c.site) + '</p><h3>Ambler class ' + st.c + '</h3></div></div>' +
       '<table class="ab-tbl mech-tbl">' + c.rows.map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join('') + '</table>';
   }
-  function clsOpts() {
-    return '<div class="opts bl-opts">' + ['A', 'B', 'C', 'D'].map(function (k) {
-      return '<button type="button" class="opt' + (st.c === k ? ' on' : '') + '" aria-pressed="' + (st.c === k) + '" data-c="' + k + '"><span class="opt-text">Class ' + k + '</span><span class="opt-pts">' + esc(CL[k].ex) + '</span></button>';
-    }).join('') + '</div>';
-  }
-
   // ── Matrices ──────────────────────────────────────────────
   var ENZ = [['Penicillinase', 'A: TEM-1, SHV-1'], ['ESBL', 'A: CTX-M'], ['AmpC', 'C'], ['KPC', 'A'], ['OXA-48', 'D'], ['MBL', 'B: NDM, VIM, IMP']];
   var WORD = ['Destroyed (inactive)', 'Variable or not reliable', 'Usually active'];
@@ -162,8 +150,8 @@
   function key(words) { return '<div class="sp-key" aria-hidden="true"><span><i class="c2"></i>' + words[2] + '</span><span><i class="c1"></i>' + words[1] + '</span><span><i class="c0"></i>' + words[0] + '</span></div>'; }
 
   function drawCls() {
-    var t = host.querySelector('#bl-tree'), o = host.querySelector('#bl-cls-opts'), p = host.querySelector('#bl-cls-panel');
-    t.innerHTML = tree(); o.innerHTML = clsOpts(); p.innerHTML = clsPanel();
+    host.querySelector('#bl-tree').innerHTML = tree();
+    host.querySelector('#bl-cls-panel').innerHTML = clsPanel();
   }
 
   host.querySelector('#bl-env').innerHTML = envelope();
@@ -172,6 +160,5 @@
   host.querySelector('#bl-drug-mx').innerHTML = key(WORD) + matrix(DR, 'Antibiotic', WORD);
   host.querySelector('#bl-inh-mx').innerHTML = key(IWORD) + matrix([['', INH]], 'Inhibitor', IWORD);
   drawCls();
-  host.addEventListener('click', function (e) { var t = e.target.closest('[data-c]'); if (t) { st.c = t.getAttribute('data-c'); drawCls(); } });
-  host.addEventListener('keydown', function (e) { var t = e.target.closest('g[data-c]'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); st.c = t.getAttribute('data-c'); drawCls(); var g = host.querySelector('g[data-c="' + st.c + '"]'); if (g) g.focus(); } });
+  host.addEventListener('click', function (e) { var t = e.target.closest('[data-c]'); if (t) { st.c = t.getAttribute('data-c'); drawCls(); var b = host.querySelector('.bl-cls[data-c="' + st.c + '"]'); if (b) b.focus(); } });
 })();
