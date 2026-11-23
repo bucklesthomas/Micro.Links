@@ -67,6 +67,10 @@
       note: Subscription
       tags: renal dosing ckd
 
+    - name: Resistance takeover (animation)
+      url: "/resistance-takeover/"
+      note: Watch resistant bacteria take over with low doses, missed doses or stopping early
+      tags: resistance selection mutant selection window animation teaching simulation dose course missed doses stopped early combination stewardship students
     - name: TB drug monographs
       url: "https://www.tbdrugmonographs.co.uk/"
       note: Monitoring and safe use of first-line and MDR-TB drugs (UK)
