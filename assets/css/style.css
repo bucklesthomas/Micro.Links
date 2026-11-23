@@ -1579,3 +1579,59 @@ table.bl-spec .spec-corner { min-width: 210px; }
 .org-tx a.dz-drug, .dz-notes a.dz-drug { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 2px; }
 .org-tx a.dz-drug:hover, .dz-notes a.dz-drug:hover { color: var(--accent-ink); text-decoration-color: currentColor; }
 .dz-layout .ir-items { max-height: 640px; }
+
+/* CD4 explorer */
+.cd4x { margin-bottom: 14px; }
+.cd4x-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 10px 20px; margin-bottom: 8px; }
+.cd4x-big { margin: 0; font-family: var(--serif, 'Libre Baskerville', Georgia, serif); font-size: 34px; font-weight: 700; line-height: 1.1; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
+.cd4x-big span { margin-left: 8px; font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--muted); }
+.cd4x-top .ab-note { margin: 4px 0 0; }
+.cd4x-num { display: flex; flex-direction: column; gap: 4px; font-family: var(--sans); font-size: 12px; color: var(--muted); }
+.cd4x-num input { width: 110px; padding: 7px 10px; font: inherit; font-size: 15px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; }
+.cd4x-num input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.cd4x-grid { --now: 0%; display: grid; grid-template-columns: minmax(150px, 250px) minmax(0, 1fr); column-gap: 14px; font-family: var(--sans); }
+.cd4x-lab { display: flex; flex-direction: column; justify-content: center; font-size: 13.5px; line-height: 1.25; color: var(--muted); padding: 5px 0; text-align: left; }
+.cd4x-lab small { font-size: 11px; color: var(--muted); }
+.cd4x-head { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--accent-ink); }
+.cd4x-track { position: relative; min-height: 30px; }
+.cd4x-row { display: contents; cursor: pointer; font: inherit; }
+.cd4x-row > span { cursor: pointer; }
+.cd4x-bar { position: absolute; left: 0; top: 50%; height: 16px; transform: translateY(-50%); border-radius: 4px; background: var(--line-soft, var(--line)); transition: background .15s; }
+.cd4x-bar.any { background: linear-gradient(to right, var(--line) 0%, var(--line-soft, var(--line)) 100%); }
+.cd4x-track em { position: absolute; top: 50%; transform: translate(6px, -50%); font-style: normal; font-size: 11px; color: var(--muted); white-space: nowrap; }
+.cd4x-bar.any + em { left: 8px; transform: translate(0, -50%); }
+.cd4x-row.on .cd4x-lab { color: var(--ink); font-weight: 600; }
+.cd4x-row.on .cd4x-bar { background: color-mix(in srgb, var(--high) 70%, var(--surface)); }
+.cd4x-row.on .cd4x-bar.any { background: linear-gradient(to right, color-mix(in srgb, var(--high) 75%, var(--surface)) 0%, color-mix(in srgb, var(--mid) 45%, var(--surface)) 100%); }
+.cd4x-row.on .cd4x-bar.any + em { color: var(--ink); }
+.cd4x-row.cond .cd4x-bar { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--high) 30%, var(--surface)) 0 5px, transparent 5px 9px); }
+.cd4x-row.sel .cd4x-lab { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
+.cd4x-row:hover .cd4x-lab { color: var(--accent-ink); }
+.cd4x-row:focus-visible .cd4x-lab { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cd4x-thr { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px dashed var(--muted); opacity: .45; }
+.cd4x-now { position: absolute; top: 0; bottom: 0; left: var(--now); width: 2px; margin-left: -1px; background: var(--accent-ink); z-index: 1; pointer-events: none; }
+.cd4x-slider .cd4x-now { display: none; }
+.cd4x-thrlab { min-height: 18px; }
+.cd4x-thrlab span { position: absolute; bottom: 2px; transform: translateX(-50%); font-size: 10.5px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.cd4x-axis { min-height: 22px; border-top: 1px solid var(--line); }
+.cd4x-axis span.k { color: var(--ink); font-weight: 700; }
+.cd4x-key { margin: 8px 0 0; }
+.cd4x-axis span.e { transform: translateX(-100%); }
+.cd4x-key b { color: var(--ink); }
+.cd4x-axis span { position: absolute; top: 4px; transform: translateX(-50%); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cd4x-axis .cd4x-now { bottom: auto; height: 8px; }
+.cd4x-slider { display: flex; align-items: center; min-height: 36px; }
+.cd4x-slider input[type=range] { -webkit-appearance: none; appearance: none; width: calc(100% + 22px); margin: 0 -11px; height: 22px; background: transparent; cursor: pointer; }
+.cd4x-slider input[type=range]::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: linear-gradient(to right, var(--high) 0%, var(--mid) 45%, var(--low) 80%) center / calc(100% - 22px) 100% no-repeat; opacity: .55; }
+.cd4x-slider input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; background: linear-gradient(to right, var(--high) 0%, var(--mid) 45%, var(--low) 80%); opacity: .55; }
+.cd4x-slider input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -8px; border-radius: 50%; background: var(--surface); border: 3px solid var(--accent-ink); box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.cd4x-slider input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--surface); border: 3px solid var(--accent-ink); }
+.cd4x-slider input[type=range]:focus-visible { outline: none; }
+.cd4x-slider input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--accent-soft); }
+#cd4-oi { margin-top: 12px; }
+.cd4x-card { padding: 12px 14px; border: 1px solid var(--accent); border-radius: 8px; background: var(--accent-soft); }
+.cd4x-card h3 { margin: 2px 0 6px; font-size: 18px; }
+.cd4x-card > p { margin: 0 0 6px; font-size: 14px; line-height: 1.5; }
+.cd4x-card .pk-dl { border-top-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+.cd4x-card .cov-chips { margin: 8px 0 0; }
+@media (max-width: 600px) { .cd4x-grid { grid-template-columns: 118px minmax(0, 1fr); column-gap: 8px; } .cd4x-lab { font-size: 12px; } .cd4x-lab small { font-size: 10px; } .cd4x-thrlab span { font-size: 9.5px; } .cd4x-track em { font-size: 10px; } .cd4x-big { font-size: 28px; } .cd4x-axis span { font-size: 9.5px; } .cd4x-axis span.m { display: none; } .cd4x-bar { height: 13px; } }
