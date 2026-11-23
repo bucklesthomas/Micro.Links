@@ -13,7 +13,7 @@
   var LAB = ['Not reliable', 'Variable: check susceptibility', 'Reliable activity'];
   var CLASSES = [];
   A.drugs.forEach(function (d) { if (CLASSES.indexOf(d.cls) < 0) CLASSES.push(d.cls); });
-  var st = { grp: 'All', cls: 'All', q: '' };
+  var st = { grp: 'All', cls: [], q: '' };  // cls: the classes picked to compare (empty = all)
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function dl(id) { return hashMode ? '#drug-' + id : abxHref + '#drug-' + id; }
@@ -22,7 +22,7 @@
     var h = '<div class="ab-bar"><input id="sp-q" type="search" placeholder="Filter antibiotics…" value="' + esc(st.q) + '" aria-label="Filter antibiotics" autocomplete="off"><div class="ab-aw" role="group" aria-label="Organism groups">';
     ['All'].concat(A.groups).forEach(function (g) { h += '<button type="button" class="sp-chip' + (st.grp === g ? ' on' : '') + '" aria-pressed="' + (st.grp === g) + '" data-g="' + esc(g) + '">' + esc(g === 'All' ? 'All organisms' : g) + '</button>'; });
     h += '</div></div><div class="ab-aw sp-cls" role="group" aria-label="Antibiotic classes">';
-    ['All'].concat(CLASSES).forEach(function (c) { h += '<button type="button" class="sp-chip' + (st.cls === c ? ' on' : '') + '" aria-pressed="' + (st.cls === c) + '" data-c="' + esc(c) + '">' + esc(c === 'All' ? 'All classes' : c) + '</button>'; });
+    ['All'].concat(CLASSES).forEach(function (c) { var on = c === 'All' ? !st.cls.length : st.cls.indexOf(c) >= 0; h += '<button type="button" class="sp-chip' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-c="' + esc(c) + '">' + esc(c === 'All' ? 'All classes' : c) + '</button>'; });
     h += '</div><div class="sp-key" aria-hidden="true"><span><i class="c2"></i>Reliable activity</span><span><i class="c1"></i>Variable: check susceptibility</span><span><i class="c0"></i>Not reliable or intrinsically resistant</span></div>';
     return h;
   }
@@ -31,7 +31,7 @@
     var cols = [];
     A.orgs.forEach(function (o, i) { if (st.grp === 'All' || o[2] === st.grp) cols.push(i); });
     var q = st.q.toLowerCase().trim();
-    var drugs = A.drugs.filter(function (d) { return (st.cls === 'All' || d.cls === st.cls) && (!q || (d.name + ' ' + (d.brands || '') + ' ' + d.cls).toLowerCase().indexOf(q) >= 0); });
+    var drugs = A.drugs.filter(function (d) { return (!st.cls.length || st.cls.indexOf(d.cls) >= 0) && (!q || (d.name + ' ' + (d.brands || '') + ' ' + d.cls).toLowerCase().indexOf(q) >= 0); });
     if (!drugs.length) return '<p class="ab-note">No antibiotics match.</p>';
     // Columns with a narrow spacer between organism groups
     var seq = [], prev = null;
@@ -62,8 +62,9 @@
   }
 
   function draw() {
-    var y = window.scrollY;
+    var y = window.scrollY, rows = Array.prototype.map.call(host.querySelectorAll('.ab-aw'), function (r) { return r.scrollLeft; });
     host.innerHTML = controls() + '<div id="spec-t">' + table() + '</div>';
+    Array.prototype.forEach.call(host.querySelectorAll('.ab-aw'), function (r, i) { if (rows[i]) r.scrollLeft = rows[i]; });
     window.scrollTo(0, y);
   }
   function redrawTable() { host.querySelector('#spec-t').innerHTML = table(); }
@@ -71,7 +72,12 @@
   host.addEventListener('click', function (e) {
     var g = e.target.closest('[data-g]'), c = e.target.closest('[data-c]');
     if (g) { st.grp = g.getAttribute('data-g'); draw(); }
-    else if (c) { st.cls = c.getAttribute('data-c'); draw(); }
+    else if (c) {
+      var v = c.getAttribute('data-c'), i = st.cls.indexOf(v);
+      if (v === 'All') st.cls = []; else if (i >= 0) st.cls.splice(i, 1); else st.cls.push(v);
+      if (st.cls.length === CLASSES.length) st.cls = [];
+      draw();
+    }
   });
   host.addEventListener('input', function (e) { if (e.target.id === 'sp-q') { st.q = e.target.value; redrawTable(); } });
   // Crosshair highlight of the organism column (row highlight is CSS)

@@ -136,6 +136,10 @@
 
 - category: Microbiology & lab
   links:
+    - name: "Beta-lactamases: ESBL, AmpC, CPE and Ambler classes"
+      url: "/beta-lactamases/"
+      note: How beta-lactamases work, the Ambler classes, which drugs still work and how to spot them
+      tags: beta-lactamase β-lactamase esbl ampc cpe cre carbapenemase kpc oxa-48 ndm vim imp mbl metallo ambler bush jacoby ctx-m tem shv inhibitor avibactam vaborbactam relebactam clavulanate tazobactam temocillin merino resistance teaching diagram
     - name: BSAC
       url: "https://bsac.org.uk/"
       tags: antimicrobial chemotherapy

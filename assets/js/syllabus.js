@@ -7,7 +7,7 @@
   var KEY = 'mc-syllabus';
   var A = [
     ['bio', 'Basic biology of bacteria, viruses, fungi and parasites', [
-      ['Bacterial structure, Gram stain and classification', '/organisms/'], ['Bacterial genetics and resistance mechanisms (ESBL, AmpC, carbapenemases, MRSA, VRE)', '/intrinsic-resistance/'],
+      ['Bacterial structure, Gram stain and classification', '/organisms/'], ['Bacterial genetics and resistance mechanisms (ESBL, AmpC, carbapenemases, MRSA, VRE)', '/beta-lactamases/'],
       ['Virus structure, replication and classification'], ['Viral latency and reactivation (herpesviruses, HBV)'], ['Yeasts and moulds: Candida, Aspergillus, Cryptococcus, Mucorales', '/antifungals/'],
       ['Protozoa: Plasmodium life cycle and species', '/malaria/'], ['Helminths: Strongyloides, Schistosoma, tapeworms'], ['Host defences and pathogenesis; toxins'], ['Prions']]],
     ['lab', 'Laboratory practice', [
@@ -19,7 +19,7 @@
       ['IV-to-oral switch and treatment duration', '/iv-oral-durations/'], ['Antifungals and antivirals', '/antifungals/'], ['Penicillin allergy assessment', '/penicillin-allergy/'],
       ['Prescribing in pregnancy and renal impairment', '/pregnancy/'], ['Stewardship programmes and Start Smart then Focus']]],
     ['ipc', 'Infection prevention and control', [
-      ['Standard and transmission-based precautions', '/isolation/'], ['Healthcare-associated infections and surveillance'], ['MRSA, CPE and other multidrug-resistant organisms'],
+      ['Standard and transmission-based precautions', '/isolation/'], ['Healthcare-associated infections and surveillance'], ['MRSA, CPE and other multidrug-resistant organisms', '/beta-lactamases/'],
       ['C. difficile: prevention and outbreaks', '/cdiff/'], ['Outbreak investigation and management'], ['Decontamination, sterilisation and the environment (water, Legionella, Pseudomonas)'],
       ['Occupational exposures and BBV', '/needlestick/'], ['Isolation for HCIDs']]],
     ['ph', 'Public health and vaccination', [

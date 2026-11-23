@@ -133,6 +133,7 @@
     - { name: "Antibiotic coverage checker", url: /coverage/, kind: tool }
     - { name: "EUCAST breakpoint interpreter", url: /breakpoints/, kind: tool }
     - { name: "Intrinsic resistance table", url: /intrinsic-resistance/, kind: tool }
+    - { name: "β-lactamases: ESBL, AmpC, CPE", url: /beta-lactamases/, kind: tool }
     - { name: "Vancomycin AUC calculator", url: /vancomycin-auc/, kind: tool }
     - { name: "Organisms", url: /organisms/, kind: tool }
     - { name: "Penicillin allergy and cross-reactivity", url: /penicillin-allergy/, kind: guide }

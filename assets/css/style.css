@@ -1528,3 +1528,68 @@ table.spec .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; 
 .mech-tbl li + li { margin-top: 3px; }
 .mech-drugs { margin-top: 4px; }
 .mech-opts .opt { text-align: left; align-items: flex-start; }
+
+/* β-lactamases page */
+.bl-wrap { max-width: 1120px; }
+.bl-two { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.bl-svg { width: 100%; height: auto; display: block; font-family: var(--sans); overflow: visible; }
+.bl-svg .lbl { fill: var(--muted); font-size: 13px; }
+.bl-svg .lbl.sm { font-size: 12.5px; }
+.bl-svg .lbl.lyr { fill: var(--ink); font-weight: 600; }
+.bl-svg .lbl.side { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+.bl-svg .lbl.acc { fill: var(--accent-ink); font-weight: 600; }
+.bl-svg .lbl.nd { fill: var(--ink); font-size: 13.5px; font-weight: 600; }
+.bl-svg .mem { fill: var(--bg); }
+.bl-svg .head { fill: var(--surface); stroke: var(--muted); stroke-width: 1; }
+.bl-svg .lbl.acc2 { fill: var(--ink); }
+.bl-svg .peri { fill: var(--accent-soft); opacity: .35; }
+.bl-svg .cyto { fill: var(--accent-soft); opacity: .6; }
+.bl-svg .pg { fill: var(--surface); }
+.bl-svg .pg-hatch { fill: url(#blHatch); }
+.bl-svg .pg-line { stroke: var(--line); stroke-width: 2; }
+.bl-svg .porin { fill: var(--surface); stroke: var(--muted); stroke-width: 1.3; }
+.bl-svg .porin-hole { fill: var(--accent-soft); }
+.bl-svg .bl-ring rect, .bl-svg .bl-ring path { fill: none; stroke: var(--accent-ink); stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.bl-svg .bl-ring rect { fill: var(--surface); }
+.bl-svg .bl-ring.broken path { stroke: var(--muted); }
+.bl-svg .bl-ring .cut { stroke: var(--high, #c0392b) !important; stroke-width: 1.6; }
+.bl-svg .flow { fill: none; stroke: var(--muted); stroke-width: 1.6; marker-end: none; }
+.bl-svg .flow.ok { stroke: var(--accent); stroke-dasharray: 4 3; }
+.bl-svg .flow.thin { stroke-dasharray: 2 3; }
+.bl-svg .enzyme path { fill: var(--mid-bg, #fdf1dc); stroke: var(--mid, #c98a18); stroke-width: 1.6; }
+.bl-svg .pbp rect { fill: var(--surface); stroke: var(--accent); stroke-width: 1.6; }
+.bl-svg .plasmid { fill: none; stroke: var(--ink); stroke-width: 1.6; opacity: .6; }
+.bl-svg .bl-n circle { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+.bl-svg .bl-n text { fill: #fff; font-size: 12px; font-weight: 700; }
+.bl-svg .mol path { fill: none; stroke: var(--ink); stroke-width: 2.2; stroke-linecap: round; }
+.bl-svg .mol .amide { stroke: var(--accent); stroke-width: 3.4; }
+.bl-svg .atom { fill: var(--ink); font-size: 15px; font-weight: 700; }
+.bl-svg .attack { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 4 3; }
+.bl-svg .cutline { stroke: var(--high, #c0392b); stroke-width: 2; }
+.bl-steps { margin: 10px 0 0; padding-left: 20px; font-family: var(--sans); font-size: 14px; line-height: 1.55; }
+.bl-steps li + li { margin-top: 5px; }
+.bl-steps li::marker { color: var(--accent-ink); font-weight: 700; }
+.bl-intro { margin: 0 0 12px; }
+.bl-tree .link { fill: none; stroke: var(--line); stroke-width: 1.6; }
+.bl-tree .node { fill: var(--bg); stroke: var(--line); }
+.bl-tree .node.root { fill: var(--accent-soft); stroke: var(--accent); }
+.bl-tree .cls { cursor: pointer; outline: none; }
+.bl-tree .cls rect { fill: var(--surface); stroke: var(--line); stroke-width: 1.4; transition: fill .15s, stroke .15s; }
+.bl-tree .cls .big { fill: var(--ink); font-family: var(--serif, 'Libre Baskerville', Georgia, serif); font-size: 30px; font-weight: 700; }
+.bl-tree .cls.on rect { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+.bl-tree .cls.on .big { fill: var(--accent-ink); }
+.bl-tree .cls:focus-visible rect { stroke: var(--ink); }
+.bl-opts { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 12px; }
+@media (min-width: 601px) { .bl-opts { display: none; } }
+@media (max-width: 600px) { .bl-opts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.bl-cls-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+@media (max-width: 860px) { .bl-cls-grid { grid-template-columns: 1fr; } }
+.bl-scroll { max-height: none; }
+table.bl-spec .spec-org th { top: 0; }
+table.bl-spec .spec-org th small { display: block; margin-top: 3px; font-size: 10.5px; font-weight: 400; }
+table.bl-spec td { width: 44px; min-width: 36px; }
+table.bl-spec .spec-corner { min-width: 210px; }
+.bl-pheno td:last-child { font-weight: 600; }
+.bl-pheno th { text-align: left; }
+.bl-scroll { overflow-x: auto; max-width: 100%; }
+@media (max-width: 760px) { table.bl-spec .spec-corner { min-width: 0; } table.bl-spec tbody th[scope="row"] { white-space: normal; min-width: 108px; max-width: 130px; font-size: 13px; } table.bl-spec td { width: 34px; min-width: 30px; } .bl-wrap .af-card { padding-left: 12px; padding-right: 12px; } }

@@ -1,0 +1,97 @@
+---
+layout: default
+title: "β-lactamases: ESBL, AmpC, CPE and Ambler classes"
+permalink: /beta-lactamases/
+scripts:
+  - /assets/js/abx-data.js
+  - /assets/js/betalactamases.js
+---
+<div class="ie-wrap bl-wrap">
+  <header class="page-head">
+    <p class="page-kind k-reference">Reference</p>
+    <h1 class="page-title">β-lactamases: ESBL, AmpC, CPE and Ambler classes</h1>
+    <p class="lede">How bacteria destroy β-lactams, how the enzymes are classified, which drugs and inhibitors still work against each one, and how to spot them on a susceptibility report.</p>
+    <p class="page-meta"><span class="pm-check">Checked November 2026</span><span>Main sources: IDSA 2024; EUCAST resistance mechanisms; UKHSA</span></p>
+  </header>
+
+  <div id="bl" data-abx="{{ '/antibiotics/' | relative_url }}">
+    <h2 class="section-title">How β-lactamases cause resistance</h2>
+    <div class="pk-cards bl-two">
+      <section class="card pk-card"><p class="pk-kicker">In the cell</p><h2>Caught in the periplasm</h2><div id="bl-env" class="pk-fig"></div><div id="bl-env-notes"></div></section>
+      <section class="card pk-card"><p class="pk-kicker">The chemistry</p><h2>Breaking the ring</h2><div id="bl-chem" class="pk-fig"></div>
+        <p>All β-lactams share a four-membered β-lactam ring that mimics the end of the peptidoglycan building block and binds the PBPs. β-lactamases attack the ring’s carbonyl, using a serine (classes A, C and D) or zinc ions (class B), and water then opens it. The opened drug cannot bind PBPs.</p>
+        <p>β-lactamase inhibitors (clavulanate, tazobactam, avibactam, vaborbactam, relebactam) are taken up by the enzyme instead, protecting the partner β-lactam. None of the licensed inhibitors blocks the zinc enzymes.</p></section>
+    </div>
+
+    <h2 class="section-title">Ambler classes</h2>
+    <section class="card af-card">
+      <p class="ab-note bl-intro">Ambler groups β-lactamases by their amino-acid sequence into four classes. The Bush–Jacoby system groups them by what they destroy and what inhibits them (group 1 = AmpC, group 2 = class A and D, group 3 = metallo). Tap a class.</p>
+      <div class="mech-grid bl-cls-grid">
+        <div><div id="bl-tree"></div><div id="bl-cls-opts"></div></div>
+        <div id="bl-cls-panel" class="mech-panel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <h2 class="section-title">ESBL, AmpC and CPE</h2>
+    <div class="pk-cards">
+      <section class="card pk-card">
+        <p class="pk-kicker">Class A</p><h2>ESBL</h2>
+        <p>Extended-spectrum β-lactamases destroy penicillins, third-generation cephalosporins and aztreonam, but are inhibited by clavulanate. In the UK most are CTX-M-15 in <i>E. coli</i> and <i>K. pneumoniae</i>, often on plasmids with OXA-1 and other genes that also give co-amoxiclav, piperacillin–tazobactam, quinolone and aminoglycoside resistance.</p>
+        <dl class="pk-dl"><dt>Spot it</dt><dd>Cefotaxime, ceftriaxone or ceftazidime MIC &gt;1 mg/L, cefoxitin susceptible, with clavulanate synergy on a combination disc or strip test</dd>
+          <dt>Serious</dt><dd>A carbapenem (meropenem, or ertapenem if stable). In MERINO, 30-day mortality was 12.3% with piperacillin–tazobactam vs 3.7% with meropenem for ceftriaxone-resistant <i>E. coli</i> and <i>Klebsiella</i> bacteraemia. IDSA advises against piperacillin–tazobactam and cefepime even if reported susceptible, except for cystitis</dd>
+          <dt>Oral</dt><dd>Step down by susceptibility (co-trimoxazole, ciprofloxacin). Cystitis: nitrofurantoin, fosfomycin or pivmecillinam</dd>
+          <dt>Sparing</dt><dd>Temocillin IV for urinary infections, including bacteraemia from a urinary source</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">Class C</p><h2>AmpC</h2>
+        <p>Chromosomal AmpC is normally switched off but is induced by β-lactams. Mutants that make it all the time (derepressed) can be selected during treatment: an isolate susceptible to ceftriaxone at first becomes resistant (about 1 in 5 <i>Enterobacter</i> bacteraemias treated with third-generation cephalosporins in older series). Plasmid AmpC (CMY, DHA) occurs in <i>E. coli</i> and <i>Klebsiella</i>.</p>
+        <dl class="pk-dl"><dt>Who</dt><dd>Moderate to high risk of derepression: <i>Enterobacter cloacae</i> complex, <i>Klebsiella aerogenes</i>, <i>Citrobacter freundii</i>. Lower risk: <i>Serratia</i>, <i>Morganella</i>, <i>Providencia</i>, <i>Hafnia</i>. Also <i>Pseudomonas</i></dd>
+          <dt>Spot it</dt><dd>Third-generation cephalosporin and cefoxitin (MIC &gt;8 mg/L) resistant, no clavulanate synergy, cefepime usually susceptible; confirm with a cloxacillin or boronic acid test</dd>
+          <dt>Treat</dt><dd>For the moderate–high-risk organisms avoid ceftriaxone for serious infection even if reported susceptible. Cefepime if the MIC is ≤1 mg/L; a carbapenem if higher or an ESBL is also present. Non-β-lactams by susceptibility: co-trimoxazole, quinolones, aminoglycosides</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">Classes A, B and D</p><h2>CPE</h2>
+        <p>Carbapenemase-producing Enterobacterales. The “big five” are KPC (A), OXA-48-like (D) and the metallo-β-lactamases NDM, VIM and IMP (B). In England OXA-48-like and NDM are the most often reported. They are carried on plasmids that spread between species and between patients.</p>
+        <dl class="pk-dl"><dt>Spot it</dt><dd>Meropenem MIC above the EUCAST screening cut-off of 0.125 mg/L; high-level temocillin resistance suggests OXA-48. The laboratory names the enzyme by lateral flow test or PCR and can refer to UKHSA</dd>
+          <dt>Treat</dt><dd>Depends on the enzyme. KPC: ceftazidime–avibactam, meropenem–vaborbactam or imipenem–relebactam. OXA-48: ceftazidime–avibactam. MBL: aztreonam–avibactam, or ceftazidime–avibactam plus aztreonam. Cefiderocol is an alternative. Always discuss with microbiology</dd>
+          <dt>Control</dt><dd>Single room with contact precautions, flag the record, and screen contacts and at-risk admissions (rectal swab) as in the UKHSA CPE framework</dd></dl>
+      </section>
+    </div>
+
+    <h2 class="section-title">Which β-lactams each enzyme destroys</h2>
+    <section class="card af-card"><div id="bl-drug-mx"></div>
+      <p class="ab-note">Enterobacterales, by enzyme on its own. Real isolates often carry several (ESBL with OXA-1, or a carbapenemase with an ESBL), so always go by the isolate’s reported susceptibilities. Carbapenems against OXA-48 and aztreonam against MBLs show as variable because co-carried enzymes usually decide the result.</p></section>
+
+    <h2 class="section-title">Which inhibitor blocks which enzyme</h2>
+    <section class="card af-card"><div id="bl-inh-mx"></div></section>
+
+    <h2 class="section-title">Reading the susceptibility report (Enterobacterales)</h2>
+    <section class="card af-card">
+      <table class="ab-tbl bl-pheno">
+        <thead><tr><th>Pattern</th><th>Think of</th></tr></thead>
+        <tbody>
+          <tr><td>Amoxicillin resistant; co-amoxiclav and cephalosporins susceptible</td><td>Penicillinase (TEM-1; SHV-1 in all <i>K. pneumoniae</i>)</td></tr>
+          <tr><td>Third-generation cephalosporins resistant, cefoxitin susceptible, clavulanate synergy</td><td>ESBL</td></tr>
+          <tr><td>Third-generation cephalosporins and cefoxitin resistant, cefepime susceptible, no clavulanate synergy</td><td>AmpC (derepressed chromosomal, or plasmid AmpC in <i>E. coli</i> or <i>Klebsiella</i>)</td></tr>
+          <tr><td>Ertapenem resistant, meropenem susceptible, carbapenemase test negative</td><td>ESBL or AmpC with porin loss (non-carbapenemase)</td></tr>
+          <tr><td>High-level temocillin resistance, low-level carbapenem resistance, cephalosporins may be susceptible</td><td>OXA-48-like</td></tr>
+          <tr><td>Carbapenem resistant; ceftazidime–avibactam and meropenem–vaborbactam susceptible</td><td>KPC</td></tr>
+          <tr><td>Carbapenem resistant; ceftazidime–avibactam susceptible, meropenem–vaborbactam resistant</td><td>OXA-48-like</td></tr>
+          <tr><td>Resistant to all β-lactams including ceftazidime–avibactam; aztreonam–avibactam susceptible</td><td>Metallo-β-lactamase (NDM, VIM, IMP)</td></tr>
+        </tbody>
+      </table>
+      <p class="ab-note">Patterns point the way; confirmation is by the laboratory’s phenotypic and molecular tests.</p>
+    </section>
+
+    <h2 class="section-title">Key points</h2>
+    <ul class="vc-notes">
+      <li><b>Inoculum effect:</b> with a high bacterial load, MICs of piperacillin–tazobactam and cefepime against ESBL producers rise, one reason they fail in serious infection.</li>
+      <li><b>Gram-positives:</b> the <i>S. aureus</i> penicillinase (blaZ) is why benzylpenicillin rarely works; MRSA resistance is PBP2a, which no β-lactamase inhibitor helps.</li>
+      <li><b>Non-fermenters:</b> <i>Pseudomonas</i> combines AmpC, efflux and porin (OprD) loss; <i>Acinetobacter baumannii</i> carries OXA-23-like carbapenemases; <i>Stenotrophomonas maltophilia</i> has its own metallo-β-lactamase (L1), so it is intrinsically carbapenem resistant.</li>
+      <li><b>Anaerobes:</b> <i>Bacteroides fragilis</i> makes a cephalosporinase (so co-amoxiclav, piperacillin–tazobactam and carbapenems are used); a few carry the CfiA metallo-β-lactamase.</li>
+      <li><b>Non-β-lactam options</b> depend on the isolate: aminoglycosides, fosfomycin, co-trimoxazole, quinolones, tigecycline and colistin.</li>
+    </ul>
+  </div>
+
+  <p class="ie-source">Sources: Tamma PD et al. Infectious Diseases Society of America 2024 guidance on the treatment of antimicrobial-resistant Gram-negative infections. Clin Infect Dis 2024; EUCAST guidelines for detection of resistance mechanisms and specific resistances of clinical and/or epidemiological importance, version 2.0 (2017); Harris PNA et al. Effect of piperacillin-tazobactam vs meropenem on 30-day mortality for patients with E coli or Klebsiella pneumoniae bloodstream infection and ceftriaxone resistance: the MERINO randomized clinical trial. JAMA 2018;320:984–94; Chow JW et al. Enterobacter bacteremia: clinical features and emergence of antibiotic resistance during therapy. Ann Intern Med 1991;115:585–90; Bush K, Jacoby GA. Updated functional classification of β-lactamases. Antimicrob Agents Chemother 2010;54:969–76; UKHSA framework of actions to contain carbapenemase-producing Enterobacterales. Expected resistance in the <a href="{{ '/intrinsic-resistance/' | relative_url }}">intrinsic resistance table</a>; drug details on the <a href="{{ '/antibiotics/' | relative_url }}">antibiotics page</a>; where β-lactams act on the <a href="{{ '/mechanisms/' | relative_url }}">mechanisms diagram</a>.</p>
+</div>
