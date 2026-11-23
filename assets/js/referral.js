@@ -16,12 +16,16 @@ NoteForm({
       { id: 'onset', k: 'text', l: 'Onset', ph: 'e.g. 5 days, gradual' },
       { id: 'sx', k: 'chips', l: 'Symptoms', neg: 'Not present', o: ['Fever', 'Rigors', 'Night sweats', 'Weight loss', 'Headache', 'Confusion', 'Neck stiffness', 'Seizure', 'Cough', 'Breathlessness', 'Chest pain', 'Abdominal pain', 'Diarrhoea', 'Vomiting', 'Jaundice', 'Urinary symptoms', 'Back pain', 'Joint pain or swelling', 'Rash', 'Skin or wound infection', 'Line site problem', 'New murmur'] },
       { id: 'hpcd', k: 'area', l: 'History of presenting illness' }] },
-    { id: 'bg', t: 'Background', ask: ['Immune status and immunosuppressive drugs', 'Implants, devices and lines', 'Admissions, surgery and antibiotics in the last 3 months', 'Known resistant organisms'], f: [
+    { id: 'bg', t: 'Background', ask: ['Immune status and immunosuppressive drugs', 'Implants, devices and lines', 'Admissions, surgery and antibiotics in the last 3 months', 'Known resistant organisms', 'Occupation, smoking and alcohol'], f: [
       { id: 'immuno', k: 'chips', l: 'Risk factors', none: 'None', o: ['None', 'HIV', 'Solid organ transplant', 'Stem cell transplant', 'Chemotherapy', 'Neutropenic', 'Steroids', 'Biologics or DMARDs', 'Asplenia', 'Diabetes', 'CKD', 'Dialysis', 'Cirrhosis', 'Pregnant', 'Injecting drug use', 'Alcohol excess'] },
       { id: 'devices', k: 'chips', l: 'Devices and implants', none: 'None', o: ['None', 'Prosthetic valve', 'Pacemaker or ICD', 'Prosthetic joint', 'Vascular graft or stent', 'Central line or PICC', 'Port', 'Urinary catheter', 'CSF shunt or drain', 'Recent surgery'] },
       { id: 'mdro', k: 'chips', l: 'Known resistant organisms', none: 'None known', o: ['None known', 'MRSA', 'ESBL', 'CPE', 'VRE', 'Pseudomonas', 'C. difficile', 'Candida auris'] },
       { id: 'recent', k: 'text', l: 'Recent admissions or antibiotics' },
-      { id: 'pmh', k: 'area', l: 'Other relevant history and medicines' }] },
+      { id: 'pmh', k: 'area', l: 'Other relevant history and medicines' },
+      { id: 'occ', k: 'text', l: 'Occupation', ph: 'e.g. farmer, healthcare worker, sewage or water worker, vet', out: 'Occupation: ', head: 'SOCIAL HISTORY' },
+      { id: 'smoke', k: 'one', l: 'Smoking', o: ['Never smoked', 'Ex-smoker', 'Current smoker'], out: 'Smoking: ' },
+      { id: 'alc', k: 'one', l: 'Alcohol', o: ['None', 'Within recommended limits', 'Above recommended limits', 'Alcohol dependence'], out: 'Alcohol: ' },
+      { id: 'socd', k: 'text', l: 'Smoking, alcohol and other details', ph: 'e.g. 20 pack-years; about 40 units a week; lives alone', out: '' }] },
     { id: 'trav', t: 'Travel and exposures', ask: ['Where, when, for how long, rural or urban', 'Malaria prophylaxis and pre-travel vaccines', 'Animals, water, insects, food, sex, sick contacts, work'], f: [
       { id: 'links', k: 'links', l: 'Check current outbreaks and HCID status', o: [
         ['HCID list (UKHSA)', 'https://www.gov.uk/guidance/high-consequence-infectious-diseases-hcid'],
