@@ -124,17 +124,19 @@
   function layout(g) {
     var cards = Array.prototype.filter.call(g.children, function (c) { return c.classList.contains('card'); });
     var cols = getComputedStyle(g).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
-    g.classList.add('mz-on');
+    if (!g.classList.contains('mz-on')) g.classList.add('mz-on');
     var h = [];
     for (var i = 0; i < cols; i++) h.push(0);
     cards.forEach(function (c) {
-      if (c.hidden || c.offsetParent === null && getComputedStyle(c).display === 'none') { c.style.gridColumn = c.style.gridRow = ''; return; }
-      c.style.gridRow = 'auto';
+      if (c.hidden || c.offsetParent === null && getComputedStyle(c).display === 'none') { if (c.style.gridColumn) c.style.gridColumn = c.style.gridRow = ''; return; }
+      // Cards are top-aligned, so their height does not depend on the rows they span: measure without
+      // resetting the placement (resetting collapsed the grid and made the page jump while scrolling).
       var ht = Math.ceil(c.getBoundingClientRect().height);
       var k = 0;
       for (var j = 1; j < cols; j++) if (h[j] < h[k] - 1) k = j;
-      c.style.gridColumn = String(k + 1);
-      c.style.gridRow = (h[k] + 1) + ' / span ' + Math.max(1, ht);
+      var col = String(k + 1), row = (h[k] + 1) + ' / span ' + Math.max(1, ht);
+      if (c.style.gridColumn !== col) c.style.gridColumn = col;
+      if (c.style.gridRow !== row) c.style.gridRow = row;
       h[k] += ht + GAP;
     });
   }
