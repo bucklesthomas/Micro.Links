@@ -129,6 +129,7 @@
 - title: Antimicrobials and resistance
   items:
     - { name: "Antibiotics (UK-AWaRe, dosing, PK/PD)", url: /antibiotics/, kind: tool }
+    - { name: "Antibiotic mechanisms of action", url: /mechanisms/, kind: tool }
     - { name: "Antibiotic coverage checker", url: /coverage/, kind: tool }
     - { name: "EUCAST breakpoint interpreter", url: /breakpoints/, kind: tool }
     - { name: "Intrinsic resistance table", url: /intrinsic-resistance/, kind: tool }

@@ -1,0 +1,29 @@
+---
+layout: default
+title: Antibiotic mechanisms of action
+permalink: /mechanisms/
+scripts:
+  - /assets/js/abx-data.js
+  - /assets/js/mechanisms.js
+---
+<div class="ie-wrap mech-wrap">
+  <header class="page-head">
+    <p class="page-kind k-reference">Reference</p>
+    <h1 class="page-title">Antibiotic mechanisms of action</h1>
+    <p class="lede">Where each antibiotic class acts on the bacterial cell, whether it kills or stops growth, and how bacteria become resistant. Tap a numbered target to see the details and the drugs on this site.</p>
+    <p class="page-meta"><span class="pm-check">Checked November 2026</span><span>Main sources: Kapoor 2017; Blair 2015</span></p>
+  </header>
+
+  <section class="card af-card"><div id="mech" data-abx="{{ '/antibiotics/' | relative_url }}"></div></section>
+
+  <h2 class="section-title">Key points</h2>
+  <ul class="vc-notes">
+    <li><b>Synergy:</b> drugs acting at different steps can work better together: a β-lactam opens the wall so more aminoglycoside gets in (enterococcal endocarditis), and sulfamethoxazole with trimethoprim blocks two steps of folate synthesis.</li>
+    <li><b>Antagonism:</b> bacteriostatic drugs can blunt β-lactams, which need actively growing cells to kill.</li>
+    <li><b>Toxin suppression:</b> protein synthesis inhibitors (clindamycin, linezolid) stop toxin production, so they are added in toxic shock and necrotising fasciitis.</li>
+    <li><b>Cidal or static:</b> the distinction matters most when host defences are poor: endocarditis, meningitis and neutropenia.</li>
+    <li><b>Same target, cross-resistance:</b> erm methylation affects macrolides and clindamycin together, and one rpoB mutation removes rifampicin entirely, so rifampicin and fusidic acid are combined for systemic use.</li>
+  </ul>
+
+  <p class="ie-source">Sources: Kapoor G, Saigal S, Elongavan A. Action and resistance mechanisms of antibiotics: a guide for clinicians. J Anaesthesiol Clin Pharmacol 2017;33:300–5; Blair JMA et al. Molecular mechanisms of antibiotic resistance. Nat Rev Microbiol 2015;13:42–51; UK product information. Doses and spectrum on the <a href="{{ '/antibiotics/' | relative_url }}">antibiotics page</a>; PK/PD targets on the <a href="{{ '/pkpd/' | relative_url }}">PK/PD page</a>; intrinsic resistance in the <a href="{{ '/intrinsic-resistance/' | relative_url }}">EUCAST table</a>.</p>
+</div>

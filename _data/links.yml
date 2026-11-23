@@ -26,6 +26,10 @@
       url: "/coverage/"
       note: Is the current regimen covering the bugs you are worried about?
       tags: coverage spectrum regimen gram-positive gram-negative anaerobes atypical covering gaps empirical
+    - name: Antibiotic mechanisms of action
+      url: "/mechanisms/"
+      note: Diagram of a bacterial cell showing where each antibiotic class acts, with resistance mechanisms
+      tags: mechanism mechanisms of action moa target cell wall pbp ribosome 30s 50s gyrase rna polymerase folate membrane resistance bactericidal bacteriostatic teaching diagram
     - name: Antibiotic spectrum chart
       url: "/spectrum/"
       note: Every antibiotic against key organisms, colour coded at a glance

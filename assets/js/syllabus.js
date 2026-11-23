@@ -15,7 +15,7 @@
       ['Susceptibility testing and EUCAST breakpoints', '/breakpoints/'], ['Molecular diagnostics: PCR, multiplex panels, 16S, sequencing'], ['Serology and antigen tests (window periods, avidity)', '/syphilis/'],
       ['Fungal biomarkers: galactomannan, beta-D-glucan, CrAg', '/fungal-markers/'], ['Containment levels and laboratory safety (HG3/4, HCID samples)'], ['Quality assurance, accreditation (UKAS ISO 15189) and EQA']]],
     ['abx', 'Antimicrobial agents and stewardship', [
-      ['Antibiotic classes, mechanisms and spectrum', '/antibiotics/'], ['Pharmacokinetics and pharmacodynamics; TDM', '/pkpd/'], ['Choosing empirical therapy and coverage', '/coverage/'],
+      ['Antibiotic classes, mechanisms and spectrum', '/mechanisms/'], ['Pharmacokinetics and pharmacodynamics; TDM', '/pkpd/'], ['Choosing empirical therapy and coverage', '/coverage/'],
       ['IV-to-oral switch and treatment duration', '/iv-oral-durations/'], ['Antifungals and antivirals', '/antifungals/'], ['Penicillin allergy assessment', '/penicillin-allergy/'],
       ['Prescribing in pregnancy and renal impairment', '/pregnancy/'], ['Stewardship programmes and Start Smart then Focus']]],
     ['ipc', 'Infection prevention and control', [

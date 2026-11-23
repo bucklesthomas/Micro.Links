@@ -1473,3 +1473,58 @@ table.spec .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; 
 .pk-tbl th { width: 34%; font-weight: 700; } .pk-tbl th a { color: var(--ink); text-decoration: none; } .pk-tbl th a:hover { color: var(--accent-ink); text-decoration: underline; }
 .pk-tbl td { font-family: var(--sans); font-size: 14px; }
 @media (max-width: 600px) { .pk-metrics { grid-template-columns: 1fr; } .pk-m b { font-size: 20px; } }
+
+/* Antibiotic mechanisms diagram */
+.mech-wrap { max-width: 1120px; }
+.mech-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 860px) { .mech-grid { grid-template-columns: 1fr; } }
+.mech-svg { width: 100%; height: auto; display: block; font-family: var(--sans); overflow: visible; }
+.mech-svg .om { fill: none; stroke: var(--muted); stroke-width: 7; stroke-dasharray: 2 3; opacity: .8; }
+.mech-svg .pg { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
+.mech-svg .pg-hatch { fill: url(#pgHatch); stroke: none; }
+.mech-svg .pg-line { stroke: var(--line); stroke-width: 2; }
+.mech-svg .im { fill: none; stroke: var(--muted); stroke-width: 6; stroke-dasharray: 1.5 2.5; opacity: .8; }
+.mech-svg .cyto-base { fill: var(--surface); }
+.mech-svg .cyto { fill: var(--accent-soft); opacity: .5; }
+.mech-svg .porin rect { fill: var(--surface); stroke: var(--muted); stroke-width: 1.2; }
+.mech-svg .porin .porin-hole { fill: var(--accent-soft); stroke: none; }
+.mech-svg .dna { fill: none; stroke: var(--ink); stroke-width: 1.6; opacity: .55; }
+.mech-svg .enz ellipse, .mech-svg .enz rect, .mech-svg .fol rect { fill: var(--surface); stroke: var(--muted); stroke-width: 1.2; }
+.mech-svg .r50, .mech-svg .r30 { fill: var(--surface); stroke: var(--muted); stroke-width: 1.4; }
+.mech-svg .mrna { fill: none; stroke: var(--muted); stroke-width: 1.4; stroke-dasharray: 4 3; }
+.mech-svg .chain { fill: none; stroke: var(--accent-ink); stroke-width: 2; stroke-linecap: round; }
+.mech-svg .arr, .mech-svg .lead { fill: none; stroke: var(--muted); stroke-width: 1.1; }
+.mech-svg .lead { stroke-dasharray: 2 3; }
+.mech-svg .zap { fill: none; stroke: var(--high, #c0392b); stroke-width: 1.6; stroke-linejoin: round; }
+.mech-svg .lbl { fill: var(--muted); font-size: 15px; }
+.mech-svg .lbl.sm { font-size: 13px; }
+.mech-svg .lbl.lyr { fill: var(--ink); font-size: 14px; font-weight: 600; }
+.mech-svg .ar { transition: opacity .2s; }
+.mech-svg.has-sel .ar:not(.on) { opacity: .45; }
+.mech-svg .ar.on .om, .mech-svg .ar.on .im { stroke: var(--accent); opacity: 1; }
+.mech-svg .ar.on .pg { fill: var(--accent-soft); stroke: var(--accent); }
+.mech-svg .ar.on .dna { stroke: var(--accent-ink); opacity: 1; stroke-width: 2.2; }
+.mech-svg .ar.on .r50, .mech-svg .ar.on .r30 { fill: var(--accent-soft); stroke: var(--accent); }
+.mech-svg .mk { cursor: pointer; outline: none; }
+.mech-svg .mk circle { fill: var(--accent); stroke: var(--surface); stroke-width: 2.5; transition: fill .15s; }
+.mech-svg .mk text { fill: #fff; font-size: 14px; font-weight: 700; pointer-events: none; }
+.mech-svg .mk:focus-visible circle { stroke: var(--ink); }
+.mech-svg.has-sel .mk:not(.on) circle { fill: var(--muted); opacity: .55; }
+.mech-svg .mk.on circle { fill: var(--accent-ink); }
+.mech-gp { margin: 10px 2px 0; }
+@media (max-width: 600px) { .mech-fig { margin: -6px -10px 0; } .mech-gp { margin: 8px 10px 0; } }
+.mech-panel { font-family: var(--sans); font-size: 14px; line-height: 1.55; }
+.mech-panel > .ab-note { margin: 4px 0; }
+.mech-head { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
+.mech-head h3 { margin: 0; font-size: 19px; line-height: 1.25; }
+.mech-kicker { margin: 0; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--accent-ink); }
+.mech-n { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 20px; height: 20px; margin-right: 7px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11.5px; font-weight: 700; vertical-align: 1px; }
+.mech-n.big { width: 34px; height: 34px; margin: 0; font-size: 16px; }
+.opt.on .mech-n { background: var(--accent-ink); }
+.mech-how { margin: 8px 0 10px; }
+.mech-tbl { width: 100%; font-size: 13.5px; }
+.mech-tbl th { width: 84px; text-align: left; vertical-align: top; color: var(--muted); font-weight: 600; }
+.mech-tbl ul { margin: 0; padding-left: 18px; }
+.mech-tbl li + li { margin-top: 3px; }
+.mech-drugs { margin-top: 4px; }
+.mech-opts .opt { text-align: left; align-items: flex-start; }
