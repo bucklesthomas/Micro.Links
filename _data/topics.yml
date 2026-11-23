@@ -2,6 +2,7 @@
 # kind: guide (click-through guide), tool (reference page or calculator on this site), score, trials, link (external).
 - title: Bloodstream infection and sepsis
   items:
+    - { name: "Disease lookup (all infections)", url: /diseases/, kind: tool }
     - { name: "Positive blood culture triage", url: /blood-culture-triage/, kind: guide }
     - { name: "Blood culture report (note template)", url: /blood-culture-report/, kind: tool }
     - { name: "S. aureus bacteraemia", url: /sab/, kind: guide }

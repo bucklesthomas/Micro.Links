@@ -34,6 +34,9 @@ permalink: /search.json
     {%- assign uses = d.uses | join: " " -%},
   {"t":"abx","title":{{ d.name | jsonify }},"sub":{{ d.cls | append: " · " | append: d.aware | append: " · " | append: d.routes | jsonify }},"url":{{ "/antibiotics/#drug-" | append: d.id | jsonify }},"ext":false,"k":{{ d.brands | append: " antibiotic dose dosing pk pd " | append: d.aware | append: " " | append: uses | jsonify }}}
 {%- endfor -%}
+{%- for d in site.data.diseases.dz -%},
+  {"t":"dz","title":{{ d.n | jsonify }},"sub":{{ "Disease · " | append: d.g | append: " · " | append: d.s | truncate: 120 | jsonify }},"url":{{ "/diseases/#dz-" | append: d.id | jsonify }},"ext":false,"k":{{ d.syn | jsonify }}}
+{%- endfor -%}
 {%- for o in site.data.organisms.orgs -%},
   {"t":"bug","title":{{ o.n | jsonify }},"sub":{{ "Organism · " | append: o.g | jsonify }},"url":{{ "/organisms/#bug-" | append: o.id | jsonify }},"ext":false,"k":{{ o.syn | jsonify }}}
 {%- endfor %}

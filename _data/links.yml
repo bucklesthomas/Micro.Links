@@ -82,6 +82,10 @@
     - name: BIA (British Infection Association)
       url: "https://www.britishinfection.org/"
       tags: guidelines uk
+    - name: Disease lookup
+      url: "/diseases/"
+      note: Type any infection for quick guideline-directed diagnosis, treatment, duration and infection control
+      tags: disease lookup diseases infection condition quick guideline treatment first line empirical what to give nice ukhsa bashh summary
     - name: Encephalitis (UK 2026)
       url: "https://www.encephalitis.info/wp-content/uploads/2026/11/Management-of-suspected-infectious-and-autoimmune-encephalitis-in-adults_United-Kingdom_2026.pdf"
       note: Infectious and autoimmune encephalitis in adults (PDF)

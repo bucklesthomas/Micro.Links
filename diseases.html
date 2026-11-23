@@ -1,0 +1,22 @@
+---
+layout: default
+title: Disease lookup
+permalink: /diseases/
+scripts:
+  - /assets/js/disease-data.js
+  - /assets/js/abx-data.js
+  - /assets/js/diseases.js
+---
+<header class="page-head">
+  <p class="page-kind k-reference">Reference</p>
+  <h1 class="page-title">Disease lookup</h1>
+  <p class="lede">Type an infection you have come across and get a quick, guideline-directed summary: diagnosis, first-line treatment, alternatives, duration and infection control, with links to the guideline and the full guides on this site.</p>
+  <p class="page-meta"><span class="pm-check">Checked November 2026</span><span>Main sources: NICE antimicrobial prescribing guidelines; UKHSA; BASHH; BHIVA</span></p>
+</header>
+<p class="ie-disclaimer">Usual adult doses with normal kidney and liver function, for quick reference. Check allergies, interactions, pregnancy and local guidelines, and discuss with microbiology or infectious diseases.</p>
+
+<section class="card af-card">
+  <div id="dz" data-base="{{ site.baseurl }}" data-abx="{{ '/antibiotics/' | relative_url }}"><noscript>This page needs JavaScript turned on.</noscript></div>
+</section>
+
+<p class="ie-source">Summaries follow NICE antimicrobial prescribing guidelines (NG79, NG84, NG109–NG111, NG113, NG114, NG117, NG141, NG147, NG153, NG184, NG199), NICE NG250 (pneumonia), NICE NG95 (Lyme disease), NG191 (COVID-19), NG240 (meningitis), NG33 (TB), NG51 (sepsis), CG184 (H. pylori) and CG165 (hepatitis B); UKHSA guidance (pertussis, measles, varicella, influenza, group A strep, enteric fever, STEC, Shigella, PVL, scabies, CPE) and the Green Book; BASHH and BHIVA guidelines; ESCMID 2024 (brain abscess); Tokyo 2018 (cholangitis); STOP-IT 2015; Bernard 2015. Full detail is in the linked guides on this site.</p>

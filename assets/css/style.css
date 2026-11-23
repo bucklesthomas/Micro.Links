@@ -365,6 +365,7 @@ fieldset.row.choice:first-child { border-top: 0; }
 .ss-type.bug { color: var(--low); }
 .ss-type.ir { color: var(--mid); }
 .ss-type.abx { color: var(--high); }
+.ss-type.dz { color: var(--accent-ink); }
 .ss-main { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .ss-main b { overflow-wrap: anywhere; }
 .ss-main b { font-weight: 700; font-size: 14.5px; }
@@ -1566,3 +1567,15 @@ table.bl-spec .spec-corner { min-width: 210px; }
 .bl-pheno th { text-align: left; }
 .bl-scroll { overflow-x: auto; max-width: 100%; }
 @media (max-width: 760px) { table.bl-spec .spec-corner { min-width: 0; } table.bl-spec tbody th[scope="row"] { white-space: normal; min-width: 108px; max-width: 130px; font-size: 13px; } table.bl-spec td { width: 34px; min-width: 30px; } .bl-wrap .af-card { padding-left: 12px; padding-right: 12px; } }
+
+/* Disease lookup */
+.dz-sum { margin: 0 0 6px; font-size: 15px; line-height: 1.5; }
+.dz-empty p:last-child { font-family: var(--sans); font-size: 14px; line-height: 1.55; color: var(--muted); max-width: 60ch; }
+.dz-dl { margin: 14px 0 0; display: grid; grid-template-columns: 150px 1fr; gap: 6px 12px; font-size: 14px; line-height: 1.5; }
+.dz-dl dt { font-family: var(--sans); font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding-top: 2px; }
+.dz-dl dd { margin: 0; }
+@media (max-width: 600px) { .dz-dl { grid-template-columns: 1fr; gap: 2px; } .dz-dl dd { margin-bottom: 8px; } }
+.dz-notes { margin-top: 12px; }
+.org-tx a.dz-drug, .dz-notes a.dz-drug { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 2px; }
+.org-tx a.dz-drug:hover, .dz-notes a.dz-drug:hover { color: var(--accent-ink); text-decoration-color: currentColor; }
+.dz-layout .ir-items { max-height: 640px; }

@@ -1,0 +1,2475 @@
+{
+ "groups": [
+  "Respiratory",
+  "Skin and soft tissue",
+  "Bone and joint",
+  "Brain and nerves",
+  "Heart, blood and lines",
+  "Abdomen and liver",
+  "Gastroenteritis",
+  "Urinary",
+  "Sexual health",
+  "Viral and vaccine-preventable",
+  "Travel and zoonoses",
+  "Immunocompromised and fungal",
+  "Infection control"
+ ],
+ "dz": [
+  {
+   "id": "cap",
+   "n": "Community-acquired pneumonia",
+   "g": "Respiratory",
+   "syn": "cap pneumonia chest infection lrti curb-65 curb65 lower respiratory tract infection",
+   "s": "Severity (CURB-65 with clinical judgement) decides the antibiotic. Treat for 5 days, then review.",
+   "dx": [
+    "Chest X-ray; CURB-65 (CRB-65 in the community)",
+    "Moderate–high severity: blood and sputum cultures, pneumococcal and Legionella urinary antigens",
+    "Respiratory viral PCR in season"
+   ],
+   "rx": "Low severity: amoxicillin 500 mg TDS orally. Moderate: amoxicillin 500 mg TDS (add clarithromycin 500 mg BD if atypical infection suspected). High: co-amoxiclav 1.2 g TDS IV (or 500/125 mg TDS orally) plus clarithromycin 500 mg BD.",
+   "alt": "Penicillin allergy: doxycycline 200 mg on day 1 then 100 mg OD, or clarithromycin 500 mg BD (low–moderate severity); levofloxacin 500 mg BD (high severity, consider its safety warnings).",
+   "dur": "5 days, then stop if clinically stable.",
+   "ipc": "",
+   "notes": [
+    "High severity in hospital: consider a corticosteroid (IV hydrocortisone first) for 4–7 days or until discharge (NICE NG250).",
+    "Higher doses (amoxicillin up to 1 g TDS) are often used in hospital; follow local policy."
+   ],
+   "src": [
+    [
+     "NICE NG250",
+     "https://www.nice.org.uk/guidance/ng250"
+    ]
+   ],
+   "site": [
+    [
+     "CURB-65",
+     "/scores/#curb65"
+    ],
+    [
+     "IV to oral switch",
+     "/iv-oral-durations/"
+    ]
+   ]
+  },
+  {
+   "id": "hap",
+   "n": "Hospital-acquired pneumonia",
+   "g": "Respiratory",
+   "syn": "hap hospital acquired pneumonia nosocomial pneumonia vap ventilator",
+   "s": "Pneumonia starting 48 hours or more after admission. Choice depends on severity and the risk of resistant organisms.",
+   "dx": [
+    "Chest X-ray, blood cultures, sputum (or endotracheal aspirate) culture",
+    "Check previous cultures for MRSA and resistant Gram-negatives"
+   ],
+   "rx": "Not severe and low resistance risk: co-amoxiclav 500/125 mg TDS orally. Severe or higher risk (over 5 days in hospital, recent antibiotics, known colonisation): IV piperacillin–tazobactam, ceftazidime, ceftriaxone, cefuroxime, meropenem or levofloxacin per local policy.",
+   "alt": "Penicillin allergy (not severe): doxycycline, co-trimoxazole 960 mg BD or levofloxacin. Add vancomycin, teicoplanin or linezolid if MRSA is suspected or confirmed.",
+   "dur": "5 days, then review.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG250",
+     "https://www.nice.org.uk/guidance/ng250"
+    ]
+   ],
+   "site": [
+    [
+     "β-lactamases (ESBL, AmpC, CPE)",
+     "/beta-lactamases/"
+    ]
+   ]
+  },
+  {
+   "id": "aspiration",
+   "n": "Aspiration pneumonia",
+   "g": "Respiratory",
+   "syn": "aspiration pneumonitis vomit inhalation",
+   "s": "Aspiration pneumonitis (chemical) does not need antibiotics; aspiration pneumonia is treated like community- or hospital-acquired pneumonia.",
+   "dx": [
+    "Chest X-ray (often right lower lobe)",
+    "Swallow assessment"
+   ],
+   "rx": "Treat as community-acquired or hospital-acquired pneumonia by severity and setting. Extra anaerobic cover is not routinely needed unless there is lung abscess or empyema.",
+   "alt": "",
+   "dur": "5 days, then review.",
+   "ipc": "",
+   "notes": [
+    "Antibiotics started for pneumonitis can often be stopped within 48 hours if the patient improves quickly."
+   ],
+   "src": [
+    [
+     "NICE NG250",
+     "https://www.nice.org.uk/guidance/ng250"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "copd",
+   "n": "COPD exacerbation (infective)",
+   "g": "Respiratory",
+   "syn": "copd aecopd exacerbation chronic obstructive bronchitis",
+   "s": "Give antibiotics only if the exacerbation is severe or sputum becomes purulent, balancing likely benefit against resistance.",
+   "dx": [
+    "Sputum culture if previous treatment failed or frequent exacerbations",
+    "Chest X-ray if pneumonia possible"
+   ],
+   "rx": "Amoxicillin 500 mg TDS, doxycycline 200 mg on day 1 then 100 mg OD, or clarithromycin 500 mg BD.",
+   "alt": "Higher risk of treatment failure: co-amoxiclav 500/125 mg TDS, levofloxacin 500 mg OD or co-trimoxazole 960 mg BD. IV: amoxicillin, co-amoxiclav, clarithromycin, co-trimoxazole or piperacillin–tazobactam.",
+   "dur": "5 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG114",
+     "https://www.nice.org.uk/guidance/ng114"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "bronchiectasis",
+   "n": "Bronchiectasis exacerbation",
+   "g": "Respiratory",
+   "syn": "bronchiectasis exacerbation pseudomonas",
+   "s": "Send sputum before starting, and use previous sputum results to choose.",
+   "dx": [
+    "Sputum culture with every exacerbation"
+   ],
+   "rx": "Without previous results: amoxicillin 500 mg TDS, or clarithromycin 500 mg BD / doxycycline 100 mg OD if allergic. Pseudomonas colonisation: ciprofloxacin 500 mg BD (750 mg BD for severe).",
+   "alt": "IV if severe: piperacillin–tazobactam or ceftazidime by previous susceptibility.",
+   "dur": "7–14 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG117",
+     "https://www.nice.org.uk/guidance/ng117"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "influenza",
+   "n": "Influenza",
+   "g": "Respiratory",
+   "syn": "flu influenza oseltamivir tamiflu zanamivir",
+   "s": "Antivirals for people in hospital or at risk of complications, started as soon as possible.",
+   "dx": [
+    "Nose and throat swab for respiratory viral PCR"
+   ],
+   "rx": "Oseltamivir 75 mg BD for 5 days (adjust for kidney function). Start in hospitalised patients even after 48 hours of symptoms.",
+   "alt": "Severe immunosuppression or suspected oseltamivir resistance: zanamivir (inhaled, or IV in severe illness via specialist advice).",
+   "dur": "5 days (10 days often used if severely immunosuppressed).",
+   "ipc": "Droplet precautions in hospital; side room or cohort.",
+   "notes": [
+    "Post-exposure prophylaxis for at-risk contacts: oseltamivir 75 mg OD for 10 days, when UKHSA says flu is circulating or in outbreaks."
+   ],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=influenza+treatment+and+prophylaxis"
+    ]
+   ],
+   "site": [
+    [
+     "Isolation",
+     "/isolation/"
+    ],
+    [
+     "Infectious periods",
+     "/infectious-period/"
+    ]
+   ]
+  },
+  {
+   "id": "covid",
+   "n": "COVID-19",
+   "g": "Respiratory",
+   "syn": "covid covid-19 sars-cov-2 coronavirus paxlovid nirmatrelvir",
+   "s": "Treatment depends on whether the patient needs oxygen and their risk of severe disease.",
+   "dx": [
+    "Respiratory viral PCR or lateral flow test"
+   ],
+   "rx": "Needing oxygen: dexamethasone 6 mg OD for up to 10 days; consider tocilizumab or baricitinib per NICE. Not in hospital but at high risk: nirmatrelvir with ritonavir (check interactions) within 5 days of symptoms, or other options listed by NICE.",
+   "alt": "",
+   "dur": "Dexamethasone up to 10 days; nirmatrelvir–ritonavir 5 days.",
+   "ipc": "Follow local respiratory infection precautions.",
+   "notes": [
+    "Use the Liverpool COVID drug interaction checker before ritonavir-containing treatment."
+   ],
+   "src": [
+    [
+     "NICE NG191",
+     "https://www.nice.org.uk/guidance/ng191"
+    ]
+   ],
+   "site": [
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  },
+  {
+   "id": "pertussis",
+   "n": "Whooping cough (pertussis)",
+   "g": "Respiratory",
+   "syn": "pertussis whooping cough bordetella",
+   "s": "Paroxysmal cough with whoop or post-tussive vomiting. Notifiable; antibiotics mainly reduce spread.",
+   "dx": [
+    "Cough under 2 weeks: nasopharyngeal PCR or culture",
+    "Cough over 2 weeks: serology (anti-pertussis toxin IgG) or oral fluid"
+   ],
+   "rx": "Within 21 days of cough onset: clarithromycin 500 mg BD for 7 days or azithromycin 500 mg OD for 3 days.",
+   "alt": "Macrolide unsuitable: co-trimoxazole 960 mg BD for 7 days.",
+   "dur": "",
+   "ipc": "Notifiable. Exclude from work or school until 48 hours of antibiotics, or 21 days from cough onset if untreated.",
+   "notes": [
+    "Prophylaxis for close contacts in priority groups (infants, pregnant women, healthcare workers) follows UKHSA guidance."
+   ],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=pertussis"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Exclusion periods",
+     "/exclusion/"
+    ],
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ]
+   ]
+  },
+  {
+   "id": "legionella",
+   "n": "Legionnaires’ disease",
+   "g": "Respiratory",
+   "syn": "legionella legionnaires pneumophila atypical pneumonia",
+   "s": "Severe pneumonia, often with confusion, diarrhoea, hyponatraemia and raised CK; ask about travel, hot tubs and cooling towers.",
+   "dx": [
+    "Urinary antigen (detects serogroup 1 only)",
+    "Sputum or lower respiratory sample for Legionella PCR and culture (needed for public health typing)"
+   ],
+   "rx": "Levofloxacin 500 mg BD (or OD for mild disease), or clarithromycin 500 mg BD.",
+   "alt": "",
+   "dur": "7–10 days; 14–21 days if severe or immunosuppressed.",
+   "ipc": "Notifiable (as Legionnaires’ disease). Not spread person to person.",
+   "notes": [],
+   "src": [
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ],
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=legionella"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "empyema",
+   "n": "Empyema and parapneumonic effusion",
+   "g": "Respiratory",
+   "syn": "empyema pleural infection parapneumonic effusion",
+   "s": "Drain the pleural space; antibiotics alone rarely clear it.",
+   "dx": [
+    "Ultrasound-guided pleural aspiration: pH under 7.2 or frank pus means a chest drain",
+    "Pleural fluid culture in blood culture bottles"
+   ],
+   "rx": "Community-acquired: co-amoxiclav, or cefuroxime plus metronidazole. Hospital-acquired: piperacillin–tazobactam or meropenem per local policy.",
+   "alt": "Penicillin allergy: per local policy (for example clindamycin with ciprofloxacin).",
+   "dur": "Usually 2–6 weeks; guided by drainage and response.",
+   "ipc": "",
+   "notes": [
+    "Intrapleural tPA with DNase if drainage fails (MIST-2)."
+   ],
+   "src": [
+    [
+     "BTS guidelines",
+     "https://www.brit-thoracic.org.uk/quality-improvement/guidelines/"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "sorethroat",
+   "n": "Sore throat (tonsillitis)",
+   "g": "Respiratory",
+   "syn": "sore throat pharyngitis tonsillitis strep throat feverpain centor quinsy",
+   "s": "Most are viral. Use FeverPAIN or Centor to decide; look for quinsy and other red flags.",
+   "dx": [
+    "FeverPAIN 0–1 or Centor 0–2: no antibiotic",
+    "FeverPAIN 2–3: no antibiotic or back-up prescription",
+    "FeverPAIN 4–5 or Centor 3–4: immediate or back-up antibiotic"
+   ],
+   "rx": "Phenoxymethylpenicillin 500 mg QDS (or 1 g BD).",
+   "alt": "Penicillin allergy: clarithromycin 250–500 mg BD for 5 days, or erythromycin.",
+   "dur": "5–10 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG84",
+     "https://www.nice.org.uk/guidance/ng84"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "sinusitis",
+   "n": "Acute sinusitis",
+   "g": "Respiratory",
+   "syn": "sinusitis rhinosinusitis",
+   "s": "Usually viral and settles within 2–3 weeks. Look for orbital or intracranial complications.",
+   "dx": [
+    "Symptoms under 10 days: no antibiotic",
+    "10 days or more: consider high-dose nasal steroid, or a back-up antibiotic"
+   ],
+   "rx": "Phenoxymethylpenicillin 500 mg QDS.",
+   "alt": "Penicillin allergy: doxycycline 200 mg on day 1 then 100 mg OD, or clarithromycin 500 mg BD. Very unwell or high risk: co-amoxiclav 500/125 mg TDS.",
+   "dur": "5 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG79",
+     "https://www.nice.org.uk/guidance/ng79"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "otitisext",
+   "n": "Necrotising (malignant) otitis externa",
+   "g": "Respiratory",
+   "syn": "malignant otitis externa necrotising otitis externa skull base osteomyelitis pseudomonas",
+   "s": "Severe ear pain out of proportion, often in older people with diabetes. Usually Pseudomonas; urgent ENT.",
+   "dx": [
+    "CT and MRI of the temporal bone",
+    "Ear swab or biopsy culture before antibiotics",
+    "CRP and ESR to monitor"
+   ],
+   "rx": "Anti-pseudomonal treatment per ENT and microbiology: for example IV ceftazidime or piperacillin–tazobactam, or oral ciprofloxacin if susceptible and mild.",
+   "alt": "",
+   "dur": "At least 6 weeks, often longer.",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": []
+  },
+  {
+   "id": "cellulitis",
+   "n": "Cellulitis and erysipelas",
+   "g": "Skin and soft tissue",
+   "syn": "cellulitis erysipelas skin infection ssti leg red",
+   "s": "Mark the edge, look for a portal of entry, and rule out necrotising infection, DVT and venous eczema.",
+   "dx": [
+    "Blood cultures if systemically unwell",
+    "Swab only if there is an open wound or pus"
+   ],
+   "rx": "Flucloxacillin 500 mg–1 g QDS orally; IV flucloxacillin 1–2 g QDS if severe. Near the eyes or nose: co-amoxiclav.",
+   "alt": "Penicillin allergy: clarithromycin 500 mg BD, erythromycin or doxycycline (200 mg on day 1 then 100 mg OD). Severe: cefuroxime, ceftriaxone or clindamycin. MRSA: vancomycin, teicoplanin or linezolid.",
+   "dur": "5–7 days, then review.",
+   "ipc": "",
+   "notes": [
+    "Redness can spread for the first 24–48 hours even when treatment is working."
+   ],
+   "src": [
+    [
+     "NICE NG141",
+     "https://www.nice.org.uk/guidance/ng141"
+    ]
+   ],
+   "site": [
+    [
+     "Penicillin allergy",
+     "/penicillin-allergy/"
+    ],
+    [
+     "IV to oral switch",
+     "/iv-oral-durations/"
+    ]
+   ]
+  },
+  {
+   "id": "necfasc",
+   "n": "Necrotising fasciitis",
+   "g": "Skin and soft tissue",
+   "syn": "necrotising fasciitis nec fasc nf flesh eating fournier gangrene",
+   "s": "A surgical emergency: pain out of proportion, rapid spread, systemic toxicity. Do not wait for imaging if suspected.",
+   "dx": [
+    "Urgent surgical review for debridement",
+    "Blood cultures, tissue cultures at surgery",
+    "LRINEC can support, but a low score does not rule it out"
+   ],
+   "rx": "Broad IV cover per local policy, for example meropenem or piperacillin–tazobactam, plus clindamycin 1.2–1.8 g QDS (to switch off toxin). Add vancomycin or linezolid if MRSA risk.",
+   "alt": "",
+   "dur": "Until no further debridement needed and clinically improving; review with microbiology.",
+   "ipc": "Invasive group A strep is notifiable: contacts may need prophylaxis.",
+   "notes": [
+    "Consider IV immunoglobulin for streptococcal toxic shock."
+   ],
+   "src": [
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ],
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=invasive+group+A+streptococcal"
+    ]
+   ],
+   "site": [
+    [
+     "LRINEC",
+     "/scores/#lrinec"
+    ],
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ]
+   ]
+  },
+  {
+   "id": "bites",
+   "n": "Human and animal bites",
+   "g": "Skin and soft tissue",
+   "syn": "bite dog bite cat bite human bite animal bite",
+   "s": "Clean and assess. Consider tetanus, rabies (animal bites abroad, any bat) and blood-borne viruses (human bites).",
+   "dx": [
+    "Prophylaxis: human bite breaking skin with blood; cat bite breaking skin; dog or other bite with deep wound, high-risk site (hands, feet, face, genitals, joints) or at-risk patient"
+   ],
+   "rx": "Co-amoxiclav 500/125 mg TDS.",
+   "alt": "Penicillin allergy: doxycycline 100 mg BD plus metronidazole 400 mg TDS.",
+   "dur": "Prophylaxis 3 days; treatment of infection 5 days.",
+   "ipc": "",
+   "notes": [
+    "Human bites: assess hepatitis B, hepatitis C and HIV risk."
+   ],
+   "src": [
+    [
+     "NICE NG184",
+     "https://www.nice.org.uk/guidance/ng184"
+    ]
+   ],
+   "site": [
+    [
+     "Rabies",
+     "/rabies/"
+    ],
+    [
+     "Needlestick and BBV exposure",
+     "/needlestick/"
+    ]
+   ]
+  },
+  {
+   "id": "diabeticfoot",
+   "n": "Diabetic foot infection",
+   "g": "Skin and soft tissue",
+   "syn": "diabetic foot infection ulcer osteomyelitis dfi",
+   "s": "Grade the severity, probe to bone, and involve the diabetic foot team.",
+   "dx": [
+    "Deep tissue sample (not a surface swab) after debridement",
+    "X-ray; MRI if osteomyelitis suspected"
+   ],
+   "rx": "Mild: flucloxacillin 500 mg–1 g QDS. Moderate or severe: flucloxacillin with or without gentamicin and/or metronidazole; co-amoxiclav with or without gentamicin; ceftriaxone with metronidazole; or piperacillin–tazobactam (severe).",
+   "alt": "Penicillin allergy: clarithromycin, erythromycin or doxycycline (mild); co-trimoxazole with or without gentamicin and/or metronidazole (moderate–severe). Add vancomycin, teicoplanin or linezolid if MRSA.",
+   "dur": "Mild 7 days; moderate–severe 7 days minimum then review; osteomyelitis about 6 weeks.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG19",
+     "https://www.nice.org.uk/guidance/ng19"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "impetigo",
+   "n": "Impetigo",
+   "g": "Skin and soft tissue",
+   "syn": "impetigo school sores",
+   "s": "Golden crusted lesions; S. aureus or group A strep.",
+   "dx": [],
+   "rx": "Localised, not bullous: hydrogen peroxide 1% cream BD–TDS (fusidic acid 2% TDS if unsuitable). Widespread, bullous or unwell: flucloxacillin 500 mg QDS.",
+   "alt": "Penicillin allergy: clarithromycin 250–500 mg BD.",
+   "dur": "5 days (topical can be 5–7 days).",
+   "ipc": "Exclude until lesions crusted and healed, or 48 hours after starting antibiotics.",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG153",
+     "https://www.nice.org.uk/guidance/ng153"
+    ]
+   ],
+   "site": [
+    [
+     "Exclusion periods",
+     "/exclusion/"
+    ]
+   ]
+  },
+  {
+   "id": "pvl",
+   "n": "PVL Staphylococcus aureus",
+   "g": "Skin and soft tissue",
+   "syn": "pvl panton valentine leukocidin boils recurrent abscesses necrotising pneumonia",
+   "s": "Suspect with recurrent boils or abscesses, clusters in households or sports teams, or necrotising pneumonia.",
+   "dx": [
+    "Send pus or swabs asking for PVL testing (reference laboratory)"
+   ],
+   "rx": "Drain abscesses. Antibiotics by susceptibility if needed (for example flucloxacillin; doxycycline or clindamycin). Necrotising pneumonia: IV clindamycin and linezolid, with rifampicin; consider IV immunoglobulin.",
+   "alt": "",
+   "dur": "Skin infection 5–7 days.",
+   "ipc": "Decolonise the patient and household once lesions heal (for example nasal mupirocin and chlorhexidine body wash for 5 days).",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=Panton-Valentine+leukocidin"
+    ]
+   ],
+   "site": [
+    [
+     "S. aureus",
+     "/organisms/#bug-staphylococcus-aureus-mssa"
+    ]
+   ]
+  },
+  {
+   "id": "scabies",
+   "n": "Scabies",
+   "g": "Skin and soft tissue",
+   "syn": "scabies sarcoptes itch mites crusted norwegian",
+   "s": "Intense itch worse at night, burrows in finger webs and wrists. Crusted scabies is very contagious.",
+   "dx": [],
+   "rx": "Permethrin 5% cream to the whole body, repeated after 7 days. Treat all household and close contacts at the same time.",
+   "alt": "Malathion 0.5% liquid if permethrin unsuitable. Crusted scabies or outbreaks: oral ivermectin 200 micrograms/kg (specialist advice) with topical treatment.",
+   "dur": "Two applications 7 days apart.",
+   "ipc": "Contact precautions for crusted scabies; wash bedding and clothes at 50°C or above.",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=scabies"
+    ]
+   ],
+   "site": [
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  },
+  {
+   "id": "shingles",
+   "n": "Shingles (herpes zoster)",
+   "g": "Skin and soft tissue",
+   "syn": "shingles herpes zoster vzv ophthalmicus ramsay hunt",
+   "s": "Antivirals within 72 hours of rash help most when over 50, immunocompromised, severe pain or rash, or ophthalmic involvement.",
+   "dx": [
+    "Vesicle swab for VZV PCR if unsure"
+   ],
+   "rx": "Aciclovir 800 mg five times a day, or valaciclovir 1 g TDS, or famciclovir 500 mg TDS. Disseminated or severely immunocompromised: IV aciclovir 10 mg/kg TDS.",
+   "alt": "",
+   "dur": "7 days.",
+   "ipc": "Cover lesions. Airborne and contact precautions if disseminated or immunocompromised.",
+   "notes": [
+    "Eye involvement (nose tip, eye symptoms): same-day ophthalmology."
+   ],
+   "src": [
+    [
+     "NICE search",
+     "https://www.nice.org.uk/search?q=shingles"
+    ]
+   ],
+   "site": [
+    [
+     "Infectious periods",
+     "/infectious-period/"
+    ]
+   ]
+  },
+  {
+   "id": "septicarthritis",
+   "n": "Septic arthritis",
+   "g": "Bone and joint",
+   "syn": "septic arthritis joint infection hot joint",
+   "s": "A hot swollen joint is septic until proven otherwise. Aspirate before antibiotics unless septic.",
+   "dx": [
+    "Joint aspirate: Gram stain, culture, crystals",
+    "Blood cultures",
+    "Gonococcal NAAT (urine and swabs) if sexually active"
+   ],
+   "rx": "IV flucloxacillin 2 g QDS (add gentamicin if Gram-negative risk). Suspected gonococcal: ceftriaxone 2 g OD. MRSA risk: vancomycin.",
+   "alt": "Penicillin allergy: clindamycin or vancomycin.",
+   "dur": "Usually 4–6 weeks in total, with early oral switch when improving.",
+   "ipc": "",
+   "notes": [
+    "Urgent orthopaedic washout. Prosthetic joints: see prosthetic joint infection."
+   ],
+   "src": [],
+   "site": [
+    [
+     "IV to oral switch",
+     "/iv-oral-durations/"
+    ]
+   ]
+  },
+  {
+   "id": "pji",
+   "n": "Prosthetic joint infection",
+   "g": "Bone and joint",
+   "syn": "prosthetic joint infection pji hip knee replacement arthroplasty",
+   "s": "Plan surgery and microbiology together; hold antibiotics until samples are taken unless septic.",
+   "dx": [
+    "Joint aspirate (culture, cell count)",
+    "At surgery: at least 5 separate periprosthetic tissue samples",
+    "Blood cultures"
+   ],
+   "rx": "After sampling: IV vancomycin plus broad Gram-negative cover (for example piperacillin–tazobactam or meropenem) per local policy, then target to cultures.",
+   "alt": "",
+   "dur": "Usually 6–12 weeks depending on the operation (DAIR or revision).",
+   "ipc": "",
+   "notes": [
+    "Rifampicin is added for staphylococci when metalwork is retained, once bacteraemia has cleared and wounds are dry (never alone)."
+   ],
+   "src": [],
+   "site": []
+  },
+  {
+   "id": "vertebral",
+   "n": "Vertebral osteomyelitis and discitis",
+   "g": "Bone and joint",
+   "syn": "vertebral osteomyelitis discitis spondylodiscitis spinal infection epidural abscess",
+   "s": "Back pain with fever or raised CRP. Look for a source (endocarditis) and spinal cord compromise.",
+   "dx": [
+    "MRI whole spine",
+    "Blood cultures (×2–3); CT-guided biopsy if cultures negative, ideally before antibiotics",
+    "Echo if S. aureus or streptococcal bacteraemia",
+    "Consider TB and Brucella"
+   ],
+   "rx": "If stable, wait for microbiology. If septic or neurological signs: IV flucloxacillin (or vancomycin if MRSA risk) plus Gram-negative cover per local policy.",
+   "alt": "",
+   "dur": "6 weeks (non-inferior to 12 weeks in the Bernard 2015 trial for most cases).",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "IDSA guidelines",
+     "https://www.idsociety.org/practice-guideline/practice-guidelines/"
+    ]
+   ],
+   "site": [
+    [
+     "Endocarditis",
+     "/endocarditis/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ]
+   ]
+  },
+  {
+   "id": "meningitis",
+   "n": "Bacterial meningitis",
+   "g": "Brain and nerves",
+   "syn": "meningitis bacterial meningitis meningococcal pneumococcal neck stiffness",
+   "s": "Give antibiotics within an hour; do not delay for lumbar puncture or CT.",
+   "dx": [
+    "Blood cultures and meningococcal PCR",
+    "Lumbar puncture if safe (CSF cell count, protein, glucose, culture, PCR)"
+   ],
+   "rx": "Ceftriaxone 2 g BD IV with dexamethasone 10 mg QDS (start with or before the first dose). Add amoxicillin 2 g every 4 hours if Listeria risk (over 60 or immunocompromised).",
+   "alt": "Severe penicillin or cephalosporin allergy: chloramphenicol (with co-trimoxazole for Listeria).",
+   "dur": "Meningococcal 5 days; pneumococcal 10–14 days; Listeria 21 days.",
+   "ipc": "Meningococcal: droplet precautions for 24 hours of treatment; notifiable; contacts need prophylaxis.",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG240",
+     "https://www.nice.org.uk/guidance/ng240"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ],
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ]
+   ]
+  },
+  {
+   "id": "encephalitis",
+   "n": "Encephalitis",
+   "g": "Brain and nerves",
+   "syn": "encephalitis hsv encephalitis confusion fever seizures",
+   "s": "Fever with altered behaviour, seizures or focal signs. Start aciclovir immediately.",
+   "dx": [
+    "MRI brain, lumbar puncture (HSV and VZV PCR), EEG",
+    "Send autoimmune antibodies if infection not found"
+   ],
+   "rx": "IV aciclovir 10 mg/kg TDS (adjust for kidney function).",
+   "alt": "",
+   "dur": "HSV encephalitis 14–21 days (repeat LP before stopping).",
+   "ipc": "Notifiable (acute encephalitis).",
+   "notes": [],
+   "src": [
+    [
+     "UK encephalitis guideline 2026",
+     "https://www.encephalitis.info/wp-content/uploads/2026/11/Management-of-suspected-infectious-and-autoimmune-encephalitis-in-adults_United-Kingdom_2026.pdf"
+    ]
+   ],
+   "site": [
+    [
+     "Meningitis and encephalitis",
+     "/meningitis-encephalitis/"
+    ]
+   ]
+  },
+  {
+   "id": "brainabscess",
+   "n": "Brain abscess",
+   "g": "Brain and nerves",
+   "syn": "brain abscess cerebral abscess ring enhancing",
+   "s": "Headache, focal signs, fever often absent. Find the source: teeth, sinuses, ears, heart, lungs.",
+   "dx": [
+    "MRI with diffusion-weighted imaging",
+    "Neurosurgical aspiration for culture (before antibiotics if possible)",
+    "Blood cultures, echo, HIV test (toxoplasmosis)"
+   ],
+   "rx": "Ceftriaxone 2 g BD IV plus metronidazole 500 mg TDS; add vancomycin or linezolid if post-neurosurgery or S. aureus suspected.",
+   "alt": "",
+   "dur": "Usually 6–8 weeks; oral step-down possible after initial response (ESCMID 2024).",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "ESCMID guidelines",
+     "https://www.escmid.org/guidelines-journals/guidelines/published-guidelines/"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "ie",
+   "n": "Infective endocarditis",
+   "g": "Heart, blood and lines",
+   "syn": "endocarditis ie valve vegetation",
+   "s": "Three sets of blood cultures before antibiotics if stable; echo; modified Duke criteria; endocarditis team.",
+   "dx": [
+    "Blood cultures ×3 from separate venepunctures",
+    "TTE then TOE",
+    "Duke–ISCVID criteria"
+   ],
+   "rx": "Use the site’s endocarditis guide for empirical and organism-specific regimens.",
+   "alt": "",
+   "dur": "Usually 4–6 weeks; partial oral treatment (POET) for selected patients.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "ESCMID guidelines",
+     "https://www.escmid.org/guidelines-journals/guidelines/published-guidelines/"
+    ]
+   ],
+   "site": [
+    [
+     "Endocarditis guide",
+     "/endocarditis/"
+    ],
+    [
+     "Duke criteria",
+     "/scores/#duke"
+    ],
+    [
+     "Strep species and IE risk",
+     "/strep-ie-risk/"
+    ]
+   ]
+  },
+  {
+   "id": "sab",
+   "n": "Staphylococcus aureus bacteraemia",
+   "g": "Heart, blood and lines",
+   "syn": "sab staph aureus bacteraemia mssa mrsa bacteremia",
+   "s": "Never a contaminant. Repeat blood cultures, echo, remove lines, find the source, infection specialist review.",
+   "dx": [
+    "Repeat blood cultures at 48–72 hours",
+    "Echo (TOE if high risk)"
+   ],
+   "rx": "MSSA: flucloxacillin 2 g QDS IV or cefazolin 2 g TDS. MRSA: vancomycin (AUC-guided).",
+   "alt": "",
+   "dur": "At least 14 days IV from the first negative culture if uncomplicated; 4–6 weeks if complicated.",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "S. aureus bacteraemia guide",
+     "/sab/"
+    ],
+    [
+     "Vancomycin AUC",
+     "/vancomycin-auc/"
+    ]
+   ]
+  },
+  {
+   "id": "crbsi",
+   "n": "Line infection (catheter-related bloodstream infection)",
+   "g": "Heart, blood and lines",
+   "syn": "line infection crbsi clabsi central line picc hickman catheter related bloodstream",
+   "s": "Paired blood cultures from the line and a vein; remove short-term lines for S. aureus, Pseudomonas, Candida and mycobacteria.",
+   "dx": [
+    "Paired cultures: line positive at least 2 hours before the peripheral set suggests the line",
+    "Look at the exit site and tunnel"
+   ],
+   "rx": "Empirical: vancomycin (or teicoplanin), plus Gram-negative cover if septic, neutropenic or femoral line. Then target to cultures.",
+   "alt": "",
+   "dur": "Coagulase-negative staph: 5–7 days after removal. S. aureus: at least 14 days. Candida: 14 days after the first negative culture.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "IDSA guidelines",
+     "https://www.idsociety.org/practice-guideline/practice-guidelines/"
+    ]
+   ],
+   "site": [
+    [
+     "Blood culture triage",
+     "/blood-culture-triage/"
+    ],
+    [
+     "S. aureus bacteraemia",
+     "/sab/"
+    ],
+    [
+     "Candidaemia",
+     "/candidaemia/"
+    ]
+   ]
+  },
+  {
+   "id": "gnb",
+   "n": "Gram-negative bacteraemia",
+   "g": "Heart, blood and lines",
+   "syn": "gram negative bacteraemia e coli bacteraemia klebsiella bacteremia urosepsis",
+   "s": "Find and control the source; 7 days is enough for most once controlled.",
+   "dx": [
+    "Repeat cultures only if not improving",
+    "Imaging of the likely source"
+   ],
+   "rx": "Per source and local policy; then the narrowest active agent. ESBL: a carbapenem for serious infection.",
+   "alt": "",
+   "dur": "7 days for most uncomplicated cases (Yahav 2019, BALANCE 2024).",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Gram-negative bacteraemia guide",
+     "/gram-negative-bacteraemia/"
+    ],
+    [
+     "β-lactamases",
+     "/beta-lactamases/"
+    ]
+   ]
+  },
+  {
+   "id": "sepsis",
+   "n": "Sepsis (unknown source)",
+   "g": "Heart, blood and lines",
+   "syn": "sepsis septic shock unknown source",
+   "s": "Identify high-risk patients and give antibiotics within an hour, after blood cultures.",
+   "dx": [
+    "Blood cultures before antibiotics, lactate",
+    "Look hard for a source and send relevant samples"
+   ],
+   "rx": "Broad-spectrum per local policy (often piperacillin–tazobactam, with gentamicin in shock). Add MRSA cover if colonised.",
+   "alt": "Penicillin allergy: per local policy.",
+   "dur": "Review at 48–72 hours; narrow or stop.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG51",
+     "https://www.nice.org.uk/guidance/ng51"
+    ]
+   ],
+   "site": [
+    [
+     "qSOFA",
+     "/scores/#qsofa"
+    ],
+    [
+     "Neutropenic sepsis",
+     "/neutropenic-sepsis/"
+    ]
+   ]
+  },
+  {
+   "id": "cdiff",
+   "n": "Clostridioides difficile infection",
+   "g": "Abdomen and liver",
+   "syn": "c diff cdiff clostridium difficile cdi pseudomembranous colitis",
+   "s": "Stop unnecessary antibiotics and PPIs; assess severity; isolate.",
+   "dx": [
+    "Stool GDH and toxin testing",
+    "WCC, creatinine and lactate for severity"
+   ],
+   "rx": "First episode: vancomycin 125 mg QDS orally for 10 days. Recurrence or high risk of recurrence: fidaxomicin 200 mg BD for 10 days.",
+   "alt": "",
+   "dur": "10 days.",
+   "ipc": "Side room with enteric precautions; soap and water handwashing.",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG199",
+     "https://www.nice.org.uk/guidance/ng199"
+    ]
+   ],
+   "site": [
+    [
+     "C. difficile guide",
+     "/cdiff/"
+    ],
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  },
+  {
+   "id": "sbp",
+   "n": "Spontaneous bacterial peritonitis",
+   "g": "Abdomen and liver",
+   "syn": "sbp peritonitis ascites cirrhosis",
+   "s": "Diagnostic tap in every patient with ascites admitted to hospital. Neutrophils over 250/mm³.",
+   "dx": [
+    "Ascitic fluid cell count and culture in blood culture bottles"
+   ],
+   "rx": "Per the site’s SBP guide and local policy (for example ceftriaxone, or piperacillin–tazobactam if hospital-acquired).",
+   "alt": "",
+   "dur": "5–7 days.",
+   "ipc": "",
+   "notes": [
+    "IV albumin on day 1 and day 3 reduces kidney failure and death."
+   ],
+   "src": [],
+   "site": [
+    [
+     "SBP guide",
+     "/sbp/"
+    ]
+   ]
+  },
+  {
+   "id": "cholangitis",
+   "n": "Acute cholangitis",
+   "g": "Abdomen and liver",
+   "syn": "cholangitis ascending cholangitis biliary sepsis charcot",
+   "s": "Fever, jaundice and right upper quadrant pain; biliary drainage is the key treatment.",
+   "dx": [
+    "Blood cultures, LFTs, ultrasound or MRCP",
+    "Tokyo guidelines grade severity"
+   ],
+   "rx": "Co-amoxiclav 1.2 g TDS IV (mild–moderate), or piperacillin–tazobactam (severe or healthcare-associated) per local policy.",
+   "alt": "Penicillin allergy: per local policy (for example ciprofloxacin or a cephalosporin with metronidazole).",
+   "dur": "4–7 days after source control (Tokyo 2018).",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Gram-negative bacteraemia",
+     "/gram-negative-bacteraemia/"
+    ]
+   ]
+  },
+  {
+   "id": "liverabscess",
+   "n": "Liver abscess",
+   "g": "Abdomen and liver",
+   "syn": "liver abscess pyogenic amoebic hepatic abscess klebsiella",
+   "s": "Pyogenic (biliary or bowel source; hypervirulent Klebsiella) or amoebic (travel).",
+   "dx": [
+    "Ultrasound or CT; drain if large",
+    "Blood cultures, aspirate culture",
+    "Entamoeba serology if travel"
+   ],
+   "rx": "Pyogenic: ceftriaxone plus metronidazole, or piperacillin–tazobactam. Amoebic: metronidazole 800 mg TDS for 7–10 days, then a luminal agent (paromomycin).",
+   "alt": "",
+   "dur": "Pyogenic usually 4–6 weeks (drain plus antibiotics).",
+   "ipc": "",
+   "notes": [
+    "Hypervirulent K. pneumoniae: check eyes (endophthalmitis) and look for other abscesses."
+   ],
+   "src": [],
+   "site": []
+  },
+  {
+   "id": "intraabdo",
+   "n": "Intra-abdominal infection",
+   "g": "Abdomen and liver",
+   "syn": "intra-abdominal infection peritonitis appendicitis perforation abscess",
+   "s": "Source control (surgery or drainage) matters most.",
+   "dx": [
+    "CT abdomen",
+    "Cultures from pus at drainage"
+   ],
+   "rx": "Co-amoxiclav, or cefuroxime (or ceftriaxone) plus metronidazole; piperacillin–tazobactam if severe or healthcare-associated (local policy).",
+   "alt": "Penicillin allergy: per local policy.",
+   "dur": "About 4 days after adequate source control (STOP-IT 2015).",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": []
+  },
+  {
+   "id": "diverticulitis",
+   "n": "Diverticulitis",
+   "g": "Abdomen and liver",
+   "syn": "diverticulitis diverticular disease",
+   "s": "Uncomplicated and systemically well: no antibiotic, analgesia and review.",
+   "dx": [
+    "CT if complications suspected"
+   ],
+   "rx": "Systemically unwell, immunosuppressed or significant comorbidity: co-amoxiclav 500/125 mg TDS. IV: co-amoxiclav, or cefuroxime plus metronidazole, or gentamicin plus metronidazole.",
+   "alt": "Penicillin allergy: cefalexin plus metronidazole, trimethoprim plus metronidazole, or ciprofloxacin plus metronidazole.",
+   "dur": "5 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG147",
+     "https://www.nice.org.uk/guidance/ng147"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "hpylori",
+   "n": "Helicobacter pylori",
+   "g": "Abdomen and liver",
+   "syn": "h pylori helicobacter dyspepsia peptic ulcer eradication",
+   "s": "Test with urea breath test or stool antigen (no PPI for 2 weeks before).",
+   "dx": [],
+   "rx": "PPI BD plus amoxicillin 1 g BD plus clarithromycin 500 mg BD or metronidazole 400 mg BD.",
+   "alt": "Penicillin allergy: PPI plus clarithromycin 250–500 mg BD plus metronidazole 400 mg BD.",
+   "dur": "7 days (NICE); many now use 14 days in line with Maastricht VI.",
+   "ipc": "",
+   "notes": [
+    "Avoid clarithromycin or metronidazole if used for any reason in the past year."
+   ],
+   "src": [
+    [
+     "NICE CG184",
+     "https://www.nice.org.uk/guidance/cg184"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "hepb",
+   "n": "Hepatitis B",
+   "g": "Abdomen and liver",
+   "syn": "hepatitis b hbv hbsag",
+   "s": "Notifiable (acute). Check everyone before chemotherapy or immunosuppression.",
+   "dx": [
+    "HBsAg, anti-HBc, HBeAg/anti-HBe, HBV DNA, LFTs",
+    "Test for HIV, hepatitis C and D; vaccinate contacts"
+   ],
+   "rx": "Refer to hepatology. Antivirals (tenofovir or entecavir) depend on phase, DNA level and liver disease.",
+   "alt": "",
+   "dur": "",
+   "ipc": "Notifiable (acute hepatitis).",
+   "notes": [
+    "Before immunosuppression: HBsAg-positive needs prophylaxis; anti-HBc-positive may need prophylaxis or monitoring."
+   ],
+   "src": [
+    [
+     "NICE CG165",
+     "https://www.nice.org.uk/guidance/cg165"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Lab tests (hepatitis B)",
+     "/lab-tests/"
+    ],
+    [
+     "Screen before immunosuppression",
+     "/immunosuppression-screen/"
+    ],
+    [
+     "Needlestick",
+     "/needlestick/"
+    ]
+   ]
+  },
+  {
+   "id": "hepc",
+   "n": "Hepatitis C",
+   "g": "Abdomen and liver",
+   "syn": "hepatitis c hcv",
+   "s": "Curable with 8–12 weeks of direct-acting antivirals.",
+   "dx": [
+    "Anti-HCV, then HCV RNA (or core antigen) to confirm current infection",
+    "Test for HIV and hepatitis B"
+   ],
+   "rx": "Refer to the hepatitis C service (operational delivery network). Pan-genotypic regimens: sofosbuvir–velpatasvir 12 weeks or glecaprevir–pibrentasvir 8 weeks.",
+   "alt": "",
+   "dur": "8–12 weeks.",
+   "ipc": "Notifiable (acute).",
+   "notes": [
+    "Check drug interactions (Liverpool HEP checker)."
+   ],
+   "src": [
+    [
+     "Liverpool HEP interactions",
+     "https://www.hep-druginteractions.org/checker"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Needlestick",
+     "/needlestick/"
+    ]
+   ]
+  },
+  {
+   "id": "hepa",
+   "n": "Hepatitis A",
+   "g": "Abdomen and liver",
+   "syn": "hepatitis a hav",
+   "s": "Faecal–oral; notifiable. Contacts can be protected with vaccine.",
+   "dx": [
+    "HAV IgM"
+   ],
+   "rx": "Supportive. Watch for acute liver failure (INR).",
+   "alt": "",
+   "dur": "",
+   "ipc": "Notifiable. Exclude from work or school for 7 days after onset of jaundice or symptoms.",
+   "notes": [
+    "Close contacts: hepatitis A vaccine within 14 days of exposure (immunoglobulin for some)."
+   ],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=hepatitis+A"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Exclusion periods",
+     "/exclusion/"
+    ]
+   ]
+  },
+  {
+   "id": "hepe",
+   "n": "Hepatitis E",
+   "g": "Abdomen and liver",
+   "syn": "hepatitis e hev pork",
+   "s": "UK infection is mostly genotype 3 from pork; usually self-limiting but can become chronic when immunosuppressed.",
+   "dx": [
+    "HEV IgM and HEV RNA (PCR); PCR in immunosuppressed patients"
+   ],
+   "rx": "Supportive. Chronic infection: reduce immunosuppression; ribavirin (specialist).",
+   "alt": "",
+   "dur": "",
+   "ipc": "Notifiable (acute hepatitis).",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=hepatitis+E"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "campylobacter",
+   "n": "Campylobacter",
+   "g": "Gastroenteritis",
+   "syn": "campylobacter food poisoning diarrhoea gastroenteritis",
+   "s": "Usually self-limiting; most need no antibiotic.",
+   "dx": [
+    "Stool culture or PCR"
+   ],
+   "rx": "Only if severe, prolonged or immunocompromised: azithromycin 500 mg OD for 3 days (or clarithromycin 500 mg BD for 5–7 days).",
+   "alt": "Avoid quinolones (high resistance).",
+   "dur": "3 days (azithromycin).",
+   "ipc": "Notifiable as food poisoning. Food handlers and other risk groups: exclude until 48 hours free of symptoms.",
+   "notes": [],
+   "src": [
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Exclusion periods",
+     "/exclusion/"
+    ]
+   ]
+  },
+  {
+   "id": "salmonella",
+   "n": "Non-typhoidal Salmonella",
+   "g": "Gastroenteritis",
+   "syn": "salmonella gastroenteritis food poisoning",
+   "s": "Usually no antibiotic. Treat if severe, very young or old, immunocompromised or bacteraemic.",
+   "dx": [
+    "Stool culture; blood cultures if febrile",
+    "Bacteraemia in over-50s: look for endovascular infection"
+   ],
+   "rx": "Ciprofloxacin 500 mg BD or IV ceftriaxone (or azithromycin) guided by susceptibility.",
+   "alt": "",
+   "dur": "Gastroenteritis 5–7 days if treated; bacteraemia 10–14 days.",
+   "ipc": "Notifiable as food poisoning. Exclusion for risk groups until 48 hours free of symptoms.",
+   "notes": [],
+   "src": [
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Exclusion periods",
+     "/exclusion/"
+    ]
+   ]
+  },
+  {
+   "id": "typhoid",
+   "n": "Enteric fever (typhoid and paratyphoid)",
+   "g": "Gastroenteritis",
+   "syn": "typhoid enteric fever paratyphoid salmonella typhi xdr",
+   "s": "Fever after travel (especially South Asia). Constipation is as common as diarrhoea.",
+   "dx": [
+    "Blood cultures (repeat), stool culture",
+    "Tell the laboratory: hazard group 3"
+   ],
+   "rx": "Ceftriaxone 2 g OD IV empirically. Pakistan (XDR typhoid): meropenem, with or without azithromycin. Oral when susceptible: azithromycin 500 mg OD (1 g on day 1 in some protocols).",
+   "alt": "",
+   "dur": "Usually 10–14 days in total.",
+   "ipc": "Notifiable. Exclusion and clearance stool samples for risk groups (UKHSA).",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=typhoid+paratyphoid"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Returned traveller",
+     "/returned-traveller/"
+    ],
+    [
+     "Country lookup",
+     "/countries/"
+    ]
+   ]
+  },
+  {
+   "id": "shigella",
+   "n": "Shigella",
+   "g": "Gastroenteritis",
+   "syn": "shigella dysentery bloody diarrhoea msm",
+   "s": "Bloody diarrhoea; can be sexually acquired. Extensively drug-resistant strains are rising.",
+   "dx": [
+    "Stool culture with susceptibility",
+    "Sexual health screen if sexually acquired"
+   ],
+   "rx": "Treat if severe or immunocompromised, guided by susceptibility (for example ciprofloxacin or azithromycin).",
+   "alt": "",
+   "dur": "3–5 days.",
+   "ipc": "Notifiable (infectious bloody diarrhoea). Exclusion and clearance samples for risk groups.",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=shigella"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Exclusion periods",
+     "/exclusion/"
+    ]
+   ]
+  },
+  {
+   "id": "stec",
+   "n": "STEC (E. coli O157)",
+   "g": "Gastroenteritis",
+   "syn": "stec e coli o157 vtec haemolytic uraemic syndrome hus bloody diarrhoea",
+   "s": "Bloody diarrhoea; risk of haemolytic uraemic syndrome, especially in children.",
+   "dx": [
+    "Stool PCR or culture",
+    "FBC, film, U&E daily if unwell (watch for HUS)"
+   ],
+   "rx": "No antibiotics and no anti-motility drugs (both increase HUS risk). Supportive care.",
+   "alt": "",
+   "dur": "",
+   "ipc": "Notifiable (HUS too). Strict exclusion for risk groups until clearance samples negative.",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=STEC"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Exclusion periods",
+     "/exclusion/"
+    ]
+   ]
+  },
+  {
+   "id": "giardia",
+   "n": "Giardiasis",
+   "g": "Gastroenteritis",
+   "syn": "giardia giardiasis",
+   "s": "Prolonged watery diarrhoea, bloating and weight loss.",
+   "dx": [
+    "Stool PCR or antigen"
+   ],
+   "rx": "Metronidazole 400 mg TDS for 5 days (or 2 g OD for 3 days).",
+   "alt": "Tinidazole 2 g single dose.",
+   "dur": "3–5 days.",
+   "ipc": "Exclude risk groups until 48 hours free of symptoms.",
+   "notes": [],
+   "src": [],
+   "site": []
+  },
+  {
+   "id": "norovirus",
+   "n": "Norovirus",
+   "g": "Gastroenteritis",
+   "syn": "norovirus winter vomiting bug diarrhoea vomiting outbreak",
+   "s": "Sudden vomiting and diarrhoea; spreads quickly in wards and care homes.",
+   "dx": [
+    "Stool PCR"
+   ],
+   "rx": "Supportive (fluids).",
+   "alt": "",
+   "dur": "",
+   "ipc": "Enteric precautions until 48 hours free of symptoms; close bays in outbreaks; soap and water.",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=norovirus"
+    ]
+   ],
+   "site": [
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  },
+  {
+   "id": "cystitis",
+   "n": "Lower UTI (cystitis)",
+   "g": "Urinary",
+   "syn": "uti cystitis lower urinary tract infection dysuria",
+   "s": "Women under 65: diagnose on symptoms. Men, pregnancy and catheters: send urine culture.",
+   "dx": [
+    "Urine culture for men, pregnancy, over 65s, treatment failure, recurrence"
+   ],
+   "rx": "Nitrofurantoin 100 mg MR BD (if eGFR 45 or more), or trimethoprim 200 mg BD (if low resistance risk).",
+   "alt": "Second line: pivmecillinam 400 mg then 200 mg TDS, or fosfomycin 3 g single dose.",
+   "dur": "Women 3 days; men and pregnancy 7 days.",
+   "ipc": "",
+   "notes": [
+    "Pregnancy: nitrofurantoin (avoid at term); amoxicillin or cefalexin by culture."
+   ],
+   "src": [
+    [
+     "NICE NG109",
+     "https://www.nice.org.uk/guidance/ng109"
+    ]
+   ],
+   "site": [
+    [
+     "Pregnancy and breastfeeding",
+     "/pregnancy/"
+    ]
+   ]
+  },
+  {
+   "id": "pyelo",
+   "n": "Pyelonephritis",
+   "g": "Urinary",
+   "syn": "pyelonephritis upper uti kidney infection loin pain",
+   "s": "Send urine culture; blood cultures if systemically unwell.",
+   "dx": [
+    "Urine culture",
+    "Imaging if obstruction or no response in 48–72 hours"
+   ],
+   "rx": "Oral: cefalexin 500 mg BD–TDS (up to 1–1.5 g TDS–QDS), or ciprofloxacin 500 mg BD; co-amoxiclav or trimethoprim only if culture susceptible. IV: amoxicillin (if susceptible), co-amoxiclav, cefuroxime, ceftriaxone, ciprofloxacin, gentamicin.",
+   "alt": "",
+   "dur": "Cefalexin or co-amoxiclav 7–10 days; ciprofloxacin 7 days; trimethoprim 14 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG111",
+     "https://www.nice.org.uk/guidance/ng111"
+    ]
+   ],
+   "site": [
+    [
+     "IV to oral switch",
+     "/iv-oral-durations/"
+    ]
+   ]
+  },
+  {
+   "id": "cauti",
+   "n": "Catheter-associated UTI",
+   "g": "Urinary",
+   "syn": "catheter uti cauti catheter associated",
+   "s": "Treat only symptomatic infection; bacteriuria in a catheter is expected.",
+   "dx": [
+    "Change a catheter in place over 7 days, then send urine from the new one"
+   ],
+   "rx": "As for pyelonephritis (upper tract symptoms) or lower UTI by severity; check previous cultures.",
+   "alt": "",
+   "dur": "7 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG113",
+     "https://www.nice.org.uk/guidance/ng113"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "prostatitis",
+   "n": "Acute prostatitis",
+   "g": "Urinary",
+   "syn": "prostatitis acute bacterial prostatitis",
+   "s": "Fever, perineal pain, tender prostate; send urine culture.",
+   "dx": [
+    "Urine culture; consider STI testing"
+   ],
+   "rx": "Ciprofloxacin 500 mg BD, ofloxacin 200 mg BD or levofloxacin 500 mg OD.",
+   "alt": "Quinolone unsuitable: trimethoprim 200 mg BD.",
+   "dur": "14 days, then review.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG110",
+     "https://www.nice.org.uk/guidance/ng110"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "epididymo",
+   "n": "Epididymo-orchitis",
+   "g": "Urinary",
+   "syn": "epididymo-orchitis epididymitis orchitis scrotal pain",
+   "s": "Exclude torsion. STI-related (often under 35) or enteric (older, urinary tract problems).",
+   "dx": [
+    "First-void urine NAAT for gonorrhoea and chlamydia; urine culture"
+   ],
+   "rx": "STI likely: ceftriaxone 1 g IM single dose plus doxycycline 100 mg BD for 10–14 days. Enteric likely: ofloxacin 200 mg BD for 14 days or levofloxacin 500 mg OD for 10 days.",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "gonorrhoea",
+   "n": "Gonorrhoea",
+   "g": "Sexual health",
+   "syn": "gonorrhoea gonorrhea neisseria gonorrhoeae gc clap",
+   "s": "Culture before treatment when possible (resistance). Test of cure for all.",
+   "dx": [
+    "NAAT plus culture from exposed sites"
+   ],
+   "rx": "Ceftriaxone 1 g IM single dose. Ciprofloxacin 500 mg single dose if known susceptible.",
+   "alt": "Refer to sexual health for allergy or resistance.",
+   "dur": "Single dose.",
+   "ipc": "",
+   "notes": [
+    "Partner notification through sexual health services."
+   ],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "chlamydia",
+   "n": "Chlamydia",
+   "g": "Sexual health",
+   "syn": "chlamydia trachomatis lgv",
+   "s": "Often asymptomatic.",
+   "dx": [
+    "NAAT (vulvovaginal swab or first-void urine; rectal or pharyngeal if exposed)"
+   ],
+   "rx": "Doxycycline 100 mg BD for 7 days.",
+   "alt": "Pregnancy or doxycycline unsuitable: azithromycin 1 g then 500 mg OD for 2 days. LGV: doxycycline 100 mg BD for 21 days.",
+   "dur": "7 days.",
+   "ipc": "",
+   "notes": [
+    "Partner notification."
+   ],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "syphilis",
+   "n": "Syphilis",
+   "g": "Sexual health",
+   "syn": "syphilis treponema pallidum",
+   "s": "Stage the infection; check for neurological, eye and ear involvement.",
+   "dx": [
+    "Treponemal EIA, then TPPA and RPR",
+    "Lumbar puncture if neurological signs"
+   ],
+   "rx": "Early: benzathine benzylpenicillin 2.4 MU IM single dose. Use the site’s syphilis guide for late and neurosyphilis.",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": [
+    [
+     "Syphilis guide",
+     "/syphilis/"
+    ]
+   ]
+  },
+  {
+   "id": "pid",
+   "n": "Pelvic inflammatory disease",
+   "g": "Sexual health",
+   "syn": "pid pelvic inflammatory disease salpingitis",
+   "s": "Low threshold to treat; exclude pregnancy and surgical causes.",
+   "dx": [
+    "NAAT for gonorrhoea and chlamydia; pregnancy test"
+   ],
+   "rx": "Outpatient: ceftriaxone 1 g IM single dose plus doxycycline 100 mg BD and metronidazole 400 mg BD for 14 days.",
+   "alt": "Alternative: ofloxacin 400 mg BD plus metronidazole 400 mg BD for 14 days (avoid if gonorrhoea likely).",
+   "dur": "14 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "trich",
+   "n": "Trichomoniasis",
+   "g": "Sexual health",
+   "syn": "trichomonas trichomoniasis tv",
+   "s": "Frothy discharge; treat partners.",
+   "dx": [
+    "NAAT"
+   ],
+   "rx": "Metronidazole 400–500 mg BD for 7 days.",
+   "alt": "",
+   "dur": "7 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "bv",
+   "n": "Bacterial vaginosis",
+   "g": "Sexual health",
+   "syn": "bacterial vaginosis bv",
+   "s": "Not sexually transmitted in the usual sense; partners do not need treatment.",
+   "dx": [],
+   "rx": "Metronidazole 400 mg BD for 5–7 days, or metronidazole 0.75% vaginal gel for 5 days.",
+   "alt": "Clindamycin 2% cream for 7 days.",
+   "dur": "5–7 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "vvc",
+   "n": "Vulvovaginal candidiasis",
+   "g": "Sexual health",
+   "syn": "thrush candida vaginal vulvovaginal candidiasis",
+   "s": "",
+   "dx": [],
+   "rx": "Fluconazole 150 mg single oral dose, or clotrimazole 500 mg pessary.",
+   "alt": "Pregnancy: clotrimazole pessary (up to 7 nights); avoid oral azoles.",
+   "dur": "Single dose.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "herpes",
+   "n": "Genital herpes",
+   "g": "Sexual health",
+   "syn": "genital herpes hsv",
+   "s": "Start antivirals for a first episode within 5 days of onset or while new lesions form.",
+   "dx": [
+    "Lesion swab for HSV PCR"
+   ],
+   "rx": "First episode: aciclovir 400 mg TDS or valaciclovir 500 mg BD.",
+   "alt": "",
+   "dur": "5 days.",
+   "ipc": "",
+   "notes": [
+    "Late pregnancy: discuss with obstetrics and sexual health."
+   ],
+   "src": [
+    [
+     "BASHH guidelines",
+     "https://www.bashh.org/resources/guidelines"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "hiv",
+   "n": "HIV (new diagnosis and PEP)",
+   "g": "Sexual health",
+   "syn": "hiv new diagnosis pepse pep post exposure prophylaxis",
+   "s": "New diagnosis: refer the same week to HIV services; look for opportunistic infections if CD4 low.",
+   "dx": [
+    "HIV antigen/antibody test (4th generation); confirm",
+    "CD4 count, viral load, resistance test"
+   ],
+   "rx": "Antiretrovirals via the HIV team. PEP after exposure: start as soon as possible, within 72 hours.",
+   "alt": "",
+   "dur": "PEP: 28 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "BHIVA guidelines",
+     "https://www.bhiva.org/guidelines"
+    ]
+   ],
+   "site": [
+    [
+     "Needlestick and PEP",
+     "/needlestick/"
+    ],
+    [
+     "HIV opportunistic infections",
+     "/hiv-oi/"
+    ]
+   ]
+  },
+  {
+   "id": "chickenpox",
+   "n": "Chickenpox (varicella)",
+   "g": "Viral and vaccine-preventable",
+   "syn": "chickenpox varicella vzv",
+   "s": "Adults, pregnant women and the immunosuppressed get more severe disease (pneumonitis).",
+   "dx": [
+    "Vesicle swab for VZV PCR",
+    "Chest X-ray if breathless"
+   ],
+   "rx": "Adults presenting within 24 hours of rash: aciclovir 800 mg five times a day for 7 days. Pregnant, immunosuppressed or pneumonitis: urgent specialist advice; IV aciclovir if severe.",
+   "alt": "",
+   "dur": "7 days.",
+   "ipc": "Airborne and contact precautions until all lesions crusted.",
+   "notes": [
+    "Post-exposure for susceptible high-risk contacts (pregnant, immunosuppressed): oral aciclovir or valaciclovir from day 7 to 14 after exposure (UKHSA)."
+   ],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=varicella+post+exposure+prophylaxis"
+    ]
+   ],
+   "site": [
+    [
+     "Infectious periods",
+     "/infectious-period/"
+    ],
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  },
+  {
+   "id": "measles",
+   "n": "Measles",
+   "g": "Viral and vaccine-preventable",
+   "syn": "measles rubeola koplik",
+   "s": "Fever, cough, conjunctivitis, then rash. Very infectious; notifiable on suspicion.",
+   "dx": [
+    "Oral fluid or throat swab for measles PCR; IgM"
+   ],
+   "rx": "Supportive. Watch for pneumonia and encephalitis.",
+   "alt": "",
+   "dur": "",
+   "ipc": "Airborne precautions (negative-pressure room) from 4 days before to 4 days after rash onset. Notify on suspicion.",
+   "notes": [
+    "Exposed contacts: MMR within 72 hours, or human normal immunoglobulin within 6 days for pregnant, immunosuppressed and infant contacts (UKHSA)."
+   ],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=measles+post-exposure+prophylaxis"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Infectious periods",
+     "/infectious-period/"
+    ],
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  },
+  {
+   "id": "mumps",
+   "n": "Mumps",
+   "g": "Viral and vaccine-preventable",
+   "syn": "mumps parotitis orchitis",
+   "s": "Parotid swelling; complications include orchitis, meningitis and pancreatitis.",
+   "dx": [
+    "Oral fluid or buccal swab for mumps PCR"
+   ],
+   "rx": "Supportive.",
+   "alt": "",
+   "dur": "",
+   "ipc": "Notifiable. Exclude for 5 days after onset of swelling; droplet precautions.",
+   "notes": [],
+   "src": [
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Infectious periods",
+     "/infectious-period/"
+    ]
+   ]
+  },
+  {
+   "id": "scarlet",
+   "n": "Scarlet fever and invasive group A strep",
+   "g": "Viral and vaccine-preventable",
+   "syn": "scarlet fever igas invasive group a strep streptococcus pyogenes gas",
+   "s": "Sandpaper rash with sore throat. Invasive disease (iGAS) is notifiable and needs contact assessment.",
+   "dx": [
+    "Throat swab culture",
+    "Blood cultures if invasive disease suspected"
+   ],
+   "rx": "Scarlet fever: phenoxymethylpenicillin 500 mg QDS for 10 days. iGAS: IV benzylpenicillin plus clindamycin (toxin), per severity.",
+   "alt": "Penicillin allergy: clarithromycin (scarlet fever).",
+   "dur": "Scarlet fever 10 days.",
+   "ipc": "Exclude for 24 hours after starting antibiotics. Notifiable (scarlet fever and iGAS).",
+   "notes": [
+    "Household contacts of iGAS cases may need prophylaxis (UKHSA)."
+   ],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=group+A+streptococcal"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Contact prophylaxis",
+     "/contact-prophylaxis/"
+    ],
+    [
+     "Exclusion periods",
+     "/exclusion/"
+    ]
+   ]
+  },
+  {
+   "id": "tss",
+   "n": "Toxic shock syndrome",
+   "g": "Viral and vaccine-preventable",
+   "syn": "toxic shock syndrome tss tampon staphylococcal streptococcal",
+   "s": "Fever, rash, shock and multi-organ failure from staphylococcal or streptococcal toxins.",
+   "dx": [
+    "Remove tampons or other foreign bodies; look for a focus",
+    "Blood cultures, swabs"
+   ],
+   "rx": "IV clindamycin 1.2–1.8 g QDS (stops toxin production) plus flucloxacillin (staphylococcal) or benzylpenicillin (streptococcal), or broad cover until known; add MRSA cover if risk.",
+   "alt": "",
+   "dur": "Guided by source.",
+   "ipc": "Streptococcal TSS: notifiable as iGAS.",
+   "notes": [
+    "Consider IV immunoglobulin."
+   ],
+   "src": [
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "ebv",
+   "n": "Glandular fever (EBV)",
+   "g": "Viral and vaccine-preventable",
+   "syn": "glandular fever ebv epstein barr infectious mononucleosis monospot",
+   "s": "Fever, sore throat, lymphadenopathy, atypical lymphocytes.",
+   "dx": [
+    "Monospot or EBV serology (VCA IgM)"
+   ],
+   "rx": "Supportive. Avoid amoxicillin (rash).",
+   "alt": "",
+   "dur": "",
+   "ipc": "Avoid contact sports for at least 3–4 weeks (spleen rupture).",
+   "notes": [],
+   "src": [],
+   "site": []
+  },
+  {
+   "id": "mpox",
+   "n": "Mpox",
+   "g": "Viral and vaccine-preventable",
+   "syn": "mpox monkeypox",
+   "s": "Rash or lesions (often anogenital), with fever and lymphadenopathy.",
+   "dx": [
+    "Lesion swab for mpox PCR (tell the laboratory)",
+    "Sexual health screen"
+   ],
+   "rx": "Supportive. Tecovirimat for severe disease or high risk, via national guidance.",
+   "alt": "",
+   "dur": "",
+   "ipc": "Isolate; check UKHSA for the current infection-control status of each clade. Notifiable.",
+   "notes": [
+    "Vaccine (MVA-BN) for contacts, ideally within 4 days of exposure."
+   ],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=mpox"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  },
+  {
+   "id": "tetanus",
+   "n": "Tetanus-prone wounds",
+   "g": "Viral and vaccine-preventable",
+   "syn": "tetanus wound tetanus prone immunoglobulin htig",
+   "s": "Assess the wound and the patient’s vaccination history.",
+   "dx": [],
+   "rx": "Clean the wound. Give a tetanus vaccine dose and, for high-risk wounds in people not fully vaccinated, human tetanus immunoglobulin, as set out in the Green Book.",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [
+    "Tetanus disease: ICU, immunoglobulin, metronidazole and wound debridement."
+   ],
+   "src": [
+    [
+     "Green Book",
+     "https://www.gov.uk/government/collections/immunisation-against-infectious-disease-the-green-book"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "malaria",
+   "n": "Malaria",
+   "g": "Travel and zoonoses",
+   "syn": "malaria falciparum vivax plasmodium",
+   "s": "Any fever after travel to a malarious area is malaria until 3 negative tests.",
+   "dx": [
+    "Thick and thin films (×3) and rapid antigen test"
+   ],
+   "rx": "Use the site’s malaria guide (artesunate for severe falciparum).",
+   "alt": "",
+   "dur": "",
+   "ipc": "Notifiable.",
+   "notes": [],
+   "src": [
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "Malaria guide",
+     "/malaria/"
+    ],
+    [
+     "Country lookup",
+     "/countries/"
+    ]
+   ]
+  },
+  {
+   "id": "dengue",
+   "n": "Dengue",
+   "g": "Travel and zoonoses",
+   "syn": "dengue fever",
+   "s": "Fever within 14 days of return from tropics, headache, myalgia, rash, low platelets.",
+   "dx": [
+    "Dengue NS1 antigen or PCR in the first week; IgM after",
+    "FBC daily (haematocrit, platelets)"
+   ],
+   "rx": "Supportive: fluids; paracetamol; avoid NSAIDs and aspirin.",
+   "alt": "",
+   "dur": "",
+   "ipc": "Warning signs (abdominal pain, persistent vomiting, bleeding, rising haematocrit with falling platelets) need admission. Not spread person to person.",
+   "notes": [],
+   "src": [
+    [
+     "TravelHealthPro",
+     "https://travelhealthpro.org.uk/"
+    ]
+   ],
+   "site": [
+    [
+     "Returned traveller",
+     "/returned-traveller/"
+    ]
+   ]
+  },
+  {
+   "id": "lyme",
+   "n": "Lyme disease",
+   "g": "Travel and zoonoses",
+   "syn": "lyme borrelia tick erythema migrans",
+   "s": "Erythema migrans is diagnosed clinically without testing.",
+   "dx": [
+    "Without erythema migrans: ELISA, then immunoblot if positive (repeat in 4–6 weeks if negative and still suspected)"
+   ],
+   "rx": "Erythema migrans or non-focal: doxycycline 100 mg BD (or 200 mg OD) for 21 days. Cranial nerve, peripheral nerve or Lyme carditis: doxycycline 21 days (or ceftriaxone). Central nervous system: ceftriaxone 2 g BD or 4 g OD for 21 days.",
+   "alt": "Doxycycline unsuitable: amoxicillin 1 g TDS for 21 days, or azithromycin 500 mg OD for 17 days (erythema migrans).",
+   "dur": "21 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG95",
+     "https://www.nice.org.uk/guidance/ng95"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "lepto",
+   "n": "Leptospirosis",
+   "g": "Travel and zoonoses",
+   "syn": "leptospirosis weil rat urine freshwater",
+   "s": "Freshwater or rat exposure; fever, myalgia, conjunctival suffusion, jaundice and kidney injury.",
+   "dx": [
+    "Leptospira PCR (blood early, urine later) and serology"
+   ],
+   "rx": "Mild: doxycycline 100 mg BD for 7 days. Severe: IV benzylpenicillin or ceftriaxone.",
+   "alt": "",
+   "dur": "7 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Returned traveller",
+     "/returned-traveller/"
+    ]
+   ]
+  },
+  {
+   "id": "brucella",
+   "n": "Brucellosis",
+   "g": "Travel and zoonoses",
+   "syn": "brucella brucellosis unpasteurised",
+   "s": "Unpasteurised dairy or animal exposure; fever, sweats, spondylitis.",
+   "dx": [
+    "Blood cultures (warn the laboratory: hazard group 3)",
+    "Brucella serology"
+   ],
+   "rx": "Doxycycline 100 mg BD for 6 weeks plus gentamicin for the first 7 days (or rifampicin for 6 weeks).",
+   "alt": "",
+   "dur": "6 weeks (longer for spondylitis or endocarditis).",
+   "ipc": "Notifiable.",
+   "notes": [],
+   "src": [
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": []
+  },
+  {
+   "id": "qfever",
+   "n": "Q fever",
+   "g": "Travel and zoonoses",
+   "syn": "q fever coxiella burnetii",
+   "s": "Farm animal exposure; flu-like illness, pneumonia or hepatitis; endocarditis later.",
+   "dx": [
+    "Coxiella serology (phase I and II antibodies)"
+   ],
+   "rx": "Acute: doxycycline 100 mg BD for 14 days. Endocarditis: doxycycline plus hydroxychloroquine for at least 18 months (specialist).",
+   "alt": "",
+   "dur": "14 days (acute).",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": []
+  },
+  {
+   "id": "schisto",
+   "n": "Schistosomiasis",
+   "g": "Travel and zoonoses",
+   "syn": "schistosomiasis bilharzia freshwater africa",
+   "s": "Freshwater exposure in Africa; often asymptomatic, eosinophilia.",
+   "dx": [
+    "Serology at least 6–12 weeks after last exposure; urine or stool microscopy"
+   ],
+   "rx": "Praziquantel 40 mg/kg (single dose or two divided doses), repeated after 6–12 weeks in many protocols.",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [
+    "Acute (Katayama) syndrome: specialist advice; steroids may be needed."
+   ],
+   "src": [],
+   "site": [
+    [
+     "Returned traveller",
+     "/returned-traveller/"
+    ]
+   ]
+  },
+  {
+   "id": "strongyloides",
+   "n": "Strongyloides",
+   "g": "Travel and zoonoses",
+   "syn": "strongyloides strongyloidiasis hyperinfection eosinophilia",
+   "s": "Lifelong infection that can become fatal hyperinfection on steroids.",
+   "dx": [
+    "Serology; screen before steroids or immunosuppression if from an endemic area"
+   ],
+   "rx": "Ivermectin 200 micrograms/kg OD for 2 days (repeat after 2 weeks in some protocols).",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Lab tests",
+     "/lab-tests/"
+    ],
+    [
+     "Screen before immunosuppression",
+     "/immunosuppression-screen/"
+    ]
+   ]
+  },
+  {
+   "id": "vhf",
+   "n": "Viral haemorrhagic fever",
+   "g": "Travel and zoonoses",
+   "syn": "vhf viral haemorrhagic fever ebola lassa marburg cchf",
+   "s": "Fever within 21 days of return from an affected area. High-consequence infection.",
+   "dx": [
+    "Use the UKHSA VHF risk assessment algorithm before any tests"
+   ],
+   "rx": "Isolate and discuss with the infection specialist on call and the Imported Fever Service.",
+   "alt": "",
+   "dur": "",
+   "ipc": "High-consequence infectious disease: strict isolation; notifiable.",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA HCID guidance",
+     "https://www.gov.uk/guidance/high-consequence-infectious-diseases-hcid"
+    ]
+   ],
+   "site": [
+    [
+     "Returned traveller",
+     "/returned-traveller/"
+    ],
+    [
+     "Country lookup",
+     "/countries/"
+    ]
+   ]
+  },
+  {
+   "id": "tb",
+   "n": "Tuberculosis",
+   "g": "Travel and zoonoses",
+   "syn": "tb tuberculosis mycobacterium tuberculosis latent ltbi",
+   "s": "Notifiable. Multidisciplinary TB team.",
+   "dx": [
+    "Sputum ×3 for smear, culture and rapid molecular test (resistance)",
+    "Chest X-ray, HIV test"
+   ],
+   "rx": "Rifampicin, isoniazid, pyrazinamide and ethambutol for 2 months, then rifampicin and isoniazid for 4 months. Use the site’s TB guide for doses.",
+   "alt": "",
+   "dur": "6 months (longer for CNS).",
+   "ipc": "Notifiable. Airborne precautions for suspected infectious pulmonary TB.",
+   "notes": [],
+   "src": [
+    [
+     "NICE NG33",
+     "https://www.nice.org.uk/guidance/ng33"
+    ],
+    [
+     "Notifiable diseases (GOV.UK)",
+     "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
+    ]
+   ],
+   "site": [
+    [
+     "TB guide",
+     "/tb/"
+    ],
+    [
+     "TB drug monographs",
+     "https://www.tbdrugmonographs.co.uk/"
+    ]
+   ]
+  },
+  {
+   "id": "listeria",
+   "n": "Listeriosis",
+   "g": "Travel and zoonoses",
+   "syn": "listeria listeriosis monocytogenes pregnancy",
+   "s": "Pregnancy, older age, immunosuppression; bacteraemia and meningitis.",
+   "dx": [
+    "Blood cultures, CSF"
+   ],
+   "rx": "Amoxicillin 2 g every 4 hours IV, with or without gentamicin. Cephalosporins do not work.",
+   "alt": "Penicillin allergy: co-trimoxazole.",
+   "dur": "Bacteraemia 14 days; meningitis 21 days.",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Meningitis",
+     "/meningitis-encephalitis/"
+    ]
+   ]
+  },
+  {
+   "id": "rabies",
+   "n": "Rabies exposure",
+   "g": "Travel and zoonoses",
+   "syn": "rabies bat bite dog bite abroad",
+   "s": "Any bat contact, or a mammal bite or scratch abroad.",
+   "dx": [],
+   "rx": "Wash the wound for 15 minutes. Risk-assess with UKHSA; vaccine with or without immunoglobulin as advised.",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Rabies guide",
+     "/rabies/"
+    ]
+   ]
+  },
+  {
+   "id": "neutsep",
+   "n": "Neutropenic sepsis",
+   "g": "Immunocompromised and fungal",
+   "syn": "neutropenic sepsis febrile neutropenia",
+   "s": "An emergency: antibiotics within an hour.",
+   "dx": [
+    "Blood cultures (line and peripheral)"
+   ],
+   "rx": "Piperacillin–tazobactam 4.5 g QDS IV per local policy.",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Neutropenic sepsis guide",
+     "/neutropenic-sepsis/"
+    ]
+   ]
+  },
+  {
+   "id": "pjp",
+   "n": "Pneumocystis pneumonia (PCP/PJP)",
+   "g": "Immunocompromised and fungal",
+   "syn": "pcp pjp pneumocystis jirovecii",
+   "s": "Breathlessness, hypoxia on exertion; HIV with low CD4, steroids, transplant.",
+   "dx": [
+    "Induced sputum or BAL for Pneumocystis PCR",
+    "Serum β-D-glucan"
+   ],
+   "rx": "Co-trimoxazole 120 mg/kg/day IV or orally in 3–4 divided doses (lower doses also used). HIV with pO₂ under 9.3 kPa: add prednisolone.",
+   "alt": "Alternatives: clindamycin plus primaquine (check G6PD), or atovaquone for mild disease.",
+   "dur": "21 days in HIV; usually 14–21 days otherwise.",
+   "ipc": "",
+   "notes": [],
+   "src": [
+    [
+     "BHIVA guidelines",
+     "https://www.bhiva.org/guidelines"
+    ]
+   ],
+   "site": [
+    [
+     "HIV opportunistic infections",
+     "/hiv-oi/"
+    ]
+   ]
+  },
+  {
+   "id": "candidaemia",
+   "n": "Candidaemia",
+   "g": "Immunocompromised and fungal",
+   "syn": "candidaemia candida bloodstream candida auris",
+   "s": "Never a contaminant.",
+   "dx": [
+    "Repeat blood cultures until negative",
+    "Eye examination, echo if persistent"
+   ],
+   "rx": "An echinocandin first; step down to fluconazole if susceptible and stable.",
+   "alt": "",
+   "dur": "14 days after the first negative culture.",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Candidaemia guide",
+     "/candidaemia/"
+    ]
+   ]
+  },
+  {
+   "id": "aspergillosis",
+   "n": "Invasive aspergillosis",
+   "g": "Immunocompromised and fungal",
+   "syn": "aspergillus aspergillosis invasive fungal",
+   "s": "",
+   "dx": [
+    "CT chest; galactomannan (serum, BAL)"
+   ],
+   "rx": "Voriconazole or isavuconazole (TDM for voriconazole).",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Aspergillosis guide",
+     "/aspergillosis/"
+    ],
+    [
+     "Fungal markers",
+     "/fungal-markers/"
+    ]
+   ]
+  },
+  {
+   "id": "crypto",
+   "n": "Cryptococcal meningitis",
+   "g": "Immunocompromised and fungal",
+   "syn": "cryptococcus cryptococcal meningitis crag",
+   "s": "",
+   "dx": [
+    "Serum and CSF cryptococcal antigen; opening pressure"
+   ],
+   "rx": "Use the site’s cryptococcus guide.",
+   "alt": "",
+   "dur": "",
+   "ipc": "",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Cryptococcus guide",
+     "/cryptococcus/"
+    ]
+   ]
+  },
+  {
+   "id": "mrsa",
+   "n": "MRSA carriage and decolonisation",
+   "g": "Infection control",
+   "syn": "mrsa decolonisation decolonization carriage screening mupirocin",
+   "s": "Decolonise before surgery and when colonised in high-risk areas.",
+   "dx": [
+    "Nose, groin and other site screens per local policy"
+   ],
+   "rx": "Mupirocin 2% nasal ointment TDS for 5 days, plus chlorhexidine 4% (or octenidine) body wash OD for 5 days.",
+   "alt": "",
+   "dur": "5 days.",
+   "ipc": "Contact precautions per local policy.",
+   "notes": [],
+   "src": [],
+   "site": [
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  },
+  {
+   "id": "cpe",
+   "n": "CPE carriage",
+   "g": "Infection control",
+   "syn": "cpe carbapenemase producing enterobacterales cre kpc ndm oxa-48",
+   "s": "Carriers are not treated; infection is treated by enzyme type.",
+   "dx": [
+    "Rectal swab screening for at-risk admissions"
+   ],
+   "rx": "Treat infection only, guided by the enzyme (see β-lactamases page).",
+   "alt": "",
+   "dur": "",
+   "ipc": "Single room with contact precautions; flag the record.",
+   "notes": [],
+   "src": [
+    [
+     "UKHSA guidance (GOV.UK)",
+     "https://www.gov.uk/search/guidance-and-regulation?keywords=carbapenemase-producing+Enterobacterales"
+    ]
+   ],
+   "site": [
+    [
+     "β-lactamases",
+     "/beta-lactamases/"
+    ],
+    [
+     "Isolation",
+     "/isolation/"
+    ]
+   ]
+  }
+ ]
+}

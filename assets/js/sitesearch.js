@@ -11,7 +11,7 @@
   var loading = null;
   var results = [];
   var active = -1;
-  var LABEL = { link: 'Link', score: 'Score', trial: 'Trial', bug: 'Organism', abx: 'Antibiotic', ir: 'Resistance' };
+  var LABEL = { link: 'Link', score: 'Score', trial: 'Trial', bug: 'Organism', abx: 'Antibiotic', ir: 'Resistance', dz: 'Disease' };
 
   function load() {
     if (index) return Promise.resolve();
@@ -118,7 +118,7 @@
         if (!s) return;
         score += s;
       }
-      if (it.t === 'score' || it.t === 'bug') score += 1;
+      if (it.t === 'score' || it.t === 'bug' || it.t === 'dz') score += 1;
       list.push({ it: it, s: score });
     });
     list.sort(function (a, b) { return b.s - a.s || a.it.title.localeCompare(b.it.title); });
