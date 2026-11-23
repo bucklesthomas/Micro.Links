@@ -3,6 +3,7 @@ NoteForm({
   host: 'referral', prefix: 'rf', key: 'mc-referral', title: 'TELEPHONE INFECTION REFERRAL',
   sections: [
     { id: 'ref', t: 'Referral', ask: ['Who is calling: grade, team and hospital', 'What exactly is the question?', 'Advice only, or a request for review or transfer?'], f: [
+      { id: 'cons', k: 'text', l: 'On-call consultant', ph: 'e.g. Dr B Jones, ID consultant', out: 'On-call consultant: ' },
       { id: 'me', k: 'text', l: 'Taken by (your name and role; remembered on this device)', ph: 'e.g. Dr A Smith, ID registrar', mine: true, out: 'Taken by: ' },
       { id: 'from', k: 'text', l: 'Referrer (role, team, hospital)', ph: 'e.g. Medical registrar, AMU, district general hospital', out: 'From: ' },
       { id: 'reason', k: 'chips', l: 'Reason', o: ['Antimicrobial advice', 'Positive culture', 'Fever, source unclear', 'Returned traveller', 'Possible HCID', 'Endocarditis', 'Bone or joint infection', 'CNS infection', 'HIV-related', 'TB query', 'Exposure or PEP', 'Review or transfer request', 'OPAT'] },
