@@ -346,10 +346,6 @@
       url: "/flashcards/"
       note: Revision cards for the Combined Infection Certificate Examination
       tags: cice exam revision flashcards quiz frcpath combined infection certificate training study
-    - name: Exam syllabus tracker
-      url: "/syllabus/"
-      note: Track CICE and FRCPath Part 1 revision by topic, with an exam countdown
-      tags: cice frcpath exam syllabus curriculum revision tracker progress study combined infection training
     - name: Infection screen before immunosuppression
       url: "/immunosuppression-screen/"
       note: Tests, vaccines and prophylaxis before biologics, steroids, chemotherapy or transplant

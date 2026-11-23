@@ -1346,35 +1346,7 @@ input[type="date"] { min-height: 40px; }
 .cotd-ans a { font-weight: 700; white-space: nowrap; }
 @media (max-width: 760px) { .cotd-line { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; } }
 
-/* ── Syllabus tracker ─────────────────────────────────── */
-.sy-top { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 6px; }
-.sy-sum { flex: 1; min-width: 240px; }
-.sy-sum b { font-size: 30px; line-height: 1; margin-right: 8px; font-variant-numeric: tabular-nums; }
-.sy-sum span { font-size: 13px; color: var(--muted); }
-.sy-exam { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; color: var(--muted); }
-.sy-exam input { padding: 8px 10px; font: inherit; font-size: 15px; color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 8px; }
-.sy-exam small { font-size: 12.5px; color: var(--accent-ink); font-weight: 700; }
-.sy-bar { display: flex; height: 8px; margin-top: 8px; background: var(--bg); border: 1px solid var(--line-soft, var(--line)); border-radius: 5px; overflow: hidden; }
-.sy-bar.sm { height: 5px; margin: 6px 0 8px; }
-.sy-bar i { display: block; height: 100%; }
-.sy-bar i.c { background: var(--low); } .sy-bar i.r { background: var(--mid); opacity: .7; }
-.sy-area { margin-top: 16px; }
-.sy-area header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
-.sy-area h3 { margin: 0; font-size: 15px; }
-.sy-count { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.sy-area ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 6px; }
-.sy-t { display: flex; align-items: stretch; border: 1.5px solid var(--line); border-radius: 8px; overflow: hidden; }
-.sy-t button { flex: 1; display: flex; align-items: center; gap: 10px; padding: 9px 10px; font: inherit; font-size: 14px; line-height: 1.35; text-align: left; color: var(--ink); background: none; border: 0; cursor: pointer; }
-.sy-dot { flex: none; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--line); }
-.sy-name { flex: 1; }
-.sy-lv { flex: none; font-size: 11.5px; color: var(--muted); }
-.sy-t.lv1 { border-color: var(--mid); background: var(--mid-bg); } .sy-t.lv1 .sy-dot { border-color: var(--mid); background: linear-gradient(90deg, var(--mid) 50%, transparent 50%); } .sy-t.lv1 .sy-lv { color: var(--mid); font-weight: 700; }
-.sy-t.lv2 { border-color: var(--low); background: var(--low-bg); } .sy-t.lv2 .sy-dot { border-color: var(--low); background: var(--low); } .sy-t.lv2 .sy-lv { color: var(--low); font-weight: 700; }
-.sy-go { flex: none; display: flex; align-items: center; padding: 0 10px; font-size: 12.5px; font-weight: 700; text-decoration: none; color: var(--accent-ink); border-left: 1px solid var(--line); }
-@media (max-width: 760px) { .sy-area ul { grid-template-columns: 1fr; } }
 .cotd-ans, .cotd-line, .cotd-next, .cotd-kicker { font-family: var(--sans); }
-.ip-pep span, .ip-rel, .ip-notes, .is-sub, .is-list, .as-when, .sy-lv, .sy-sum span, .sy-exam, .sy-go, .sy-count, .ct-mal, .ct-flags, .ct-also, .ct-sum ul, .ct-card header small, .ct-tag, .ct-pill, .si-pill, .vc-h small, #si-q, #ct-q { font-family: var(--sans); }
-
 /* Box options as buttons (same look as the score option boxes) */
 button.opt { font: inherit; color: var(--ink); }
 .opt.on { background: var(--accent-soft); border-color: var(--accent); }
