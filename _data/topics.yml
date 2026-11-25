@@ -5,6 +5,8 @@
     - { name: "Disease lookup (all infections)", url: /diseases/, kind: tool }
     - { name: "Positive blood culture triage", url: /blood-culture-triage/, kind: guide }
     - { name: "Blood culture report (note template)", url: /blood-culture-report/, kind: tool }
+    - { name: "ID clinic review (note template)", url: /id-clinic/, kind: tool }
+    - { name: "OPAT review (note template)", url: /opat-review/, kind: tool }
     - { name: "S. aureus bacteraemia", url: /sab/, kind: guide }
     - { name: "Gram-negative bacteraemia", url: /gram-negative-bacteraemia/, kind: guide }
     - { name: "Neutropenic sepsis", url: /neutropenic-sepsis/, kind: guide }

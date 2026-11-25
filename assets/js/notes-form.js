@@ -127,7 +127,7 @@
       h += '</div><aside class="rf-side"><div class="card rf-prev" id="' + P + '-prev"><div class="rf-prevhead"><h2>Note preview</h2><span class="rf-count"></span></div>' +
         '<pre class="rf-note"></pre><p class="rf-warn" hidden></p><div class="ie-actions"><button type="button" class="reset rf-copy" data-copy>Copy for Epic</button>' +
         '<button type="button" class="reset" data-clear>Clear form</button></div>' +
-        '<p class="rf-priv">No patient names, dates of birth, hospital or lab numbers. Entries stay in this browser tab only, and are removed when you clear the form or close the tab. Your own name is remembered on this device.</p></div></aside></div>' +
+        '<p class="rf-priv">No patient names, dates of birth, hospital or lab numbers. Entries stay in this browser tab only, and are removed when you clear the form or close the tab.' + (S.some(function (sx) { return sx.f.some(function (g) { return g.mine; }); }) ? ' Your own name is remembered on this device.' : '') + '</p></div></aside></div>' +
         '<div class="rf-bar"><a href="#' + P + '-prev" class="reset" data-goprev>Preview</a><button type="button" class="reset rf-copy" data-copy>Copy for Epic</button></div>';
       host.innerHTML = h;
       Array.prototype.forEach.call(host.querySelectorAll('[data-lo]'), flag);

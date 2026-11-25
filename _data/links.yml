@@ -15,10 +15,19 @@
       url: "https://app.eolasmedical.com/organisation/Cambridge%20University%20Hospitals%20NHS%20Foundation%20Trust"
       note: Cambridge University Hospitals, via Eolas Medical
       tags: local trust cuh addenbrookes cambridge empirical antibiotics microguide eolas
+    - name: ID clinic review
+      url: "/id-clinic/"
+      note: Outpatient clinic note section by section, ready to copy into Epic
+      tags: clinic outpatient review follow-up letter template note epic copy bone joint tb hiv
     - name: ID referral call
       url: "/referral/"
       note: Take a phone referral section by section and copy the history into Epic
       tags: referral phone call telephone template history clerking epic note copy advice on call
+
+    - name: OPAT review
+      url: "/opat-review/"
+      note: "Weekly OPAT review: line, response, side effects and monitoring, ready for Epic"
+      tags: opat outpatient parenteral antimicrobial therapy review line picc midline elastomeric pump weekly bloods template note epic
 
 - category: Prescribing & interactions
   links:
