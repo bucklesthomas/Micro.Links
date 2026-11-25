@@ -1,0 +1,28 @@
+---
+layout: default
+title: Bacterial family map
+permalink: /family-map/
+scripts:
+  - /assets/js/org-data.js
+  - /assets/js/familymap.js
+---
+<div class="ie-wrap fm-wrap">
+  <header class="page-head">
+    <p class="page-kind k-reference">Reference</p>
+    <h1 class="page-title">Bacterial family map</h1>
+    <p class="lede">The bacteria on this site arranged by phylum, family and genus. Fold and unfold branches, highlight an organism, and tap one for a summary and its full page.</p>
+    <p class="page-meta"><span class="pm-check">Checked November 2026</span><span>Names follow LPSN</span></p>
+  </header>
+
+  <div id="fam" data-base="{{ site.baseurl }}"><noscript>This map needs JavaScript turned on.</noscript></div>
+
+  <h2 class="section-title">Notes on the names</h2>
+  <ul class="vc-notes">
+    <li><b>Phylum names changed in 2021</b> to end in “-ota”: Firmicutes became Bacillota, Proteobacteria became Pseudomonadota, and Bacteroidetes became Bacteroidota.</li>
+    <li><b>Enterobacterales</b> is the order that holds Enterobacteriaceae, Yersiniaceae (Serratia) and Morganellaceae (Proteus, Morganella, Providencia): the “CPE” and “ESBL-producing Enterobacterales” in infection control.</li>
+    <li><b>Clostridioides difficile</b> was moved out of Clostridium (and its family) in 2016, which is why it sits in Peptostreptococcaceae.</li>
+    <li><b>Stenotrophomonas</b> is listed under Lysobacteraceae, which now includes the former Xanthomonadaceae.</li>
+    <li><b>Mycoplasma pneumoniae</b> has a proposed new name, Mycoplasmoides pneumoniae; most laboratories still report Mycoplasma.</li>
+  </ul>
+  <p class="ie-source">Source: List of Prokaryotic names with Standing in Nomenclature (LPSN, lpsn.dsmz.de); Oren A, Garrity GM. Valid publication of the names of forty-two phyla of prokaryotes. Int J Syst Evol Microbiol 2021;71:005056. Organism details on the <a href="{{ '/organisms/' | relative_url }}">organisms page</a>.</p>
+</div>

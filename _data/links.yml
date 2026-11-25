@@ -153,6 +153,10 @@
 
 - category: Microbiology & lab
   links:
+    - name: Bacterial family map
+      url: "/family-map/"
+      note: Interactive tree of the bacteria on this site by phylum, family and genus
+      tags: family taxonomy classification phylum genus tree map bacteria enterobacterales firmicutes bacillota proteobacteria pseudomonadota teaching
     - name: "Beta-lactamases: ESBL, AmpC, CPE and Ambler classes"
       url: "/beta-lactamases/"
       note: How beta-lactamases work, the Ambler classes, which drugs still work and how to spot them
