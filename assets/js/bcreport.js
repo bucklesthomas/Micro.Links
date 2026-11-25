@@ -33,7 +33,7 @@ NoteForm({
       { id: 'interp', k: 'one', l: 'Interpretation', o: ['True bacteraemia likely', 'Possible contaminant: repeat cultures', 'Likely contaminant', 'Too early to say'], head: 'INTERPRETATION', out: '' },
       { id: 'interpd', k: 'area', l: 'Comment', out: '' },
       { id: 'advice', k: 'area', l: 'Antimicrobial advice', head: 'ADVICE', out: '' },
-      { id: 'actions', k: 'chips', l: 'Actions advised', o: ['Repeat blood cultures', 'Follow-up cultures at 48 hours', 'Remove or replace line', 'Echo (TTE)', 'TOE', 'Imaging for source', 'Source control', 'Infection specialist review', 'Check drug levels', 'Isolation', 'IPC informed', 'Notify UKHSA'] },
+      { id: 'actions', k: 'chips', l: 'Actions advised', o: ['Repeat blood cultures', 'Follow-up cultures at 48 hours', 'Remove or replace line', 'TTE', 'TOE', 'Imaging for source', 'Source control', 'Infection specialist review', 'Check drug levels', 'Isolation', 'IPC informed', 'Notify UKHSA'] },
       { id: 'fu', k: 'text', l: 'Follow-up', ph: 'e.g. Micro to call with susceptibilities tomorrow', out: '', head: 'FOLLOW-UP' }] }
   ]
 });

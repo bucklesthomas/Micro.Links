@@ -51,7 +51,7 @@ NoteForm({
       { id: 'virodone', k: 'chips', l: 'Serology, PCR and antigen tests sent (tap to add a line)', ins: 'viro', out: 'Sent: ', o: ['Malaria films and RDT', 'Respiratory viral PCR', 'Legionella and pneumococcal urine antigens', 'HIV test', 'Hepatitis B and C', 'Syphilis serology', 'EBV and CMV', 'β-D-glucan', 'Galactomannan', 'Cryptococcal antigen', 'IGRA'] },
       { id: 'viro', k: 'area', l: 'Serology, PCR and antigen tests: results', rows: 4 }] },
     { id: 'img', t: 'Imaging', ask: ['What was done and when', 'Formal report or provisional'], f: [
-      { id: 'imgdone', k: 'chips', l: 'Done (tap to add a line for its findings)', ins: 'imgd', out: 'Done: ', o: ['Chest X-ray', 'CT', 'Ultrasound', 'MRI', 'Echo (TTE)', 'TOE', 'PET-CT'] },
+      { id: 'imgdone', k: 'chips', l: 'Done (tap to add a line for its findings)', ins: 'imgd', out: 'Done: ', o: ['Chest X-ray', 'CT', 'Ultrasound', 'MRI', 'TTE', 'TOE', 'PET-CT'] },
       { id: 'imgd', k: 'area', l: 'Findings', rows: 5 }] },
     { id: 'mx', t: 'Current management', ask: ['Antimicrobials: drug, dose, route, and when started', 'Source control done or planned', 'Response so far'], f: [
       { id: 'abx', k: 'abx' }, { id: 'source', k: 'text', l: 'Source control' }, { id: 'resp', k: 'text', l: 'Response so far', out: 'Response: ' }] },
