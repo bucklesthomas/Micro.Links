@@ -37,11 +37,30 @@
     function fieldDef(id) { for (var i = 0; i < S.length; i++) for (var j = 0; j < S[i].f.length; j++) if (S[i].f[j].id === id) return S[i].f[j]; return {}; }
 
     function chipBtn(kind, f, o, cls, pressed, label) {
-      return '<button type="button" class="sp-chip rf-chip' + cls + '" aria-pressed="' + pressed + '"' + (label ? ' aria-label="' + esc(label) + '"' : '') +
+      var tt = f.titles && f.titles[o];
+      if (tt && !label) label = tt;
+      return '<button type="button" class="sp-chip rf-chip' + cls + (f.region ? ' rf-reg' : '') + '" aria-pressed="' + pressed + '"' + (label ? ' aria-label="' + esc(label) + '"' : '') + (tt ? ' title="' + esc(tt) + '"' : '') +
         ' data-' + kind + '="' + f.id + '" data-o="' + esc(o) + '">' + esc(o) + '</button>';
     }
     // A field with dep: { id, v } only shows (and only goes in the note) when that other field has value v
-    function depOk(f) { return !f.dep || val(f.dep.id) === f.dep.v; }
+    function depOk(f) { if (!f.dep) return true; var dv = st.v[f.dep.id]; return Array.isArray(dv) ? dv.indexOf(f.dep.v) !== -1 : val(f.dep.id) === f.dep.v; }
+    function showDeps(id) { Array.prototype.forEach.call(host.querySelectorAll('[data-dep="' + id + '"]'), function (x) { var dv = st.v[id]; x.hidden = !(Array.isArray(dv) ? dv.indexOf(x.getAttribute('data-depv')) !== -1 : dv === x.getAttribute('data-depv')); }); }
+    function reRe(t) { return t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    // Area buttons (region) rename a findings line, e.g. "CT:" becomes "CT TAP:" or "MRI head, lumbar spine:"
+    function regionLabel(f) {
+      var sel = f.o.filter(function (o) { return arr(f.id).indexOf(o) !== -1; });
+      if (!sel.length) return f.region.base;
+      if (f.region.abbr && sel.length > 1) return f.region.base + ' ' + sel.join('');
+      return f.region.base + ' ' + sel.map(function (o) { return lc((f.titles && f.titles[o]) || o); }).join(', ');
+    }
+    function relabel(f) {
+      var ta = host.querySelector('[data-v="' + f.region.ins + '"]'); if (!ta) return;
+      var ls = String(ta.value).split('\n'), re = new RegExp('^\\s*' + reRe(f.region.base) + '( [^:]*)?:'), lab = regionLabel(f), idx = -1;
+      ls.forEach(function (l, i) { if (idx === -1 && re.test(l)) idx = i; });
+      if (idx === -1) { while (ls.length && ls[ls.length - 1].trim() === '') ls.pop(); ls.push(lab + ': '); idx = ls.length - 1; }
+      else ls[idx] = ls[idx].replace(re, lab + ':');
+      ta.value = ls.join('\n'); st.v[f.region.ins] = ta.value;
+    }
     function field(f) {
       if (f.dep) { var inner = fieldInner(f); return '<div class="rf-dep" data-dep="' + f.dep.id + '" data-depv="' + esc(f.dep.v) + '"' + (depOk(f) ? '' : ' hidden') + '>' + inner + '</div>'; }
       return fieldInner(f);
@@ -130,7 +149,7 @@
     function isNegOpt(o) { return /^(No|Never|None)\b/.test(o); }
     function joinOr(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' or ' + a[a.length - 1]; }
     function lines(f) {
-      if (!depOk(f)) return [];
+      if (!depOk(f) || f.region) return [];
       var out = f.out != null ? f.out : (f.k === 'area' ? '' : f.l + ': ');
       if (f.k === 'text' || f.k === 'area') { var tv = String(val(f.id)).trim(); return tv ? [NEGTXT.test(tv) ? negLine(f) : out + val(f.id)] : []; }
       if (f.k === 'num') return val(f.id) ? [out + val(f.id) + (f.u ? ' ' + f.u : '')] : [];
@@ -216,15 +235,15 @@
     // Tapping an imaging test (for example) adds "Test: " as a line in a findings box; untapping removes it if still empty
     function insertLine(target, label, adding) {
       var ta = host.querySelector('[data-v="' + target + '"]'); if (!ta) return;
-      var ls = String(ta.value).split('\n'), prefix = label + ':';
+      var ls = String(ta.value).split('\n'), prefix = label + ':', reL = new RegExp('^' + reRe(label) + '( [^:]*)?:\\s*$'), reP = new RegExp('^' + reRe(label) + '( [^:]*)?:');
       var idx = -1;
-      ls.forEach(function (l, i) { if (idx === -1 && l.trim().indexOf(prefix) === 0) idx = i; });
+      ls.forEach(function (l, i) { if (idx === -1 && reP.test(l.trim())) idx = i; });
       if (adding) {
         if (idx === -1) { while (ls.length && ls[ls.length - 1].trim() === '') ls.pop(); ls.push(prefix + ' '); idx = ls.length - 1; }
         ta.value = ls.join('\n');
         var pos = ls.slice(0, idx + 1).join('\n').length;
         ta.focus(); ta.setSelectionRange(pos, pos);
-      } else if (idx !== -1 && ls[idx].trim() === prefix) { ls.splice(idx, 1); ta.value = ls.join('\n'); }
+      } else if (idx !== -1 && reL.test(ls[idx].trim())) { ls.splice(idx, 1); ta.value = ls.join('\n'); }
       st.v[target] = ta.value;
     }
     function setChipStates(id) {
@@ -264,6 +283,9 @@
         } else a.splice(i, 1);
         st.v[id] = a; setChipStates(id);
         if (fd.ins) insertLine(fd.ins, o, i === -1);
+        if (fd.region) relabel(fd);
+        if (i !== -1) S.forEach(function (sx) { sx.f.forEach(function (g) { if (g.region && g.dep && g.dep.id === id && g.dep.v === o) { st.v[g.id] = []; setChipStates(g.id); } }); });
+        showDeps(id);
         save(); note();
       } else if (b.hasAttribute('data-one')) {
         var id1 = b.getAttribute('data-one'), o1 = b.getAttribute('data-o');

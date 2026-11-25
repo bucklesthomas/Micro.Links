@@ -1680,3 +1680,4 @@ table.bl-spec .spec-corner { min-width: 210px; }
 
 .rf-dep { display: contents; }
 .rf-dep[hidden] { display: none; }
+.rf-chip.rf-reg { min-width: 40px; justify-content: center; text-align: center; }
