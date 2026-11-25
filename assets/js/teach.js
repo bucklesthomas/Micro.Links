@@ -27,6 +27,7 @@
       bed: ['Count the respiratory rate for a full 30 seconds: it is the most often missed and most predictive observation.', 'Check capillary refill and skin mottling; look at the urine output on the fluid chart.'],
       take: 'Think sepsis, measure the observations properly, take cultures and give antibiotics fast, then find the source.',
       cs: ['A 74-year-old man is confused with a temperature of 38.9°C, heart rate 118, blood pressure 88/50, respiratory rate 26 and lactate 4.1 mmol/L. He has a long-term urinary catheter.', [['What is his risk category?', 'High risk: hypotension, raised respiratory rate, new confusion and lactate over 4 mmol/L.'], ['What do you do in the first hour?', 'Senior review, blood cultures, urine from a new catheter, IV antibiotics per local policy, IV fluid bolus, oxygen if needed, lactate repeat, catheter change, and critical care referral if not responding.']]],
+      page: '/teach-sepsis/',
       see: [['NEWS2 and qSOFA', '/scores/'], ['Blood culture triage', '/blood-culture-triage/']] },
 
     { id: 'cellulitis', t: 'Cellulitis', pts: [
@@ -243,6 +244,7 @@
     h += '<div class="tw-head"><div><p class="ir-eyebrow">' + st.time + '-minute session</p><h2 class="tw-title">' + esc(tp.t) + '</h2></div>' +
       '<div class="tw-timer"><span class="tw-clock" id="tw-clock">' + clock(st.run ? st.left : st.time * 60) + '</span><button type="button" class="reset tw-go" data-act="timer">' + (st.run ? 'Stop' : 'Start timer') + '</button></div></div>';
     h += '<div class="tw-bar"><i id="tw-bar" style="width:' + (st.run ? (100 - st.left / (st.time * 60) * 100) : 0) + '%"></i></div>';
+    if (tp.page) h += '<p class="tw-full"><a class="reset tw-go" href="' + esc(url(tp.page)) + '">Open the full teaching page: diagrams, NEWS2 calculator, case and quiz</a></p>';
     h += plan(p);
     if (p.cs && tp.cs) {
       h += '<section class="tw-block"><h3><span class="tw-n s0">Case</span>Work through together</h3><p class="tw-stem">' + esc(tp.cs[0]) + '</p>' + qa(tp.cs[1], 'c') + '</section>';
