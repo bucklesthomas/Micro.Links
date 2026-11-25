@@ -6,6 +6,7 @@ NoteForm({
       { id: 'cons', k: 'text', l: 'On-call consultant', ph: 'e.g. Dr B Jones, ID consultant', out: 'On-call consultant: ' },
       { id: 'me', k: 'text', l: 'Taken by (your name and role; remembered on this device)', ph: 'e.g. Dr A Smith, ID registrar', mine: true, out: 'Taken by: ' },
       { id: 'from', k: 'text', l: 'Referrer (role, team, hospital)', ph: 'e.g. Medical registrar, AMU, district general hospital', out: 'From: ' },
+      { id: 'tel', k: 'text', l: 'Referrer contact number (bleep, extension or phone)', ph: 'e.g. bleep 1234, ext 5678 or switchboard', out: 'Referrer contact: ' },
       { id: 'reason', k: 'chips', l: 'Reason', o: ['Antimicrobial advice', 'Positive culture', 'Fever, source unclear', 'Returned traveller', 'Possible HCID', 'Endocarditis', 'Bone or joint infection', 'CNS infection', 'HIV-related', 'TB query', 'Exposure or PEP', 'Review or transfer request', 'OPAT'] },
       { id: 'question', k: 'area', l: 'Specific question', out: 'Question: ' }] },
     { id: 'pt', t: 'Patient', ask: ['Age, sex and weight (no name, date of birth or hospital number)', 'Allergies, and what actually happened'], f: [
