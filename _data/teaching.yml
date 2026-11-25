@@ -1,0 +1,27 @@
+# Teaching hub (/teaching/). Topic pages: set ready: true once the page exists.
+topics:
+  - { name: "Sepsis", url: /teach-sepsis/, ready: true, note: "Organ map, NEWS2 calculator, Sepsis Six, source cards, case and quiz" }
+  - { name: "Cellulitis", url: /teach-cellulitis/, note: "Skin layers diagram, red-leg mimics, case and quiz" }
+  - { name: "Community-acquired pneumonia", url: /teach-pneumonia/, note: "CURB-65 calculator, causes, case and quiz" }
+  - { name: "Urinary tract infection", url: /teach-uti/, note: "Treat-or-not tool, urinary tract diagram, case and quiz" }
+  - { name: "Blood cultures", url: /teach-blood-cultures/, note: "Bottle-to-result timeline, contaminant or real, case and quiz" }
+  - { name: "Antibiotic classes", url: /teach-antibiotics/, note: "Targets diagram, match the drug, case and quiz" }
+  - { name: "Penicillin allergy", url: /teach-penicillin-allergy/, note: "PEN-FAST calculator, reaction types, case and quiz" }
+  - { name: "Clostridioides difficile", url: /teach-cdiff/, note: "Two-step test interpreter, severity, case and quiz" }
+  - { name: "Fever in the returned traveller", url: /teach-traveller/, note: "Incubation timeline, case and quiz" }
+  - { name: "Infective endocarditis", url: /teach-endocarditis/, note: "Duke criteria tool, peripheral signs, case and quiz" }
+  - { name: "Meningitis", url: /teach-meningitis/, note: "CSF interpreter, first hour, case and quiz" }
+  - { name: "Tuberculosis", url: /teach-tb/, note: "Treatment timeline, side-effect map, case and quiz" }
+tools:
+  - { name: "Teach on the ward (quick planner)", url: /teach/, note: "Questions, key points and a timer for a 5, 10 or 20 minute session on any topic" }
+  - { name: "Resistance takeover (animation)", url: /resistance-takeover/, note: "Watch resistance being selected by low doses, missed doses and stopping early" }
+  - { name: "Antibiotic mechanisms of action", url: /mechanisms/, note: "Bacterial cell diagram: where each antibiotic class acts" }
+  - { name: "PK/PD targets explained", url: /pkpd/, note: "Time, peak and AUC targets with live dosing curves" }
+  - { name: "Antibiotic spectrum chart", url: /spectrum/, note: "Which antibiotic covers which organism, at a glance" }
+  - { name: "Bacterial family map", url: /family-map/, note: "Interactive tree of the bacteria on this site" }
+  - { name: "Beta-lactamases: ESBL, AmpC, CPE", url: /beta-lactamases/, note: "How resistance enzymes work, with diagrams" }
+  - { name: "HIV: CD4 explorer", url: /hiv-oi/, note: "Drag the CD4 count to see which infections become possible" }
+practice:
+  - { name: "Case of the day", url: /, note: "A new short case every day on the home page" }
+  - { name: "Flashcards", url: /flashcards/, note: "Quick-fire revision cards" }
+  - { name: "Disease lookup", url: /diseases/, note: "Quick guideline-directed summaries for over 90 infections" }

@@ -313,6 +313,10 @@
       url: "/syphilis/"
       note: Interpret treponemal tests and RPR; treatment and follow-up
       tags: syphilis serology rpr tppa tpha treponemal benzathine penicillin neurosyphilis serofast reinfection
+    - name: Teaching (all teaching pages)
+      url: "/teaching/"
+      note: Topic teaching pages, interactive diagrams and practice for medical students
+      tags: teaching hub medical students education topics ward round tutorial
     - name: Teach on the ward
       url: "/teach/"
       note: Ready-made 5, 10 or 20 minute sessions for medical students on the ward round

@@ -1,0 +1,37 @@
+---
+layout: default
+title: Teaching
+permalink: /teaching/
+---
+<header class="page-head">
+  <p class="page-kind k-revision">Teaching</p>
+  <h1 class="page-title">Teaching</h1>
+  <p class="lede">Everything for teaching medical students in one place: topic pages to work through on the ward, interactive diagrams and animations to show, and cases and flashcards for practice.</p>
+  <p class="page-meta"><span class="pm-check">Checked November 2026</span><span>Built for phones and tablets on the ward round</span></p>
+</header>
+
+<h2 class="section-title">Topic teaching pages</h2>
+<p class="th-intro">Each page fits a 5, 10 or 20 minute slot, with a diagram, an interactive tool, clinical pearls, an unfolding case and a quiz.</p>
+<div class="th-grid">
+{% for t in site.data.teaching.topics %}
+  {% if t.ready %}
+  <a class="card th-tile" href="{{ t.url | relative_url }}"><span class="th-n">{{ forloop.index }}</span><h3>{{ t.name }}</h3><p>{{ t.note }}</p><span class="th-go">Open teaching page</span></a>
+  {% else %}
+  <div class="card th-tile soon" aria-disabled="true"><span class="th-n">{{ forloop.index }}</span><h3>{{ t.name }}</h3><p>{{ t.note }}</p><span class="th-go">Coming soon</span></div>
+  {% endif %}
+{% endfor %}
+</div>
+
+<h2 class="section-title">Interactive tools to show</h2>
+<div class="th-list">
+{% for t in site.data.teaching.tools %}
+  <a class="card th-item" href="{{ t.url | relative_url }}"><b>{{ t.name }}</b><span>{{ t.note }}</span></a>
+{% endfor %}
+</div>
+
+<h2 class="section-title">Practice</h2>
+<div class="th-list">
+{% for t in site.data.teaching.practice %}
+  <a class="card th-item" href="{{ t.url | relative_url }}"><b>{{ t.name }}</b><span>{{ t.note }}</span></a>
+{% endfor %}
+</div>
