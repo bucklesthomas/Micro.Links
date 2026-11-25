@@ -124,19 +124,27 @@
     }
 
     // Note lines for one field
+    // Negative answers become a plain negative line ("No travel"), not "Travel: nil"
+    var NEGTXT = /^(nil|nil of note|none|none known|no|nope|nothing|nothing of note|negative|denies|n\/?a|not applicable)\.?$/i;
+    function negLine(f) { if (f.nil) return f.nil; var l = String(f.l || '').replace(/\s*\(.*\)\s*/g, ' ').trim(); return 'No ' + l.charAt(0).toLowerCase() + l.slice(1); }
+    function isNegOpt(o) { return /^(No|Never|None)\b/.test(o); }
+    function joinOr(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' or ' + a[a.length - 1]; }
     function lines(f) {
       if (!depOk(f)) return [];
       var out = f.out != null ? f.out : (f.k === 'area' ? '' : f.l + ': ');
-      if (f.k === 'text' || f.k === 'area') return val(f.id) ? [out + val(f.id)] : [];
+      if (f.k === 'text' || f.k === 'area') { var tv = String(val(f.id)).trim(); return tv ? [NEGTXT.test(tv) ? negLine(f) : out + val(f.id)] : []; }
       if (f.k === 'num') return val(f.id) ? [out + val(f.id) + (f.u ? ' ' + f.u : '')] : [];
-      if (f.k === 'one') return val(f.id) ? [out + val(f.id)] : [];
+      if (f.k === 'one') { var ov = val(f.id); if (!ov) return []; if (ov === 'None') return [negLine(f)]; return [isNegOpt(ov) ? ov : out + ov]; }
       if (f.k === 'chips') {
         var yes = arr(f.id);
         if (f.ins) yes = yes.filter(function (x) { return String(val(f.ins)).indexOf(x) === -1; });
         var r = [];
-        if (yes.length) r.push(out + yes.join(', '));
+        if (f.none && yes.indexOf(f.none) !== -1) r.push(negLine(f));
+        var pos = yes.filter(function (x) { return x !== f.none && !isNegOpt(x); });
+        if (pos.length) r.push(out + pos.join(', '));
+        yes.forEach(function (x) { if (x !== f.none && isNegOpt(x)) r.push(x); });
         var no = arr(f.id + '_no');
-        if (no.length) r.push(f.neg + ': ' + no.map(lc).join(', '));
+        if (no.length) r.push(f.neg + ' ' + joinOr(no.map(lc)));
         return r;
       }
       if (f.k === 'sir') {
@@ -178,6 +186,7 @@
         }
         flush();
       });
+      L = L.filter(function (x, i) { return x === '' || L.indexOf(x) === i; });
       return L.join('\n');
     }
 
