@@ -1,9 +1,9 @@
 # Teaching hub (/teaching/). Topic pages: set ready: true once the page exists.
 topics:
   - { name: "Sepsis", url: /teach-sepsis/, ready: true, note: "Organ map, NEWS2 calculator, Sepsis Six, source cards, case and quiz" }
-  - { name: "Cellulitis", url: /teach-cellulitis/, note: "Skin layers diagram, red-leg mimics, case and quiz" }
-  - { name: "Community-acquired pneumonia", url: /teach-pneumonia/, note: "CURB-65 calculator, causes, case and quiz" }
-  - { name: "Urinary tract infection", url: /teach-uti/, note: "Treat-or-not tool, urinary tract diagram, case and quiz" }
+  - { name: "Cellulitis", url: /teach-cellulitis/, ready: true, note: "Skin layers diagram, red-leg mimics, case and quiz" }
+  - { name: "Community-acquired pneumonia", url: /teach-pneumonia/, ready: true, note: "CURB-65 calculator, causes, case and quiz" }
+  - { name: "Urinary tract infection", url: /teach-uti/, ready: true, note: "Treat-or-not tool, urinary tract diagram, case and quiz" }
   - { name: "Blood cultures", url: /teach-blood-cultures/, note: "Bottle-to-result timeline, contaminant or real, case and quiz" }
   - { name: "Antibiotic classes", url: /teach-antibiotics/, note: "Targets diagram, match the drug, case and quiz" }
   - { name: "Penicillin allergy", url: /teach-penicillin-allergy/, note: "PEN-FAST calculator, reaction types, case and quiz" }

@@ -1911,3 +1911,51 @@ table.bl-spec .spec-corner { min-width: 210px; }
 .th-item b { font-size: 15px; }
 .th-item span { font-family: var(--sans); font-size: 13px; line-height: 1.4; color: var(--muted); }
 .th-item:hover b, .th-tile:not(.soon):hover h3 { color: var(--accent-ink); }
+/* Teaching page diagrams */
+.tc-skin { max-width: 680px; }
+.tc-l { cursor: pointer; outline: none; }
+.tc-l rect { stroke: var(--surface); stroke-width: 1; transition: filter .15s; }
+.tc-l.l0 rect { fill: color-mix(in srgb, #e8b796 55%, var(--surface)); }
+.tc-l.l1 rect { fill: color-mix(in srgb, #e39a8a 50%, var(--surface)); }
+.tc-l.l2 rect { fill: color-mix(in srgb, #f2d27a 55%, var(--surface)); }
+.tc-l.l3 rect { fill: color-mix(in srgb, #c9c2b8 65%, var(--surface)); }
+.tc-l.l4 rect { fill: color-mix(in srgb, #c46a6a 50%, var(--surface)); }
+.tc-l:hover rect, .tc-l:focus-visible rect { filter: brightness(.94); }
+.tc-l.on rect { stroke: var(--accent-ink); stroke-width: 3; }
+.tc-lbl { fill: var(--ink); font-size: 12.5px; font-weight: 600; }
+.tc-lbl.hd, .tq-side { fill: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.tc-inf { fill: var(--ink); font-size: 13.5px; font-weight: 700; }
+.tc-l.on .tc-inf { fill: var(--accent-ink); }
+.tc-lead { stroke: var(--muted); stroke-width: 1.2; }
+.tc-hair { stroke: var(--ink); stroke-width: 1.4; opacity: .5; fill: none; }
+.tc-vessel { stroke: var(--high); stroke-width: 2.5; fill: none; opacity: .5; }
+.tq-curb { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(200px, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 680px) { .tq-curb { grid-template-columns: 1fr; } }
+.tq-band { margin: 4px 0 6px; font-family: var(--sans); font-weight: 800; font-size: 15px; }
+.tq-band.b0 { color: var(--low); } .tq-band.b1 { color: color-mix(in srgb, var(--mid) 80%, var(--ink)); } .tq-band.b2 { color: var(--high); }
+.tq-lungs { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 640px) { .tq-lungs { grid-template-columns: 1fr; } .tq-lungs > svg { max-width: 260px; margin: 0 auto; } }
+.tq-lobe { fill: color-mix(in srgb, var(--accent) 18%, var(--surface)); stroke: var(--accent); stroke-width: 1.5; cursor: pointer; outline: none; }
+.tq-lobe:hover, .tq-lobe:focus-visible { fill: color-mix(in srgb, var(--accent) 32%, var(--surface)); }
+.tq-lobe.on { fill: color-mix(in srgb, #9a8f7a 55%, var(--surface)); stroke: var(--ink); stroke-width: 2.5; }
+.tq-heart { fill: color-mix(in srgb, var(--high) 30%, transparent); stroke: var(--high); stroke-width: 1.2; pointer-events: none; }
+.tq-dia { fill: none; stroke: var(--muted); stroke-width: 2; pointer-events: none; }
+.tq-trachea { fill: none; stroke: var(--muted); stroke-width: 7; stroke-linecap: round; opacity: .6; }
+.tq-uti { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(220px, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 720px) { .tq-uti { grid-template-columns: 1fr; } }
+.tq-g { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.tq-verdict { position: sticky; top: 84px; padding: 14px; border-radius: 10px; background: var(--bg); border-left: 5px solid var(--line); }
+.tq-verdict b { display: block; font-size: 17px; margin-bottom: 4px; }
+.tq-verdict p { margin: 0; font-size: 14.5px; line-height: 1.5; }
+.tq-verdict.green { border-color: var(--low); } .tq-verdict.amber { border-color: var(--mid); } .tq-verdict.red { border-color: var(--high); }
+.tq-verdict.green b { color: var(--low); } .tq-verdict.red b { color: var(--high); }
+.tq-part { cursor: pointer; outline: none; }
+.tq-part ellipse, .tq-part > path:not(.tq-tube) { fill: color-mix(in srgb, #d9a066 40%, var(--surface)); stroke: #b0743a; stroke-width: 1.5; }
+.tq-part .tq-tube { fill: none; stroke: #c9925a; stroke-width: 6; stroke-linecap: round; }
+.tq-part .tq-tube.cath { stroke: var(--muted); stroke-width: 4; }
+.tq-part .tq-bal { fill: var(--surface); stroke: var(--muted); stroke-width: 2; }
+.tq-part:hover ellipse, .tq-part:hover > path:not(.tq-tube) { filter: brightness(.93); }
+.tq-part.on ellipse, .tq-part.on > path:not(.tq-tube) { fill: color-mix(in srgb, var(--high) 35%, var(--surface)); stroke: var(--high); stroke-width: 2.5; }
+.tq-part.on .tq-tube { stroke: var(--high); }
+.tq-list { margin-bottom: 0; }
+.tp-orgcard h3 small { font-weight: 400; color: var(--muted); font-size: 14px; }
