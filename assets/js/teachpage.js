@@ -7,16 +7,38 @@
      type 'pearls' : items [[title, text]]
      type 'case'   : steps [{ t, s, q, o: [[text, correct(1/0), why]] }], end
      type 'quiz'   : items [[question, [options], correctIndex, why]]
+     type 'deep'   : items [[title, text]]  (more advanced content, for final-year students)
+     type 'trial'  : trial { name, cite, q, who, arms: [[label, value]], outcome, ans (0 better, 1 no difference, 2 worse), result, meaning }
    Custom sections use type 'html' with a function; buttons inside carry data-x="name" and are handled by on[name](el, S, redraw).
    S is a per-page state object; redraw(id) re-renders one section. */
 (function () {
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  window.TeachBlocks = {
+    deep: function (items) {
+      return '<div class="tp-deep">' + items.map(function (d) { return '<details class="tp-dp"><summary>' + esc(d[0]) + '</summary><p>' + esc(d[1]) + '</p></details>'; }).join('') + '</div><p class="tp-dpall"><button type="button" class="tw-all" data-act="dpall">Open all</button></p>';
+    },
+    trial: function (id, tr, g) {
+      var opts = ['Better', 'No real difference', 'Worse'];
+      var h = '<div class="tp-trial"><div class="tp-trh"><b>' + esc(tr.name) + '</b><span>' + esc(tr.cite) + '</span></div>' +
+        '<dl class="pk-dl"><dt>Question</dt><dd>' + esc(tr.q) + '</dd><dt>Who</dt><dd>' + esc(tr.who) + '</dd><dt>Outcome</dt><dd>' + esc(tr.outcome) + '</dd></dl>' +
+        '<p class="tp-sq">Predict first: was ' + esc(tr.newArm || 'the new approach') + '…</p><div class="opts tw-times tp-pred">' + opts.map(function (o, j) {
+          var cls = g == null ? '' : (j === tr.ans ? ' right' : (g === j ? ' wrong' : ' faded'));
+          return '<button type="button" class="opt tp-co' + cls + '" data-trial="' + id + '" data-o="' + j + '"' + (g != null ? ' disabled' : '') + '><span class="opt-text">' + o + '</span></button>';
+        }).join('') + '</div>';
+      if (g != null) {
+        var max = Math.max.apply(null, tr.arms.map(function (a) { return a[1]; })) || 1;
+        h += '<div class="tp-trbars">' + tr.arms.map(function (a, i) { return '<div class="tp-trb"><span>' + esc(a[0]) + '</span><span class="tp-trt"><i class="a' + i + '" style="width:' + (a[1] / max * 100).toFixed(1) + '%"></i></span><b>' + a[1] + (tr.unit == null ? '%' : tr.unit) + '</b></div>'; }).join('') + '</div>' +
+          '<p class="tp-p"><b>Result:</b> ' + esc(tr.result) + '</p><div class="tp-mean"><span>What it means on the ward</span><p>' + esc(tr.meaning) + '</p></div>';
+      }
+      return h + '</div>';
+    }
+  };
   window.TeachPage = function (cfg) {
     var host = document.getElementById(cfg.host);
     if (!host) return;
     var base = host.getAttribute('data-base') || '', hashMode = host.hasAttribute('data-hash');
     function url(u) { if (/^https?:/.test(u)) return u; if (hashMode) { var m = /^\/([^/]+)\/(#.*)?$/.exec(u); return m ? (m[2] || '#' + m[1]) : u; } return base + u; }
-    var S = { time: 10, cards: {}, check: {}, caseStep: {}, caseAns: {}, quiz: {} };
+    var S = { time: 10, cards: {}, check: {}, caseStep: {}, caseAns: {}, quiz: {}, trial: {} };
     if (cfg.state) Object.keys(cfg.state).forEach(function (k) { S[k] = cfg.state[k]; });
     var T = {
       esc: esc, url: url,
@@ -39,6 +61,8 @@
           '<ul class="tp-check">' + s.items.map(function (x, i) { var on = !!m[i]; return '<li><button type="button" class="tp-ck' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-check="' + s.id + '" data-i="' + i + '"><i aria-hidden="true"></i><span><b>' + esc(x[0]) + '</b>' + (on ? '<em>' + esc(x[1]) + '</em>' : '') + '</span></button></li>'; }).join('') + '</ul></div>' +
           (n === N && s.done ? '<p class="tp-done">' + esc(s.done) + '</p>' : '<p class="ab-note">Tap each step as the group names it.</p>');
       }
+      if (s.type === 'deep') return window.TeachBlocks.deep(s.items);
+      if (s.type === 'trial') return window.TeachBlocks.trial(s.id, s.trial, S.trial[s.id]);
       if (s.type === 'pearls') return '<div class="tp-pearls">' + s.items.map(function (p) { return '<div class="tp-pearl"><b>' + esc(p[0]) + '</b><p>' + esc(p[1]) + '</p></div>'; }).join('') + '</div>';
       if (s.type === 'case') {
         var step = S.caseStep[s.id] || 0, ans = S.caseAns[s.id] || {}, h = '<ol class="tp-case">';
@@ -68,7 +92,7 @@
       return '';
     }
     function sec(s) {
-      return '<section class="card af-card tp-sec" id="tp-' + s.id + '" data-sec="' + s.id + '"><div class="tp-sh"><span class="tp-min" data-min></span><p class="tp-kick">' + esc(s.k || '') + '</p><h2>' + esc(s.t) + '</h2></div><div class="tp-body">' + body(s) + '</div><button type="button" class="tp-open" data-act="open">Show this section</button></section>';
+      return '<section class="card af-card tp-sec' + (s.type === 'deep' || s.type === 'trial' ? ' tp-adv' : '') + '" id="tp-' + s.id + '" data-sec="' + s.id + '"><div class="tp-sh"><p class="tp-kick">' + esc(s.k || '') + '</p><h2>' + esc(s.t) + '</h2></div><div class="tp-body">' + body(s) + '</div></section>';
     }
     function redraw(id) { var el = host.querySelector('#tp-' + id + ' .tp-body'); if (el) el.innerHTML = body(SEC[id]); if (cfg.after) cfg.after(S, host, id); }
     function planBar() {
@@ -77,12 +101,12 @@
       return '<div class="tp-planhd"><div class="ab-sec"><h4>Time you have</h4><div class="opts tw-times">' + [5, 10, 20].map(function (t) { var on = S.time === t; return '<button type="button" class="opt' + (on ? ' on' : '') + '" aria-pressed="' + on + '" data-time="' + t + '"><span class="opt-text">' + t + ' minutes</span></button>'; }).join('') + '</div></div>' +
         '<p class="ab-note">Sections in the plan are open; the rest are folded but still there if the discussion goes that way.</p></div><div class="tw-plan">' + segs + '</div><p class="tw-tot">' + tot + ' minutes in total · then the take-home message</p>';
     }
-    function applyPlan() {
+    function applyPlan() { return;
       var p = cfg.plans[S.time];
       host.querySelectorAll('.tp-sec').forEach(function (s) { var id = s.getAttribute('data-sec'), m = p[id]; s.classList.toggle('out', !m); s.classList.remove('force'); s.querySelector('[data-min]').textContent = m ? m + ' min' : 'Not in this plan'; });
       host.querySelector('#tp-plan').innerHTML = planBar();
     }
-    host.innerHTML = '<section class="card af-card tp-plan" id="tp-plan"></section>' +
+    host.innerHTML = '<nav class="tp-toc" aria-label="Sections">' + cfg.sections.map(function (s) { return '<a class="tw-seg-l' + (s.type === 'deep' || s.type === 'trial' ? ' adv' : '') + '" href="#tp-' + s.id + '">' + esc(s.t) + '</a>'; }).join('') + '</nav>' +
       '<section class="card af-card tp-obj"><h2>By the end, students can</h2><ol>' + cfg.objectives.map(function (o) { return '<li>' + esc(o) + '</li>'; }).join('') + '</ol></section>' +
       cfg.sections.map(sec).join('') +
       '<div class="tw-take"><span>Take-home message</span><p>' + esc(cfg.take) + '</p></div>' +
@@ -91,11 +115,14 @@
     if (cfg.after) cfg.after(S, host, null);
 
     host.addEventListener('click', function (e) {
-      var b = e.target.closest('button, a.tw-seg, [data-x]'); if (!b || !host.contains(b)) return;
+      var b = e.target.closest('button, a.tw-seg, a.tw-seg-l, [data-x]'); if (!b || !host.contains(b)) return;
+      if (b.classList.contains('tw-seg-l')) { var tt = host.querySelector(b.getAttribute('href')); if (tt) { e.preventDefault(); tt.scrollIntoView({ behavior: 'smooth', block: 'start' }); } return; }
+      if (b.hasAttribute('data-trial')) { S.trial[b.getAttribute('data-trial')] = +b.getAttribute('data-o'); redraw(b.getAttribute('data-trial')); return; }
       if (b.hasAttribute('data-time')) { S.time = +b.getAttribute('data-time'); applyPlan(); return; }
       var act = b.getAttribute('data-act');
       if (act === 'open') { b.closest('.tp-sec').classList.add('force'); return; }
       if (b.classList.contains('tw-seg')) { var t = host.querySelector(b.getAttribute('href')); if (t) { e.preventDefault(); t.classList.add('force'); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } return; }
+      if (act === 'dpall') { var ds = b.closest('.tp-body').querySelectorAll('details'), anyc = Array.prototype.some.call(ds, function (d) { return !d.open; }); ds.forEach(function (d) { d.open = anyc; }); b.textContent = anyc ? 'Close all' : 'Open all'; return; }
       if (act === 'ans') { var a = b.nextElementSibling, open = a.hidden; a.hidden = !open; b.textContent = open ? 'Hide answer' : 'Show answer'; return; }
       var id;
       if ((id = b.getAttribute('data-card'))) { var c = S.cards[id] = S.cards[id] || {}, i = +b.getAttribute('data-i'); c[i] = !c[i]; redraw(id); return; }

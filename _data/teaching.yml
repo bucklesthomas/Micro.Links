@@ -8,10 +8,10 @@ topics:
   - { name: "Antibiotic classes", url: /teach-antibiotics/, ready: true, note: "Targets diagram, match the drug, case and quiz" }
   - { name: "Penicillin allergy", url: /teach-penicillin-allergy/, ready: true, note: "PEN-FAST calculator, reaction types, case and quiz" }
   - { name: "Clostridioides difficile", url: /teach-cdiff/, ready: true, note: "Two-step test interpreter, severity, case and quiz" }
-  - { name: "Fever in the returned traveller", url: /teach-traveller/, note: "Incubation timeline, case and quiz" }
-  - { name: "Infective endocarditis", url: /teach-endocarditis/, note: "Duke criteria tool, peripheral signs, case and quiz" }
-  - { name: "Meningitis", url: /teach-meningitis/, note: "CSF interpreter, first hour, case and quiz" }
-  - { name: "Tuberculosis", url: /teach-tb/, note: "Treatment timeline, side-effect map, case and quiz" }
+  - { name: "Fever in the returned traveller", url: /teach-traveller/, ready: true, note: "Incubation timeline, case and quiz" }
+  - { name: "Infective endocarditis", url: /teach-endocarditis/, ready: true, note: "Duke criteria tool, peripheral signs, case and quiz" }
+  - { name: "Meningitis", url: /teach-meningitis/, ready: true, note: "CSF interpreter, first hour, case and quiz" }
+  - { name: "Tuberculosis", url: /teach-tb/, ready: true, note: "Treatment timeline, side-effect map, case and quiz" }
 tools:
   - { name: "Teach on the ward (quick planner)", url: /teach/, note: "Questions, key points and a timer for a 5, 10 or 20 minute session on any topic" }
   - { name: "Resistance takeover (animation)", url: /resistance-takeover/, note: "Watch resistance being selected by low doses, missed doses and stopping early" }

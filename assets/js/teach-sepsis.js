@@ -10,12 +10,14 @@
   function url(u) { if (/^https?:/.test(u)) return u; if (hashMode) { var m = /^\/([^/]+)\/(#.*)?$/.exec(u); return m ? (m[2] || '#' + m[1]) : u; } return base + u; }
 
   // ── Session plans: which sections to cover in 5, 10 or 20 minutes ──
-  var SECTIONS = [['what', 'What sepsis is'], ['organs', 'Organ map'], ['spot', 'Spot it: NEWS2'], ['hour', 'The first hour'], ['source', 'Find the source'], ['pearls', 'Clinical pearls'], ['case', 'Unfolding case'], ['quiz', 'Quick quiz']];
+  var SECTIONS = [['what', 'What sepsis is'], ['organs', 'Organ map'], ['spot', 'Spot it: NEWS2'], ['hour', 'The first hour'], ['source', 'Find the source'], ['deep', 'Going deeper'], ['trial', 'Key trial: ProMISe'], ['pearls', 'Clinical pearls'], ['case', 'Unfolding case'], ['quiz', 'Quick quiz']];
   var PLANS = { 5: { spot: 2, hour: 2, pearls: 1 }, 10: { what: 2, spot: 3, hour: 3, pearls: 2 }, 20: { what: 2, organs: 3, spot: 3, hour: 3, source: 3, case: 4, quiz: 2 } };
-  var st = { time: 10, organ: null, news: { rr: 18, sat: 96, o2: 0, sbp: 120, hr: 80, cons: 0, temp: 37.0 }, six: {}, src: {}, caseStep: 0, caseAns: {}, quiz: {} };
+  var ADV = {"obj": "Apply the evidence on resuscitation, vasopressors, fluids and steroids in septic shock.", "deep": [["SOFA and organ dysfunction", "Sepsis-3 defines organ dysfunction as a rise in the SOFA score of 2 or more (respiration, coagulation, liver, cardiovascular, brain and kidneys). qSOFA (respiratory rate 22 or more, altered mentation, systolic BP 100 or less) is a quick prompt but too insensitive to rule sepsis out."], ["Vasopressors", "Noradrenaline is first line, targeting a mean arterial pressure of 65 mmHg. It can be started through a good peripheral cannula while central access is arranged. Vasopressin is added if more support is needed."], ["Fluids", "Give crystalloid boluses and reassess after each one. Balanced crystalloids (Hartmann’s, Plasma-Lyte) are preferred to large volumes of saline; starches harm the kidneys. In CLOVERS (2023), a restrictive and a liberal fluid strategy had similar mortality."], ["Steroids", "Hydrocortisone (200 mg a day) is used in septic shock that needs ongoing vasopressors. ADRENAL (2018) showed faster shock reversal without a mortality difference; APROCCHSS (2018), with fludrocortisone added, showed lower mortality."], ["Lactate", "Raised lactate usually reflects poor tissue perfusion (type A), but also impaired clearance in liver failure, and adrenaline or salbutamol (type B). The trend after treatment matters more than a single value."], ["Antibiotic timing", "Observational studies (Kumar 2006; Seymour 2017) link each hour of delay in septic shock with higher mortality. For less sick patients, a short time to assess and test before antibiotics is reasonable, which is why NICE times antibiotics by risk."]], "trial": {"name": "ProMISe", "cite": "Mouncey PR et al. N Engl J Med 2015;372:1301–11", "q": "Does protocolised early goal-directed therapy improve survival in septic shock?", "who": "1260 adults with early septic shock in 56 English hospitals", "outcome": "Death at 90 days", "newArm": "early goal-directed therapy", "arms": [["Early goal-directed therapy", 29.5], ["Usual care", 29.2]], "ans": 1, "result": "Death at 90 days was 29.5% with early goal-directed therapy and 29.2% with usual care; EGDT cost more. ARISE and ProCESS found the same.", "meaning": "A rigid protocol with central lines and venous oxygen targets adds nothing to good usual care: what matters is early recognition, antibiotics, fluids, vasopressors and source control."}};
+  var st = { trialGuess: null, time: 10, organ: null, news: { rr: 18, sat: 96, o2: 0, sbp: 120, hr: 80, cons: 0, temp: 37.0 }, six: {}, src: {}, caseStep: 0, caseAns: {}, quiz: {} };
 
   function sec(id, title, kicker, body) {
-    return '<section class="card af-card tp-sec" id="tp-' + id + '" data-sec="' + id + '"><div class="tp-sh"><span class="tp-min" data-min></span><p class="tp-kick">' + esc(kicker) + '</p><h2>' + esc(title) + '</h2></div><div class="tp-body">' + body + '</div><button type="button" class="tp-open" data-act="open">Show this section</button></section>';
+    var adv = id === 'deep' || id === 'trial';
+    return '<section class="card af-card tp-sec' + (adv ? ' tp-adv' : '') + '" id="tp-' + id + '" data-sec="' + id + '"><div class="tp-sh"><p class="tp-kick">' + esc(kicker) + '</p><h2>' + esc(title) + '</h2></div><div class="tp-body">' + body + '</div></section>';
   }
 
   // ── 1. What sepsis is: cascade diagram ──
@@ -195,19 +197,21 @@
   }
   function rerender(id, fn) { var b = host.querySelector('#tp-' + id + ' .tp-body'); if (b) b.innerHTML = fn(); }
 
-  host.innerHTML = '<section class="card af-card tp-plan" id="tp-plan"></section>' +
-    '<section class="card af-card tp-obj"><h2>By the end, students can</h2><ol><li>Define sepsis and septic shock, and explain why organ dysfunction is the key.</li><li>Recognise a deteriorating patient using NEWS2 and the bedside signs.</li><li>List the Sepsis Six and the first-hour priorities.</li><li>Search systematically for a source, and know when source control matters most.</li></ol></section>' +
+  host.innerHTML = '<nav class="tp-toc" aria-label="Sections">' + SECTIONS.map(function (x) { return '<a class="tw-seg-l' + (x[0] === 'deep' || x[0] === 'trial' ? ' adv' : '') + '" href="#tp-' + x[0] + '">' + esc(x[1]) + '</a>'; }).join('') + '</nav>' +
+    '<section class="card af-card tp-obj"><h2>By the end, students can</h2><ol><li>Define sepsis and septic shock, and explain why organ dysfunction is the key.</li><li>Recognise a deteriorating patient using NEWS2 and the bedside signs.</li><li>List the Sepsis Six and the first-hour priorities.</li><li>Search systematically for a source, and know when source control matters most.</li><li>' + esc(ADV.obj) + '</li></ol></section>' +
     sec('what', 'What sepsis is', 'The idea', what()) + sec('organs', 'Organ map', 'Diagram', organs()) + sec('spot', 'Spot it: NEWS2', 'Interactive', newsCtl()) + sec('hour', 'The first hour', 'Sepsis Six', six()) +
-    sec('source', 'Find the source', 'Flip cards', source()) + sec('pearls', 'Clinical pearls', 'Remember', pearls()) + sec('case', 'Unfolding case', 'Work through together', kase()) + sec('quiz', 'Quick quiz', 'Check understanding', quiz()) +
+    sec('source', 'Find the source', 'Flip cards', source()) + sec('deep', 'Going deeper', 'For final-year students', window.TeachBlocks.deep(ADV.deep)) + sec('trial', 'Key trial: ProMISe', 'Evidence', window.TeachBlocks.trial('trial', ADV.trial, null)) + sec('pearls', 'Clinical pearls', 'Remember', pearls()) + sec('case', 'Unfolding case', 'Work through together', kase()) + sec('quiz', 'Quick quiz', 'Check understanding', quiz()) +
     '<div class="tw-take"><span>Take-home message</span><p>Sepsis is organ dysfunction from infection: count the breathing, score NEWS2, give the Sepsis Six within the hour, find the source, and review at 48–72 hours.</p></div>';
-  applyPlan(); newsUpdate();
+  newsUpdate();
 
   host.addEventListener('click', function (e) {
-    var b = e.target.closest('button, a.tw-seg, g[data-organ]'); if (!b) return;
-    if (b.hasAttribute('data-time')) { st.time = +b.getAttribute('data-time'); applyPlan(); return; }
+    var b = e.target.closest('button, a.tw-seg-l, g[data-organ]'); if (!b) return;
+    if (b.classList.contains('tw-seg-l')) { var tt = host.querySelector(b.getAttribute('href')); if (tt) { e.preventDefault(); tt.scrollIntoView({ behavior: 'smooth', block: 'start' }); } return; }
+    if (b.hasAttribute('data-trial')) { st.trialGuess = +b.getAttribute('data-o'); rerender('trial', function () { return window.TeachBlocks.trial('trial', ADV.trial, st.trialGuess); }); return; }
     var act = b.getAttribute('data-act');
     if (act === 'open') { b.closest('.tp-sec').classList.add('force'); return; }
     if (b.classList.contains('tw-seg')) { var t = host.querySelector(b.getAttribute('href')); if (t) { e.preventDefault(); t.classList.add('force'); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } return; }
+    if (act === 'dpall') { var ds = b.closest('.tp-body').querySelectorAll('details'), anyc = Array.prototype.some.call(ds, function (d) { return !d.open; }); ds.forEach(function (d) { d.open = anyc; }); b.textContent = anyc ? 'Close all' : 'Open all'; return; }
     if (act === 'ans') { var a = b.nextElementSibling, open = a.hidden; a.hidden = !open; b.textContent = open ? 'Hide answer' : 'Show answer'; return; }
     if (b.hasAttribute('data-organ')) { var o = b.getAttribute('data-organ'); st.organ = st.organ === o ? null : o; rerender('organs', organs); return; }
     if (b.hasAttribute('data-nt')) { st.news[b.getAttribute('data-nt')] = +b.getAttribute('data-v'); newsUpdate(); return; }
