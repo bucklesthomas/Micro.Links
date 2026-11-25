@@ -177,7 +177,12 @@
         return r2;
       }
       if (f.k === 'obs') { var ob = OBS.map(function (o) { var x = val('o_' + o[0]); return x !== '' ? o[1] + ' ' + x + (o[0] === 'temp' ? '°C' : '') : ''; }).filter(Boolean).join(', '); return ob ? [ob] : []; }
-      if (f.k === 'labs') { var lb = LABS.map(function (o) { var x = val('l_' + o[0]); return x !== '' ? o[1] + ' ' + x : ''; }).filter(Boolean).join(', '); return lb ? [lb] : []; }
+      if (f.k === 'labs') {
+        // One line per panel: FBC; CRP and PCT; U&E; LFT; INR and lactate
+        var LINES = [['wcc', 'neut', 'lymph', 'hb', 'plt'], ['crp', 'pct'], ['na', 'k', 'urea', 'creat', 'egfr'], ['bili', 'alt', 'alp', 'alb'], ['inr', 'lact']];
+        var name = {}; LABS.forEach(function (o) { name[o[0]] = o[1]; });
+        return LINES.map(function (ks) { return ks.map(function (k) { var x = val('l_' + k); return x !== '' ? name[k] + ' ' + x : ''; }).filter(Boolean).join(', '); }).filter(Boolean);
+      }
       if (f.k === 'abx') {
         var rows = st.abx.filter(function (a) { return a.d; }).map(function (a) { return '- ' + [a.d, a.dose, a.start && 'started ' + a.start].filter(Boolean).join(', '); });
         return rows.length && f.out ? [f.out].concat(rows) : rows;
