@@ -75,12 +75,13 @@ self.addEventListener('fetch', function (e) {
     return;
   }
 
-  // Assets and fonts: saved copy first (ignoring the ?v= version), then refresh in the background.
-  e.respondWith(caches.match(req, { ignoreSearch: sameOrigin }).then(function (cached) {
+  // Assets and fonts: the saved copy of this exact version first (refreshed in the background). A new ?v= version
+  // after a deploy is fetched from the network, so a new page never runs old code; any saved version is used only offline.
+  e.respondWith(caches.match(req).then(function (cached) {
     var net = fetch(req).then(function (res) {
       if (res && (res.ok || res.type === 'opaque')) { var copy = res.clone(); caches.open(CACHE).then(function (c) { c.put(req, copy); }); }
       return res;
-    }).catch(function () { return cached; });
+    }).catch(function () { return cached || caches.match(req, { ignoreSearch: sameOrigin }); });
     return cached || net;
   }));
 });

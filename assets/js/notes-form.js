@@ -48,10 +48,12 @@
     function reRe(t) { return t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
     // Area buttons (region) rename a findings line, e.g. "CT:" becomes "CT TAP:" or "MRI head, lumbar spine:"
     function regionLabel(f) {
-      var sel = f.o.filter(function (o) { return arr(f.id).indexOf(o) !== -1; });
-      if (!sel.length) return f.region.base;
-      if (f.region.abbr && sel.length > 1) return f.region.base + ' ' + sel.join('');
-      return f.region.base + ' ' + sel.map(function (o) { return lc((f.titles && f.titles[o]) || o); }).join(', ');
+      var ext = f.region.extra || [], picked = arr(f.id);
+      var sel = f.o.filter(function (o) { return picked.indexOf(o) !== -1 && ext.indexOf(o) === -1; });
+      var tail = ext.filter(function (o) { return picked.indexOf(o) !== -1; }).map(function (o) { return ' ' + lc(o); }).join('');
+      if (!sel.length) return f.region.base + tail;
+      if (f.region.abbr && sel.length > 1) return f.region.base + ' ' + sel.join('') + tail;
+      return f.region.base + ' ' + sel.map(function (o) { return lc((f.titles && f.titles[o]) || o); }).join(', ') + tail;
     }
     function relabel(f) {
       var ta = host.querySelector('[data-v="' + f.region.ins + '"]'); if (!ta) return;

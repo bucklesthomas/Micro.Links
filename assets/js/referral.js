@@ -52,8 +52,8 @@ NoteForm({
       { id: 'viro', k: 'area', l: 'Serology, PCR and antigen tests: results', rows: 4 }] },
     { id: 'img', t: 'Imaging', ask: ['What was done and when', 'Formal report or provisional'], f: [
       { id: 'imgdone', k: 'chips', l: 'Done (tap to add a line for its findings)', ins: 'imgd', out: 'Done: ', o: ['Chest X-ray', 'CT', 'Ultrasound', 'MRI', 'TTE', 'TOE', 'PET-CT'] },
-      { id: 'ctreg', k: 'chips', l: 'CT: which areas', dep: { id: 'imgdone', v: 'CT' }, region: { ins: 'imgd', base: 'CT', abbr: true }, o: ['H', 'T', 'A', 'P'], titles: { H: 'Head', T: 'Thorax', A: 'Abdomen', P: 'Pelvis' } },
-      { id: 'mrireg', k: 'chips', l: 'MRI: which areas', dep: { id: 'imgdone', v: 'MRI' }, region: { ins: 'imgd', base: 'MRI' }, o: ['Head', 'Whole spine', 'Cervical spine', 'Thoracic spine', 'Lumbar spine', 'Abdomen', 'Pelvis', 'Joint', 'Limb'] },
+      { id: 'ctreg', k: 'chips', l: 'CT: which areas', dep: { id: 'imgdone', v: 'CT' }, region: { ins: 'imgd', base: 'CT', abbr: true, extra: ['With contrast'] }, o: ['H', 'T', 'A', 'P', 'With contrast'], titles: { H: 'Head', T: 'Thorax', A: 'Abdomen', P: 'Pelvis' } },
+      { id: 'mrireg', k: 'chips', l: 'MRI: which areas', dep: { id: 'imgdone', v: 'MRI' }, region: { ins: 'imgd', base: 'MRI', extra: ['With contrast'] }, o: ['Head', 'Whole spine', 'Cervical spine', 'Thoracic spine', 'Lumbar spine', 'Abdomen', 'Pelvis', 'Joint', 'Limb', 'With contrast'] },
       { id: 'usreg', k: 'chips', l: 'Ultrasound: which areas', dep: { id: 'imgdone', v: 'Ultrasound' }, region: { ins: 'imgd', base: 'Ultrasound' }, o: ['Abdomen', 'Liver and biliary', 'Renal tract', 'Pelvis', 'Soft tissue', 'Joint', 'Neck', 'Chest'] },
       { id: 'imgd', k: 'area', l: 'Findings', rows: 5 }] },
     { id: 'mx', t: 'Current management', ask: ['Antimicrobials: drug, dose, route, and when started', 'Source control done or planned', 'Response so far'], f: [
