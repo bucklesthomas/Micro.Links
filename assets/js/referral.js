@@ -48,7 +48,11 @@ NoteForm({
       { id: 'bc', k: 'text', l: 'Blood cultures', ph: 'e.g. 2/2 sets S. aureus at 14 h; sensitivities pending' },
       { id: 'sampdone', k: 'chips', l: 'Other samples sent (tap to add a line for its result)', ins: 'samples', out: 'Sent: ', o: ['Urine culture', 'Sputum culture', 'CSF (LP)', 'Wound or pus swab', 'Throat swab', 'Stool culture', 'C. difficile test', 'Joint aspirate', 'Pleural fluid', 'Ascitic fluid', 'Tissue or bone', 'Line tip'] },
       { id: 'samples', k: 'area', l: 'Other samples: results', rows: 5 },
-      { id: 'virodone', k: 'chips', l: 'Serology, PCR and antigen tests sent (tap to add a line)', ins: 'viro', out: 'Sent: ', o: ['Malaria films and RDT', 'Respiratory viral PCR', 'Legionella and pneumococcal urine antigens', 'HIV test', 'Hepatitis B and C', 'Syphilis serology', 'EBV and CMV', 'β-D-glucan', 'Galactomannan', 'Cryptococcal antigen', 'IGRA'] },
+      { id: 'virodone', k: 'chips', l: 'Serology, PCR and antigen tests sent (tap to add a line)', ins: 'viro', out: 'Sent: ', o: ['Malaria films and RDT', 'Respiratory viral PCR', 'Legionella and pneumococcal urine antigens', 'HIV test', 'Hepatitis B and C', 'Syphilis serology', 'CMV', 'EBV', 'HSV', 'VZV', 'β-D-glucan', 'Galactomannan', 'Cryptococcal antigen', 'IGRA'] },
+      { id: 'pncmv', k: 'pn', l: 'CMV: results', base: 'CMV', dep: { id: 'virodone', v: 'CMV' }, o: ['IgM', 'IgG', 'PCR'] },
+      { id: 'pnebv', k: 'pn', l: 'EBV: results', base: 'EBV', dep: { id: 'virodone', v: 'EBV' }, o: ['IgM', 'IgG', 'PCR'] },
+      { id: 'pnhsv', k: 'pn', l: 'HSV: results', base: 'HSV', dep: { id: 'virodone', v: 'HSV' }, o: ['IgM', 'IgG', 'PCR'] },
+      { id: 'pnvzv', k: 'pn', l: 'VZV: results', base: 'VZV', dep: { id: 'virodone', v: 'VZV' }, o: ['IgM', 'IgG', 'PCR'] },
       { id: 'viro', k: 'area', l: 'Serology, PCR and antigen tests: results', rows: 4 }] },
     { id: 'img', t: 'Imaging', ask: ['What was done and when', 'Formal report or provisional'], f: [
       { id: 'imgdone', k: 'chips', l: 'Done (tap to add a line for its findings)', ins: 'imgd', out: 'Done: ', o: ['Chest X-ray', 'CT', 'Ultrasound', 'MRI', 'TTE', 'TOE', 'PET-CT'] },

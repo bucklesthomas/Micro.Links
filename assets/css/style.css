@@ -1172,12 +1172,12 @@ tr.sp-note td,
 .rf-linkrow a:hover { border-color: var(--accent); text-decoration: none; }
 
 /* Susceptibility chips: S / I / R */
-.rf-chip.sS { color: var(--low); background: var(--low-bg); border-color: var(--low); }
-.rf-chip.sI { color: var(--mid); background: var(--mid-bg); border-color: var(--mid); }
-.rf-chip.sR { color: var(--high); background: var(--high-bg); border-color: var(--high); }
+.rf-chip.sir-s { color: var(--low); background: var(--low-bg); border-color: var(--low); }
+.rf-chip.sir-i { color: var(--mid); background: var(--mid-bg); border-color: var(--mid); }
+.rf-chip.sir-r { color: var(--high); background: var(--high-bg); border-color: var(--high); }
 .rf-sirk { display: inline-grid; place-items: center; min-width: 17px; height: 17px; margin-right: 2px; border-radius: 4px; font: 700 11px/1 var(--sans); color: var(--surface); background: currentColor; }
 .rf-sirk { color: inherit; }
-.rf-chip.sS .rf-sirk, .rf-chip.sI .rf-sirk, .rf-chip.sR .rf-sirk { background: transparent; border: 1.5px solid currentColor; }
+.rf-chip.sir-s .rf-sirk, .rf-chip.sir-i .rf-sirk, .rf-chip.sir-r .rf-sirk { background: transparent; border: 1.5px solid currentColor; }
 
 /* Antifungals page: tidy spacing */
 .af-card h2 { font-size: 19px; margin: 0 0 6px; }

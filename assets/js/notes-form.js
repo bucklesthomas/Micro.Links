@@ -1,7 +1,7 @@
 /* Shared engine for structured note templates (ID referral call, blood culture report).
    A page calls NoteForm({ host, prefix, key, title, sections, ... }); each section lists fields:
      text | area | num | one | chips (none: exclusive option, neg: label for negatives, ins: id of a textarea to add a line to)
-     obs | labs | abx | links | sir (S / I / R per antibiotic)
+     obs | labs | abx | links | sir (S / I / R per antibiotic) | pn (positive / negative per test, e.g. CMV IgM, IgG, PCR; base: name in the note)
    Field options: out (prefix in the note; default "Label: " for text, chips and num, nothing for area), group (join on one line),
    head (start a new heading in the note), mine (your own name: remembered on this device, put in the note header).
    No patient identifiers are asked for. Entries are kept in this browser tab only (sessionStorage) until cleared or the tab closes. */
@@ -18,6 +18,7 @@
   var ID_RE = /\b\d{3}[ -]?\d{3}[ -]?\d{4}\b|\b(nhs ?(no|number)|mrn|dob|d\.o\.b|date of birth|hospital (no|number)|hosp no|lab (no|number))\b/i;
   var ID_RE2 = /\b[A-Z]{1,3}\d{6,10}\b/;
   var SIR = { S: 'Susceptible', I: 'Susceptible, increased exposure', R: 'Resistant' };
+  var PN = { P: 'positive', N: 'negative' }, PNK = { P: '+', N: '−' }, PNC = { P: ' sir-r', N: ' sir-s' };
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function lc(x) { return /^[A-Z][A-Z0-9]/.test(x) ? x : x.charAt(0).toLowerCase() + x.slice(1); }
@@ -42,6 +43,13 @@
       return '<button type="button" class="sp-chip rf-chip' + cls + (f.region ? ' rf-reg' : '') + '" aria-pressed="' + pressed + '"' + (label ? ' aria-label="' + esc(label) + '"' : '') + (tt ? ' title="' + esc(tt) + '"' : '') +
         ' data-' + kind + '="' + f.id + '" data-o="' + esc(o) + '">' + esc(o) + '</button>';
     }
+    function pnBtn(f, o, v) {
+      return '<button type="button" class="sp-chip rf-chip' + (v ? PNC[v] : '') + '" aria-pressed="' + (v ? 'true' : 'false') + '"' + (v ? ' aria-label="' + esc(o + ' ' + PN[v]) + '"' : '') +
+        ' data-pn="' + f.id + '" data-o="' + esc(o) + '">' + (v ? '<b class="rf-sirk">' + PNK[v] + '</b> ' : '') + esc(o) + '</button>';
+    }
+    // Results entered in a pn field that depends on this chip (so the chip is not also listed under "Sent")
+    function pnDone(id, o) { var d = false; S.forEach(function (sx) { sx.f.forEach(function (g) { if (g.k === 'pn' && g.dep && g.dep.id === id && g.dep.v === o && Object.keys(obj(g.id)).length) d = true; }); }); return d; }
+    function hasPn(id, o) { var d = false; S.forEach(function (sx) { sx.f.forEach(function (g) { if (g.k === 'pn' && g.dep && g.dep.id === id && g.dep.v === o) d = true; }); }); return d; }
     // A field with dep: { id, v } only shows (and only goes in the note) when that other field has value v
     function depOk(f) { if (!f.dep) return true; var dv = st.v[f.dep.id]; return Array.isArray(dv) ? dv.indexOf(f.dep.v) !== -1 : val(f.dep.id) === f.dep.v; }
     function showDeps(id) { Array.prototype.forEach.call(host.querySelectorAll('[data-dep="' + id + '"]'), function (x) { var dv = st.v[id]; x.hidden = !(Array.isArray(dv) ? dv.indexOf(x.getAttribute('data-depv')) !== -1 : dv === x.getAttribute('data-depv')); }); }
@@ -83,8 +91,12 @@
         var m = obj(f.id);
         return '<div class="rf-f rf-wide"><span>' + esc(f.l) + '<small class="rf-tip">Tap once for S (green), twice for I (amber), three times for R (red), four times to clear</small></span><div class="ab-aw">' + f.o.map(function (o) {
           var s = m[o] || '';
-          return chipBtn('sir', f, o, s ? ' s' + s : '', s ? 'true' : 'false', s ? o + ': ' + SIR[s] : '').replace('>' + esc(o) + '<', '>' + (s ? '<b class="rf-sirk">' + s + '</b> ' : '') + esc(o) + '<');
+          return chipBtn('sir', f, o, s ? ' sir-' + s.toLowerCase() : '', s ? 'true' : 'false', s ? o + ': ' + SIR[s] : '').replace('>' + esc(o) + '<', '>' + (s ? '<b class="rf-sirk">' + s + '</b> ' : '') + esc(o) + '<');
         }).join('') + '</div></div>';
+      }
+      if (f.k === 'pn') {
+        var pm = obj(f.id);
+        return '<div class="rf-f rf-wide rf-pn"><span>' + esc(f.l) + '<small class="rf-tip">Tap once for positive (+), twice for negative (−), three times to clear</small></span><div class="ab-aw">' + f.o.map(function (o) { return pnBtn(f, o, pm[o] || ''); }).join('') + '</div></div>';
       }
       if (f.k === 'obs') return '<div class="rf-grid">' + OBS.map(function (o) {
         return '<label class="rf-f rf-lab"><span>' + o[1] + '</span><input data-v="o_' + o[0] + '" data-lo="' + (o[3] != null ? o[3] : '') + '" data-hi="' + (o[4] != null ? o[4] : '') + '" ' + (o[0] === 'bp' || o[0] === 'sats' ? '' : 'inputmode="decimal" ') + 'value="' + esc(val('o_' + o[0])) + '" placeholder="' + esc(o[2]) + '" autocomplete="off"></label>';
@@ -111,7 +123,7 @@
       if (f.k === 'labs') return LABS.some(function (o) { return val('l_' + o[0]) !== ''; });
       if (f.k === 'abx') return st.abx.some(function (a) { return a.d; });
       if (f.k === 'chips') return arr(f.id).length > 0 || arr(f.id + '_no').length > 0;
-      if (f.k === 'sir') return Object.keys(obj(f.id)).length > 0;
+      if (f.k === 'sir' || f.k === 'pn') return depOk(f) && Object.keys(obj(f.id)).length > 0;
       return val(f.id) !== '';
     }
     function filled(s) { return s.f.some(hasVal); }
@@ -159,6 +171,7 @@
       if (f.k === 'chips') {
         var yes = arr(f.id);
         if (f.ins) yes = yes.filter(function (x) { return String(val(f.ins)).indexOf(x) === -1; });
+        yes = yes.filter(function (x) { return !pnDone(f.id, x); });
         var r = [];
         if (f.none && yes.indexOf(f.none) !== -1) r.push(negLine(f));
         var pos = yes.filter(function (x) { return x !== f.none && !isNegOpt(x); });
@@ -175,6 +188,10 @@
           if (ds.length) r2.push(SIR[k] + ': ' + ds.map(lc).join(', '));
         });
         return r2;
+      }
+      if (f.k === 'pn') {
+        var pm2 = obj(f.id), pr = f.o.filter(function (o) { return pm2[o]; }).map(function (o) { return o + ' ' + PN[pm2[o]]; });
+        return pr.length ? [(f.base || f.l) + ': ' + pr.join(', ')] : [];
       }
       if (f.k === 'obs') { var ob = OBS.map(function (o) { var x = val('o_' + o[0]); return x !== '' ? o[1] + ' ' + x + (o[0] === 'temp' ? '°C' : '') : ''; }).filter(Boolean).join(', '); return ob ? [ob] : []; }
       if (f.k === 'labs') {
@@ -289,7 +306,7 @@
           a.push(o);
         } else a.splice(i, 1);
         st.v[id] = a; setChipStates(id);
-        if (fd.ins) insertLine(fd.ins, o, i === -1);
+        if (fd.ins && !hasPn(id, o)) insertLine(fd.ins, o, i === -1);
         if (fd.region) relabel(fd);
         if (i !== -1) S.forEach(function (sx) { sx.f.forEach(function (g) { if (g.region && g.dep && g.dep.id === id && g.dep.v === o) { st.v[g.id] = []; setChipStates(g.id); } }); });
         showDeps(id);
@@ -305,10 +322,18 @@
         var nx = order[(order.indexOf(m[o2] || '') + 1) % 4];
         if (nx) m[o2] = nx; else delete m[o2];
         st.v[id2] = m;
-        b.className = 'sp-chip rf-chip' + (nx ? ' s' + nx : '');
+        b.className = 'sp-chip rf-chip' + (nx ? ' sir-' + nx.toLowerCase() : '');
         b.setAttribute('aria-pressed', nx ? 'true' : 'false');
         if (nx) b.setAttribute('aria-label', o2 + ': ' + SIR[nx]); else b.removeAttribute('aria-label');
         b.innerHTML = (nx ? '<b class="rf-sirk">' + nx + '</b> ' : '') + esc(o2);
+        save(); note();
+      } else if (b.hasAttribute('data-pn')) {
+        var id3 = b.getAttribute('data-pn'), o3 = b.getAttribute('data-o'), pm3 = obj(id3), ord = ['', 'P', 'N'];
+        var nv = ord[(ord.indexOf(pm3[o3] || '') + 1) % 3];
+        if (nv) pm3[o3] = nv; else delete pm3[o3];
+        st.v[id3] = pm3;
+        b.outerHTML = pnBtn(fieldDef(id3), o3, nv);
+        var nb = host.querySelector('[data-pn="' + id3 + '"][data-o="' + o3.replace(/"/g, '\\"') + '"]'); if (nb) nb.focus();
         save(); note();
       } else if (b.hasAttribute('data-addabx')) { st.abx.push({ d: '', dose: '', start: '' }); save(); redraw(); var ins = host.querySelectorAll('[data-k="d"]'); if (ins.length) ins[ins.length - 1].focus(); }
       else if (b.hasAttribute('data-delabx')) { st.abx.splice(+b.getAttribute('data-delabx'), 1); save(); redraw(); }
