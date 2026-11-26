@@ -125,6 +125,29 @@ var SCORES = [
     ref: 'Fowler VG et al. The 2023 Duke-ISCVID criteria for infective endocarditis. Clin Infect Dis 2023;77:518-26'
   },
   {
+    id: 'hscore',
+    name: 'HScore',
+    use: 'Probability of reactive haemophagocytic lymphohistiocytosis (HLH) in adults',
+    wide: true,
+    items: [
+      { label: 'Known underlying immunosuppression (HIV, or long-term immunosuppressive therapy)', options: [['No', 0], ['Yes', 18]] },
+      { label: 'Temperature (°C)', options: [['< 38.4', 0], ['38.4–39.4', 33], ['> 39.4', 49]] },
+      { label: 'Organomegaly', options: [['None', 0], ['Hepatomegaly or splenomegaly', 23], ['Both', 38]] },
+      { label: 'Cytopenias (Hb ≤ 92 g/L, WCC ≤ 5.0 × 10⁹/L, platelets ≤ 110 × 10⁹/L)', options: [['1 lineage', 0], ['2 lineages', 24], ['3 lineages', 34]] },
+      { label: 'Ferritin (µg/L)', options: [['< 2000', 0], ['2000–6000', 35], ['> 6000', 50]] },
+      { label: 'Triglycerides (mmol/L)', options: [['< 1.5', 0], ['1.5–4', 44], ['> 4', 64]] },
+      { label: 'Fibrinogen (g/L)', options: [['> 2.5', 0], ['≤ 2.5', 30]] },
+      { label: 'AST (U/L)', options: [['< 30', 0], ['≥ 30', 19]] },
+      { label: 'Haemophagocytosis on bone marrow aspirate', options: [['No or not done', 0], ['Yes', 35]] }
+    ],
+    bands: [
+      { max: 168, level: 'mid', text: 'Below the usual cut-off of 169: HLH less likely. Repeat as results change; the score can rise quickly' },
+      { max: 337, level: 'high', text: '169 or more: HLH likely. Discuss urgently with haematology' }
+    ],
+    note: 'A cut-off of 169 gave 93% sensitivity and 86% specificity in the original cohort. The HScore was developed for reactive (secondary) HLH in adults. Common triggers are infection (especially EBV and other herpesviruses), lymphoma and autoimmune disease (macrophage activation syndrome). A bone marrow aspirate is not needed to score; enter "No or not done" if not available. Ferritin is often over 10,000 µg/L.',
+    ref: 'Fardet L et al. Development and validation of the HScore, a score for the diagnosis of reactive hemophagocytic syndrome. Arthritis Rheumatol 2014;66:2613–20'
+  },
+  {
     id: 'ipa',
     name: 'Invasive aspergillosis (EORTC/MSGERC)',
     use: 'Proven, probable or possible invasive pulmonary aspergillosis or mould disease',
