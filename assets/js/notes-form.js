@@ -18,7 +18,7 @@
   var ID_RE = /\b\d{3}[ -]?\d{3}[ -]?\d{4}\b|\b(nhs ?(no|number)|mrn|dob|d\.o\.b|date of birth|hospital (no|number)|hosp no|lab (no|number))\b/i;
   var ID_RE2 = /\b[A-Z]{1,3}\d{6,10}\b/;
   var SIR = { S: 'Susceptible', I: 'Susceptible, increased exposure', R: 'Resistant' };
-  var PN = { P: 'positive', N: 'negative' }, PNK = { P: '+', N: '−' }, PNC = { P: ' sir-r', N: ' sir-s' };
+  var PN = { P: 'positive', N: 'negative', Q: 'pending' }, PNK = { P: '+', N: '−', Q: '…' }, PNC = { P: ' sir-r', N: ' sir-s', Q: ' sir-i' };
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function lc(x) { return /^[A-Z][A-Z0-9]/.test(x) ? x : x.charAt(0).toLowerCase() + x.slice(1); }
@@ -46,6 +46,33 @@
     function resChip(f, o, v) {
       return '<button type="button" class="sp-chip rf-chip' + (v ? PNC[v] : '') + '" aria-pressed="' + (v ? 'true' : 'false') + '"' + (v ? ' aria-label="' + esc(o + ' ' + PN[v]) + '"' : '') +
         ' data-chips="' + f.id + '" data-o="' + esc(o) + '">' + (v ? '<b class="rf-sirk">' + PNK[v] + '</b> ' : '') + esc(o) + '</button>';
+    }
+    // Result buttons keep a line in the free-text box up to date ("Positive urine culture"), leaving anything typed after it alone
+    function manage(target, key, text) {
+      var ta = host.querySelector('[data-v="' + target + '"]'), ml = obj('_ml'), old = ml[key] || '';
+      var ls = String(ta ? ta.value : val(target)).split('\n'), idx = -1;
+      if (old) ls.forEach(function (l, i) { if (idx === -1 && l.indexOf(old) === 0) idx = i; });
+      if (text) {
+        if (idx !== -1) ls[idx] = text + ls[idx].slice(old.length);
+        else { while (ls.length && ls[ls.length - 1].trim() === '') ls.pop(); ls.push(text); }
+        ml[key] = text;
+      } else {
+        if (idx !== -1) { var rest = ls[idx].slice(old.length).replace(/^[\s,;:–-]+/, ''); if (rest) ls[idx] = rest; else ls.splice(idx, 1); }
+        delete ml[key];
+      }
+      var v = ls.join('\n'); if (ta) ta.value = v; st.v[target] = v; st.v._ml = ml;
+    }
+    function resText(f, o) {
+      var a = arr(f.id), n = arr(f.id + '_no');
+      if (hasPn(f.id, o)) {
+        if (a.indexOf(o) === -1) return '';
+        var g = null; S.forEach(function (sx) { sx.f.forEach(function (x) { if (x.k === 'pn' && x.dep && x.dep.id === f.id && x.dep.v === o) g = x; }); });
+        var pm = obj(g.id), b = g.base || o, pr = [];
+        ['P', 'N', 'Q'].forEach(function (k) { var ts = g.o.filter(function (t) { return pm[t] === k; }); if (ts.length) pr.push(PN[k] + ' ' + b + ' ' + joinAnd(ts)); });
+        var ln = pr.length ? pr.join('; ') : 'sent ' + b;
+        return ln.charAt(0).toUpperCase() + ln.slice(1);
+      }
+      return a.indexOf(o) !== -1 ? 'Positive ' + lc(o) : n.indexOf(o) !== -1 ? 'Negative ' + lc(o) : arr(f.id + '_pd').indexOf(o) !== -1 ? 'Pending ' + lc(o) : '';
     }
     function pnBtn(f, o, v) {
       return '<button type="button" class="sp-chip rf-chip' + (v ? PNC[v] : '') + '" aria-pressed="' + (v ? 'true' : 'false') + '"' + (v ? ' aria-label="' + esc(o + ' ' + PN[v]) + '"' : '') +
@@ -86,10 +113,10 @@
       if (f.k === 'num') return '<label class="rf-f rf-num"><span>' + esc(f.l) + '</span><span class="rf-u"><input data-v="' + f.id + '" inputmode="decimal" value="' + esc(val(f.id)) + '" autocomplete="off"><em>' + esc(f.u || '') + '</em></span></label>';
       if (f.k === 'chips' || f.k === 'one') {
         var sel = f.k === 'one' ? [val(f.id)] : arr(f.id), no = arr(f.id + '_no');
-        var tip = f.pnres ? 'Tap once for positive (+), twice for negative (−), three times to clear' + (f.o.some(function (o) { return hasPn(f.id, o); }) ? '; CMV, EBV, HSV and VZV open IgM, IgG and PCR' : '') : 'Tap once for yes, twice for no (red), three times to clear';
+        var tip = f.pnres ? 'Tap once for positive (+), twice for negative (−), three times for pending (…), four times to clear' + (f.o.some(function (o) { return hasPn(f.id, o); }) ? '; CMV, EBV, HSV and VZV open IgM, IgG and PCR' : '') : 'Tap once for yes, twice for no (red), three times to clear';
         return '<div class="rf-f rf-wide"><span>' + esc(f.l) + (f.neg ? '<small class="rf-tip">' + tip + '</small>' : '') + '</span><div class="ab-aw">' + f.o.map(function (o) {
           var on = sel.indexOf(o) !== -1, isNo = no.indexOf(o) !== -1;
-          if (f.pnres && !hasPn(f.id, o)) return resChip(f, o, on ? 'P' : isNo ? 'N' : '');
+          if (f.pnres && !hasPn(f.id, o)) return resChip(f, o, on ? 'P' : isNo ? 'N' : arr(f.id + '_pd').indexOf(o) !== -1 ? 'Q' : '');
           return chipBtn(f.k, f, o, (on ? ' on' : '') + (isNo ? ' no' : ''), on ? 'true' : isNo ? 'mixed' : 'false', isNo ? 'No ' + o : '');
         }).join('') + '</div></div>';
       }
@@ -102,7 +129,7 @@
       }
       if (f.k === 'pn') {
         var pm = obj(f.id);
-        return '<div class="rf-f rf-wide rf-pn"><span>' + esc(f.l) + '<small class="rf-tip">Tap once for positive (+), twice for negative (−), three times to clear</small></span><div class="ab-aw">' + f.o.map(function (o) { return pnBtn(f, o, pm[o] || ''); }).join('') + '</div></div>';
+        return '<div class="rf-f rf-wide rf-pn"><span>' + esc(f.l) + '<small class="rf-tip">Tap once for positive (+), twice for negative (−), three times for pending (…), four times to clear</small></span><div class="ab-aw">' + f.o.map(function (o) { return pnBtn(f, o, pm[o] || ''); }).join('') + '</div></div>';
       }
       if (f.k === 'obs') return '<div class="rf-grid">' + OBS.map(function (o) {
         return '<label class="rf-f rf-lab"><span>' + o[1] + '</span><input data-v="o_' + o[0] + '" data-lo="' + (o[3] != null ? o[3] : '') + '" data-hi="' + (o[4] != null ? o[4] : '') + '" ' + (o[0] === 'bp' || o[0] === 'sats' ? '' : 'inputmode="decimal" ') + 'value="' + esc(val('o_' + o[0])) + '" placeholder="' + esc(o[2]) + '" autocomplete="off"></label>';
@@ -128,7 +155,7 @@
       if (f.k === 'obs') return OBS.some(function (o) { return val('o_' + o[0]) !== ''; });
       if (f.k === 'labs') return LABS.some(function (o) { return val('l_' + o[0]) !== ''; });
       if (f.k === 'abx') return st.abx.some(function (a) { return a.d; });
-      if (f.k === 'chips') return arr(f.id).length > 0 || arr(f.id + '_no').length > 0;
+      if (f.k === 'chips') return arr(f.id).length > 0 || arr(f.id + '_no').length > 0 || arr(f.id + '_pd').length > 0;
       if (f.k === 'sir' || f.k === 'pn') return depOk(f) && Object.keys(obj(f.id)).length > 0;
       return val(f.id) !== '';
     }
@@ -175,12 +202,14 @@
       if (f.k === 'text' || f.k === 'area') { var tv = String(val(f.id)).trim(); return tv ? [NEGTXT.test(tv) ? negLine(f) : out + val(f.id)] : []; }
       if (f.k === 'num') return val(f.id) ? [out + val(f.id) + (f.u ? ' ' + f.u : '')] : [];
       if (f.k === 'one') { var ov = val(f.id); if (!ov) return []; if (ov === 'None') return [negLine(f)]; return [isNegOpt(ov) ? ov : out + ov]; }
+      if (f.k === 'chips' && f.pnres && f.ins) return []; // results are written into the free-text box instead
       if (f.k === 'chips' && f.pnres) {
         var py = arr(f.id), pno = arr(f.id + '_no'), rr = [];
         var sent = py.filter(function (x) { return hasPn(f.id, x) && !pnDone(f.id, x); });
         var posr = py.filter(function (x) { return !hasPn(f.id, x); });
         if (posr.length) rr.push('Positive ' + joinAnd(posr.map(lc)));
         if (pno.length) rr.push('Negative ' + joinAnd(pno.map(lc)));
+        var ppd = arr(f.id + '_pd'); if (ppd.length) rr.push('Pending ' + joinAnd(ppd.map(lc)));
         if (sent.length) rr.push((f.out || 'Sent ') + joinAnd(sent));
         return rr;
       }
@@ -205,10 +234,10 @@
         });
         return r2;
       }
+      if (f.k === 'pn' && f.dep && fieldDef(f.dep.id).ins) return [];
       if (f.k === 'pn') {
-        var pm2 = obj(f.id), b = f.base || f.l, pp = f.o.filter(function (o) { return pm2[o] === 'P'; }), nn = f.o.filter(function (o) { return pm2[o] === 'N'; }), pr = [];
-        if (pp.length) pr.push('positive ' + b + ' ' + joinAnd(pp));
-        if (nn.length) pr.push('negative ' + b + ' ' + joinAnd(nn));
+        var pm2 = obj(f.id), b = f.base || f.l, pr = [];
+        ['P', 'N', 'Q'].forEach(function (k) { var ts = f.o.filter(function (o) { return pm2[o] === k; }); if (ts.length) pr.push(PN[k] + ' ' + b + ' ' + joinAnd(ts)); });
         if (!pr.length) return [];
         var ln = pr.join('; '); return [ln.charAt(0).toUpperCase() + ln.slice(1)];
       }
@@ -294,7 +323,7 @@
       var fdc = fieldDef(id);
       Array.prototype.forEach.call(host.querySelectorAll('[data-chips="' + id + '"]'), function (x) {
         var o = x.getAttribute('data-o'), on = a.indexOf(o) !== -1, isNo = n.indexOf(o) !== -1;
-        if (fdc.pnres && !hasPn(id, o)) { x.outerHTML = resChip(fdc, o, on ? 'P' : isNo ? 'N' : ''); return; }
+        if (fdc.pnres && !hasPn(id, o)) { x.outerHTML = resChip(fdc, o, on ? 'P' : isNo ? 'N' : arr(id + '_pd').indexOf(o) !== -1 ? 'Q' : ''); return; }
         x.classList.toggle('on', on); x.classList.toggle('no', isNo);
         x.setAttribute('aria-pressed', on ? 'true' : isNo ? 'mixed' : 'false');
         if (isNo) x.setAttribute('aria-label', 'No ' + o); else x.removeAttribute('aria-label');
@@ -319,16 +348,20 @@
       if (b.hasAttribute('data-chips')) {
         var id = b.getAttribute('data-chips'), o = b.getAttribute('data-o'), fd = fieldDef(id), a = arr(id).slice(), i = a.indexOf(o);
         if (fd.neg && !(fd.pnres && hasPn(id, o))) {
-          var n = arr(id + '_no').slice(), ni = n.indexOf(o);
-          if (i !== -1) { a.splice(i, 1); n.push(o); } else if (ni !== -1) n.splice(ni, 1); else a.push(o);
-          st.v[id + '_no'] = n;
+          var n = arr(id + '_no').slice(), ni = n.indexOf(o), pd = arr(id + '_pd').slice(), pi = pd.indexOf(o);
+          if (i !== -1) { a.splice(i, 1); n.push(o); }
+          else if (ni !== -1) { n.splice(ni, 1); if (fd.pnres) pd.push(o); }
+          else if (pi !== -1) pd.splice(pi, 1);
+          else a.push(o);
+          st.v[id + '_no'] = n; st.v[id + '_pd'] = pd;
         } else if (i === -1) {
           if (fd.none) a = o === fd.none ? [] : a.filter(function (x) { return x !== fd.none; });
           a.push(o);
         } else a.splice(i, 1);
         st.v[id] = a; setChipStates(id);
         if (!b.isConnected) { var nb2 = host.querySelector('[data-chips="' + id + '"][data-o="' + o.replace(/"/g, '\\"') + '"]'); if (nb2) nb2.focus(); }
-        if (fd.ins && !hasPn(id, o)) insertLine(fd.ins, o, i === -1);
+        if (fd.ins && fd.pnres) manage(fd.ins, id + '|' + o, resText(fd, o));
+        else if (fd.ins && !hasPn(id, o)) insertLine(fd.ins, o, i === -1);
         if (fd.region) relabel(fd);
         if (i !== -1) S.forEach(function (sx) { sx.f.forEach(function (g) { if (g.region && g.dep && g.dep.id === id && g.dep.v === o) { st.v[g.id] = []; setChipStates(g.id); } }); });
         showDeps(id);
@@ -350,11 +383,13 @@
         b.innerHTML = (nx ? '<b class="rf-sirk">' + nx + '</b> ' : '') + esc(o2);
         save(); note();
       } else if (b.hasAttribute('data-pn')) {
-        var id3 = b.getAttribute('data-pn'), o3 = b.getAttribute('data-o'), pm3 = obj(id3), ord = ['', 'P', 'N'];
-        var nv = ord[(ord.indexOf(pm3[o3] || '') + 1) % 3];
+        var id3 = b.getAttribute('data-pn'), o3 = b.getAttribute('data-o'), pm3 = obj(id3), ord = ['', 'P', 'N', 'Q'];
+        var nv = ord[(ord.indexOf(pm3[o3] || '') + 1) % 4];
         if (nv) pm3[o3] = nv; else delete pm3[o3];
         st.v[id3] = pm3;
-        b.outerHTML = pnBtn(fieldDef(id3), o3, nv);
+        var fd3 = fieldDef(id3);
+        b.outerHTML = pnBtn(fd3, o3, nv);
+        if (fd3.dep) { var cf = fieldDef(fd3.dep.id); if (cf.ins && cf.pnres) manage(cf.ins, cf.id + '|' + fd3.dep.v, resText(cf, fd3.dep.v)); }
         var nb = host.querySelector('[data-pn="' + id3 + '"][data-o="' + o3.replace(/"/g, '\\"') + '"]'); if (nb) nb.focus();
         save(); note();
       } else if (b.hasAttribute('data-addabx')) { st.abx.push({ d: '', dose: '', start: '' }); save(); redraw(); var ins = host.querySelectorAll('[data-k="d"]'); if (ins.length) ins[ins.length - 1].focus(); }
