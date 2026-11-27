@@ -14,7 +14,8 @@
   function setVars() {
     var tb = topbarH(), f = document.querySelector('.jump-float.show');
     root.style.setProperty('--tb-h', tb + 'px');
-    root.style.scrollPaddingTop = (tb + (f ? f.getBoundingClientRect().height : 0) + 12) + 'px';
+    // Offset for jumps to a section. Not scroll-padding on <html>: that made Chrome scroll the page with every letter typed in the header search box.
+    root.style.setProperty('--sp', (tb + (f ? f.getBoundingClientRect().height : 0) + 12) + 'px');
   }
   function bind() {
     bars.forEach(function (b) { if (b.io) b.io.disconnect(); if (b.so) b.so.disconnect(); if (b.fl && b.fl.parentNode) b.fl.parentNode.removeChild(b.fl); });
@@ -65,7 +66,7 @@
     if (!t) return;
     e.preventDefault();
     setVars();
-    var y = t.getBoundingClientRect().top + window.scrollY - (parseFloat(root.style.scrollPaddingTop) || 80);
+    var y = t.getBoundingClientRect().top + window.scrollY - (parseFloat(root.style.getPropertyValue('--sp')) || 80);
     window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
   });
 

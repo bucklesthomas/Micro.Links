@@ -46,7 +46,11 @@
 :root[data-theme="light"] { color-scheme: light; }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+html { scroll-behavior: smooth; scroll-padding-top: 0; }
+/* Offset for the sticky header when jumping to a section. Set on targets rather than as scroll-padding on html:
+   scroll-padding made Chrome scroll the page up with every letter typed in the header search box. */
+[id] { scroll-margin-top: var(--sp, 70px); }
+.topbar, .topbar [id] { scroll-margin-top: 0; }
 body {
   margin: 0;
   background: var(--bg);
@@ -380,7 +384,8 @@ fieldset.row.choice:first-child { border-top: 0; }
   .site-search { order: 3; flex-basis: 100%; max-width: none; }
   .ss-kbd { display: none; }
   .ss-type { width: 76px; font-size: 9px; letter-spacing: 0.02em; }
-  html { scroll-padding-top: 120px; }
+  [id] { scroll-margin-top: var(--sp, 120px); }
+  .topbar, .topbar [id] { scroll-margin-top: 0; }
 }
 
 /* Yes/no criteria as selectable boxes (CURB-65, qSOFA, Duke) */
@@ -1486,7 +1491,7 @@ table.spec .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; 
 .mech-svg .mk.on circle { fill: var(--accent-ink); }
 .mech-gp { margin: 10px 2px 0; }
 @media (max-width: 600px) { .mech-fig { margin: -6px -10px 0; } .mech-gp { margin: 8px 10px 0; } }
-.mech-panel { font-family: var(--sans); font-size: 14px; line-height: 1.55; }
+.mech-panel { display: flow-root; font-family: var(--sans); font-size: 14px; line-height: 1.55; }
 .mech-panel > .ab-note { margin: 4px 0; }
 .mech-head { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
 .mech-head h3 { margin: 0; font-size: 19px; line-height: 1.25; }

@@ -144,8 +144,16 @@
       (drugs ? '<h4 class="vc-h">On this site</h4><div class="ab-aw mech-drugs">' + drugs + '</div>' : '');
   }
 
+  // Keep the panel the height of its tallest entry so nothing below it moves when the selection changes
+  function sizePanel() {
+    var p = host.querySelector('#mech-panel'), keep = st.sel, h = 0;
+    if (!p.offsetParent) return;
+    p.style.minHeight = '';
+    for (var i = 0; i <= M.length; i++) { st.sel = i || null; p.innerHTML = panel(); h = Math.max(h, p.offsetHeight); }
+    st.sel = keep; p.innerHTML = panel(); p.style.minHeight = h + 'px';
+  }
   function draw() {
-    host.querySelector('#mech-list').innerHTML = list();
+    Array.prototype.forEach.call(host.querySelectorAll('#mech-list [data-m]'), function (b) { var on = +b.getAttribute('data-m') === st.sel; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); });
     host.querySelector('#mech-panel').innerHTML = panel();
     var s = host.querySelector('.mech-svg');
     s.classList.toggle('has-sel', !!st.sel);
@@ -162,6 +170,11 @@
     '<div class="mech-side"><div id="mech-panel" class="mech-panel" aria-live="polite"></div></div></div><h2 class="section-title">All targets</h2><div id="mech-list"></div>';
   host.addEventListener('click', function (e) { var t = e.target.closest('[data-m]'); if (t) pick(+t.getAttribute('data-m'), t.tagName.toLowerCase() === 'button'); });
   host.addEventListener('keydown', function (e) { var t = e.target.closest('.mk'); if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); pick(+t.getAttribute('data-m')); } });
-  draw();
+  host.querySelector('#mech-list').innerHTML = list();
+  draw(); sizePanel();
+  // In the hosted copy the page starts hidden (height 0), so size again once it is shown
+  if (window.IntersectionObserver) new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) sizePanel(); }); }).observe(host.querySelector('#mech-panel'));
+  var rw = 0, rt; window.addEventListener('resize', function () { if (window.innerWidth === rw) return; rw = window.innerWidth; clearTimeout(rt); rt = setTimeout(sizePanel, 150); });
+  rw = window.innerWidth;
   window.MECH = M;
 })();

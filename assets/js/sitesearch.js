@@ -169,7 +169,10 @@
     items.forEach(function (el, i) { el.classList.toggle('active', i === active); });
     if (items[active]) {
       input.setAttribute('aria-activedescendant', items[active].id);
-      items[active].scrollIntoView({ block: 'nearest' });
+      // Scroll only inside the results box: scrollIntoView would also scroll the page on every keystroke
+      var el = items[active], top = el.offsetTop, bot = top + el.offsetHeight;
+      if (top < box.scrollTop) box.scrollTop = top - 6;
+      else if (bot > box.scrollTop + box.clientHeight) box.scrollTop = bot - box.clientHeight + 6;
     } else {
       input.removeAttribute('aria-activedescendant');
     }
