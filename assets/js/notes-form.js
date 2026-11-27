@@ -196,8 +196,29 @@
     function isNegOpt(o) { return /^(No|Never|None)\b/.test(o); }
     function joinAnd(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1]; }
     function joinOr(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' or ' + a[a.length - 1]; }
+    // Buttons with to: '<free-text id>' write their lines into that box (kept up to date, and editable) instead of straight into the note
+    function gen(f) {
+      if (!depOk(f)) return [];
+      var out = f.out != null ? f.out : f.l + ': ', r = [];
+      if (f.k === 'one') { var ov = val(f.id); if (ov) r.push(['v', ov === 'None' ? negLine(f) : isNegOpt(ov) ? ov : out + ov]); return r; }
+      var yes = arr(f.id);
+      if (f.none && yes.indexOf(f.none) !== -1) r.push(['none', negLine(f)]);
+      var pos = yes.filter(function (x) { return x !== f.none && !isNegOpt(x); });
+      if (pos.length) r.push(['pos', out + pos.join(', ')]);
+      yes.forEach(function (x) { if (x !== f.none && isNegOpt(x)) r.push(['o:' + x, x]); });
+      var no = arr(f.id + '_no');
+      if (no.length) r.push(['no', f.neg + ' ' + joinOr(no.map(lc))]);
+      return r;
+    }
+    function syncTo(f) {
+      if (!f.to) return;
+      var g = gen(f), ml = obj('_ml'), keys = {}, pre = f.id + '|';
+      Object.keys(ml).forEach(function (k) { if (k.indexOf(pre) === 0) keys[k.slice(pre.length)] = ''; });
+      g.forEach(function (x) { keys[x[0]] = x[1]; });
+      Object.keys(keys).forEach(function (k) { manage(f.to, pre + k, keys[k]); });
+    }
     function lines(f) {
-      if (!depOk(f) || f.region) return [];
+      if (!depOk(f) || f.region || f.to) return [];
       var out = f.out != null ? f.out : (f.k === 'area' ? '' : f.l + ': ');
       if (f.k === 'text' || f.k === 'area') { var tv = String(val(f.id)).trim(); return tv ? [NEGTXT.test(tv) ? negLine(f) : out + val(f.id)] : []; }
       if (f.k === 'num') return val(f.id) ? [out + val(f.id) + (f.u ? ' ' + f.u : '')] : [];
@@ -360,6 +381,7 @@
         } else a.splice(i, 1);
         st.v[id] = a; setChipStates(id);
         if (!b.isConnected) { var nb2 = host.querySelector('[data-chips="' + id + '"][data-o="' + o.replace(/"/g, '\\"') + '"]'); if (nb2) nb2.focus(); }
+        syncTo(fd);
         if (fd.ins && fd.pnres) manage(fd.ins, id + '|' + o, resText(fd, o));
         else if (fd.ins && !hasPn(id, o)) insertLine(fd.ins, o, i === -1);
         if (fd.region) relabel(fd);
@@ -369,6 +391,7 @@
       } else if (b.hasAttribute('data-one')) {
         var id1 = b.getAttribute('data-one'), o1 = b.getAttribute('data-o');
         st.v[id1] = st.v[id1] === o1 ? '' : o1;
+        syncTo(fieldDef(id1));
         Array.prototype.forEach.call(host.querySelectorAll('[data-one="' + id1 + '"]'), function (x) { var on = st.v[id1] === x.getAttribute('data-o'); x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on)); });
         Array.prototype.forEach.call(host.querySelectorAll('[data-dep="' + id1 + '"]'), function (x) { x.hidden = st.v[id1] !== x.getAttribute('data-depv'); });
         save(); note();
