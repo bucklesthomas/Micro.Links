@@ -1682,7 +1682,7 @@ table.bl-spec .spec-corner { min-width: 210px; }
 .rf-dep[hidden] { display: none; }
 .rf-chip.rf-reg { min-width: 40px; justify-content: center; text-align: center; }
 
-/* Teach on the ward */
+/* Teaching page segments (shared by topic teaching pages) */
 .tw-wrap { max-width: 1000px; }
 .tw-topics { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
 .tw-row { display: flex; flex-wrap: wrap; gap: 4px 28px; align-items: flex-start; }

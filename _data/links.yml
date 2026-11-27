@@ -317,10 +317,6 @@
       url: "/teaching/"
       note: Topic teaching pages, interactive diagrams and practice for medical students
       tags: teaching hub medical students education topics ward round tutorial
-    - name: Teach on the ward
-      url: "/teach/"
-      note: Ready-made 5, 10 or 20 minute sessions for medical students on the ward round
-      tags: teaching medical students ward round tutorial session teach questions bedside quiz education
     - name: Tuberculosis
       url: "/tb/"
       note: Latent TB, standard treatment doses, liver toxicity, isolation

@@ -13,7 +13,6 @@ topics:
   - { name: "Meningitis", url: /teach-meningitis/, ready: true, note: "CSF interpreter, first hour, case and quiz" }
   - { name: "Tuberculosis", url: /teach-tb/, ready: true, note: "Treatment timeline, side-effect map, case and quiz" }
 tools:
-  - { name: "Teach on the ward (quick planner)", url: /teach/, note: "Questions, key points and a timer for a 5, 10 or 20 minute session on any topic" }
   - { name: "Resistance takeover (animation)", url: /resistance-takeover/, note: "Watch resistance being selected by low doses, missed doses and stopping early" }
   - { name: "Antibiotic mechanisms of action", url: /mechanisms/, note: "Bacterial cell diagram: where each antibiotic class acts" }
   - { name: "PK/PD targets explained", url: /pkpd/, note: "Time, peak and AUC targets with live dosing curves" }

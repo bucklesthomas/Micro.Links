@@ -138,7 +138,6 @@
     - { name: "Bacterial family map", url: /family-map/, kind: tool }
     - { name: "Intrinsic resistance table", url: /intrinsic-resistance/, kind: tool }
     - { name: "Resistance takeover (animation)", url: /resistance-takeover/, kind: tool }
-    - { name: "Teach on the ward", url: /teach/, kind: tool }
     - { name: "Teaching: sepsis", url: /teach-sepsis/, kind: tool }
     - { name: "β-lactamases: ESBL, AmpC, CPE", url: /beta-lactamases/, kind: tool }
     - { name: "Vancomycin AUC calculator", url: /vancomycin-auc/, kind: tool }
