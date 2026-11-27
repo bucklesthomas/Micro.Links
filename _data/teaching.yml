@@ -15,6 +15,7 @@ topics:
 tools:
   - { name: "Resistance takeover (animation)", url: /resistance-takeover/, note: "Watch resistance being selected by low doses, missed doses and stopping early" }
   - { name: "Antibiotic mechanisms of action", url: /mechanisms/, note: "Bacterial cell diagram: where each antibiotic class acts" }
+  - { name: "Antibiotic structures", url: /structures/, note: "Chemical structures with the key features and side chains highlighted" }
   - { name: "PK/PD targets explained", url: /pkpd/, note: "Time, peak and AUC targets with live dosing curves" }
   - { name: "Antibiotic spectrum chart", url: /spectrum/, note: "Which antibiotic covers which organism, at a glance" }
   - { name: "Bacterial family map", url: /family-map/, note: "Interactive tree of the bacteria on this site" }

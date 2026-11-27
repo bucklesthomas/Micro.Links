@@ -43,6 +43,10 @@
       url: "/spectrum/"
       note: Every antibiotic against key organisms, colour coded at a glance
       tags: spectrum chart table grid activity coverage antibiotic antibiotics gram positive negative anaerobes atypicals mrsa esbl pseudomonas heatmap
+    - name: Antibiotic structures
+      url: "/structures/"
+      note: Chemical structures with the β-lactam ring and side chains highlighted, and what each feature does
+      tags: structure structures chemical chemistry molecule beta-lactam ring side chain r1 cross-reactivity allergy penam cephem carbapenem monobactam sar teaching diagram
     - name: Antibiotics (UK-AWaRe, dosing, PK/PD)
       url: "/antibiotics/"
       note: Doses, PK/PD and AUC targets, spectrum and AWaRe category
