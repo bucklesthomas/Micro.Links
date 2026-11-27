@@ -528,7 +528,6 @@
       "Temocillin",
       "Ceftazidime",
       "Aztreonam",
-      "Nalidixic acid",
       "Colistin"
      ]
     ],
@@ -538,7 +537,6 @@
       "Temocillin",
       "Ceftazidime",
       "Aztreonam",
-      "Nalidixic acid",
       "Colistin"
      ]
     ],
@@ -548,7 +546,6 @@
       "Temocillin",
       "Ceftazidime",
       "Aztreonam",
-      "Nalidixic acid",
       "Fosfomycin",
       "Colistin",
       "Fusidic acid"
@@ -563,7 +560,6 @@
       "Gentamicin",
       "Tobramycin",
       "Amikacin",
-      "Nalidixic acid",
       "Colistin",
       "Fusidic acid"
      ]
@@ -577,7 +573,6 @@
       "Gentamicin",
       "Tobramycin",
       "Amikacin",
-      "Nalidixic acid",
       "Colistin",
       "Fusidic acid"
      ]
@@ -600,7 +595,6 @@
       "Gentamicin",
       "Tobramycin",
       "Amikacin",
-      "Nalidixic acid",
       "Co-trimoxazole",
       "Colistin",
       "Clindamycin",
@@ -627,7 +621,6 @@
       "Gentamicin",
       "Tobramycin",
       "Amikacin",
-      "Nalidixic acid",
       "Co-trimoxazole",
       "Colistin",
       "Erythromycin / macrolides",
@@ -652,7 +645,6 @@
       "Gentamicin",
       "Tobramycin",
       "Amikacin",
-      "Nalidixic acid",
       "Co-trimoxazole",
       "Colistin",
       "Vancomycin",
@@ -680,7 +672,6 @@
       "Gentamicin",
       "Tobramycin",
       "Amikacin",
-      "Nalidixic acid",
       "Co-trimoxazole",
       "Colistin",
       "Vancomycin",
@@ -705,7 +696,6 @@
       "Ceftolozane–tazobactam",
       "Cefiderocol",
       "Aztreonam",
-      "Nalidixic acid",
       "Colistin"
      ]
     ],
@@ -714,7 +704,6 @@
      [
       "Temocillin",
       "Aztreonam",
-      "Nalidixic acid",
       "Fosfomycin",
       "Colistin"
      ]
@@ -724,7 +713,6 @@
      [
       "Temocillin",
       "Aztreonam",
-      "Nalidixic acid",
       "Fosfomycin",
       "Colistin",
       "Vancomycin"
@@ -735,7 +723,6 @@
      [
       "Temocillin",
       "Aztreonam",
-      "Nalidixic acid",
       "Fosfomycin",
       "Colistin",
       "Vancomycin"
@@ -746,7 +733,6 @@
      [
       "Temocillin",
       "Aztreonam",
-      "Nalidixic acid",
       "Fosfomycin",
       "Colistin",
       "Vancomycin"
@@ -770,7 +756,6 @@
      [
       "Temocillin",
       "Aztreonam",
-      "Nalidixic acid",
       "Colistin",
       "Gentamicin",
       "Tobramycin",
@@ -782,7 +767,6 @@
      [
       "Temocillin",
       "Aztreonam",
-      "Nalidixic acid",
       "Colistin",
       "Vancomycin",
       "Gentamicin",
@@ -795,7 +779,6 @@
      [
       "Temocillin",
       "Aztreonam",
-      "Nalidixic acid",
       "Colistin",
       "Vancomycin",
       "Gentamicin",
@@ -853,7 +836,7 @@
    "Quinolones",
    [
     "Ciprofloxacin",
-    "Nalidixic acid"
+    "Levofloxacin"
    ]
   ],
   [
