@@ -29,7 +29,7 @@
    "rx": "Low severity: amoxicillin 500 mg TDS orally. Moderate: amoxicillin 500 mg TDS (add clarithromycin 500 mg BD if atypical infection suspected). High: co-amoxiclav 1.2 g TDS IV (or 500/125 mg TDS orally) plus clarithromycin 500 mg BD.",
    "alt": "Penicillin allergy: doxycycline 200 mg on day 1 then 100 mg OD, or clarithromycin 500 mg BD (low–moderate severity); levofloxacin 500 mg BD (high severity, consider its safety warnings).",
    "dur": "5 days, then stop if clinically stable.",
-   "ipc": "",
+   "ipc": "Pneumococcal vaccine (PPV23) at 65 y and in risk groups; influenza vaccination; smoking cessation.",
    "notes": [
     "High severity in hospital: consider a corticosteroid (IV hydrocortisone first) for 4–7 days or until discharge (NICE NG250).",
     "Higher doses (amoxicillin up to 1 g TDS) are often used in hospital; follow local policy."
@@ -49,6 +49,14 @@
      "IV to oral switch",
      "/iv-oral-durations/"
     ]
+   ],
+   "cause": "S. pneumoniae commonest; H. influenzae (COPD), Mycoplasma (epidemic young adults), Legionella, Chlamydophila psittaci (birds), S. aureus after influenza.",
+   "clin": "Cough, fever, pleuritic pain, dyspnoea; consolidation on examination. Mycoplasma: cold agglutinins, haemolysis, erythema multiforme.",
+   "pearl": "PVL S. aureus: necrotising pneumonia with haemoptysis and leucopenia — add clindamycin or linezolid to suppress toxin.",
+   "trial": [
+    "CAPE COD",
+    "Dequin 2023, NEJM",
+    "Hydrocortisone within 24 h reduced 28-day mortality in severe CAP on ICU (excluding influenza and septic shock)."
    ]
   },
   {
@@ -64,7 +72,7 @@
    "rx": "Not severe and low resistance risk: co-amoxiclav 500/125 mg TDS orally. Severe or higher risk (over 5 days in hospital, recent antibiotics, known colonisation): IV piperacillin–tazobactam, ceftazidime, ceftriaxone, cefuroxime, meropenem or levofloxacin per local policy.",
    "alt": "Penicillin allergy (not severe): doxycycline, co-trimoxazole 960 mg BD or levofloxacin. Add vancomycin, teicoplanin or linezolid if MRSA is suspected or confirmed.",
    "dur": "5 days, then review.",
-   "ipc": "",
+   "ipc": "VAP bundle: head-up 30–45°, daily sedation hold, subglottic suction, oral care with toothbrushing, early extubation.",
    "notes": [],
    "src": [
     [
@@ -77,6 +85,14 @@
      "β-lactamases (ESBL, AmpC, CPE)",
      "/beta-lactamases/"
     ]
+   ],
+   "cause": "Early onset (<5 days): community flora. Late onset: Enterobacterales, P. aeruginosa, Acinetobacter, S. aureus including MRSA.",
+   "clin": "New or progressive infiltrate with fever, purulent secretions and worsening oxygenation ≥48 h after admission or intubation.",
+   "pearl": "Ventilator-associated tracheobronchitis without infiltrate rarely needs treatment — avoid chasing colonisers.",
+   "trial": [
+    "PneumA",
+    "Chastre 2003, JAMA",
+    "8 days was non-inferior to 15 days for VAP, with more recurrence when non-fermenters such as P. aeruginosa were the cause."
    ]
   },
   {
@@ -180,6 +196,14 @@
      "Infectious periods",
      "/infectious-period/"
     ]
+   ],
+   "cause": "Influenza A (H1N1, H3N2; avian H5N1, H7N9) and B; segmented RNA genome. Antigenic drift causes epidemics, shift causes pandemics.",
+   "clin": "Abrupt fever, myalgia, headache, dry cough; complications include primary viral and secondary bacterial pneumonia, myocarditis, encephalopathy.",
+   "pearl": "Post-influenza S. aureus pneumonia (often PVL) is rapidly fatal. Aspirin in children → Reye’s syndrome.",
+   "trial": [
+    "Dobson meta-analysis",
+    "2015, Lancet",
+    "Oseltamivir shortened time to symptom relief by about a day and reduced lower respiratory complications and admission."
    ]
   },
   {
@@ -247,6 +271,14 @@
      "Contact prophylaxis",
      "/contact-prophylaxis/"
     ]
+   ],
+   "cause": "Bordetella pertussis; pertussis toxin and filamentous haemagglutinin. Highly transmissible; waning immunity in adolescents and adults.",
+   "clin": "Catarrhal phase, then paroxysmal cough with whoop and post-tussive vomiting for weeks (‘100-day cough’); apnoea in infants.",
+   "pearl": "Infants under 3 months die of pulmonary hypertension and apnoea — leucocytosis >30 predicts severity.",
+   "trial": [
+    "Maternal pertussis programme",
+    "Amirthalingam 2014, Lancet",
+    "Vaccination in pregnancy was ~90% effective against pertussis in infants under 3 months in England."
    ]
   },
   {
@@ -274,7 +306,15 @@
      "https://www.gov.uk/search/guidance-and-regulation?keywords=legionella"
     ]
    ],
-   "site": []
+   "site": [],
+   "cause": "Legionella pneumophila serogroup 1 from aerosolised warm water (25–45 °C): cooling towers, showers, spa pools. Risk: smokers, older men, immunosuppressed.",
+   "clin": "Severe pneumonia with high fever, confusion, diarrhoea, hyponatraemia, deranged LFTs and raised CK. Pontiac fever is a mild, self-limiting flu-like form.",
+   "pearl": "Ask about travel, hotels and hospital stays in the incubation period (2–10 days); clusters drive environmental sampling.",
+   "trial": [
+    "Philadelphia outbreak",
+    "Fraser 1977, NEJM",
+    "Investigation of the American Legion convention outbreak identified Legionella and its water-borne aerosol spread."
+   ]
   },
   {
    "id": "empyema",
@@ -315,7 +355,7 @@
    "rx": "Phenoxymethylpenicillin 500 mg QDS (or 1 g BD).",
    "alt": "Penicillin allergy: clarithromycin 250–500 mg BD for 5 days, or erythromycin.",
    "dur": "5–10 days.",
-   "ipc": "",
+   "ipc": "Scarlet fever is notifiable; exclude from school for 24 h after starting antibiotics. Outbreak control for iGAS in care homes.",
    "notes": [],
    "src": [
     [
@@ -323,7 +363,15 @@
      "https://www.nice.org.uk/guidance/ng84"
     ]
    ],
-   "site": []
+   "site": [],
+   "cause": "Streptococcus pyogenes (group A), spread by droplets; peak in school-age children, late winter and spring.",
+   "clin": "Fever, tonsillar exudate, tender anterior cervical nodes, absent cough. Scarlet fever: sandpaper rash, strawberry tongue, circumoral pallor.",
+   "pearl": "Sequelae: rheumatic fever (prevented by treatment) and glomerulonephritis (not prevented). Avoid amoxicillin — EBV rash.",
+   "trial": [
+    "Warren Air Force Base",
+    "Denny 1950, JAMA",
+    "Penicillin for streptococcal pharyngitis markedly reduced subsequent rheumatic fever — the basis for treating sore throat."
+   ]
   },
   {
    "id": "sinusitis",
@@ -438,6 +486,14 @@
      "Contact prophylaxis",
      "/contact-prophylaxis/"
     ]
+   ],
+   "cause": "Type I polymicrobial (diabetes, perineum — Fournier’s gangrene); type II group A strep ± S. aureus; Vibrio and Aeromonas after water exposure; clostridial gas gangrene.",
+   "clin": "Pain out of proportion to signs, rapid spread, tense oedema, bullae, crepitus, skin anaesthesia; septic shock.",
+   "pearl": "Clindamycin suppresses toxin synthesis and is unaffected by inoculum (Eagle) effect.",
+   "trial": [
+    "INSTINCT",
+    "Madsen 2017, Intensive Care Med",
+    "IVIG did not improve physical function or mortality in necrotising soft-tissue infection."
    ]
   },
   {
@@ -616,7 +672,7 @@
    "rx": "IV flucloxacillin 2 g QDS (add gentamicin if Gram-negative risk). Suspected gonococcal: ceftriaxone 2 g OD. MRSA risk: vancomycin.",
    "alt": "Penicillin allergy: clindamycin or vancomycin.",
    "dur": "Usually 4–6 weeks in total, with early oral switch when improving.",
-   "ipc": "",
+   "ipc": "Aseptic technique for intra-articular injections; prompt orthopaedic review.",
    "notes": [
     "Urgent orthopaedic washout. Prosthetic joints: see prosthetic joint infection."
    ],
@@ -626,6 +682,14 @@
      "IV to oral switch",
      "/iv-oral-durations/"
     ]
+   ],
+   "cause": "S. aureus commonest; streptococci; N. gonorrhoeae if sexually active; Kingella kingae in children under 4; Gram-negatives in elderly and IVDU.",
+   "clin": "Acute hot, swollen, painful joint with restricted movement — usually knee; fever may be absent. Risk: RA, prosthetic joint, diabetes, steroids.",
+   "pearl": "Crystals do not exclude sepsis. Kingella is fastidious — PCR or blood culture bottle inoculation.",
+   "trial": [
+    "Gjika",
+    "2019, Ann Rheum Dis",
+    "After surgical drainage, 2 weeks of antibiotics was non-inferior to 4 weeks for native-joint septic arthritis."
    ]
   },
   {
@@ -642,12 +706,20 @@
    "rx": "After sampling: IV vancomycin plus broad Gram-negative cover (for example piperacillin–tazobactam or meropenem) per local policy, then target to cultures.",
    "alt": "",
    "dur": "Usually 6–12 weeks depending on the operation (DAIR or revision).",
-   "ipc": "",
+   "ipc": "Laminar flow theatres, skin preparation, cefuroxime or flucloxacillin + gentamicin prophylaxis at induction; MSSA decolonisation pre-op.",
    "notes": [
     "Rifampicin is added for staphylococci when metalwork is retained, once bacteraemia has cleared and wounds are dry (never alone)."
    ],
    "src": [],
-   "site": []
+   "site": [],
+   "cause": "S. aureus; CoNS and Cutibacterium on implants; Salmonella in sickle cell; Pseudomonas after foot puncture through trainers; polymicrobial in diabetic foot.",
+   "clin": "Haematogenous in children (metaphysis) and adults (vertebral discitis); contiguous in diabetic foot; PJI early (<3 months), delayed or late.",
+   "pearl": "A sinus tract communicating with the prosthesis is diagnostic. Cutibacterium needs 14-day incubation.",
+   "trial": [
+    "OVIVA",
+    "Li 2019, NEJM",
+    "Oral antibiotics were non-inferior to IV during the first 6 weeks for bone and joint infection."
+   ]
   },
   {
    "id": "vertebral",
@@ -717,6 +789,14 @@
      "Contact prophylaxis",
      "/contact-prophylaxis/"
     ]
+   ],
+   "cause": "N. meningitidis and S. pneumoniae in adults; GBS, E. coli and Listeria in neonates; Listeria if >60 y, pregnant or immunosuppressed.",
+   "clin": "Fever, headache, neck stiffness, photophobia, confusion; non-blanching rash in meningococcal sepsis. Infants: bulging fontanelle, poor feeding.",
+   "pearl": "CT first only if focal signs, GCS ≤12 or papilloedema. Terminal complement deficiency predisposes to recurrent Neisseria.",
+   "trial": [
+    "European Dexamethasone Study",
+    "de Gans 2002, NEJM",
+    "Dexamethasone before or with the first antibiotic dose reduced death and unfavourable outcome, with the clearest benefit in pneumococcal meningitis."
    ]
   },
   {
@@ -745,6 +825,14 @@
      "Meningitis and encephalitis",
      "/meningitis-encephalitis/"
     ]
+   ],
+   "cause": "HSV-1 in adults (reactivation or primary); HSV-2 in neonates and recurrent lymphocytic (Mollaret’s) meningitis.",
+   "clin": "Fever, altered behaviour, dysphasia, temporal lobe seizures; olfactory hallucinations. Mortality ~70% untreated.",
+   "pearl": "Start aciclovir empirically within 6 h of admission. Anti-NMDA-receptor encephalitis follows HSV in up to 1 in 4.",
+   "trial": [
+    "NIAID Collaborative Antiviral Study",
+    "Whitley 1986, NEJM",
+    "Aciclovir roughly halved mortality compared with vidarabine and became standard therapy."
    ]
   },
   {
@@ -761,7 +849,7 @@
    "rx": "Ceftriaxone 2 g BD IV plus metronidazole 500 mg TDS; add vancomycin or linezolid if post-neurosurgery or S. aureus suspected.",
    "alt": "",
    "dur": "Usually 6–8 weeks; oral step-down possible after initial response (ESCMID 2024).",
-   "ipc": "",
+   "ipc": "Treat dental and sinus sepsis promptly; screen for right-to-left shunts.",
    "notes": [],
    "src": [
     [
@@ -769,7 +857,15 @@
      "https://www.escmid.org/guidelines-journals/guidelines/published-guidelines/"
     ]
    ],
-   "site": []
+   "site": [],
+   "cause": "S. anginosus group and anaerobes from sinus, dental or otogenic spread; S. aureus after trauma or surgery; Nocardia, Toxoplasma, Aspergillus if immunosuppressed.",
+   "clin": "Headache is the commonest symptom; fever in only half; focal deficit, seizures, raised intracranial pressure.",
+   "pearl": "LP is contraindicated — herniation risk. Look for HHT or cyanotic congenital heart disease.",
+   "trial": [
+    "Brouwer meta-analysis",
+    "2014, Neurology",
+    "Mortality from brain abscess fell from ~40% to ~10% over five decades with CT/MRI, stereotactic aspiration and better antibiotics."
+   ]
   },
   {
    "id": "ie",
@@ -785,7 +881,7 @@
    "rx": "Use the site’s endocarditis guide for empirical and organism-specific regimens.",
    "alt": "",
    "dur": "Usually 4–6 weeks; partial oral treatment (POET) for selected patients.",
-   "ipc": "",
+   "ipc": "Antibiotic prophylaxis for dental procedures no longer routine in UK (NICE); good oral hygiene in high-risk patients.",
    "notes": [],
    "src": [
     [
@@ -806,6 +902,14 @@
      "Strep species and IE risk",
      "/strep-ie-risk/"
     ]
+   ],
+   "cause": "Viridans streptococci (native); S. aureus (acute, PWID, right-sided); CoNS (early prosthetic); enterococci (elderly, GU source); HACEK; Coxiella, Bartonella (culture-negative).",
+   "clin": "Fever with a new murmur; emboli (stroke, splinter haemorrhages, Janeway lesions), immune phenomena (Osler’s nodes, Roth spots, GN).",
+   "pearl": "Surgery for heart failure, uncontrolled infection or large vegetation with emboli. S. gallolyticus → colonoscopy.",
+   "trial": [
+    "POET",
+    "Iversen 2019, NEJM",
+    "Oral step-down after ≥10 days IV was non-inferior to full IV therapy in stable left-sided endocarditis."
    ]
   },
   {
@@ -821,7 +925,7 @@
    "rx": "MSSA: flucloxacillin 2 g QDS IV or cefazolin 2 g TDS. MRSA: vancomycin (AUC-guided).",
    "alt": "",
    "dur": "At least 14 days IV from the first negative culture if uncomplicated; 4–6 weeks if complicated.",
-   "ipc": "",
+   "ipc": "MRSA screening and decolonisation; line care bundles; mandatory surveillance; ID consultation for every case.",
    "notes": [],
    "src": [],
    "site": [
@@ -833,6 +937,14 @@
      "Vancomycin AUC",
      "/vancomycin-auc/"
     ]
+   ],
+   "cause": "MSSA and MRSA from lines, skin and soft tissue, injecting drug use, surgical sites; 30-day mortality ~20–30%.",
+   "clin": "Fever, rigors; metastatic foci in spine, joints, psoas, valves and lungs. Persistent bacteraemia suggests an undrained focus or endocarditis.",
+   "pearl": "Never dismiss as a contaminant. Cefazolin is an alternative to flucloxacillin; vancomycin is inferior for MSSA.",
+   "trial": [
+    "ARREST",
+    "Thwaites 2018, Lancet",
+    "Adjunctive rifampicin did not improve outcome in S. aureus bacteraemia, though it reduced recurrence."
    ]
   },
   {
@@ -960,6 +1072,14 @@
      "Isolation",
      "/isolation/"
     ]
+   ],
+   "cause": "Toxigenic C. difficile (toxins A and B; binary toxin in ribotype 027) after clindamycin, cephalosporins, quinolones or co-amoxiclav; age and PPIs.",
+   "clin": "Diarrhoea ≥3 unformed stools in 24 h; colitis, ileus, toxic megacolon. Severe: WCC >15, creatinine >50% rise, temperature >38.5 °C, colitis on imaging.",
+   "pearl": "PCR+/toxin− suggests colonisation. Bezlotoxumab (anti-toxin B) reduced recurrence but has been withdrawn.",
+   "trial": [
+    "van Nood",
+    "2013, NEJM",
+    "Duodenal FMT cured 81% of recurrent CDI vs 31% with vancomycin alone; the trial stopped early for benefit."
    ]
   },
   {
@@ -1132,6 +1252,14 @@
      "Needlestick",
      "/needlestick/"
     ]
+   ],
+   "cause": "HBV, partially double-stranded DNA hepadnavirus with reverse transcriptase; vertical, sexual, blood-borne. High prevalence in Asia and sub-Saharan Africa.",
+   "clin": "Acute: often subclinical; jaundice in adults; fulminant failure <1%. Chronic: cirrhosis, HCC (even without cirrhosis), extrahepatic polyarteritis nodosa.",
+   "pearl": "Chronicity ~90% after perinatal vs <5% after adult infection. Reactivation with rituximab — prophylaxis if anti-HBc positive. HDV needs HBsAg.",
+   "trial": [
+    "Taiwan vaccination programme",
+    "Chang 1997, NEJM",
+    "Universal infant HBV vaccination reduced childhood hepatocellular carcinoma — the first vaccine to prevent a cancer."
    ]
   },
   {
@@ -1166,6 +1294,14 @@
      "Needlestick",
      "/needlestick/"
     ]
+   ],
+   "cause": "HCV, positive-sense RNA flavivirus; genotypes 1–6. Injecting drug use, pre-1991 blood products, unsafe medical procedures abroad; low vertical and sexual risk.",
+   "clin": "Acute usually asymptomatic; ~75% chronic. Cirrhosis over decades, HCC; extrahepatic cryoglobulinaemia, membranoproliferative GN, porphyria cutanea tarda.",
+   "pearl": "Antibody persists after cure — test RNA for reinfection. HBV reactivation on DAAs: check HBsAg first. HCC surveillance continues if cirrhotic.",
+   "trial": [
+    "ASTRAL-1",
+    "Feld 2015, NEJM",
+    "Sofosbuvir–velpatasvir for 12 weeks achieved ~99% SVR12 across genotypes 1, 2, 4, 5 and 6."
    ]
   },
   {
@@ -1248,6 +1384,14 @@
      "Exclusion periods",
      "/exclusion/"
     ]
+   ],
+   "cause": "C. jejuni (and C. coli) from undercooked poultry, unpasteurised milk and untreated water; low infectious dose.",
+   "clin": "Prodromal fever and myalgia, then cramping abdominal pain and bloody diarrhoea; may mimic appendicitis or IBD.",
+   "pearl": "Commonest UK bacterial gastroenteritis. Guillain–Barré via molecular mimicry of gangliosides (GM1); reactive arthritis.",
+   "trial": [
+    "Rees",
+    "1995, NEJM",
+    "About a quarter of Guillain–Barré cases had recent C. jejuni infection, linked to axonal damage and worse recovery."
    ]
   },
   {
@@ -1312,6 +1456,14 @@
      "Country lookup",
      "/countries/"
     ]
+   ],
+   "cause": "Salmonella Typhi and Paratyphi A, B, C; faecal–oral spread; humans only reservoir; most UK cases after travel to South Asia.",
+   "clin": "Step-ladder fever, headache, constipation then diarrhoea, relative bradycardia, rose spots, splenomegaly. Complications: perforation, bleeding in week 3.",
+   "pearl": "Chronic gallbladder carriage (‘Typhoid Mary’) — cholecystectomy may be needed. Laboratory-acquired infections reported.",
+   "trial": [
+    "TyVAC Nepal",
+    "Shakya 2019, NEJM",
+    "Typhoid conjugate vaccine (Vi-TT) gave ~82% efficacy in children aged 9 months to 16 years."
    ]
   },
   {
@@ -1376,6 +1528,14 @@
      "Exclusion periods",
      "/exclusion/"
     ]
+   ],
+   "cause": "Shiga toxin-producing E. coli, mainly O157:H7; cattle reservoir, undercooked beef, raw vegetables, petting farms. Infectious dose <100 organisms.",
+   "clin": "Bloody diarrhoea, often without fever. HUS 5–10 days later in ~10% of children: haemolytic anaemia with schistocytes, thrombocytopenia, AKI.",
+   "pearl": "stx2 carries greater HUS risk. Antibiotics trigger phage induction and toxin release.",
+   "trial": [
+    "Wong",
+    "2000, NEJM",
+    "Children given antibiotics for E. coli O157 had a much higher risk of HUS — the basis of the no-antibiotics rule."
    ]
   },
   {
@@ -1434,7 +1594,7 @@
    "rx": "Nitrofurantoin 100 mg MR BD (if eGFR 45 or more), or trimethoprim 200 mg BD (if low resistance risk).",
    "alt": "Second line: pivmecillinam 400 mg then 200 mg TDS, or fosfomycin 3 g single dose.",
    "dur": "Women 3 days; men and pregnancy 7 days.",
-   "ipc": "",
+   "ipc": "Remove or change catheters; avoid catheter dipsticks; prophylaxis for recurrent UTI after review; cranberry evidence weak.",
    "notes": [
     "Pregnancy: nitrofurantoin (avoid at term); amoxicillin or cefalexin by culture."
    ],
@@ -1449,6 +1609,14 @@
      "Pregnancy and breastfeeding",
      "/pregnancy/"
     ]
+   ],
+   "cause": "E. coli ~80%; Klebsiella, Proteus, enterococci; S. saprophyticus in young women; Pseudomonas with catheters and instrumentation.",
+   "clin": "Cystitis: dysuria, frequency, suprapubic pain. Pyelonephritis: loin pain, fever, rigors, vomiting. Older adults present with delirium.",
+   "pearl": "Treat asymptomatic bacteriuria only in pregnancy and before urological surgery. Proteus: struvite stones, nitrofurantoin-resistant.",
+   "trial": [
+    "Huttner",
+    "2018, JAMA",
+    "Nitrofurantoin for 5 days gave better clinical resolution of cystitis than single-dose fosfomycin (70% vs 58%)."
    ]
   },
   {
@@ -1464,7 +1632,7 @@
    "rx": "Oral: cefalexin 500 mg BD–TDS (up to 1–1.5 g TDS–QDS), or ciprofloxacin 500 mg BD; co-amoxiclav or trimethoprim only if culture susceptible. IV: amoxicillin (if susceptible), co-amoxiclav, cefuroxime, ceftriaxone, ciprofloxacin, gentamicin.",
    "alt": "",
    "dur": "Cefalexin or co-amoxiclav 7–10 days; ciprofloxacin 7 days; trimethoprim 14 days.",
-   "ipc": "",
+   "ipc": "Remove or change catheters; avoid catheter dipsticks; prophylaxis for recurrent UTI after review; cranberry evidence weak.",
    "notes": [],
    "src": [
     [
@@ -1477,6 +1645,14 @@
      "IV to oral switch",
      "/iv-oral-durations/"
     ]
+   ],
+   "cause": "E. coli ~80%; Klebsiella, Proteus, enterococci; S. saprophyticus in young women; Pseudomonas with catheters and instrumentation.",
+   "clin": "Cystitis: dysuria, frequency, suprapubic pain. Pyelonephritis: loin pain, fever, rigors, vomiting. Older adults present with delirium.",
+   "pearl": "Treat asymptomatic bacteriuria only in pregnancy and before urological surgery. Proteus: struvite stones, nitrofurantoin-resistant.",
+   "trial": [
+    "Huttner",
+    "2018, JAMA",
+    "Nitrofurantoin for 5 days gave better clinical resolution of cystitis than single-dose fosfomycin (70% vs 58%)."
    ]
   },
   {
@@ -1557,7 +1733,7 @@
    "rx": "Ceftriaxone 1 g IM single dose. Ciprofloxacin 500 mg single dose if known susceptible.",
    "alt": "Refer to sexual health for allergy or resistance.",
    "dur": "Single dose.",
-   "ipc": "",
+   "ipc": "Partner notification; screening of at-risk groups; 4CMenB offers partial cross-protection.",
    "notes": [
     "Partner notification through sexual health services."
    ],
@@ -1567,7 +1743,15 @@
      "https://www.bashh.org/resources/guidelines"
     ]
    ],
-   "site": []
+   "site": [],
+   "cause": "Neisseria gonorrhoeae; Gram-negative intracellular diplococci; highest rates in young adults and MSM.",
+   "clin": "Urethral discharge and dysuria in men; often asymptomatic in women (cervicitis, PID); pharyngeal and rectal infection silent. Ophthalmia neonatorum.",
+   "pearl": "Report ceftriaxone treatment failures to UKHSA. Disseminated infection: arthritis–dermatitis syndrome with tenosynovitis.",
+   "trial": [
+    "G-ToG",
+    "Ross 2019, Lancet",
+    "Gentamicin was inferior to ceftriaxone for gonorrhoea clearance, mainly at pharyngeal and rectal sites."
+   ]
   },
   {
    "id": "chlamydia",
@@ -1581,7 +1765,7 @@
    "rx": "Doxycycline 100 mg BD for 7 days.",
    "alt": "Pregnancy or doxycycline unsuitable: azithromycin 1 g then 500 mg OD for 2 days. LGV: doxycycline 100 mg BD for 21 days.",
    "dur": "7 days.",
-   "ipc": "",
+   "ipc": "National Chlamydia Screening Programme for under-25s; partner notification; condoms.",
    "notes": [
     "Partner notification."
    ],
@@ -1591,7 +1775,15 @@
      "https://www.bashh.org/resources/guidelines"
     ]
    ],
-   "site": []
+   "site": [],
+   "cause": "Chlamydia trachomatis serovars D–K (genital), L1–L3 (LGV), A–C (trachoma). Obligate intracellular with elementary and reticulate bodies.",
+   "clin": "Mostly asymptomatic; urethritis, cervicitis, PID, epididymitis. LGV: proctitis in MSM, inguinal buboes. Sequelae: tubal infertility, ectopic pregnancy.",
+   "pearl": "Reactive arthritis (urethritis, conjunctivitis, arthritis). Neonates: conjunctivitis and afebrile pneumonia — treat with a macrolide.",
+   "trial": [
+    "Dombrowski",
+    "2021, NEJM",
+    "Doxycycline cured 100% of rectal chlamydia in MSM vs 74% with azithromycin — doxycycline now first-line."
+   ]
   },
   {
    "id": "syphilis",
@@ -1606,7 +1798,7 @@
    "rx": "Early: benzathine benzylpenicillin 2.4 MU IM single dose. Use the site’s syphilis guide for late and neurosyphilis.",
    "alt": "",
    "dur": "",
-   "ipc": "",
+   "ipc": "Universal antenatal screening; partner notification; regular testing for MSM; treat pregnant women with penicillin (desensitise if allergic).",
    "notes": [],
    "src": [
     [
@@ -1619,6 +1811,14 @@
      "Syphilis guide",
      "/syphilis/"
     ]
+   ],
+   "cause": "Treponema pallidum subsp. pallidum; sexual and vertical transmission; rising in MSM.",
+   "clin": "Primary painless chancre; secondary rash on palms and soles, condylomata lata, mucous patches; latent; tertiary gummas, aortitis, neurosyphilis.",
+   "pearl": "Jarisch–Herxheimer reaction within 24 h of first dose. Prozone effect: false-negative RPR at very high titre — dilute.",
+   "trial": [
+    "Rolfs",
+    "1997, NEJM",
+    "Adding amoxicillin and probenecid to benzathine penicillin gave no benefit in early syphilis, with or without HIV."
    ]
   },
   {
@@ -1717,7 +1917,7 @@
    "rx": "First episode: aciclovir 400 mg TDS or valaciclovir 500 mg BD.",
    "alt": "",
    "dur": "5 days.",
-   "ipc": "",
+   "ipc": "Condoms reduce but don’t abolish risk; suppressive therapy reduces transmission. Near term: aciclovir from 36 weeks if recurrent.",
    "notes": [
     "Late pregnancy: discuss with obstetrics and sexual health."
    ],
@@ -1727,7 +1927,15 @@
      "https://www.bashh.org/resources/guidelines"
     ]
    ],
-   "site": []
+   "site": [],
+   "cause": "HSV-2 and increasingly HSV-1 (oral sex); latent in sacral dorsal root ganglia; asymptomatic shedding drives transmission.",
+   "clin": "Primary: painful multiple ulcers, dysuria, fever, inguinal lymphadenopathy, urinary retention, aseptic meningitis. Recurrences milder and shorter.",
+   "pearl": "Primary infection in the third trimester → caesarean section; neonatal HSV mortality is high even with treatment.",
+   "trial": [
+    "Corey",
+    "2004, NEJM",
+    "Daily valaciclovir suppression in the infected partner halved HSV-2 transmission in discordant couples."
+   ]
   },
   {
    "id": "hiv",
@@ -1742,7 +1950,7 @@
    "rx": "Antiretrovirals via the HIV team. PEP after exposure: start as soon as possible, within 72 hours.",
    "alt": "",
    "dur": "PEP: 28 days.",
-   "ipc": "",
+   "ipc": "PEP within 72 h (ideally 24 h) for 28 days; PrEP for high-risk groups; universal antenatal screening; U=U.",
    "notes": [],
    "src": [
     [
@@ -1759,6 +1967,14 @@
      "HIV opportunistic infections",
      "/hiv-oi/"
     ]
+   ],
+   "cause": "HIV-1 (groups M, N, O, P) and HIV-2 (West Africa, slower progression); retrovirus targeting CD4 via CCR5 or CXCR4 co-receptors.",
+   "clin": "Seroconversion illness 2–6 weeks after exposure: fever, rash, pharyngitis, lymphadenopathy. Untreated: opportunistic infections and malignancy as CD4 falls.",
+   "pearl": "Co-trimoxazole prophylaxis if CD4 <200. Delay ART in cryptococcal and TB meningitis to reduce IRIS.",
+   "trial": [
+    "START",
+    "INSIGHT 2015, NEJM",
+    "Immediate ART at CD4 >500 reduced serious AIDS and non-AIDS events by 57% — ART for everyone."
    ]
   },
   {
@@ -1920,7 +2136,15 @@
      "https://www.gov.uk/guidance/notifiable-diseases-and-causative-organisms-how-to-report"
     ]
    ],
-   "site": []
+   "site": [],
+   "cause": "S. aureus TSST-1 or enterotoxins (tampons, wounds, nasal packing); S. pyogenes superantigens SpeA/SpeC (invasive infection).",
+   "clin": "Fever, diffuse erythroderma with desquamation of palms and soles at 1–2 weeks, hypotension, ≥3 organ systems involved.",
+   "pearl": "Superantigens bridge MHC class II and TCR Vβ outside the groove — up to 20% of T cells activated.",
+   "trial": [
+    "Darenberg",
+    "2003, Clin Infect Dis",
+    "In a small RCT of IVIG in streptococcal TSS, mortality was 10% vs 36% — underpowered and stopped early."
+   ]
   },
   {
    "id": "ebv",
@@ -2024,6 +2248,14 @@
      "Country lookup",
      "/countries/"
     ]
+   ],
+   "cause": "Plasmodium falciparum via female Anopheles; sub-Saharan Africa; VFR travellers highest risk. Incubation ≥7 days, usually within 3 months.",
+   "clin": "Fever, rigors, headache, myalgia, diarrhoea. Severe: impaired consciousness, seizures, acidosis, hypoglycaemia, AKI, ARDS, Hb <80, parasitaemia ≥2%.",
+   "pearl": "Delayed haemolysis after artesunate — check FBC at 2–4 weeks. P. vivax/ovale hypnozoites: primaquine after G6PD.",
+   "trial": [
+    "SEAQUAMAT & AQUAMAT",
+    "Dondorp 2005 & 2010, Lancet",
+    "Artesunate reduced mortality vs quinine in severe malaria by ~35% in Asian adults and ~22% in African children."
    ]
   },
   {
@@ -2052,6 +2284,14 @@
      "Returned traveller",
      "/returned-traveller/"
     ]
+   ],
+   "cause": "Dengue virus serotypes 1–4 (flavivirus) via Aedes aegypti (day-biting); South and South-East Asia, Latin America. Incubation 4–10 days.",
+   "clin": "Fever, retro-orbital headache, myalgia, rash, leucopenia, thrombocytopenia. Critical phase at defervescence: plasma leak, shock, haemorrhage.",
+   "pearl": "Secondary infection with a different serotype raises severe dengue risk via antibody-dependent enhancement.",
+   "trial": [
+    "Sridhar",
+    "2018, NEJM",
+    "CYD-TDV (Dengvaxia) increased severe dengue in seronegative recipients — vaccinate only the previously infected."
    ]
   },
   {
@@ -2066,7 +2306,7 @@
    "rx": "Erythema migrans or non-focal: doxycycline 100 mg BD (or 200 mg OD) for 21 days. Cranial nerve, peripheral nerve or Lyme carditis: doxycycline 21 days (or ceftriaxone). Central nervous system: ceftriaxone 2 g BD or 4 g OD for 21 days.",
    "alt": "Doxycycline unsuitable: amoxicillin 1 g TDS for 21 days, or azithromycin 500 mg OD for 17 days (erythema migrans).",
    "dur": "21 days.",
-   "ipc": "",
+   "ipc": "Tick checks and prompt removal; long clothing and repellent. No UK vaccine.",
    "notes": [],
    "src": [
     [
@@ -2074,7 +2314,15 @@
      "https://www.nice.org.uk/guidance/ng95"
     ]
    ],
-   "site": []
+   "site": [],
+   "cause": "Borrelia burgdorferi sensu lato (B. garinii, B. afzelii in Europe) via Ixodes ticks; New Forest, Scottish Highlands.",
+   "clin": "Erythema migrans 3–30 days after bite. Disseminated: facial palsy, radiculitis, meningitis, heart block, arthritis; acrodermatitis chronica atrophicans.",
+   "pearl": "The same ticks transmit tick-borne encephalitis and anaplasmosis. ‘Chronic Lyme’ lacks evidence of persistent infection.",
+   "trial": [
+    "Klempner",
+    "2001, NEJM",
+    "Prolonged IV and oral antibiotics did not improve persistent symptoms after treated Lyme disease."
+   ]
   },
   {
    "id": "lepto",
@@ -2088,7 +2336,7 @@
    "rx": "Mild: doxycycline 100 mg BD for 7 days. Severe: IV benzylpenicillin or ceftriaxone.",
    "alt": "",
    "dur": "7 days.",
-   "ipc": "",
+   "ipc": "Protective clothing for occupational exposure; doxycycline prophylaxis for short high-risk exposures; rodent control.",
    "notes": [],
    "src": [],
    "site": [
@@ -2096,6 +2344,14 @@
      "Returned traveller",
      "/returned-traveller/"
     ]
+   ],
+   "cause": "Leptospira interrogans; rat (and cattle) urine via water, sewage and farms; watersports, triathlons, travel to flooded tropics.",
+   "clin": "Biphasic: abrupt fever, myalgia (calf), conjunctival suffusion; then Weil’s disease — jaundice, AKI, haemorrhage, pulmonary haemorrhage.",
+   "pearl": "Jarisch–Herxheimer reaction possible. Conjunctival suffusion without pus is a classic clue.",
+   "trial": [
+    "Watt",
+    "1988, Lancet",
+    "IV penicillin shortened fever and renal dysfunction even when started late in severe leptospirosis."
    ]
   },
   {
@@ -2253,6 +2509,14 @@
      "TB drug monographs",
      "https://www.tbdrugmonographs.co.uk/"
     ]
+   ],
+   "cause": "M. tuberculosis complex; airborne droplet nuclei. Risk: birth in high-incidence country, HIV, homelessness, prison, anti-TNF therapy, diabetes.",
+   "clin": "Cough >3 weeks, haemoptysis, night sweats, weight loss; upper-lobe cavitation. Extrapulmonary: nodes, spine (Pott’s), meninges, miliary.",
+   "pearl": "Rifampicin induces CYP450 — OCP, warfarin and antiretrovirals fail. Ethambutol: optic neuritis; isoniazid: neuropathy, hepatitis.",
+   "trial": [
+    "Study 31 / A5349",
+    "Dorman 2021, NEJM",
+    "A 4-month rifapentine–moxifloxacin regimen was non-inferior to the standard 6-month regimen for drug-susceptible TB."
    ]
   },
   {
@@ -2309,7 +2573,7 @@
    "rx": "Piperacillin–tazobactam 4.5 g QDS IV per local policy.",
    "alt": "",
    "dur": "",
-   "ipc": "",
+   "ipc": "Quinolone prophylaxis in some high-risk haematology patients; G-CSF; neutropenic diet and line care; posaconazole in AML induction.",
    "notes": [],
    "src": [],
    "site": [
@@ -2317,6 +2581,14 @@
      "Neutropenic sepsis guide",
      "/neutropenic-sepsis/"
     ]
+   ],
+   "cause": "Gram-negatives including P. aeruginosa; CoNS and S. aureus from lines; viridans strep with mucositis; Candida and moulds if prolonged.",
+   "clin": "Often fever alone — inflammation is blunted. Assess lines, mucosa, perianal region, lungs; septic shock can develop rapidly.",
+   "pearl": "Door-to-needle under an hour. MASCC ≥21 identifies low-risk patients suitable for oral co-amoxiclav plus ciprofloxacin.",
+   "trial": [
+    "HOW LONG",
+    "Aguilar-Guisado 2017, Lancet Haematol",
+    "Stopping empirical antibiotics after 72 h apyrexia and recovery, regardless of neutrophil count, was safe."
    ]
   },
   {
@@ -2332,7 +2604,7 @@
    "rx": "Co-trimoxazole 120 mg/kg/day IV or orally in 3–4 divided doses (lower doses also used). HIV with pO₂ under 9.3 kPa: add prednisolone.",
    "alt": "Alternatives: clindamycin plus primaquine (check G6PD), or atovaquone for mild disease.",
    "dur": "21 days in HIV; usually 14–21 days otherwise.",
-   "ipc": "",
+   "ipc": "Co-trimoxazole prophylaxis when CD4 <200 or after transplant; separate PCP patients from other immunocompromised hosts (airborne clusters).",
    "notes": [],
    "src": [
     [
@@ -2345,6 +2617,14 @@
      "HIV opportunistic infections",
      "/hiv-oi/"
     ]
+   ],
+   "cause": "Pneumocystis jirovecii, a fungus without ergosterol. HIV with CD4 <200, transplant, high-dose steroids, chemotherapy.",
+   "clin": "Insidious dyspnoea, dry cough, exertional desaturation; CXR bilateral perihilar ground-glass or normal. Pneumothorax risk.",
+   "pearl": "Echinocandins and azoles are inactive — no ergosterol target. Check G6PD before primaquine or dapsone.",
+   "trial": [
+    "Bozzette",
+    "1990, NEJM",
+    "Adjunctive corticosteroids reduced death and respiratory failure in HIV-associated PCP with hypoxaemia."
    ]
   },
   {
@@ -2360,7 +2640,7 @@
    "rx": "An echinocandin first; step down to fluconazole if susceptible and stable.",
    "alt": "",
    "dur": "14 days after the first negative culture.",
-   "ipc": "",
+   "ipc": "Echocardiography and fundoscopy in all candidaemia; C. auris: single room, contact precautions, admission screening (groin, axilla, nose).",
    "notes": [],
    "src": [],
    "site": [
@@ -2368,6 +2648,14 @@
      "Candidaemia guide",
      "/candidaemia/"
     ]
+   ],
+   "cause": "C. albicans; C. glabrata (reduced fluconazole, older adults); C. parapsilosis (lines, neonates); C. krusei (intrinsic fluconazole resistance); C. auris.",
+   "clin": "Fever in ICU patients with CVCs, TPN, abdominal surgery, broad-spectrum antibiotics; endophthalmitis, endocarditis, hepatosplenic disease.",
+   "pearl": "C. auris is misidentified by older biochemical systems; persists on surfaces — use chlorine or hydrogen peroxide.",
+   "trial": [
+    "Reboli",
+    "2007, NEJM",
+    "Anidulafungin outperformed fluconazole in candidaemia, establishing echinocandins as first-line therapy."
    ]
   },
   {
@@ -2382,7 +2670,7 @@
    "rx": "Voriconazole or isavuconazole (TDM for voriconazole).",
    "alt": "",
    "dur": "",
-   "ipc": "",
+   "ipc": "HEPA-filtered rooms for HSCT; posaconazole prophylaxis in AML and GVHD; protect patients during building works.",
    "notes": [],
    "src": [],
    "site": [
@@ -2394,6 +2682,14 @@
      "Fungal markers",
      "/fungal-markers/"
     ]
+   ],
+   "cause": "Aspergillus fumigatus, inhaled conidia. Prolonged neutropenia, HSCT and GVHD, high-dose steroids; increasingly post-influenza and COVID-19 ICU.",
+   "clin": "Fever unresponsive to antibiotics, pleuritic pain, haemoptysis; CT nodules with halo sign, later air-crescent sign.",
+   "pearl": "TR34/L98H azole resistance from agricultural fungicides. Mucorales: ribbon-like hyphae, amphotericin not voriconazole.",
+   "trial": [
+    "Herbrecht",
+    "2002, NEJM",
+    "Voriconazole beat amphotericin B deoxycholate for response and survival — it became first-line for invasive aspergillosis."
    ]
   },
   {

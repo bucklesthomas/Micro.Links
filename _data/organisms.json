@@ -35,7 +35,12 @@
      "/sab/"
     ]
    ],
-   "id": "staphylococcus-aureus-mssa"
+   "id": "staphylococcus-aureus-mssa",
+   "pearls": [
+    "S. aureus: commonest cause of native-valve endocarditis, osteomyelitis and septic arthritis; flucloxacillin beats vancomycin for MSSA.",
+    "PVL strains: necrotising pneumonia and recurrent boils in the young and previously well.",
+    "TSST-1: toxic shock with sterile blood cultures; toxin, not bacteraemia, drives the illness."
+   ]
   },
   {
    "n": "MRSA",
@@ -73,7 +78,11 @@
      "/isolation/"
     ]
    ],
-   "id": "mrsa"
+   "id": "mrsa",
+   "pearls": [
+    "MRSA: mecA/mecC encode PBP2a; screen with the cefoxitin disc, not methicillin.",
+    "PVL strains: necrotising pneumonia and recurrent boils in the young and previously well."
+   ]
   },
   {
    "n": "Coagulase-negative staphylococci",
@@ -99,7 +108,11 @@
      "/vancomycin-auc/"
     ]
    ],
-   "id": "coagulase-negative-staphylococci"
+   "id": "coagulase-negative-staphylococci",
+   "pearls": [
+    "S. epidermidis: biofilm on lines and prostheses; needs repeat isolates of the same strain to be believed.",
+    "S. saprophyticus: uncomplicated cystitis in sexually active young women."
+   ]
   },
   {
    "n": "Staphylococcus lugdunensis",
@@ -128,7 +141,10 @@
      "/sab/"
     ]
    ],
-   "id": "staphylococcus-lugdunensis"
+   "id": "staphylococcus-lugdunensis",
+   "pearls": [
+    "S. lugdunensis: treat like S. aureus; destroys native valves despite being coagulase-negative."
+   ]
   },
   {
    "n": "Streptococcus pyogenes (group A)",
@@ -166,7 +182,11 @@
      "/infectious-period/"
     ]
    ],
-   "id": "streptococcus-pyogenes-group-a"
+   "id": "streptococcus-pyogenes-group-a",
+   "pearls": [
+    "S. pyogenes: never penicillin-resistant; add clindamycin for toxin suppression in necrotising fasciitis and STSS.",
+    "ARF and PSGN: immune sequelae diagnosed retrospectively on ASOT and anti-DNase B."
+   ]
   },
   {
    "n": "Streptococcus agalactiae (group B)",
@@ -191,7 +211,10 @@
      "/strep-ie-risk/"
     ]
    ],
-   "id": "streptococcus-agalactiae-group-b"
+   "id": "streptococcus-agalactiae-group-b",
+   "pearls": [
+    "S. agalactiae: neonatal sepsis and meningitis; intrapartum benzylpenicillin for carriers."
+   ]
   },
   {
    "n": "Streptococcus pneumoniae",
@@ -221,7 +244,10 @@
      "/asplenia/"
     ]
    ],
-   "id": "streptococcus-pneumoniae"
+   "id": "streptococcus-pneumoniae",
+   "pearls": [
+    "S. pneumoniae: commonest CAP and adult bacterial meningitis; asplenia and myeloma are the headline risks."
+   ]
   },
   {
    "n": "Viridans group streptococci",
@@ -251,7 +277,10 @@
      "/strep-ie-risk/"
     ]
    ],
-   "id": "viridans-group-streptococci"
+   "id": "viridans-group-streptococci",
+   "pearls": [
+    "Viridans group: subacute endocarditis after dental work; S. mutans causes caries."
+   ]
   },
   {
    "n": "Streptococcus anginosus group",
@@ -276,7 +305,10 @@
      "/strep-ie-risk/"
     ]
    ],
-   "id": "streptococcus-anginosus-group"
+   "id": "streptococcus-anginosus-group",
+   "pearls": [
+    "S. anginosus group: think abscess: liver, brain and thorax."
+   ]
   },
   {
    "n": "Enterococcus faecalis",
@@ -302,7 +334,11 @@
      "/blood-culture-triage/"
     ]
    ],
-   "id": "enterococcus-faecalis"
+   "id": "enterococcus-faecalis",
+   "pearls": [
+    "E. faecalis: endocarditis needs synergy: ampicillin + gentamicin, or ampicillin + ceftriaxone if high-level aminoglycoside resistance.",
+    "All enterococci: intrinsically resistant to cephalosporins, so they emerge under cephalosporin pressure."
+   ]
   },
   {
    "n": "Enterococcus faecium (including VRE)",
@@ -332,7 +368,11 @@
      "/isolation/"
     ]
    ],
-   "id": "enterococcus-faecium-including-vre"
+   "id": "enterococcus-faecium-including-vre",
+   "pearls": [
+    "E. faecium: most VRE; vanA also resists teicoplanin, vanB does not.",
+    "All enterococci: intrinsically resistant to cephalosporins, so they emerge under cephalosporin pressure."
+   ]
   },
   {
    "n": "Listeria monocytogenes",
@@ -358,7 +398,10 @@
      "/blood-culture-triage/"
     ]
    ],
-   "id": "listeria-monocytogenes"
+   "id": "listeria-monocytogenes",
+   "pearls": [
+    "Listeria monocytogenes: cephalosporin-resistant, which is why amoxicillin is added at the extremes of age; grows at 4 °C."
+   ]
   },
   {
    "n": "Clostridioides difficile",
@@ -388,7 +431,10 @@
      "/lab-tests/"
     ]
    ],
-   "id": "clostridioides-difficile"
+   "id": "clostridioides-difficile",
+   "pearls": [
+    "C. difficile: oral vancomycin or fidaxomicin; faecal transplant for multiple recurrences."
+   ]
   },
   {
    "n": "Clostridium perfringens and other clostridia",
@@ -413,7 +459,13 @@
      "/scores/#lrinec"
     ]
    ],
-   "id": "clostridium-perfringens-and-other-clostridia"
+   "id": "clostridium-perfringens-and-other-clostridia",
+   "pearls": [
+    "C. perfringens: gas gangrene from α-toxin; surgery is the treatment, antibiotics are adjunctive.",
+    "C. tetani: tetanospasmin blocks inhibitory neurotransmission; immunoglobulin, metronidazole, wound care.",
+    "C. septicum: bacteraemia means hunt for colonic carcinoma or neutropenia.",
+    "C. botulinum: descending flaccid paralysis with intact sensation; antitoxin early."
+   ]
   },
   {
    "n": "Escherichia coli",
@@ -443,7 +495,11 @@
      "/exclusion/"
     ]
    ],
-   "id": "escherichia-coli"
+   "id": "escherichia-coli",
+   "pearls": [
+    "E. coli: commonest cause of UTI and Gram-negative bacteraemia; ST131 carries CTX-M-15.",
+    "STEC O157: never give antibiotics: they increase the risk of haemolytic uraemic syndrome."
+   ]
   },
   {
    "n": "Klebsiella pneumoniae",
@@ -465,7 +521,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "klebsiella-pneumoniae"
+   "id": "klebsiella-pneumoniae",
+   "pearls": [
+    "Klebsiella pneumoniae: currant-jelly sputum and alcoholic pneumonia; the main host of KPC and OXA-48."
+   ]
   },
   {
    "n": "Enterobacter cloacae complex",
@@ -486,7 +545,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "enterobacter-cloacae-complex"
+   "id": "enterobacter-cloacae-complex",
+   "pearls": [
+    "ESCPPM group: inducible AmpC, so cephalosporin resistance emerges on treatment."
+   ]
   },
   {
    "n": "Klebsiella aerogenes",
@@ -506,7 +568,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "klebsiella-aerogenes"
+   "id": "klebsiella-aerogenes",
+   "pearls": [
+    "ESCPPM group: inducible AmpC, so cephalosporin resistance emerges on treatment."
+   ]
   },
   {
    "n": "Citrobacter freundii",
@@ -526,7 +591,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "citrobacter-freundii"
+   "id": "citrobacter-freundii",
+   "pearls": [
+    "ESCPPM group: inducible AmpC, so cephalosporin resistance emerges on treatment."
+   ]
   },
   {
    "n": "Serratia marcescens",
@@ -547,7 +615,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "serratia-marcescens"
+   "id": "serratia-marcescens",
+   "pearls": [
+    "ESCPPM group: inducible AmpC, so cephalosporin resistance emerges on treatment."
+   ]
   },
   {
    "n": "Proteus mirabilis",
@@ -568,7 +639,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "proteus-mirabilis"
+   "id": "proteus-mirabilis",
+   "pearls": [
+    "Proteus mirabilis: urease splits urea to form struvite stones; intrinsically nitrofurantoin-resistant."
+   ]
   },
   {
    "n": "Morganella and Providencia",
@@ -589,7 +663,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "morganella-and-providencia"
+   "id": "morganella-and-providencia",
+   "pearls": [
+    "ESCPPM group: inducible AmpC, so cephalosporin resistance emerges on treatment."
+   ]
   },
   {
    "n": "Salmonella (non-typhoidal)",
@@ -619,7 +696,10 @@
      "/exclusion/"
     ]
    ],
-   "id": "salmonella-non-typhoidal"
+   "id": "salmonella-non-typhoidal",
+   "pearls": [
+    "Non-typhoidal Salmonella: treat only the invasive, immunosuppressed or extremes of age; osteomyelitis in sickle cell."
+   ]
   },
   {
    "n": "Salmonella Typhi and Paratyphi",
@@ -653,7 +733,10 @@
      "/lab-tests/"
     ]
    ],
-   "id": "salmonella-typhi-and-paratyphi"
+   "id": "salmonella-typhi-and-paratyphi",
+   "pearls": [
+    "Salmonella Typhi: bacteraemic enteric fever with rose spots; blood and bone marrow beat stool culture."
+   ]
   },
   {
    "n": "Pseudomonas aeruginosa",
@@ -675,7 +758,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "pseudomonas-aeruginosa"
+   "id": "pseudomonas-aeruginosa",
+   "pearls": [
+    "Pseudomonas aeruginosa: burns, VAP, febrile neutropenia, ecthyma gangrenosum; mucoid in cystic fibrosis."
+   ]
   },
   {
    "n": "Acinetobacter baumannii",
@@ -697,7 +783,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "acinetobacter-baumannii"
+   "id": "acinetobacter-baumannii",
+   "pearls": [
+    "Acinetobacter baumannii: ICU and war-wound outbreaks; survives on dry surfaces for weeks."
+   ]
   },
   {
    "n": "Stenotrophomonas maltophilia",
@@ -718,7 +807,10 @@
      "/gram-negative-bacteraemia/"
     ]
    ],
-   "id": "stenotrophomonas-maltophilia"
+   "id": "stenotrophomonas-maltophilia",
+   "pearls": [
+    "Stenotrophomonas maltophilia: emerges under carbapenem pressure; co-trimoxazole is the drug of choice."
+   ]
   },
   {
    "n": "Burkholderia cepacia complex",
@@ -734,7 +826,10 @@
    "tx": "Specialist advice; options include co-trimoxazole, meropenem or ceftazidime by susceptibility.",
    "alt": "B. pseudomallei (melioidosis) is a different organism: inform the laboratory (hazard group 3).",
    "links": [],
-   "id": "burkholderia-cepacia-complex"
+   "id": "burkholderia-cepacia-complex",
+   "pearls": [
+    "Burkholderia cepacia: accelerated CF decline and a contraindication to transplant in some centres."
+   ]
   },
   {
    "n": "Haemophilus influenzae",
@@ -760,7 +855,10 @@
      "/contact-prophylaxis/"
     ]
    ],
-   "id": "haemophilus-influenzae"
+   "id": "haemophilus-influenzae",
+   "pearls": [
+    "Haemophilus influenzae: Hib vaccine abolished epiglottitis; non-typeable strains cause COPD exacerbations."
+   ]
   },
   {
    "n": "Moraxella catarrhalis",
@@ -776,7 +874,10 @@
    "tx": "Co-amoxiclav, doxycycline or clarithromycin.",
    "alt": "",
    "links": [],
-   "id": "moraxella-catarrhalis"
+   "id": "moraxella-catarrhalis",
+   "pearls": [
+    "Moraxella catarrhalis: almost always β-lactamase-producing; co-amoxiclav or a macrolide."
+   ]
   },
   {
    "n": "Neisseria meningitidis",
@@ -814,7 +915,10 @@
      "/infectious-period/"
     ]
    ],
-   "id": "neisseria-meningitidis"
+   "id": "neisseria-meningitidis",
+   "pearls": [
+    "Neisseria meningitidis: terminal complement deficiency and asplenia predispose; ciprofloxacin for contacts."
+   ]
   },
   {
    "n": "Neisseria gonorrhoeae",
@@ -831,7 +935,10 @@
    "tx": "Ceftriaxone 1 g IM single dose (BASHH).",
    "alt": "If susceptibility known: ciprofloxacin 500 mg orally single dose. Disseminated infection: ceftriaxone 1 g IV daily.",
    "links": [],
-   "id": "neisseria-gonorrhoeae"
+   "id": "neisseria-gonorrhoeae",
+   "pearls": [
+    "N. gonorrhoeae: NAAT to diagnose but always culture for susceptibility; ceftriaxone monotherapy now standard."
+   ]
   },
   {
    "n": "Campylobacter",
@@ -856,7 +963,10 @@
      "/lab-tests/"
     ]
    ],
-   "id": "campylobacter"
+   "id": "campylobacter",
+   "pearls": [
+    "Campylobacter jejuni: commonest UK bacterial gastroenteritis; precedes Guillain–Barré syndrome."
+   ]
   },
   {
    "n": "Bacteroides fragilis group",
@@ -877,7 +987,10 @@
      "/blood-culture-triage/"
     ]
    ],
-   "id": "bacteroides-fragilis-group"
+   "id": "bacteroides-fragilis-group",
+   "pearls": [
+    "Bacteroides fragilis: bile-resistant, intra-abdominal abscess; metronidazole, β-lactamase-producing."
+   ]
   },
   {
    "n": "Legionella pneumophila",
@@ -899,7 +1012,10 @@
      "/lab-tests/"
     ]
    ],
-   "id": "legionella-pneumophila"
+   "id": "legionella-pneumophila",
+   "pearls": [
+    "Legionella pneumophila: water systems, hyponatraemia and deranged LFTs; urinary antigen misses non-serogroup-1."
+   ]
   },
   {
    "n": "Mycoplasma pneumoniae",
@@ -921,7 +1037,8 @@
      "/lab-tests/"
     ]
    ],
-   "id": "mycoplasma-pneumoniae"
+   "id": "mycoplasma-pneumoniae",
+   "pearls": []
   },
   {
    "n": "Candida albicans",
@@ -946,7 +1063,8 @@
      "/antifungals/"
     ]
    ],
-   "id": "candida-albicans"
+   "id": "candida-albicans",
+   "pearls": []
   },
   {
    "n": "Nakaseomyces glabratus (Candida glabrata)",
@@ -970,7 +1088,8 @@
      "/antifungals/"
     ]
    ],
-   "id": "nakaseomyces-glabratus-candida-glabrata"
+   "id": "nakaseomyces-glabratus-candida-glabrata",
+   "pearls": []
   },
   {
    "n": "Candidozyma auris (Candida auris)",
@@ -999,7 +1118,8 @@
      "/isolation/"
     ]
    ],
-   "id": "candidozyma-auris-candida-auris"
+   "id": "candidozyma-auris-candida-auris",
+   "pearls": []
   },
   {
    "n": "Aspergillus fumigatus",
@@ -1028,7 +1148,8 @@
      "/neutropenic-sepsis/"
     ]
    ],
-   "id": "aspergillus-fumigatus"
+   "id": "aspergillus-fumigatus",
+   "pearls": []
   },
   {
    "n": "Cryptococcus neoformans",
@@ -1057,7 +1178,412 @@
      "/lab-tests/"
     ]
    ],
-   "id": "cryptococcus-neoformans"
+   "id": "cryptococcus-neoformans",
+   "pearls": []
   }
- ]
+ ],
+ "pearls": {
+  "secs": [
+   {
+    "g": "Gram-positive",
+    "sub": "Staphylococci",
+    "items": [
+     [
+      "S. aureus",
+      "commonest cause of native-valve endocarditis, osteomyelitis and septic arthritis; flucloxacillin beats vancomycin for MSSA.",
+      "staphylococcus-aureus-mssa"
+     ],
+     [
+      "MRSA",
+      "mecA/mecC encode PBP2a; screen with the cefoxitin disc, not methicillin.",
+      "mrsa"
+     ],
+     [
+      "PVL strains",
+      "necrotising pneumonia and recurrent boils in the young and previously well.",
+      "staphylococcus-aureus-mssa"
+     ],
+     [
+      "TSST-1",
+      "toxic shock with sterile blood cultures; toxin, not bacteraemia, drives the illness.",
+      "staphylococcus-aureus-mssa"
+     ],
+     [
+      "S. epidermidis",
+      "biofilm on lines and prostheses; needs repeat isolates of the same strain to be believed.",
+      "coagulase-negative-staphylococci"
+     ],
+     [
+      "S. lugdunensis",
+      "treat like S. aureus; destroys native valves despite being coagulase-negative.",
+      "staphylococcus-lugdunensis"
+     ],
+     [
+      "S. saprophyticus",
+      "uncomplicated cystitis in sexually active young women.",
+      "coagulase-negative-staphylococci"
+     ]
+    ]
+   },
+   {
+    "g": "Gram-positive",
+    "sub": "Streptococci",
+    "items": [
+     [
+      "S. pyogenes",
+      "never penicillin-resistant; add clindamycin for toxin suppression in necrotising fasciitis and STSS.",
+      "streptococcus-pyogenes-group-a"
+     ],
+     [
+      "ARF and PSGN",
+      "immune sequelae diagnosed retrospectively on ASOT and anti-DNase B.",
+      "streptococcus-pyogenes-group-a"
+     ],
+     [
+      "S. agalactiae",
+      "neonatal sepsis and meningitis; intrapartum benzylpenicillin for carriers.",
+      "streptococcus-agalactiae-group-b"
+     ],
+     [
+      "S. pneumoniae",
+      "commonest CAP and adult bacterial meningitis; asplenia and myeloma are the headline risks.",
+      "streptococcus-pneumoniae"
+     ],
+     [
+      "Viridans group",
+      "subacute endocarditis after dental work; S. mutans causes caries.",
+      "viridans-group-streptococci"
+     ],
+     [
+      "S. anginosus group",
+      "think abscess: liver, brain and thorax.",
+      "streptococcus-anginosus-group"
+     ],
+     [
+      "S. gallolyticus",
+      "endocarditis mandates colonoscopy for colonic neoplasia.",
+      ""
+     ],
+     [
+      "Granulicatella / Abiotrophia",
+      "culture-negative endocarditis; growth needs pyridoxal.",
+      ""
+     ]
+    ]
+   },
+   {
+    "g": "Gram-positive",
+    "sub": "Enterococci",
+    "items": [
+     [
+      "E. faecalis",
+      "endocarditis needs synergy: ampicillin + gentamicin, or ampicillin + ceftriaxone if high-level aminoglycoside resistance.",
+      "enterococcus-faecalis"
+     ],
+     [
+      "E. faecium",
+      "most VRE; vanA also resists teicoplanin, vanB does not.",
+      "enterococcus-faecium-including-vre"
+     ],
+     [
+      "All enterococci",
+      "intrinsically resistant to cephalosporins, so they emerge under cephalosporin pressure.",
+      "enterococcus-faecalis"
+     ]
+    ]
+   },
+   {
+    "g": "Gram-positive",
+    "sub": "Aerobic bacilli",
+    "items": [
+     [
+      "Listeria monocytogenes",
+      "cephalosporin-resistant, which is why amoxicillin is added at the extremes of age; grows at 4 °C.",
+      "listeria-monocytogenes"
+     ],
+     [
+      "C. diphtheriae",
+      "give antitoxin on clinical suspicion, before toxigenicity testing returns.",
+      ""
+     ],
+     [
+      "B. anthracis",
+      "painless eschar or widened mediastinum; warn the laboratory, hazard group 3.",
+      ""
+     ],
+     [
+      "B. cereus",
+      "reheated rice emesis from preformed toxin; also line sepsis and endophthalmitis.",
+      ""
+     ],
+     [
+      "Nocardia",
+      "lung plus brain abscess in the immunosuppressed; co-trimoxazole for months, image the CNS.",
+      ""
+     ],
+     [
+      "Actinomyces israelii",
+      "lumpy jaw or IUD-related pelvic mass; long-course penicillin, no drainage alone.",
+      ""
+     ],
+     [
+      "Erysipelothrix",
+      "fishmonger's erysipeloid; penicillin-susceptible but vancomycin-resistant.",
+      ""
+     ],
+     [
+      "Lactobacillus / Leuconostoc",
+      "intrinsically vancomycin-resistant bacteraemia in the immunosuppressed.",
+      ""
+     ],
+     [
+      "Rhodococcus equi",
+      "cavitating pneumonia in HIV and transplant recipients.",
+      ""
+     ]
+    ]
+   },
+   {
+    "g": "Gram-positive",
+    "sub": "Anaerobes",
+    "items": [
+     [
+      "C. perfringens",
+      "gas gangrene from α-toxin; surgery is the treatment, antibiotics are adjunctive.",
+      "clostridium-perfringens-and-other-clostridia"
+     ],
+     [
+      "C. tetani",
+      "tetanospasmin blocks inhibitory neurotransmission; immunoglobulin, metronidazole, wound care.",
+      "clostridium-perfringens-and-other-clostridia"
+     ],
+     [
+      "C. difficile",
+      "oral vancomycin or fidaxomicin; faecal transplant for multiple recurrences.",
+      "clostridioides-difficile"
+     ],
+     [
+      "C. septicum",
+      "bacteraemia means hunt for colonic carcinoma or neutropenia.",
+      "clostridium-perfringens-and-other-clostridia"
+     ],
+     [
+      "C. botulinum",
+      "descending flaccid paralysis with intact sensation; antitoxin early.",
+      "clostridium-perfringens-and-other-clostridia"
+     ],
+     [
+      "Cutibacterium acnes",
+      "indolent shoulder prosthesis and shunt infection; hold cultures 14 days.",
+      ""
+     ],
+     [
+      "Finegoldia magna / Peptostreptococcus",
+      "polymicrobial diabetic foot and intra-abdominal sepsis.",
+      ""
+     ]
+    ]
+   },
+   {
+    "g": "Gram-negative",
+    "sub": "Enterobacterales",
+    "items": [
+     [
+      "E. coli",
+      "commonest cause of UTI and Gram-negative bacteraemia; ST131 carries CTX-M-15.",
+      "escherichia-coli"
+     ],
+     [
+      "STEC O157",
+      "never give antibiotics: they increase the risk of haemolytic uraemic syndrome.",
+      "escherichia-coli"
+     ],
+     [
+      "Klebsiella pneumoniae",
+      "currant-jelly sputum and alcoholic pneumonia; the main host of KPC and OXA-48.",
+      "klebsiella-pneumoniae"
+     ],
+     [
+      "ESCPPM group",
+      "inducible AmpC, so cephalosporin resistance emerges on treatment.",
+      "enterobacter-cloacae-complex"
+     ],
+     [
+      "Proteus mirabilis",
+      "urease splits urea to form struvite stones; intrinsically nitrofurantoin-resistant.",
+      "proteus-mirabilis"
+     ],
+     [
+      "Salmonella Typhi",
+      "bacteraemic enteric fever with rose spots; blood and bone marrow beat stool culture.",
+      "salmonella-typhi-and-paratyphi"
+     ],
+     [
+      "Non-typhoidal Salmonella",
+      "treat only the invasive, immunosuppressed or extremes of age; osteomyelitis in sickle cell.",
+      "salmonella-non-typhoidal"
+     ],
+     [
+      "Shigella",
+      "very low infectious dose, so person-to-person spread; S. dysenteriae type 1 makes Shiga toxin.",
+      ""
+     ],
+     [
+      "Yersinia enterocolitica",
+      "mesenteric adenitis mimicking appendicitis; iron overload is the classic risk.",
+      ""
+     ]
+    ]
+   },
+   {
+    "g": "Gram-negative",
+    "sub": "Non-fermenters",
+    "items": [
+     [
+      "Pseudomonas aeruginosa",
+      "burns, VAP, febrile neutropenia, ecthyma gangrenosum; mucoid in cystic fibrosis.",
+      "pseudomonas-aeruginosa"
+     ],
+     [
+      "Burkholderia cepacia",
+      "accelerated CF decline and a contraindication to transplant in some centres.",
+      "burkholderia-cepacia-complex"
+     ],
+     [
+      "B. pseudomallei",
+      "melioidosis after South-East Asian soil exposure; ceftazidime or meropenem then eradication.",
+      ""
+     ],
+     [
+      "Acinetobacter baumannii",
+      "ICU and war-wound outbreaks; survives on dry surfaces for weeks.",
+      "acinetobacter-baumannii"
+     ],
+     [
+      "Stenotrophomonas maltophilia",
+      "emerges under carbapenem pressure; co-trimoxazole is the drug of choice.",
+      "stenotrophomonas-maltophilia"
+     ]
+    ]
+   },
+   {
+    "g": "Gram-negative",
+    "sub": "Cocci & coccobacilli",
+    "items": [
+     [
+      "Neisseria meningitidis",
+      "terminal complement deficiency and asplenia predispose; ciprofloxacin for contacts.",
+      "neisseria-meningitidis"
+     ],
+     [
+      "N. gonorrhoeae",
+      "NAAT to diagnose but always culture for susceptibility; ceftriaxone monotherapy now standard.",
+      "neisseria-gonorrhoeae"
+     ],
+     [
+      "Haemophilus influenzae",
+      "Hib vaccine abolished epiglottitis; non-typeable strains cause COPD exacerbations.",
+      "haemophilus-influenzae"
+     ],
+     [
+      "Moraxella catarrhalis",
+      "almost always β-lactamase-producing; co-amoxiclav or a macrolide.",
+      "moraxella-catarrhalis"
+     ],
+     [
+      "HACEK",
+      "slow-growing culture-negative endocarditis; hold bottles and treat with ceftriaxone.",
+      ""
+     ],
+     [
+      "Bordetella pertussis",
+      "paroxysmal cough with lymphocytosis; macrolides shorten transmission, not symptoms.",
+      ""
+     ]
+    ]
+   },
+   {
+    "g": "Gram-negative",
+    "sub": "Curved & zoonotic",
+    "items": [
+     [
+      "Campylobacter jejuni",
+      "commonest UK bacterial gastroenteritis; precedes Guillain–Barré syndrome.",
+      "campylobacter"
+     ],
+     [
+      "Vibrio cholerae",
+      "toxin-mediated rice-water stool; rehydration is the treatment, antibiotics adjunctive.",
+      ""
+     ],
+     [
+      "V. vulnificus",
+      "fulminant necrotising sepsis after shellfish or seawater in liver disease.",
+      ""
+     ],
+     [
+      "Helicobacter pylori",
+      "duodenal ulcer, gastric MALT lymphoma and adenocarcinoma; triple therapy.",
+      ""
+     ],
+     [
+      "Brucella",
+      "undulant fever, sacroiliitis; hazard group 3, warn the laboratory before culture.",
+      ""
+     ],
+     [
+      "Pasteurella multocida",
+      "cat and dog bites; penicillin-susceptible, flucloxacillin is not enough.",
+      ""
+     ],
+     [
+      "Francisella tularensis",
+      "ulceroglandular disease; a laboratory-acquired-infection risk, never bench-handled.",
+      ""
+     ]
+    ]
+   },
+   {
+    "g": "Gram-negative",
+    "sub": "Fastidious & anaerobes",
+    "items": [
+     [
+      "Legionella pneumophila",
+      "water systems, hyponatraemia and deranged LFTs; urinary antigen misses non-serogroup-1.",
+      "legionella-pneumophila"
+     ],
+     [
+      "Coxiella burnetii",
+      "Q fever from parturient livestock; culture-negative endocarditis diagnosed serologically.",
+      ""
+     ],
+     [
+      "Chlamydia trachomatis",
+      "commonest bacterial STI, mostly asymptomatic; doxycycline over azithromycin.",
+      ""
+     ],
+     [
+      "Bacteroides fragilis",
+      "bile-resistant, intra-abdominal abscess; metronidazole, β-lactamase-producing.",
+      "bacteroides-fragilis-group"
+     ],
+     [
+      "Fusobacterium necrophorum",
+      "Lemierre's syndrome: jugular thrombophlebitis with septic pulmonary emboli.",
+      ""
+     ]
+    ]
+   }
+  ],
+  "traps": [
+   [
+    "Gram-positive",
+    "vancomycin-resistant Gram-positives: Leuconostoc, Pediococcus, Lactobacillus, Erysipelothrix. Cephalosporin gaps: Listeria and all enterococci. Sterile-culture toxin disease: staphylococcal TSS, diphtheria, botulism, tetanus."
+   ],
+   [
+    "Gram-negative",
+    "antibiotics worsen STEC O157 · Proteus is nitrofurantoin-resistant · cephalosporins fail against ESCPPM organisms on treatment · aminoglycosides are inactive in abscess pus · hazard group 3: Brucella, Francisella, Y. pestis, B. pseudomallei."
+   ]
+  ]
+ }
 }

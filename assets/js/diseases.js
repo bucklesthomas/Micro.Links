@@ -71,6 +71,10 @@
     if (!d) return '<div class="dz-empty"><p class="ir-eyebrow">Disease lookup</p><h3>Type a disease to start</h3><p>Pick from the list, or type a name or abbreviation (CAP, UTI, PID, SBP…). Each entry gives diagnosis, first-line treatment, alternatives, duration and infection control, with links to the guideline and to the full guides on this site.</p></div>';
     var h = '<p class="ir-eyebrow">' + esc(d.g) + '</p><h3>' + esc(d.n) + '</h3>';
     if (d.s) h += '<p class="dz-sum">' + esc(d.s) + '</p>';
+    var bg = [];
+    if (d.cause) bg.push(['Cause', d.cause]);
+    if (d.clin) bg.push(['Clinical features', d.clin]);
+    if (bg.length) h += '<dl class="dz-dl dz-bg">' + bg.map(function (f) { return '<dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd>'; }).join('') + '</dl>';
     if (d.dx.length) h += '<div class="ab-sec"><h4>Diagnosis and assessment</h4><ul>' + d.dx.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul></div>';
     if (d.rx) h += '<div class="org-tx"><p class="org-lab">First-line treatment</p><p>' + linkDrugs(d.rx) + '</p>' + (d.alt ? '<p class="org-alt">' + linkDrugs(d.alt) + '</p>' : '') + '</div>';
     var facts = [];
@@ -78,6 +82,8 @@
     if (d.ipc) facts.push(['Infection control and public health', d.ipc]);
     if (facts.length) h += '<dl class="dz-dl">' + facts.map(function (f) { return '<dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd>'; }).join('') + '</dl>';
     if (d.notes.length) h += '<ul class="vc-notes dz-notes">' + d.notes.map(function (n) { return '<li>' + linkDrugs(n) + '</li>'; }).join('') + '</ul>';
+    if (d.pearl) h += '<div class="dz-pearl"><p class="org-lab">Clinical pearl</p><p>' + linkDrugs(d.pearl) + '</p></div>';
+    if (d.trial) h += '<div class="dz-trial"><p class="org-lab">Key trial</p><p class="dz-trialn"><b>' + esc(d.trial[0]) + '</b> <span>' + esc(d.trial[1]) + '</span></p><p>' + esc(d.trial[2]) + '</p></div>';
     var links = d.site.map(function (l) { return '<a class="sp-chip" href="' + esc(url(l[1])) + '"' + (ext(l[1]) ? ' target="_blank" rel="noopener"' : '') + '>' + esc(l[0]) + '</a>'; });
     if (links.length) h += '<div class="ab-sec"><h4>On this site</h4><p class="cov-chips">' + links.join('') + '</p></div>';
     if (d.src.length) h += '<div class="ab-sec"><h4>Guidelines</h4><p class="cov-chips">' + d.src.map(function (l) { return '<a class="sp-chip dz-ext" href="' + esc(l[1]) + '" target="_blank" rel="noopener">' + esc(l[0]) + '</a>'; }).join('') + '</p></div>';

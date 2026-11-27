@@ -2056,3 +2056,23 @@ table.bl-spec .spec-corner { min-width: 210px; }
 .tp-mean { padding: 10px 12px; border-radius: 8px; border-left: 4px solid color-mix(in srgb, #7b4fb8 60%, var(--surface)); background: color-mix(in srgb, #7b4fb8 7%, var(--surface)); }
 .tp-mean span { font-family: var(--sans); font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: color-mix(in srgb, #7b4fb8 80%, var(--ink)); }
 .tp-mean p { margin: 4px 0 0; font-size: 14.5px; line-height: 1.5; }
+
+/* Clinical pearls on organism pages */
+.org-pearls { list-style: none; padding-left: 0 !important; }
+.org-pearls li { padding-left: 12px; border-left: 2px solid var(--accent-soft); }
+.org-pearls li b, .org-plink { font-weight: 700; color: var(--ink); }
+.org-plink { padding: 0; border: 0; background: none; font: inherit; font-weight: 700; color: var(--accent-ink); cursor: pointer; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 2px; }
+.org-pg { margin: 22px 0 0; font-family: 'Libre Baskerville', Georgia, serif; font-size: 17px; font-weight: 400; color: var(--ink); }
+.org-traps { margin-top: 18px; padding: 12px 14px; background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 8px; font-size: 14px; line-height: 1.5; }
+.org-traps p { margin: 0 0 6px; } .org-traps p:last-child { margin: 0; } .org-traps .org-lab { margin-top: 0; color: var(--accent-ink); }
+.org-pearlbtn { font-weight: 700; color: var(--accent-ink); }
+
+/* Disease lookup: background, pearl and key trial */
+.dz-bg { margin-top: 12px; }
+.dz-pearl, .dz-trial { margin-top: 14px; padding: 12px 14px; border-radius: 8px; font-size: 14px; line-height: 1.5; }
+.dz-pearl { background: var(--accent-soft); border: 1px solid var(--accent); }
+.dz-trial { border: 1px solid var(--line); background: var(--surface); }
+.dz-pearl p, .dz-trial p { margin: 0; }
+.dz-pearl .org-lab, .dz-trial .org-lab { margin-top: 0; color: var(--accent-ink); }
+.dz-trialn { margin-bottom: 4px !important; }
+.dz-trialn span { color: var(--muted); font-family: var(--sans); font-size: 13px; }

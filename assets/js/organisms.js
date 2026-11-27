@@ -20,6 +20,7 @@
 
   function list() {
     var q = st.q.toLowerCase().trim(), h = '';
+    if (O.pearls && (!q || 'clinical pearls exam traps'.indexOf(q) !== -1)) h += '<button type="button" class="ir-item org-pearlbtn' + (st.pick === 'pearls' ? ' on' : '') + '" data-pick="pearls">Clinical pearls: all organisms</button>';
     O.groups.forEach(function (g) {
       var os = O.orgs.filter(function (o) { return o.g === g && (!q || (o.n + ' ' + o.syn).toLowerCase().indexOf(q) !== -1); });
       if (!os.length) return;
@@ -42,12 +43,30 @@
     return h + '<p class="ab-note">From the spectrum data on the antibiotics page (' + esc(A.orgs[i][1]) + '). Site, dose and the isolate’s susceptibility still decide.</p></div>';
   }
 
+  // One-line clinical pearls for every organism, including those without a page of their own
+  function pearlsAll() {
+    var P = O.pearls, ids = {}, h = '<p class="ir-eyebrow">Gram-positive and Gram-negative</p><h3>Clinical pearls</h3><p class="dz-sum">One examinable line per organism. Names in blue open the organism’s page.</p>';
+    O.orgs.forEach(function (o) { ids[o.id] = 1; });
+    var g = '';
+    P.secs.forEach(function (sec) {
+      if (sec.g !== g) { g = sec.g; h += '<h4 class="org-pg">' + esc(g) + '</h4>'; }
+      h += '<div class="ab-sec"><h4>' + esc(sec.sub) + '</h4><ul class="org-pearls">' + sec.items.map(function (it) {
+        var nm = it[2] && ids[it[2]] ? '<button type="button" class="org-plink" data-pick="' + it[2] + '">' + esc(it[0]) + '</button>' : '<b>' + esc(it[0]) + '</b>';
+        return '<li>' + nm + ' ' + esc(it[1]) + '</li>';
+      }).join('') + '</ul></div>';
+    });
+    if (P.traps) h += '<div class="org-traps"><p class="org-lab">Exam traps</p>' + P.traps.map(function (t) { return '<p><b>' + esc(t[0]) + ':</b> ' + esc(t[1]) + '</p>'; }).join('') + '</div>';
+    return h;
+  }
+
   function detail() {
+    if (st.pick === 'pearls' && O.pearls) return pearlsAll();
     var o = O.orgs.filter(function (x) { return x.id === st.pick; })[0]; if (!o) return '';
     var h = '<p class="ir-eyebrow">' + esc(o.g) + '</p><h3>' + esc(o.n) + '</h3>';
     var am = IR && IR.ampc && o.ir ? IR.ampc[o.ir] : null;
     if (am) h += '<div class="ir-flag ' + am[0] + '"><b>' + (am[0] === 'high' ? 'AmpC: high risk' : 'AmpC: low risk') + '</b> ' + esc(am[1]) + '</div>';
     h += '<div class="ab-sec"><h4>Key points</h4><ul>' + o.facts.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul></div>';
+    if (o.pearls && o.pearls.length) h += '<div class="ab-sec"><h4>Clinical pearls</h4><ul class="org-pearls">' + o.pearls.map(function (f) { var i = f.indexOf(': '); return '<li>' + (i > 0 ? '<b>' + esc(f.slice(0, i)) + '</b> ' + esc(f.slice(i + 2)) : esc(f)) + '</li>'; }).join('') + '</ul><p class="ab-note"><button type="button" class="org-plink" data-pick="pearls">All clinical pearls</button></p></div>';
     h += '<div class="org-tx"><p class="org-lab">First-line treatment</p><p>' + esc(o.tx) + '</p>' + (o.alt ? '<p class="org-alt">' + esc(o.alt) + '</p>' : '') + '</div>';
     h += spectrum(o);
     if (o.ir && IRO[o.ir] && IRO[o.ir].length) {
@@ -68,13 +87,15 @@
   host.addEventListener('click', function (e) {
     var p = e.target.closest('[data-pick]'); if (!p) return;
     st.pick = p.getAttribute('data-pick');
-    host.querySelectorAll('.ir-item').forEach(function (b) { b.classList.toggle('on', b === p); });
+    host.querySelectorAll('.ir-item').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-pick') === st.pick); });
     host.querySelector('.ir-detail').innerHTML = detail();
     try { history.replaceState(null, '', '#bug-' + st.pick); } catch (err) {}
-    if (window.innerWidth < 760) host.querySelector('.ir-detail').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    var dt = host.querySelector('.ir-detail');
+    if (!p.classList.contains('ir-item') && dt.getBoundingClientRect().top < 0) dt.scrollIntoView({ block: 'start' });
+    else if (window.innerWidth < 760) host.querySelector('.ir-detail').scrollIntoView({ block: 'start', behavior: 'smooth' });
   });
   host.addEventListener('input', function (e) { if (e.target.id === 'org-q') { st.q = e.target.value; draw(e.target.selectionStart || st.q.length); } });
-  function fromHash() { var m = /^#bug-(.+)$/.exec(location.hash); if (m && O.orgs.some(function (o) { return o.id === m[1]; })) { st.pick = m[1]; st.q = ''; return true; } return false; }
+  function fromHash() { var m = /^#bug-(.+)$/.exec(location.hash); if (m && (m[1] === 'pearls' && O.pearls || O.orgs.some(function (o) { return o.id === m[1]; }))) { st.pick = m[1]; st.q = ''; return true; } return false; }
   window.addEventListener('hashchange', function () { if (fromHash()) { draw(); host.scrollIntoView({ block: 'start' }); } });
   var deep = fromHash(); draw();
   if (deep) { var on = host.querySelector('.ir-item.on'); if (on) on.scrollIntoView({ block: 'nearest' }); host.scrollIntoView({ block: 'start' }); }
