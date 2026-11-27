@@ -39,6 +39,75 @@ scripts:
       </section>
     </div>
 
+    <h2 class="section-title">Why each class kills the way it does</h2>
+    <p class="pk-intro">The PK/PD target follows from what the drug does inside the bacterium: whether it needs the cell to be growing, whether more drug means more target hit, and how quickly the bacterium recovers once the drug has gone.</p>
+    <div class="pk-cards pk-why">
+      <section class="card pk-card">
+        <p class="pk-kicker">Time-dependent · cell wall</p><h2>β-lactams</h2>
+        <p>They bind the penicillin-binding proteins (transpeptidases) that cross-link new peptidoglycan as the cell grows and divides. The cell’s own autolysins keep cutting the wall to make room, new cross-links fail, and the cell bursts, often at the dividing septum.</p>
+        <dl class="pk-dl"><dt>Why time</dt><dd>The PBPs are saturated at about 4 times the MIC, so a higher peak adds little. What matters is keeping them blocked through every round of growth, so time above the MIC decides the effect</dd>
+          <dt>So</dt><dd>Little killing of cells that are not growing: stationary phase, biofilm, abscess pus and very high inocula (the Eagle and inoculum effects). Gram-negatives make new PBPs quickly, so there is little post-antibiotic effect (carbapenems excepted)</dd>
+          <dt>Enterococci</dt><dd>Lack the autolysis step (tolerance): ampicillin alone only inhibits growth, which is why endocarditis needs a second drug</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">AUC-dependent · cell wall</p><h2>Glycopeptides</h2>
+        <p>Vancomycin and teicoplanin bind the D-Ala-D-Ala end of the wall building blocks (lipid II) outside the membrane, so they cannot be added to the wall. They are large molecules that cannot cross the Gram-negative outer membrane.</p>
+        <dl class="pk-dl"><dt>Why AUC</dt><dd>Killing is slow and needs growing cells, with a moderate post-antibiotic effect against Gram-positives, so the total exposure over the day (AUC/MIC 400–600) predicts the result</dd>
+          <dt>So</dt><dd>Slower killing than flucloxacillin or cefazolin for MSSA; poor in thick vegetations and biofilm</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">Concentration-dependent · ribosome</p><h2>Aminoglycosides</h2>
+        <p>They are pulled across the cell membrane by the proton-motive force, faster the higher the outside concentration. On the 30S ribosome they cause misreading; faulty proteins insert into the membrane and let in more drug, so killing speeds up as it goes.</p>
+        <dl class="pk-dl"><dt>Why peak</dt><dd>Uptake, and so killing, rises with concentration. Ribosomes take hours to recover, giving a long post-antibiotic effect. After a dose, uptake is switched down for a while (adaptive resistance), which suits one large daily dose</dd>
+          <dt>So</dt><dd>Kill growing and non-growing cells, but need oxygen and a normal pH: inactive against anaerobes and poor in abscesses. Damage to the wall by a β-lactam lets more in (synergy in endocarditis)</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">Concentration and AUC · DNA</p><h2>Fluoroquinolones</h2>
+        <p>They trap DNA gyrase and topoisomerase IV on the DNA after they have cut it. When the replication machinery runs into these trapped complexes, the DNA breaks on both strands.</p>
+        <dl class="pk-dl"><dt>Why peak and AUC</dt><dd>More drug traps more complexes, so killing rises with concentration; AUC/MIC (about 125 for Gram-negatives) is the usual target, with a post-antibiotic effect</dd>
+          <dt>So</dt><dd>Kill best when DNA is being copied, but also some non-dividing cells. Low levels sit in the mutant selection window, so under-dosing breeds resistance</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">Concentration-dependent · membrane</p><h2>Daptomycin and polymyxins</h2>
+        <p>Daptomycin, with calcium, inserts into the Gram-positive cell membrane and depolarises it. Polymyxins bind lipid A of Gram-negative LPS, push out the calcium and magnesium that hold it together, and break both membranes.</p>
+        <dl class="pk-dl"><dt>Why peak</dt><dd>Membrane damage is direct and rises with concentration, so killing is fast and does not need growth (Cmax/MIC or AUC/MIC)</dd>
+          <dt>So</dt><dd>Useful in biofilm and high inocula. Daptomycin is inactivated by lung surfactant, so it fails in pneumonia</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">AUC-dependent · ribosome</p><h2>Protein synthesis inhibitors</h2>
+        <p>Macrolides, tetracyclines, clindamycin and linezolid bind the ribosome reversibly and stop protein being made. The bacteria stop growing while the drug is present and the immune system clears them: mostly bacteriostatic.</p>
+        <dl class="pk-dl"><dt>Why AUC</dt><dd>The effect depends on how much of the day the ribosomes are blocked, so total exposure (AUC/MIC) predicts the result</dd>
+          <dt>So</dt><dd>Stop toxin production even in non-growing bacteria, which is why clindamycin or linezolid is added in necrotising fasciitis and toxic shock. Avoid relying on them alone where you need killing: endocarditis, meningitis, neutropenia</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">AUC and peak · RNA polymerase</p><h2>Rifampicin</h2>
+        <p>Blocks bacterial RNA polymerase, so no new RNA is made. This still works in slow-growing and dormant bacteria.</p>
+        <dl class="pk-dl"><dt>So</dt><dd>Reaches bacteria in biofilm on prosthetic joints and valves, and the slowly dividing persisters in TB. A single mutation in <i>rpoB</i> gives resistance, so it is never used alone. Higher doses are being studied because killing rises with exposure</dd></dl>
+      </section>
+      <section class="card pk-card">
+        <p class="pk-kicker">Concentration-dependent · DNA</p><h2>Metronidazole</h2>
+        <p>A prodrug that is only switched on by the low-redox enzymes of anaerobes and some protozoa. The activated drug breaks DNA.</p>
+        <dl class="pk-dl"><dt>So</dt><dd>Rapid, concentration-dependent killing of anaerobes only; no activity against aerobes because they cannot activate it</dd></dl>
+      </section>
+    </div>
+
+    <h2 class="section-title">Growing or not: which drugs still kill</h2>
+    <section class="card af-card">
+      <div class="ab-scroll"><table class="ab-tbl pk-grow">
+        <thead><tr><th>Class</th><th>Growing cells</th><th>Non-growing cells (biofilm, abscess, persisters)</th><th>Needs oxygen</th></tr></thead>
+        <tbody>
+          <tr><td>β-lactams, glycopeptides</td><td><span class="esc-r lo">Kill</span></td><td><span class="esc-r hi">Little</span></td><td>No</td></tr>
+          <tr><td>Aminoglycosides</td><td><span class="esc-r lo">Kill</span></td><td><span class="esc-r mid">Some</span></td><td>Yes (uptake)</td></tr>
+          <tr><td>Fluoroquinolones</td><td><span class="esc-r lo">Kill</span></td><td><span class="esc-r mid">Some</span></td><td>No</td></tr>
+          <tr><td>Daptomycin, polymyxins</td><td><span class="esc-r lo">Kill</span></td><td><span class="esc-r lo">Kill</span></td><td>No</td></tr>
+          <tr><td>Rifampicin</td><td><span class="esc-r lo">Kill</span></td><td><span class="esc-r lo">Kill</span></td><td>No</td></tr>
+          <tr><td>Macrolides, tetracyclines, clindamycin, linezolid</td><td><span class="esc-r mid">Stop growth</span></td><td><span class="esc-r mid">Stop toxin</span></td><td>No</td></tr>
+          <tr><td>Metronidazole</td><td><span class="esc-r lo">Kill (anaerobes)</span></td><td><span class="esc-r lo">Kill (anaerobes)</span></td><td>Needs its absence</td></tr>
+        </tbody>
+      </table></div>
+      <p class="ab-note">A simplification for teaching: activity varies by organism and site. It explains why prosthetic material infections use rifampicin, why abscesses need draining, and why enterococcal endocarditis needs two drugs.</p>
+    </section>
+
     <h2 class="section-title">Try it: change the dose, interval and MIC</h2>
     <section class="card af-card"><div id="pk-explorer"></div></section>
 

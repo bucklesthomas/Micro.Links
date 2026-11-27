@@ -2081,3 +2081,19 @@ table.bl-spec .spec-corner { min-width: 210px; }
 .dz-pearl .org-lab, .dz-trial .org-lab { margin-top: 0; color: var(--accent-ink); }
 .dz-trialn { margin-bottom: 4px !important; }
 .dz-trialn span { color: var(--muted); font-family: var(--sans); font-size: 13px; }
+
+/* ESCPPM table on the β-lactamases page */
+.esc-card > p { font-family: var(--sans); font-size: 14px; line-height: 1.55; margin: 0 0 12px; }
+.esc-tbl td { vertical-align: top; }
+.esc-r { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.esc-r.hi { color: var(--high); background: var(--high-bg); }
+.esc-r.lo { color: var(--low); background: var(--low-bg); }
+.esc-r.mid { color: var(--mid); background: var(--mid-bg); white-space: normal; }
+.esc-card .vc-notes { margin-top: 12px; }
+.ab-scroll { overflow-x: auto; }
+
+/* PK/PD: why each class kills the way it does */
+.pk-intro { font-family: var(--sans); font-size: 14.5px; line-height: 1.55; color: var(--muted); margin: -4px 0 12px; max-width: 760px; }
+.pk-why .pk-card h2 { font-size: 20px; }
+.pk-why .pk-dl { grid-template-columns: 86px 1fr; }
+.pk-grow td { vertical-align: top; }
