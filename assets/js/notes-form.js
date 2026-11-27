@@ -43,6 +43,10 @@
       return '<button type="button" class="sp-chip rf-chip' + cls + (f.region ? ' rf-reg' : '') + '" aria-pressed="' + pressed + '"' + (label ? ' aria-label="' + esc(label) + '"' : '') + (tt ? ' title="' + esc(tt) + '"' : '') +
         ' data-' + kind + '="' + f.id + '" data-o="' + esc(o) + '">' + esc(o) + '</button>';
     }
+    function resChip(f, o, v) {
+      return '<button type="button" class="sp-chip rf-chip' + (v ? PNC[v] : '') + '" aria-pressed="' + (v ? 'true' : 'false') + '"' + (v ? ' aria-label="' + esc(o + ' ' + PN[v]) + '"' : '') +
+        ' data-chips="' + f.id + '" data-o="' + esc(o) + '">' + (v ? '<b class="rf-sirk">' + PNK[v] + '</b> ' : '') + esc(o) + '</button>';
+    }
     function pnBtn(f, o, v) {
       return '<button type="button" class="sp-chip rf-chip' + (v ? PNC[v] : '') + '" aria-pressed="' + (v ? 'true' : 'false') + '"' + (v ? ' aria-label="' + esc(o + ' ' + PN[v]) + '"' : '') +
         ' data-pn="' + f.id + '" data-o="' + esc(o) + '">' + (v ? '<b class="rf-sirk">' + PNK[v] + '</b> ' : '') + esc(o) + '</button>';
@@ -82,8 +86,10 @@
       if (f.k === 'num') return '<label class="rf-f rf-num"><span>' + esc(f.l) + '</span><span class="rf-u"><input data-v="' + f.id + '" inputmode="decimal" value="' + esc(val(f.id)) + '" autocomplete="off"><em>' + esc(f.u || '') + '</em></span></label>';
       if (f.k === 'chips' || f.k === 'one') {
         var sel = f.k === 'one' ? [val(f.id)] : arr(f.id), no = arr(f.id + '_no');
-        return '<div class="rf-f rf-wide"><span>' + esc(f.l) + (f.neg ? '<small class="rf-tip">Tap once for yes, twice for no (red), three times to clear</small>' : '') + '</span><div class="ab-aw">' + f.o.map(function (o) {
+        var tip = f.pnres ? 'Tap once for positive (+), twice for negative (−), three times to clear' + (f.o.some(function (o) { return hasPn(f.id, o); }) ? '; CMV, EBV, HSV and VZV open IgM, IgG and PCR' : '') : 'Tap once for yes, twice for no (red), three times to clear';
+        return '<div class="rf-f rf-wide"><span>' + esc(f.l) + (f.neg ? '<small class="rf-tip">' + tip + '</small>' : '') + '</span><div class="ab-aw">' + f.o.map(function (o) {
           var on = sel.indexOf(o) !== -1, isNo = no.indexOf(o) !== -1;
+          if (f.pnres && !hasPn(f.id, o)) return resChip(f, o, on ? 'P' : isNo ? 'N' : '');
           return chipBtn(f.k, f, o, (on ? ' on' : '') + (isNo ? ' no' : ''), on ? 'true' : isNo ? 'mixed' : 'false', isNo ? 'No ' + o : '');
         }).join('') + '</div></div>';
       }
@@ -161,6 +167,7 @@
     var NEGTXT = /^(nil|nil of note|none|none known|no|nope|nothing|nothing of note|negative|denies|n\/?a|not applicable)\.?$/i;
     function negLine(f) { if (f.nil) return f.nil; var l = String(f.l || '').replace(/\s*\(.*\)\s*/g, ' ').trim(); return 'No ' + l.charAt(0).toLowerCase() + l.slice(1); }
     function isNegOpt(o) { return /^(No|Never|None)\b/.test(o); }
+    function joinAnd(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1]; }
     function joinOr(a) { return a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' or ' + a[a.length - 1]; }
     function lines(f) {
       if (!depOk(f) || f.region) return [];
@@ -168,6 +175,15 @@
       if (f.k === 'text' || f.k === 'area') { var tv = String(val(f.id)).trim(); return tv ? [NEGTXT.test(tv) ? negLine(f) : out + val(f.id)] : []; }
       if (f.k === 'num') return val(f.id) ? [out + val(f.id) + (f.u ? ' ' + f.u : '')] : [];
       if (f.k === 'one') { var ov = val(f.id); if (!ov) return []; if (ov === 'None') return [negLine(f)]; return [isNegOpt(ov) ? ov : out + ov]; }
+      if (f.k === 'chips' && f.pnres) {
+        var py = arr(f.id), pno = arr(f.id + '_no'), rr = [];
+        var sent = py.filter(function (x) { return hasPn(f.id, x) && !pnDone(f.id, x); });
+        var posr = py.filter(function (x) { return !hasPn(f.id, x); });
+        if (posr.length) rr.push('Positive ' + joinAnd(posr.map(lc)));
+        if (pno.length) rr.push('Negative ' + joinAnd(pno.map(lc)));
+        if (sent.length) rr.push((f.out || 'Sent ') + joinAnd(sent));
+        return rr;
+      }
       if (f.k === 'chips') {
         var yes = arr(f.id);
         if (f.ins) yes = yes.filter(function (x) { return String(val(f.ins)).indexOf(x) === -1; });
@@ -190,8 +206,11 @@
         return r2;
       }
       if (f.k === 'pn') {
-        var pm2 = obj(f.id), pr = f.o.filter(function (o) { return pm2[o]; }).map(function (o) { return o + ' ' + PN[pm2[o]]; });
-        return pr.length ? [(f.base || f.l) + ': ' + pr.join(', ')] : [];
+        var pm2 = obj(f.id), b = f.base || f.l, pp = f.o.filter(function (o) { return pm2[o] === 'P'; }), nn = f.o.filter(function (o) { return pm2[o] === 'N'; }), pr = [];
+        if (pp.length) pr.push('positive ' + b + ' ' + joinAnd(pp));
+        if (nn.length) pr.push('negative ' + b + ' ' + joinAnd(nn));
+        if (!pr.length) return [];
+        var ln = pr.join('; '); return [ln.charAt(0).toUpperCase() + ln.slice(1)];
       }
       if (f.k === 'obs') { var ob = OBS.map(function (o) { var x = val('o_' + o[0]); return x !== '' ? o[1] + ' ' + x + (o[0] === 'temp' ? '°C' : '') : ''; }).filter(Boolean).join(', '); return ob ? [ob] : []; }
       if (f.k === 'labs') {
@@ -272,8 +291,10 @@
     }
     function setChipStates(id) {
       var a = arr(id), n = arr(id + '_no');
+      var fdc = fieldDef(id);
       Array.prototype.forEach.call(host.querySelectorAll('[data-chips="' + id + '"]'), function (x) {
         var o = x.getAttribute('data-o'), on = a.indexOf(o) !== -1, isNo = n.indexOf(o) !== -1;
+        if (fdc.pnres && !hasPn(id, o)) { x.outerHTML = resChip(fdc, o, on ? 'P' : isNo ? 'N' : ''); return; }
         x.classList.toggle('on', on); x.classList.toggle('no', isNo);
         x.setAttribute('aria-pressed', on ? 'true' : isNo ? 'mixed' : 'false');
         if (isNo) x.setAttribute('aria-label', 'No ' + o); else x.removeAttribute('aria-label');
@@ -297,7 +318,7 @@
       var b = e.target.closest('button, a'); if (!b || !host.contains(b)) return;
       if (b.hasAttribute('data-chips')) {
         var id = b.getAttribute('data-chips'), o = b.getAttribute('data-o'), fd = fieldDef(id), a = arr(id).slice(), i = a.indexOf(o);
-        if (fd.neg) {
+        if (fd.neg && !(fd.pnres && hasPn(id, o))) {
           var n = arr(id + '_no').slice(), ni = n.indexOf(o);
           if (i !== -1) { a.splice(i, 1); n.push(o); } else if (ni !== -1) n.splice(ni, 1); else a.push(o);
           st.v[id + '_no'] = n;
@@ -306,6 +327,7 @@
           a.push(o);
         } else a.splice(i, 1);
         st.v[id] = a; setChipStates(id);
+        if (!b.isConnected) { var nb2 = host.querySelector('[data-chips="' + id + '"][data-o="' + o.replace(/"/g, '\\"') + '"]'); if (nb2) nb2.focus(); }
         if (fd.ins && !hasPn(id, o)) insertLine(fd.ins, o, i === -1);
         if (fd.region) relabel(fd);
         if (i !== -1) S.forEach(function (sx) { sx.f.forEach(function (g) { if (g.region && g.dep && g.dep.id === id && g.dep.v === o) { st.v[g.id] = []; setChipStates(g.id); } }); });
