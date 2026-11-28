@@ -13,7 +13,7 @@
   var D = {
     cfz: 'Cefazolin 2 g IV every 8 hours',
     fluc: 'Flucloxacillin 2 g IV every 6 hours (every 4 hours for endocarditis if over 85 kg)',
-    vanc: 'Vancomycin IV: loading dose 25–30 mg/kg (max 3 g), then dose by levels to an AUC of 400–600 mg·h/L (or trough 15–20 mg/L)',
+    vanc: 'Vancomycin IV: loading dose 25–30 mg/kg (max 2 g in most UK nomograms; follow local policy), then dose by levels to an AUC of 400–600 mg·h/L (or trough 15–20 mg/L)',
     dapt: 'Daptomycin 8–10 mg/kg IV once daily (not for pneumonia)',
     teic: 'Teicoplanin 12 mg/kg IV every 12 hours for 3–5 doses, then 12 mg/kg daily, to a trough above 20 mg/L (used in some UK centres; less trial evidence)'
   };

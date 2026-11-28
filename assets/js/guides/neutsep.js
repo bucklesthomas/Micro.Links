@@ -12,7 +12,7 @@
     casp: 'Caspofungin 70 mg IV on day 1, then 50 mg once daily (70 mg daily if > 80 kg)',
     lamb: 'Liposomal amphotericin B 3 mg/kg IV once daily',
     mica: 'Micafungin 100 mg IV once daily',
-    vori: 'Voriconazole IV 6 mg/kg 12-hourly for 2 doses, then 3 mg/kg 12-hourly'
+    vori: 'Voriconazole IV 6 mg/kg 12-hourly for 2 doses, then 4 mg/kg 12-hourly'
   };
 
   var N = {

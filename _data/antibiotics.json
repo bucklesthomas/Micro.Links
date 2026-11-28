@@ -453,7 +453,7 @@
    "renal": "Standard dose by creatinine clearance (SmPC): over 60, 2 g every 12 hours; 30–60, 1 g every 12 hours; 10–30, 1 g every 24 hours; under 10, 1 g every 48 hours or 500 mg every 24 hours.",
    "cautions": [
     "No activity against Gram-positives, anaerobes, Pseudomonas or Acinetobacter",
-    "Resistant to OXA-48 carbapenemases"
+    "Inactive against OXA-48 producers (high-level temocillin resistance is a marker for OXA-48)"
    ],
    "ir": [],
    "cov": "0000000000222100022100000000",

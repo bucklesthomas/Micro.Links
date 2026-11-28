@@ -168,7 +168,7 @@
     R_lis: {
       title: 'Listeria monocytogenes bacteraemia', tone: 'red',
       summary: 'Always significant. Look for CNS infection.',
-      regimens: [{ noOr: true, items: [I('Amoxicillin', '2 g IV every 4 hours'), I('plus Gentamicin', '5 mg/kg once daily (first 7 days, if CNS involved)')] }, { name: 'Penicillin allergy', items: [I('Co-trimoxazole', 'High dose, IV')] }],
+      regimens: [{ noOr: true, items: [I('Amoxicillin', '2 g IV every 4 hours'), I('plus Co-trimoxazole', 'IV for the first 7 days if CNS involved, on infection specialist advice (NICE NG240; older guidance used gentamicin)')] }, { name: 'Penicillin allergy', items: [I('Co-trimoxazole', 'High dose, IV')] }],
       notes: ['Cephalosporins are inactive.', 'NICE NG240 suggests co-trimoxazole rather than gentamicin as the added agent for Listeria meningitis (specialist advice).', 'LP or MRI if any neurological features; pregnancy needs obstetric input.', 'Duration: at least 14 days for bacteraemia, 21 days for meningitis.']
     },
     R_clos: {

@@ -29,7 +29,7 @@
    "rx": "Low severity: amoxicillin 500 mg TDS orally. Moderate: amoxicillin 500 mg TDS (add clarithromycin 500 mg BD if atypical infection suspected). High: co-amoxiclav 1.2 g TDS IV (or 500/125 mg TDS orally) plus clarithromycin 500 mg BD.",
    "alt": "Penicillin allergy: doxycycline 200 mg on day 1 then 100 mg OD, or clarithromycin 500 mg BD (low–moderate severity); levofloxacin 500 mg BD (high severity, consider its safety warnings).",
    "dur": "5 days, then stop if clinically stable.",
-   "ipc": "Pneumococcal vaccine (PPV23) at 65 y and in risk groups; influenza vaccination; smoking cessation.",
+   "ipc": "Pneumococcal conjugate vaccine (PCV20, which replaced PPV23 in 2026) at 65 and in risk groups; influenza vaccination; smoking cessation.",
    "notes": [
     "High severity in hospital: consider a corticosteroid (IV hydrocortisone first) for 4–7 days or until discharge (NICE NG250).",
     "Higher doses (amoxicillin up to 1 g TDS) are often used in hospital; follow local policy."
@@ -767,7 +767,7 @@
    ],
    "rx": "Ceftriaxone 2 g BD IV with dexamethasone 10 mg QDS (start with or before the first dose). Add amoxicillin 2 g every 4 hours if Listeria risk (over 60 or immunocompromised).",
    "alt": "Severe penicillin or cephalosporin allergy: chloramphenicol (with co-trimoxazole for Listeria).",
-   "dur": "Meningococcal 5 days; pneumococcal 10–14 days; Listeria 21 days.",
+   "dur": "If recovered (NICE NG240): meningococcal 5 days; Hib 7 days (10 if not recovered); pneumococcal 10 days; group B strep 14 days; Listeria 21 days.",
    "ipc": "Meningococcal: droplet precautions for 24 hours of treatment; notifiable; contacts need prophylaxis.",
    "notes": [],
    "src": [
@@ -1650,9 +1650,9 @@
    "clin": "Cystitis: dysuria, frequency, suprapubic pain. Pyelonephritis: loin pain, fever, rigors, vomiting. Older adults present with delirium.",
    "pearl": "Treat asymptomatic bacteriuria only in pregnancy and before urological surgery. Proteus: struvite stones, nitrofurantoin-resistant.",
    "trial": [
-    "Huttner",
-    "2018, JAMA",
-    "Nitrofurantoin for 5 days gave better clinical resolution of cystitis than single-dose fosfomycin (70% vs 58%)."
+    "Sandberg",
+    "2012, Lancet",
+    "In women with acute pyelonephritis, 7 days of ciprofloxacin was non-inferior to 14 days."
    ]
   },
   {
@@ -2025,7 +2025,7 @@
    "dur": "",
    "ipc": "Airborne precautions (negative-pressure room) from 4 days before to 4 days after rash onset. Notify on suspicion.",
    "notes": [
-    "Exposed contacts: MMR within 72 hours, or human normal immunoglobulin within 6 days for pregnant, immunosuppressed and infant contacts (UKHSA)."
+    "Exposed contacts: MMR within 72 hours, or immunoglobulin within 6 days: IM HNIG for pregnant women and infants under 6 months, IVIG 0.4 g/kg for immunosuppressed contacts (UKHSA 2026)."
    ],
    "src": [
     [
@@ -2528,7 +2528,7 @@
    "dx": [
     "Blood cultures, CSF"
    ],
-   "rx": "Amoxicillin 2 g every 4 hours IV, with or without gentamicin. Cephalosporins do not work.",
+   "rx": "Amoxicillin 2 g every 4 hours IV; for meningitis, add co-trimoxazole for the first 7 days on infection specialist advice (NICE NG240; older guidance used gentamicin). Cephalosporins do not work.",
    "alt": "Penicillin allergy: co-trimoxazole.",
    "dur": "Bacteraemia 14 days; meningitis 21 days.",
    "ipc": "",
