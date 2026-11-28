@@ -301,4 +301,22 @@ var SCORES = [
     });
     update();
   });
+
+  // One score on its own when the address ends in #<score id> (from search or the list above);
+  // #scores, or no score in the address, shows them all
+  var ids = SCORES.map(function (s) { return s.id; });
+  var back = document.createElement('p');
+  back.className = 'sc-back'; back.hidden = true;
+  back.innerHTML = '<a href="#scores">← All scores</a>';
+  host.parentNode.insertBefore(back, host);
+  function focusScore() {
+    var h = location.hash.slice(1), one = ids.indexOf(h) !== -1;
+    host.classList.toggle('sc-one', one);
+    nav.style.display = one ? 'none' : ''; back.hidden = !one;
+    host.querySelectorAll('.card.score').forEach(function (c) { c.hidden = one && c.id !== h; });
+    if (one) { var top0 = function () { window.scrollTo({ top: 0, behavior: 'instant' }); }; top0(); setTimeout(top0, 60); setTimeout(top0, 250); }
+    else if (h === 'scores') { var t2 = nav.getBoundingClientRect().top + window.scrollY - 90; window.scrollTo({ top: Math.max(0, t2), behavior: 'instant' }); }
+  }
+  window.addEventListener('hashchange', focusScore);
+  focusScore();
 })();

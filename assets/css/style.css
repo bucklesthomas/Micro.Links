@@ -2127,3 +2127,9 @@ table.bl-spec .spec-corner { min-width: 210px; }
 .st-notes { margin: 6px 0 0; padding-left: 18px; font-family: var(--sans); font-size: 13.5px; line-height: 1.5; }
 .st-notes li { margin-bottom: 4px; }
 .st-link { margin: 8px 0 0; font-family: var(--sans); font-size: 12.5px; }
+
+/* Scores: one score at a time */
+.sc-back { margin: 0 0 10px; font-family: var(--sans); font-size: 14px; }
+.sc-back a { font-weight: 600; }
+.grid.scores.sc-one { grid-template-columns: minmax(0, 760px); }
+.grid.scores.sc-one .card.score { grid-column: 1 / -1; }
