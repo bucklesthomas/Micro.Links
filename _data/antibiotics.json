@@ -274,7 +274,7 @@
     "elim": "Renal",
     "pen": "CSF with inflamed meninges at high IV doses; high urinary levels"
    },
-   "renal": "Reduce dose or frequency when eGFR < 30 ml/min.",
+   "renal": "Oral, by creatinine clearance (SmPC): 10–30, max 500 mg every 12 hours; under 10, max 500 mg every 24 hours. IV: reduce similarly.",
    "cautions": [
     "Penicillin allergy",
     "Rash with EBV infection (glandular fever)",
@@ -365,7 +365,7 @@
     "elim": "Renal (clavulanate partly hepatic)",
     "pen": "Poor CSF"
    },
-   "renal": "Reduce dose or frequency when eGFR < 30 ml/min.",
+   "renal": "Creatinine clearance 10–30: oral 500/125 mg every 12 hours, IV 1.2 g then 600 mg every 12 hours; under 10: oral 500/125 mg every 24 hours, IV 1.2 g then 600 mg every 24 hours (SmPC).",
    "cautions": [
     "Strongly associated with C. difficile infection",
     "Cholestatic jaundice (more common than with amoxicillin, especially over 65 and after 14 days)",
@@ -408,7 +408,7 @@
     "elim": "Renal",
     "pen": "Moderate tissue penetration; poor CSF"
    },
-   "renal": "Reduce dose when eGFR < 40 ml/min (e.g. 4.5 g every 8–12 hours).",
+   "renal": "Creatinine clearance 20–40: max 4.5 g every 8 hours; under 20: max 4.5 g every 12 hours (SmPC).",
    "cautions": [
     "Not reliable for serious ESBL infection (MERINO trial): use a carbapenem",
     "Avoid for serious infection with high-risk AmpC producers",
@@ -432,7 +432,7 @@
    "dose": [
     [
      "IV",
-     "2 g every 8 hours for systemic infection (the EUCAST breakpoints assume this dose); 2 g every 12 hours for uncomplicated urinary infection"
+     "Licensed standard dose 2 g every 12 hours; high dose 2 g every 8 hours for critical illness or systemic infection (the EUCAST breakpoints assume the high dose)"
     ]
    ],
    "uses": [
@@ -450,7 +450,7 @@
     "elim": "Renal",
     "pen": "High urinary levels; limited data elsewhere"
    },
-   "renal": "Reduce frequency when eGFR < 30 ml/min.",
+   "renal": "Standard dose by creatinine clearance (SmPC): over 60, 2 g every 12 hours; 30–60, 1 g every 12 hours; 10–30, 1 g every 24 hours; under 10, 1 g every 48 hours or 500 mg every 24 hours.",
    "cautions": [
     "No activity against Gram-positives, anaerobes, Pseudomonas or Acinetobacter",
     "Resistant to OXA-48 carbapenemases"
@@ -526,7 +526,7 @@
     "elim": "Renal",
     "pen": "High urinary levels"
    },
-   "renal": "Reduce dose when eGFR < 40 ml/min.",
+   "renal": "eGFR 40–50: max 3 g daily; 10–40: max 1.5 g daily; under 10: max 750 mg daily.",
    "cautions": [
     "Cross-reactivity with penicillin allergy is low; avoid after severe penicillin reactions",
     "Poor activity against H. influenzae"
@@ -1575,7 +1575,7 @@
     ],
     [
      "IV",
-     "600 mg–1.2 g every 6 hours; 1.2 g every 6 hours for toxin suppression (local policy)"
+     "0.6–2.7 g daily in 2–4 divided doses (licensed); up to 1.2 g every 6 hours (4.8 g daily, the BNF maximum) for severe infection or toxin suppression, per local policy"
     ]
    ],
    "uses": [
@@ -1724,7 +1724,7 @@
     "elim": "Renal and hepatic",
     "pen": "Good urine, prostate and bone"
    },
-   "renal": "Halve the dose when eGFR < 30 ml/min.",
+   "renal": "Oral, by creatinine clearance (SmPC): 30–60, 250–500 mg every 12 hours; under 30, 250–500 mg every 24 hours.",
    "cautions": [
     "MHRA: disabling tendon, nerve, mood and aortic adverse effects; use only when other antibiotics are unsuitable",
     "Chelated by calcium, iron, zinc and antacids",
@@ -1850,7 +1850,7 @@
     "elim": "Renal",
     "pen": "High urine and prostate levels"
    },
-   "renal": "Halve the dose after 3 days when eGFR 15–30 ml/min; avoid below 15 unless levels can be monitored.",
+   "renal": "eGFR 15–30 ml/min: normal dose for 3 days, then half dose. eGFR under 15: half the normal dose. Dialysis: only with specialist advice (SmPC).",
    "cautions": [
     "Hyperkalaemia and a rise in creatinine (blocks tubular secretion)",
     "Avoid in first-trimester pregnancy (folate antagonist)",

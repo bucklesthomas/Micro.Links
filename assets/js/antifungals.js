@@ -136,8 +136,8 @@
       interpret: function (t, lo, pk) {
         var out = [];
         if (t < 20) out.push(['low', 'Trough below 20 mg/L', 'Low troughs are linked to treatment failure and resistance. Check the dose against renal function and consider increasing it.']);
-        else if (t > 50) out.push(['high', 'Trough above 50 mg/L', 'The drug is accumulating. Check renal function and reduce the dose or lengthen the interval.']);
-        else out.push(['ok', 'Trough in range (20–50 mg/L)', '']);
+        else if (t > 40) out.push(['high', 'Trough above 40 mg/L', 'The drug is accumulating. Check renal function and reduce the dose or lengthen the interval.']);
+        else out.push(['ok', 'Trough in range (20–40 mg/L)', '']);
         if (pk != null && !isNaN(pk)) {
           if (pk > 100) out.push(['high', 'Peak above 100 mg/L', 'Peaks above 100 mg/L are linked to bone marrow and liver toxicity. Reduce the dose; check blood count, liver and renal function.']);
           else if (pk < 50) out.push(['low', 'Peak below 50 mg/L', 'Consider increasing the dose if the trough is also low.']);

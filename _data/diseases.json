@@ -152,7 +152,7 @@
    "dx": [
     "Sputum culture with every exacerbation"
    ],
-   "rx": "Without previous results: amoxicillin 500 mg TDS, or clarithromycin 500 mg BD / doxycycline 100 mg OD if allergic. Pseudomonas colonisation: ciprofloxacin 500 mg BD (750 mg BD for severe).",
+   "rx": "Without previous results: amoxicillin 500 mg TDS, or clarithromycin 500 mg BD, or doxycycline 200 mg on day 1 then 100 mg OD, if allergic. Pseudomonas colonisation: ciprofloxacin 500 mg BD (750 mg BD for severe).",
    "alt": "IV if severe: piperacillin–tazobactam or ceftazidime by previous susceptibility.",
    "dur": "7–14 days.",
    "ipc": "",
@@ -460,7 +460,7 @@
     "Blood cultures, tissue cultures at surgery",
     "LRINEC can support, but a low score does not rule it out"
    ],
-   "rx": "Broad IV cover per local policy, for example meropenem or piperacillin–tazobactam, plus clindamycin 1.2–1.8 g QDS (to switch off toxin). Add vancomycin or linezolid if MRSA risk.",
+   "rx": "Broad IV cover per local policy, for example meropenem or piperacillin–tazobactam, plus clindamycin 1.2 g QDS (to switch off toxin; above the licensed dose, per local protocol). Add vancomycin or linezolid if MRSA risk.",
    "alt": "",
    "dur": "Until no further debridement needed and clinically improving; review with microbiology.",
    "ipc": "Invasive group A strep is notifiable: contacts may need prophylaxis.",
@@ -669,7 +669,7 @@
     "Blood cultures",
     "Gonococcal NAAT (urine and swabs) if sexually active"
    ],
-   "rx": "IV flucloxacillin 2 g QDS (add gentamicin if Gram-negative risk). Suspected gonococcal: ceftriaxone 2 g OD. MRSA risk: vancomycin.",
+   "rx": "IV flucloxacillin 2 g QDS (add gentamicin if Gram-negative risk). Suspected gonococcal: ceftriaxone 1 g IV or IM every 24 hours (BASHH 2025). MRSA risk: vancomycin.",
    "alt": "Penicillin allergy: clindamycin or vancomycin.",
    "dur": "Usually 4–6 weeks in total, with early oral switch when improving.",
    "ipc": "Aseptic technique for intra-articular injections; prompt orthopaedic review.",
@@ -2123,7 +2123,7 @@
     "Remove tampons or other foreign bodies; look for a focus",
     "Blood cultures, swabs"
    ],
-   "rx": "IV clindamycin 1.2–1.8 g QDS (stops toxin production) plus flucloxacillin (staphylococcal) or benzylpenicillin (streptococcal), or broad cover until known; add MRSA cover if risk.",
+   "rx": "IV clindamycin 1.2 g QDS (stops toxin production; above the licensed dose, per local protocol) plus flucloxacillin (staphylococcal) or benzylpenicillin (streptococcal), or broad cover until known; add MRSA cover if risk.",
    "alt": "",
    "dur": "Guided by source.",
    "ipc": "Streptococcal TSS: notifiable as iGAS.",
